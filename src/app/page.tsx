@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { getPosts } from "./get-posts";
 import { PostsList } from "./posts-list";
 
@@ -9,7 +10,15 @@ export default async function Home() {
   return (
     <div className="max-w-2xl mx-auto px-4 py-12">
       <header className="mb-12">
-        <h1 className="text-4xl font-bold mb-2">rblez</h1>
+        <div className="flex items-center justify-between mb-4">
+          <h1 className="text-4xl font-bold">rblez</h1>
+          <Link
+            href="/about"
+            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+          >
+            About
+          </Link>
+        </div>
         <p className="text-gray-600 dark:text-gray-400">
           Personal blog by Ray. Writing about web development, technology, and
           more.
