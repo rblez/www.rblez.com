@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+    color-scheme: light;
+    --background: #fcfcfc;
+    --foreground: #171717;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --background: #1c1c1c;
+      --foreground: #ededed;
+    }
+  }
+
+  ::selection {
+    @apply bg-black text-white;
+  }
+
+  ::-moz-selection {
+    @apply bg-black text-white;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    ::selection {
+      @apply bg-white text-black;
+    }
+
+    ::-moz-selection {
+      @apply bg-white text-black;
+    }
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
