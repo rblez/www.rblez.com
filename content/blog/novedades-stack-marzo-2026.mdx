@@ -6,58 +6,87 @@ published: true
 tags: ["stack", "vibecoding", "supabase", "cursor", "trae"]
 ---
 
-# Novedades en mi Stack
+# 🚀 Novedades en mi Stack — Marzo 2026
 
-Marzo viene con actualizaciones importantes en las herramientas que uso a diario. Les cuento las que más me interesan.
+Marzo trae energía nueva.  
+Tres herramientas que uso todos los días —**Supabase**, **Cursor** y **TRAE**— acaban de lanzar updates que cambian por completo la forma en la que codeo, organizo y pienso en mi flujo.
 
-## Supabase
-
-El ecosistema de Supabase sigue creciendo. Este mes:
-
-- **Plugin oficial para Cursor**: ahora se puede manejar la base de datos, autenticación y almacenamiento directamente desde el editor. Menos cambio de contexto, más fluidez.
-
-- **Documentación exportable a Markdown**: cada guía tiene un botón "Copy as Markdown" para pegar directamente en los prompts de IA. Ideal para los que vibcodeamos.
-
-- **Postgres Best Practices para AI Agents**: 30 reglas para que los agentes escriban código correcto. Funciona con Claude, Cursor y Copilot.
-
-- **TRAE SOLO integration**: se puede gestionar Supabase directamente desde TRAE.
-
-- **Table filters con IA**: se describe lo que se quiere encontrar y el dashboard aplica los filtros automáticamente.
-
-- **Queue operations**: se pueden editar varias celdas, revisar los cambios en Diff View y confirmarlos con `cmd + s`.
-
-## Cursor
-
-Cursor lanza **Automations**. 
-
-Hasta ahora, había que pedirle a la IA que hiciera algo. Ahora los agentes se activan solos cuando:
-
-- Cambia el código en el repositorio
-- Llega un mensaje en Slack
-- Pasa un tiempo definido (cron)
-
-Los agentes corren en máquinas virtuales aisladas, instalan dependencias, levantan servidores, prueban la interfaz y dejan todo listo en un pull request con videos y capturas.
-
-Cursor dice que **30-35% de sus cambios internos ya los hacen estos agentes**. No es una función experimental, es como trabajan ellos ahora.
-
-## TRAE
-
-ByteDance actualizó TRAE con el modo **SOLO**.
-
-No es un cambio menor. TRAE pasa de ser un asistente a ser un "AI Engineer" que:
-
-- Planifica solo: se describe lo que se quiere y arma los pasos
-- Ejecuta: escribe código, corre pruebas, depura
-- Maneja múltiples tareas en paralelo
-
-La interfaz cambió: ahora el centro es el chat con el agente, no el editor de código. Es una forma distinta de pensar el desarrollo.
-
-Además viene con **Skills**: se pueden encapsular reglas internas del equipo (cómo escribir pruebas, estándares de código) y el agente las respeta. Para proyectos en equipo, esto es clave.
-
-También publicaron un libro gratis con toda la metodología que usan internamente.
+> Menos escribir código. Más diseñar soluciones junto a agentes que piensan contigo.
 
 ---
 
-El denominador común es claro: **los agentes pasan de ayudarnos a ejecutar por nosotros**. El rol cambia: menos escribir código, más definir problemas y revisar resultados.
+## 🟢 Supabase
 
-Si usan alguna de estas herramientas, prueben las novedades y cuenten qué tal les va.
+![Supabase dashboard actualizado — Marzo 2026](https://images.unsplash.com/photo-1671726203132-df8b4a5c8bdd?auto=format&fit=crop&w=1600&q=80)
+
+El ecosistema de Supabase sigue sin frenar.  
+Este mes sumaron funciones que se sienten hechas para los que **vibecodeamos** (los que pensamos el código como procesos fluidos, no scripts).
+
+- **Plugin oficial para Cursor** → ahora gestionás base de datos, auth y storage *sin salir del editor*.  
+  Pura concentración.  
+- **Documentación exportable a Markdown** → cada guía tiene ahora un botón _Copy as Markdown_. Ideal para prompts y agentes.  
+- **Postgres Best Practices para AI Agents** → 30 reglas que evitan errores comunes cuando tus bots escriben SQL.  
+- **TRAE SOLO integration** → Supabase y TRAE ahora se entienden nativamente: crear tablas o auth desde el chat.  
+- **Table filters con IA** → en lugar de clics, describís lo que querés ver. Supabase lo hace por vos.  
+- **Queue operations en Diff View** → ediciones masivas con vista previa tipo Git: `cmd + s` para confirmar.
+
+> Supabase dejó de ser “backend as a service”. Ahora es infraestructura para equipos híbridos: humanos + IA.
+
+---
+
+## ⚙️ Cursor
+
+![Automations de Cursor en acción](https://images.unsplash.com/photo-1626245479999-b5193bcbcf9b?auto=format&fit=crop&w=1600&q=80)
+
+Cursor acaba de soltar su bomba: **Automations** 🔁  
+Hasta ahora, le pedías cosas al agente; ahora el agente las inicia solo.
+
+Ejemplos de activadores:
+
+- Cambio en el código del repo  
+- Mensaje entrante en Slack  
+- Temporizador o cron predefinido
+
+El agente se levanta en una VM aislada, instala dependencias, ejecuta los tests, analiza el front con capturas y genera un pull request completo con contexto visual.
+
+Cursor afirma que **30–35% de sus cambios internos ya son generados así**.  
+Ya no es un experimento, es su _stack productivo_ real.
+
+> Si lo piensas, ya no es “copilot”. Es un nuevo tipo de DevOps: el copiloto que actúa sin esperar órdenes.
+
+---
+
+## 🤖 TRAE (modo SOLO)
+
+![Interfaz del nuevo TRAE SOLO](https://images.unsplash.com/photo-1695337461733-c8c53e85b9c3?auto=format&fit=crop&w=1600&q=80)
+
+ByteDance le puso turbo al modo **SOLO** de TRAE.  
+Lo que antes era un assistant, ahora es literalmente un **AI Engineer**.
+
+- Planifica solo: describís el objetivo y genera pasos concretos.  
+- Ejecuta: escribe código, corre pruebas y depura sin supervisión.  
+- Multitareas paralelas: puede atender features diferentes a la vez.  
+
+La UI también cambió: el centro del flujo ya no es el editor, sino el **chat**.  
+Ahí nace y se mueve todo el proyecto.
+
+Además, estrenan **Skills** —pequeños módulos donde definís cómo deben trabajar los agentes (estándares, formatos, testing). Ideal para mantener coherencia cuando varios humanos colaboran con la IA.
+
+Y como si fuera poco, publicaron un **libro gratuito** con toda la metodología interna.  
+Una joya para quienes quieren construir agentes con identidad propia.
+
+---
+
+## 🔭 Lo que se viene
+
+![Agentes y humanos trabajando juntos](https://images.unsplash.com/photo-1680064167439-dfcb9c63f441?auto=format&fit=crop&w=1600&q=80)
+
+El patrón es clarísimo: **los agentes pasan de ayudarnos a ejecutar por nosotros**.  
+Nuestro rol cambia.  
+Ya no es tanto escribir código, sino **definir problemas, revisar resultados y conectar herramientas**.
+
+Como indie dev, me emociona este momento: las herramientas piensan, ejecutan y documentan por sí mismas.  
+Nosotros elegimos hacia dónde apuntarles.
+
+Si usás alguna de estas, contame qué tal te fue con las novedades 👇  
+Quiero saber cómo están navegando este nuevo stack de **IA + código**.
