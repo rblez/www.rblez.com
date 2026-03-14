@@ -1,0 +1,63 @@
+---
+title: "Novedades en mi Stack (Marzo 2026)"
+date: "2026-03-13"
+description: "Lo que está pasando con las herramientas que uso a diario: Supabase, Cursor y TRAE"
+published: true
+tags: ["stack", "vibecoding", "supabase", "cursor", "trae"]
+---
+
+# Novedades en mi Stack
+
+Marzo viene con actualizaciones importantes en las herramientas que uso a diario. Les cuento las que más me interesan.
+
+## Supabase
+
+El ecosistema de Supabase sigue creciendo. Este mes:
+
+- **Plugin oficial para Cursor**: ahora se puede manejar la base de datos, autenticación y almacenamiento directamente desde el editor. Menos cambio de contexto, más fluidez.
+
+- **Documentación exportable a Markdown**: cada guía tiene un botón "Copy as Markdown" para pegar directamente en los prompts de IA. Ideal para los que vibcodeamos.
+
+- **Postgres Best Practices para AI Agents**: 30 reglas para que los agentes escriban código correcto. Funciona con Claude, Cursor y Copilot.
+
+- **TRAE SOLO integration**: se puede gestionar Supabase directamente desde TRAE.
+
+- **Table filters con IA**: se describe lo que se quiere encontrar y el dashboard aplica los filtros automáticamente.
+
+- **Queue operations**: se pueden editar varias celdas, revisar los cambios en Diff View y confirmarlos con `cmd + s`.
+
+## Cursor
+
+Cursor lanza **Automations**. 
+
+Hasta ahora, había que pedirle a la IA que hiciera algo. Ahora los agentes se activan solos cuando:
+
+- Cambia el código en el repositorio
+- Llega un mensaje en Slack
+- Pasa un tiempo definido (cron)
+
+Los agentes corren en máquinas virtuales aisladas, instalan dependencias, levantan servidores, prueban la interfaz y dejan todo listo en un pull request con videos y capturas.
+
+Cursor dice que **30-35% de sus cambios internos ya los hacen estos agentes**. No es una función experimental, es como trabajan ellos ahora.
+
+## TRAE
+
+ByteDance actualizó TRAE con el modo **SOLO**.
+
+No es un cambio menor. TRAE pasa de ser un asistente a ser un "AI Engineer" que:
+
+- Planifica solo: se describe lo que se quiere y arma los pasos
+- Ejecuta: escribe código, corre pruebas, depura
+- Maneja múltiples tareas en paralelo
+
+La interfaz cambió: ahora el centro es el chat con el agente, no el editor de código. Es una forma distinta de pensar el desarrollo.
+
+Además viene con **Skills**: se pueden encapsular reglas internas del equipo (cómo escribir pruebas, estándares de código) y el agente las respeta. Para proyectos en equipo, esto es clave.
+
+También publicaron un libro gratis con toda la metodología que usan internamente.
+
+---
+
+El denominador común es claro: **los agentes pasan de ayudarnos a ejecutar por nosotros**. El rol cambia: menos escribir código, más definir problemas y revisar resultados.
+
+Si usan alguna de estas herramientas, prueben las novedades y cuenten qué tal les va.
