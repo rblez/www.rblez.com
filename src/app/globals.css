@@ -1,6 +1,14 @@
 @import "tailwindcss";
 @import "remixicon/fonts/remixicon.css";
 
+@font-face {
+  font-family: "SF Pro Text";
+  src: url("/fonts/SF_Pro_Text_Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   :root {
     -webkit-tap-highlight-color: rgba(0, 2, 0, 0);
@@ -78,7 +86,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: -apple-system, BlinkMacSystemFont, var(--font-inter), system-ui, sans-serif;
+  font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, var(--font-inter), system-ui, sans-serif;
   font-feature-settings: "rlig" 1, "calt" 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
