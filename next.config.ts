@@ -3,9 +3,6 @@ import withMDX from "@next/mdx";
 
 const nextConfig: NextConfig = {
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
-  experimental: {
-    mdxRs: true,
-  },
   images: {
     minimumCacheTTL: 2678400,
     remotePatterns: [

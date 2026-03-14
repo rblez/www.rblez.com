@@ -1,32 +1,28 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import { Footer } from "./footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
   title: "rblez - Blog",
-  description: "Personal blog by Ray (rblez)",
+  description: "Personal blog by Ray (rblez) - Vibecoder from Cuba",
   metadataBase: new URL("https://rblez.com"),
   openGraph: {
     title: "rblez - Blog",
-    description: "Personal blog by Ray (rblez)",
+    description: "Personal blog by Ray (rblez) - Vibecoder from Cuba",
     locale: "en_US",
     type: "website",
+    images: ["/banner-seo.png"],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     site: "@rblezX",
     creator: "@rblezX",
+    images: ["/banner-seo.png"],
   },
 };
 
@@ -37,11 +33,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={inter.variable}>
         <main>{children}</main>
-        <Footer />
       </body>
     </html>
   );

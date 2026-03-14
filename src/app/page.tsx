@@ -1,49 +1,91 @@
+import { posts } from "#site/content";
+import Image from "next/image";
 import Link from "next/link";
-import { getPosts } from "./get-posts";
-import { PostsList } from "./posts-list";
 
-export const revalidate = 300;
+const publishedPosts = posts
+  .filter((post) => post.published)
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
-export default async function Home() {
-  const posts = await getPosts();
-
+export default function Home() {
   return (
-    <div className="max-w-2xl mx-auto px-4 py-12">
-      <header className="mb-12">
-        <div className="flex items-center justify-between mb-4">
-          <h1 className="text-4xl font-bold">rblez</h1>
-          <Link
-            href="/about"
-            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-          >
-            About
-          </Link>
-        </div>
-        <p className="text-gray-600 dark:text-gray-400">
-          Personal blog by Ray. Writing about web development, technology, and
-          more.
-        </p>
-        <div className="mt-4 flex gap-4 text-sm">
-          <a
-            href="https://x.com/rblezX"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-          >
-            Twitter
-          </a>
-          <a
-            href="https://github.com/rblez"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-          >
-            GitHub
-          </a>
-        </div>
-      </header>
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-[#0a0a0a] dark:to-[#111] relative">
+      {/* Grid Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]" />
+      
+      <div className="max-w-2xl mx-auto px-4 py-8 sm:py-12 relative">
+        <header className="mb-8 sm:mb-12">
+          <div className="flex items-center justify-between mb-4">
+            {/* Isotipo Logo - Blanco siempre */}
+            <div className="w-8 h-8">
+              <Image
+                src="/isotipe.svg"
+                alt="rblez"
+                width={32}
+                height={32}
+                className="w-full h-full brightness-0 invert"
+              />
+            </div>
+            
+            <nav className="flex gap-4 text-sm">
+              <a
+                href="https://x.com/rblezX"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+                aria-label="Twitter"
+              >
+                <i className="ri-twitter-x-line text-lg"></i>
+              </a>
+              <a
+                href="https://github.com/rblez"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+                aria-label="GitHub"
+              >
+                <i className="ri-github-fill text-lg"></i>
+              </a>
+            </nav>
+          </div>
+          <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">
+            Personal blog by Ray. Writing about web development, technology, and more.
+          </p>
+        </header>
 
-      <PostsList posts={posts} />
+        <section className="space-y-4 sm:space-y-6">
+          {publishedPosts.map((post) => (
+            <article key={post.slug} className="group">
+              <Link href={`/${post.slug}`} className="block">
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex-1">
+                    <h2 className="text-base sm:text-lg font-semibold group-hover:underline">
+                      {post.title}
+                    </h2>
+                    {post.description && (
+                      <p className="text-sm text-gray-600 dark:text-gray-400 mt-1 line-clamp-2">
+                        {post.description}
+                      </p>
+                    )}
+                  </div>
+                  <time className="text-xs text-gray-500 whitespace-nowrap">
+                    {new Date(post.date).toLocaleDateString("en-US", {
+                      month: "short",
+                      day: "numeric",
+                      year: "numeric",
+                    })}
+                  </time>
+                </div>
+              </Link>
+            </article>
+          ))}
+        </section>
+
+        <footer className="mt-12 pt-6 border-t border-gray-200 dark:border-gray-700">
+          <div className="flex justify-center text-sm text-gray-500">
+            <p>© 2026 rblez. All rights reserved.</p>
+          </div>
+        </footer>
+      </div>
     </div>
   );
 }

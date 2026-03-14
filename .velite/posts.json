@@ -1,0 +1,28 @@
+[
+  {
+    "slug": "blog/hello-world",
+    "title": "Hello World",
+    "description": "My first blog post introducing this new personal blog built with Next.js and MDX",
+    "date": "2026-03-11T00:00:00.000Z",
+    "tags": [
+      "intro",
+      "hello"
+    ],
+    "published": true,
+    "body": "const{Fragment:e,jsx:n,jsxs:t}=arguments[0];function _createMdxContent(o){const l={a:\"a\",blockquote:\"blockquote\",h1:\"h1\",h2:\"h2\",li:\"li\",ol:\"ol\",p:\"p\",...o.components};return t(e,{children:[n(l.h1,{id:\"hello-world\",children:n(l.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#hello-world\",children:\"Hello World\"})}),\"\\n\",n(l.p,{children:\"This is my first blog post. Welcome to my personal blog!\"}),\"\\n\",n(l.h2,{id:\"about-this-blog\",children:n(l.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#about-this-blog\",children:\"About This Blog\"})}),\"\\n\",t(l.p,{children:[\"I created this blog using \",n(l.a,{href:\"https://nextjs.org\",children:\"Next.js\"}),\" and \",n(l.a,{href:\"https://mdxjs.com\",children:\"MDX\"}),\".\"]}),\"\\n\",n(l.h2,{id:\"whats-next\",children:n(l.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#whats-next\",children:\"What's Next?\"})}),\"\\n\",n(l.p,{children:\"I'll be writing about:\"}),\"\\n\",t(l.ol,{children:[\"\\n\",n(l.li,{children:\"Web development\"}),\"\\n\",n(l.li,{children:\"Performance optimization\"}),\"\\n\",n(l.li,{children:\"Developer tools\"}),\"\\n\"]}),\"\\n\",n(l.p,{children:\"Stay tuned for more content.\"}),\"\\n\",t(l.blockquote,{children:[\"\\n\",n(l.p,{children:'\"The web is the most important platform of our time.\"'}),\"\\n\"]}),\"\\n\",n(l.p,{children:\"Thanks for visiting!\"})]})}return{default:function(e={}){const{wrapper:t}=e.components||{};return t?n(t,{...e,children:n(_createMdxContent,{...e})}):_createMdxContent(e)}};",
+    "permalink": "/blog/hello-world"
+  },
+  {
+    "slug": "blog/setup-2026",
+    "title": "My Setup 2026",
+    "description": "A look at my daily driver setup for development",
+    "date": "2026-03-13T00:00:00.000Z",
+    "tags": [
+      "setup",
+      "productivity"
+    ],
+    "published": true,
+    "body": "const{Fragment:e,jsx:n,jsxs:t}=arguments[0];function _createMdxContent(r){const i={a:\"a\",blockquote:\"blockquote\",h1:\"h1\",h2:\"h2\",img:\"img\",li:\"li\",p:\"p\",strong:\"strong\",ul:\"ul\",...r.components};return t(e,{children:[n(i.h1,{id:\"my-setup-2026\",children:n(i.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#my-setup-2026\",children:\"My Setup 2026\"})}),\"\\n\",n(i.p,{children:\"Here's a look at my current development setup and workspace.\"}),\"\\n\",n(i.h2,{id:\"workspace\",children:n(i.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#workspace\",children:\"Workspace\"})}),\"\\n\",n(i.p,{children:n(i.img,{src:\"/workspace.svg\",alt:\"My Workspace\"})}),\"\\n\",n(i.p,{children:\"This is where the magic happens. Simple, clean, and focused on what matters.\"}),\"\\n\",n(i.h2,{id:\"tech-stack\",children:n(i.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#tech-stack\",children:\"Tech Stack\"})}),\"\\n\",n(i.p,{children:\"My daily driver setup:\"}),\"\\n\",t(i.ul,{children:[\"\\n\",t(i.li,{children:[n(i.strong,{children:\"Laptop\"}),': MacBook Pro 16\"']}),\"\\n\",t(i.li,{children:[n(i.strong,{children:\"Editor\"}),\": VS Code with custom theme\"]}),\"\\n\",t(i.li,{children:[n(i.strong,{children:\"Terminal\"}),\": Warp with AI features\"]}),\"\\n\",t(i.li,{children:[n(i.strong,{children:\"Browser\"}),\": Arc for productivity\"]}),\"\\n\"]}),\"\\n\",n(i.h2,{id:\"why-this-setup\",children:n(i.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#why-this-setup\",children:\"Why This Setup?\"})}),\"\\n\",n(i.p,{children:\"I've tried many combinations over the years, but this one strikes the perfect balance between performance and simplicity.\"}),\"\\n\",n(i.p,{children:\"The key is not having too many tools—just the right ones.\"}),\"\\n\",t(i.blockquote,{children:[\"\\n\",n(i.p,{children:'\"The best setup is the one that gets out of your way and lets you focus on building.\"'}),\"\\n\"]}),\"\\n\",n(i.p,{children:\"Stay tuned for more updates!\"})]})}return{default:function(e={}){const{wrapper:t}=e.components||{};return t?n(t,{...e,children:n(_createMdxContent,{...e})}):_createMdxContent(e)}};",
+    "permalink": "/blog/setup-2026"
+  }
+]
