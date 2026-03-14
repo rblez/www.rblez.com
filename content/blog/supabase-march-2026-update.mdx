@@ -16,7 +16,7 @@ En marzo de 2026 han surgido varias noticias importantes que impactan directamen
 
 ## 1. Interrupción de servicio y bloqueo en India
 
-En los últimos días se reportó que el dominio principal de Supabase estuvo **bloqueado por algunos proveedores de Internet en India**, lo que provocó que tanto la web como proyectos alojados dejaran de ser accesibles sin VPN o soluciones de DNS alternativas. 1
+En los últimos días se reportó que el dominio principal de Supabase estuvo **bloqueado por algunos proveedores de Internet en India**, lo que provocó que tanto la web como proyectos alojados dejaran de ser accesibles sin VPN o soluciones de DNS alternativas.
 
 Este tipo de bloqueo a nivel de ISP generó confusión en la comunidad, ya que la infraestructura de Supabase no sufrió una caída generalizada en otras regiones, sino que el tráfico parecía filtrarse o bloquearse de forma selectiva según la red del proveedor local.
 
@@ -26,7 +26,7 @@ La respuesta inmediata de varios desarrolladores fue usar:
 - proxies temporales mediante funciones serverless (Cloudflare Workers, Deno Deploy)  
 - soluciones de cache o endpoints intermedios para devolver datos sin exponer directamente el dominio de Supabase
 
-Estas soluciones funcionan como parches temporales hasta que el bloqueo sea resuelto por completo. 2
+Estas soluciones funcionan como parches temporales hasta que el bloqueo sea resuelto por completo.
 
 **Lección clave:** al depender de servicios externos para un backend completo, es importante pensar en estrategias de resiliencia regional y de fallbacks, especialmente para aplicaciones con usuarios globales.
 
@@ -34,7 +34,7 @@ Estas soluciones funcionan como parches temporales hasta que el bloqueo sea resu
 
 ## 2. Reversión del bloqueo y experiencias de la comunidad
 
-Poco después de los reportes iniciales, comenzaron a surgir noticias de que el bloqueo estaría siendo levantado o mitigado para varios usuarios en India. Según algunos comentarios dentro de la comunidad, el acceso se restauró parcialmente tras cambios de DNS o ajustes por parte de ISPs locales. 3
+Poco después de los reportes iniciales, comenzaron a surgir noticias de que el bloqueo estaría siendo levantado o mitigado para varios usuarios en India. Según algunos comentarios dentro de la comunidad, el acceso se restauró parcialmente tras cambios de DNS o ajustes por parte de ISPs locales.
 
 A pesar de este alivio, muchos desarrolladores continuaron discutiendo en foros técnicas para evitar contingenias futuras, incluyendo:
 
@@ -42,13 +42,13 @@ A pesar de este alivio, muchos desarrolladores continuaron discutiendo en foros 
 - Replicar datos críticos en caches o backups  
 - Usar combinaciones de proveedores (Neon, PlanetScale, etc.) para redundancia
 
-Esto último refleja una tendencia creciente de desarrolladores que buscan evitar **vendor lock‑in completo**, especialmente en servicios gestionados que combinan muchas funcionalidades en un solo proveedor. 4
+Esto último refleja una tendencia creciente de desarrolladores que buscan evitar **vendor lock‑in completo**, especialmente en servicios gestionados que combinan muchas funcionalidades en un solo proveedor.
 
 ---
 
 ## 3. Retos con el CLI y edge functions
 
-Otra conversación significativa en la comunidad se centró en **problemas recientes con la CLI de Supabase**, especialmente en flujos de desarrollo local con edge functions y migraciones de esquema. 5
+Otra conversación significativa en la comunidad se centró en **problemas recientes con la CLI de Supabase**, especialmente en flujos de desarrollo local con edge functions y migraciones de esquema.
 
 Algunos desarrolladores indicaron que:
 
