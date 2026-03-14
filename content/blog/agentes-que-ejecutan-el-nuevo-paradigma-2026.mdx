@@ -1,0 +1,79 @@
+---
+
+title: "Agentes que ejecutan: el nuevo paradigma"
+date: "2026-03-14"
+description: "Cómo las herramientas de mi stack están pasando de ser asistentes a ejecutores autónomos, y lo que eso significa para nuestro trabajo"
+published: true
+tags: ["stack", "vibecoding", "cursor", "trae", "supabase"]
+
+---
+
+Durante los últimos meses he visto un cambio silencioso pero profundo en las herramientas que uso a diario. Ya no se trata solo de que la IA me ayude a escribir código: ahora hay agentes que ejecutan tareas completas sin que yo tenga que estar pendiente.
+
+Quiero compartir lo que estoy viendo en tres herramientas clave de mi stack y cómo está cambiando mi forma de trabajar.
+
+Cursor Automations
+
+Cursor lanzó hace unas semanas su funcionalidad de Automations. La idea es simple: los agentes ya no esperan a que les pidas algo, sino que se activan automáticamente ante ciertos eventos.
+
+Los casos que más me interesan:
+
+· Cuando alguien hace un push al repositorio, un agente revisa el código, ejecuta los tests y abre un pull request con los fixes necesarios.
+· Si llega un mensaje a un canal de Slack con una petición específica, el agente puede implementarla directamente.
+· Con tareas programadas (cron), el agente puede hacer mantenimiento, actualizar dependencias o generar informes.
+
+Cursor dice que internamente ya usan esto para el 30-35% de sus cambios. No es un experimento: es su forma de trabajar.
+
+TRAE SOLO
+
+ByteDance también actualizó TRAE con el modo SOLO. La diferencia es que TRAE pasa de ser un asistente a ser un "AI Engineer" autónomo.
+
+Puedo describirle lo que quiero lograr y el agente:
+
+· Planifica los pasos necesarios
+· Escribe el código
+· Ejecuta pruebas
+· Debuggea si algo falla
+· Maneja múltiples tareas en paralelo
+
+La interfaz cambió: el centro ahora es el chat con el agente, no el editor de código. Es una forma distinta de pensar el desarrollo.
+
+Supabase y los agentes
+
+Supabase también está moviéndose en esa dirección. Este mes lanzaron:
+
+· Un plugin oficial para Cursor que permite manejar toda la base de datos, auth y storage sin salir del editor.
+· La documentación ahora se puede exportar a Markdown con un clic, para usarla directamente en prompts de IA.
+· Una guía de "Postgres Best Practices para AI Agents" con 30 reglas para que los agentes escriban código correcto.
+
+El denominador común es que las herramientas se están adaptando para que los agentes puedan interactuar con ellas de forma autónoma.
+
+¿Qué significa esto?
+
+Tradicionalmente, el flujo era:
+
+Yo pienso → Yo escribo código → La IA me ayuda
+
+Ahora está pasando a ser:
+
+Yo defino el problema → El agente ejecuta → Yo reviso el resultado
+
+Mi rol cambia: paso menos tiempo escribiendo código y más tiempo definiendo problemas, revisando resultados y tomando decisiones.
+
+No es que la IA me reemplace. Es que me permite enfocarme en lo que realmente importa.
+
+Lo que estoy probando
+
+Esta semana configuré un agente en Cursor que:
+
+· Escucha un canal de Telegram donde la gente del club pide features pequeñas.
+· Cuando alguien escribe "agente: añade validación al formulario de login", el agente lo implementa y abre un PR.
+· Yo solo reviso y hago merge.
+
+Todavía es temprano, pero el potencial es enorme.
+
+---
+
+El próximo mes quiero explorar más a fondo los límites de estos agentes: cómo definir bien las tareas, cómo asegurar la calidad y cómo integrarlos con el resto de mi stack (Supabase, Vercel, OxaPay).
+
+Si ustedes están usando estas herramientas, cuenten cómo les va. Este cambio de paradigma está pasando ahora y vale la pena entenderlo.
