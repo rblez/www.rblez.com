@@ -1,0 +1,349 @@
+# rblez.com Blog Documentation for LLMs
+
+This document explains how to create blog posts for rblez.com. Follow these guidelines exactly.
+
+## File Location
+
+All blog posts are MDX files located in: `content/blog/`
+
+File naming convention: `post-slug-here.mdx` (lowercase, hyphens for spaces)
+
+## Frontmatter Structure
+
+Every post MUST start with YAML frontmatter between `---` delimiters:
+
+```mdx
+---
+title: "Your Post Title Here"
+date: "2026-03-22"
+description: "A brief description of your post (optional, max 999 characters)"
+published: true
+tags: ["tag1", "tag2", "tag3"]
+---
+```
+
+### Frontmatter Fields
+
+| Field | Required | Type | Description |
+|-------|----------|------|-------------|
+| `title` | YES | string | Post title (max 99 characters) |
+| `date` | YES | string | ISO date format: "YYYY-MM-DD" |
+| `description` | NO | string | Brief description (max 999 chars) |
+| `published` | NO | boolean | Default: true. Set false to hide |
+| `tags` | NO | array | List of tag strings |
+
+## Content Structure
+
+After the frontmatter, write your content using MDX (Markdown + React components).
+
+### Basic Markdown Elements
+
+```mdx
+# Heading 1 (use sparingly, usually one per post)
+
+## Heading 2 (main sections)
+
+### Heading 3 (subsections)
+
+#### Heading 4 (minor subsections)
+
+Regular paragraph text goes here. Keep paragraphs focused and concise.
+
+**Bold text** for emphasis.
+
+*Italic text* for subtle emphasis.
+
+~~Strikethrough~~ for deleted content.
+
+Inline `code` looks like this.
+```
+
+### Lists
+
+**Unordered list:**
+```mdx
+- First item
+- Second item
+- Third item
+```
+
+**Ordered list:**
+```mdx
+1. First step
+2. Second step
+3. Third step
+```
+
+### Links
+
+```mdx
+[Internal link](/posts/another-post)
+
+[External link](https://example.com)
+```
+
+External links automatically open in new tabs with `rel="noopener noreferrer"`.
+
+### Images
+
+```mdx
+![Alt text description](/image-name.png)
+```
+
+Images are automatically styled with shadow and caption. Place images in the `public/` folder.
+
+### Code Blocks
+
+**Simple code block:**
+````mdx
+```typescript
+const greeting = "Hello, World!";
+console.log(greeting);
+```
+````
+
+**Code block with title and filename:**
+````mdx
+<CodeBlock title="API Endpoint" filename="api/route.ts" language="typescript">
+
+```typescript
+export async function GET() {
+  return Response.json({ message: "Hello" });
+}
+```
+
+</CodeBlock>
+````
+
+Supported languages: typescript, javascript, python, bash, json, css, html, mdx, etc.
+
+### Callouts (Alerts/Admonitions)
+
+Use callouts for important information:
+
+```mdx
+<Callout type="info">
+  This is an informational callout.
+</Callout>
+
+<Callout type="warning">
+  This is a warning callout.
+</Callout>
+
+<Callout type="error">
+  This is an error callout.
+</Callout>
+
+<Callout type="success">
+  This is a success callout.
+</Callout>
+
+<Callout type="tip" title="Custom Title">
+  This is a tip callout with a custom title.
+</Callout>
+```
+
+Callout types: `info`, `warning`, `error`, `success`, `tip`
+
+### Buttons
+
+```mdx
+<Button href="https://example.com">Click Me</Button>
+
+<Button href="/internal-link" variant="secondary">Secondary Button</Button>
+
+<Button href="https://example.com" variant="outline" size="lg">Large Outline Button</Button>
+```
+
+Button variants: `primary`, `secondary`, `outline`
+Button sizes: `sm`, `md`, `lg`
+
+### Cards
+
+```mdx
+<Card title="Card Title">
+  Card content goes here. You can use **markdown** inside cards.
+</Card>
+
+<Card title="Clickable Card" href="https://example.com">
+  This card links to an external URL.
+</Card>
+```
+
+### Steps (Numbered with Icons)
+
+```mdx
+<Step number={1}>
+  First step content here.
+</Step>
+
+<Step number={2}>
+  Second step content here.
+</Step>
+```
+
+### Blockquotes
+
+```mdx
+> This is a blockquote. It will be styled with a left border and italic text.
+```
+
+### Horizontal Rules
+
+```mdx
+---
+```
+
+Creates a horizontal divider line.
+
+### Tables
+
+```mdx
+| Column 1 | Column 2 | Column 3 |
+|----------|----------|----------|
+| Cell 1   | Cell 2   | Cell 3   |
+| Cell 4   | Cell 5   | Cell 6   |
+```
+
+## Writing Style Guidelines
+
+1. **Tone**: Conversational but professional. Write as if explaining to a peer.
+
+2. **Paragraphs**: Keep them short (2-4 sentences). One idea per paragraph.
+
+3. **Headings**: Use a clear hierarchy. Don't skip heading levels.
+
+4. **Code Examples**: Always explain what the code does before or after showing it.
+
+5. **Images**: Use relevant images to break up long text sections. Add descriptive alt text.
+
+6. **Links**: Link to relevant resources. Don't overdo it—only link when it adds value.
+
+7. **Length**: Posts can be any length, but every paragraph should add value.
+
+## Example Post Template
+
+```mdx
+---
+title: "How to Build Something Amazing"
+date: "2026-03-22"
+description: "A complete guide to building amazing projects."
+published: true
+tags: ["tutorial", "web-development", "guide"]
+---
+
+# How to Build Something Amazing
+
+Introduction paragraph that hooks the reader and explains what they'll learn.
+
+## Prerequisites
+
+- Node.js installed
+- Basic JavaScript knowledge
+- A code editor
+
+## Step 1: Setting Up
+
+<Step number={1}>
+  First, create a new project directory:
+  
+  ```bash
+  mkdir my-project
+  cd my-project
+  npm init -y
+  ```
+</Step>
+
+## Step 2: Installation
+
+<Step number={2}>
+  Install the required dependencies:
+  
+  ```bash
+  npm install react next
+  ```
+</Step>
+
+<Callout type="tip">
+  You can also use `yarn` or `pnpm` if you prefer.
+</Callout>
+
+## Code Example
+
+Here's a complete example:
+
+<CodeBlock title="Main Component" filename="components/Main.tsx" language="typescript">
+
+```typescript
+export function Main() {
+  return <div>Hello World</div>;
+}
+```
+
+</CodeBlock>
+
+## Comparison Table
+
+| Feature | Option A | Option B |
+|---------|----------|----------|
+| Speed   | Fast     | Faster   |
+| Cost    | Free     | Paid     |
+
+## Conclusion
+
+Wrap up with key takeaways and next steps.
+
+<Button href="https://github.com/example" variant="primary">
+  View on GitHub
+</Button>
+```
+
+## Common Patterns
+
+### Tutorial Post Structure
+
+1. Introduction (what + why)
+2. Prerequisites
+3. Step-by-step instructions with code
+4. Callouts for tips/warnings
+5. Conclusion with next steps
+
+### Opinion/Analysis Post Structure
+
+1. Hook (personal anecdote or bold statement)
+2. Context/background
+3. Main argument with evidence
+4. Counterarguments (optional)
+5. Conclusion and call-to-action
+
+### Announcement Post Structure
+
+1. The announcement (clear and direct)
+2. Why it matters
+3. Details/features
+4. How to get started
+5. Links to resources
+
+## SEO Best Practices
+
+- Include relevant keywords naturally in headings
+- Write descriptive alt text for images
+- Use internal links to related posts
+- Keep the description under 160 characters for meta tags
+- Use semantic HTML (headings in order)
+
+## Publishing Checklist
+
+- [ ] Frontmatter is complete and correct
+- [ ] Title is compelling and under 99 characters
+- [ ] Date is in ISO format
+- [ ] At least 2-3 relevant tags
+- [ ] All code blocks have language specified
+- [ ] Images have alt text
+- [ ] External links open in new tabs (automatic)
+- [ ] Post reads well on mobile (short paragraphs)
+- [ ] No typos or grammatical errors
+
+## Support
+
+For questions about creating content, contact: @rblezX on Twitter/X

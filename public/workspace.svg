@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
-  <rect fill="#1a1a1a" width="800" height="450"/>
-  <rect fill="#242424" x="100" y="100" width="600" height="250" rx="8"/>
-  <circle fill="#333" cx="200" cy="225" r="40"/>
-  <rect fill="#333" x="260" y="205" width="200" height="12" rx="6"/>
-  <rect fill="#333" x="260" y="225" width="140" height="12" rx="6"/>
-  <rect fill="#062619" x="100" y="380" width="120" height="40" rx="8"/>
-  <text fill="#666" font-family="system-ui" font-size="14" x="400" y="405" text-anchor="middle">Workspace Setup</text>
-</svg>

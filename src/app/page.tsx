@@ -8,11 +8,11 @@ const publishedPosts = posts
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-[#0a0a0a] dark:to-[#111] relative">
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-[#0a0a0a] dark:to-[#111] relative flex flex-col">
       {/* Grid Background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]" />
-      
-      <div className="max-w-2xl mx-auto px-4 py-8 sm:py-12 relative">
+
+      <div className="max-w-2xl mx-auto px-4 py-8 sm:py-12 relative flex-1 flex flex-col">
         <header className="mb-8 sm:mb-12">
           <div className="flex items-center justify-between mb-4">
             {/* Isotipo Logo - Blanco siempre */}
@@ -25,7 +25,7 @@ export default function Home() {
                 className="w-full h-full brightness-0 invert"
               />
             </div>
-            
+
             <nav className="flex gap-4 text-sm">
               <a
                 href="https://x.com/rblezX"
@@ -52,7 +52,7 @@ export default function Home() {
           </p>
         </header>
 
-        <section className="space-y-4 sm:space-y-6">
+        <section className="space-y-4 sm:space-y-6 flex-1">
           {publishedPosts.map((post) => (
             <article key={post.slug} className="group">
               <Link href={`/${post.slug}`} className="block">
@@ -61,11 +61,6 @@ export default function Home() {
                     <h2 className="text-base sm:text-lg font-semibold group-hover:underline">
                       {post.title}
                     </h2>
-                    {post.description && (
-                      <p className="text-sm text-gray-600 dark:text-gray-400 mt-1 line-clamp-2">
-                        {post.description}
-                      </p>
-                    )}
                   </div>
                   <time className="text-xs text-gray-500 whitespace-nowrap">
                     {new Date(post.date).toLocaleDateString("en-US", {
@@ -80,7 +75,7 @@ export default function Home() {
           ))}
         </section>
 
-        <footer className="mt-12 pt-6 border-t border-gray-200 dark:border-gray-700">
+        <footer className="mt-auto pt-6 border-t border-gray-200 dark:border-gray-700">
           <div className="flex justify-center text-sm text-gray-500">
             <p>© 2026 rblez. All rights reserved.</p>
           </div>
