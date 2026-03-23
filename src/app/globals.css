@@ -17,6 +17,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "BerkeleyMono";
+  src: url("/fonts/BerkeleyMono_Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   :root {
     -webkit-tap-highlight-color: transparent;
@@ -31,7 +39,7 @@
 }
 
 * {
-  font-family: "CursorGothic", -apple-system, BlinkMacSystemFont, "SF Pro", "SF Pro Text", "SF Pro Display", sans-serif;
+  font-family: "CursorGothic", -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
 }
 
 body {
@@ -55,4 +63,8 @@ body {
 
 .subheading-anchor:hover {
   text-decoration: underline;
+}
+
+.font-mono {
+  font-family: "BerkeleyMono", "SF Mono", monospace;
 }

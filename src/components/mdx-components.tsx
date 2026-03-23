@@ -144,21 +144,19 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ...components,
     // Images
     img: (props) => (
-      <figure className="my-8">
-        <div className="relative w-full">
-          <Image
-            {...props}
-            className="rounded-lg object-contain shadow-lg"
-            width={props.width || 800}
-            height={props.height || 450}
-            alt={props.alt || ""}
-            sizes="(max-width: 768px) 100vw, 800px"
-          />
-        </div>
+      <div className="my-8">
+        <Image
+          {...props}
+          className="rounded-lg object-contain shadow-lg"
+          width={props.width || 800}
+          height={props.height || 450}
+          alt={props.alt || ""}
+          sizes="(max-width: 768px) 100vw, 800px"
+        />
         {props.alt && (
-          <figcaption className="text-sm text-gray-500 text-center mt-3">{props.alt}</figcaption>
+          <p className="text-sm text-gray-500 text-center mt-3">{props.alt}</p>
         )}
-      </figure>
+      </div>
     ),
     // Headings
     h1: (props) => (

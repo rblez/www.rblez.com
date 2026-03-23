@@ -1,131 +1,116 @@
-# rblez.com Blog
+# rblez-blog
 
-Personal blog by Ray ([@rblezX](https://x.com/rblezX)), built with [Next.js](https://nextjs.org) and [MDX](https://mdxjs.com).
+Personal blog and portfolio by Ray (rblez) - Vibecoder.
 
-Inspired by [Guillermo Rauch's blog](https://github.com/rauchg/blog).
+## 🌐 Routes
 
-## Features
+- **`/`** → Redirects to `/me`
+- **`/me`** → Personal page with bio and social links
+- **`/stack`** → Tech stack showcase with filtering
+- **`/blog`** → Blog posts listing
+- **`/blog/[slug]`** → Individual blog posts
+- **`404`** → Custom not found page
 
-- **MDX Support** - Write Markdown with embedded React components
-- **Dark Mode** - Automatic based on system preference
-- **Static Generation** - Fast, SEO-friendly pages
-- **TypeScript** - Full type safety
+## 🚀 Tech Stack
+
+### Frontend
+- **Next.js 16** - React framework with App Router
+- **React 19** - UI library
+- **TypeScript** - Type safety
 - **Tailwind CSS v4** - Utility-first styling
-- **Rich MDX Components** - Buttons, Callouts, Cards, Code Blocks, Steps, and more
-- **Syntax Highlighting** - Powered by rehype-pretty-code
-- **Auto-generated TOC** - Headings are automatically linked
 
-## Getting Started
+### Backend & Content
+- **Velite** - Content collection (MDX)
+- **Node.js** - Runtime
 
-### Prerequisites
+### Deployment
+- **Vercel** - Hosting and CI/CD
 
-- Node.js 18+
-- pnpm
+### AI Tools
+- **Cursor** - AI-powered code editor
+- **Claude** - AI assistant
 
-### Installation
-
-```bash
-pnpm install
-```
-
-### Development
-
-```bash
-pnpm dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) to see your blog.
-
-### Build
-
-```bash
-pnpm build
-pnpm start
-```
-
-## Creating New Posts
-
-1. Create a new `.mdx` file in the `content/blog/` directory:
-
-```mdx
----
-title: "My New Post"
-date: "2026-03-22"
-description: "A brief description of your post"
-published: true
-tags: ["tutorial", "web-development"]
----
-
-# My New Post
-
-Content goes here...
-```
-
-2. The post will be available at `/my-new-post`
-
-For detailed documentation on writing posts, see [/docs.txt](/docs.txt).
-
-## MDX Components
-
-This blog includes custom MDX components for rich content:
-
-| Component | Description |
-|-----------|-------------|
-| `<Button>` | Styled buttons with variants (primary, secondary, outline) |
-| `<Callout>` | Info/warning/error/success/tip callouts |
-| `<Card>` | Card containers with optional links |
-| `<CodeBlock>` | Code blocks with titles and filenames |
-| `<Step>` | Numbered steps with icons for tutorials |
-
-### Example Usage
-
-```mdx
-<Callout type="tip">
-  This is a helpful tip!
-</Callout>
-
-<Button href="https://example.com" variant="primary">
-  Click Me
-</Button>
-
-<Card title="Related Post" href="/another-post">
-  Check out this related content.
-</Card>
-
-<Step number={1}>
-  First, do this...
-</Step>
-```
-
-## Project Structure
+## 📁 Project Structure
 
 ```
 rblez-blog/
-├── content/
-│   └── blog/           # MDX blog posts
-├── public/             # Static assets (images, fonts, etc.)
 ├── src/
 │   ├── app/
-│   │   ├── [...slug]/  # Dynamic post pages
-│   │   ├── layout.tsx  # Root layout
-│   │   ├── page.tsx    # Homepage
-│   │   └── globals.css # Global styles
-│   └── components/
-│       ├── header.tsx          # Header component
-│       ├── mdx-components.tsx  # MDX component mapping
-│       └── mdx-content.tsx     # MDX content renderer
-├── docs.txt            # Documentation for LLMs/writers
-├── velite.config.ts    # Velite (content) configuration
-├── next.config.ts      # Next.js configuration
-└── tailwind.config.js  # Tailwind configuration
+│   │   ├── blog/              # Blog routes
+│   │   │   ├── page.tsx       # Blog listing
+│   │   │   └── [...slug]/     # Dynamic blog posts
+│   │   ├── me/                # Personal page
+│   │   ├── stack/             # Tech stack page
+│   │   ├── layout.tsx         # Root layout
+│   │   ├── page.tsx           # Root redirect
+│   │   └── not-found.tsx      # 404 page
+│   ├── components/            # Reusable components
+│   └── app/globals.css        # Global styles
+├── content/                   # MDX blog posts
+├── public/
+│   └── fonts/                 # Custom fonts
+└── package.json
 ```
 
-## Deployment
+## 🛠 Development
 
-Deploy to [Vercel](https://vercel.com) with one click:
+```bash
+# Install dependencies
+pnpm install
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
+# Start development server
+pnpm dev
 
-## License
+# Build for production
+pnpm build
 
-MIT - See [LICENSE](./LICENSE) for details.
+# Start production server
+pnpm start
+
+# Run linter
+pnpm lint
+```
+
+## 🎨 Design System
+
+### Colors
+- **Light mode**: White background, black text
+- **Dark mode**: Black background, white text
+- **Accent**: Monochrome with subtle gradients
+
+### Typography
+- **Primary**: CursorGothic (Regular & Bold)
+- **Mono**: BerkeleyMono
+
+### Effects
+- Liquid glass background orbs
+- Subtle blur effects
+- Smooth hover transitions
+- Scale animations on interactive elements
+
+## 📝 Content
+
+Blog posts are written in MDX and stored in `content/blog/`. Each post requires:
+
+```mdx
+---
+title: "Post Title"
+description: "Short description"
+date: "2026-01-01"
+published: true
+---
+```
+
+## 🔗 Social Links
+
+- [X/Twitter](https://x.com/rblezX)
+- [GitHub](https://github.com/rblez)
+- [Dev.to](https://dev.to/rblez)
+
+## 🔗 Repository
+
+- [rblez.com](https://github.com/rblez/rblez.com)
+
+## 📄 License
+
+© 2026 rblez. All rights reserved.

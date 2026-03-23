@@ -1,349 +1,253 @@
-# rblez.com Blog Documentation for LLMs
-
-This document explains how to create blog posts for rblez.com. Follow these guidelines exactly.
-
-## File Location
-
-All blog posts are MDX files located in: `content/blog/`
-
-File naming convention: `post-slug-here.mdx` (lowercase, hyphens for spaces)
-
-## Frontmatter Structure
-
-Every post MUST start with YAML frontmatter between `---` delimiters:
-
-```mdx
----
-title: "Your Post Title Here"
-date: "2026-03-22"
-description: "A brief description of your post (optional, max 999 characters)"
-published: true
-tags: ["tag1", "tag2", "tag3"]
----
-```
-
-### Frontmatter Fields
-
-| Field | Required | Type | Description |
-|-------|----------|------|-------------|
-| `title` | YES | string | Post title (max 99 characters) |
-| `date` | YES | string | ISO date format: "YYYY-MM-DD" |
-| `description` | NO | string | Brief description (max 999 chars) |
-| `published` | NO | boolean | Default: true. Set false to hide |
-| `tags` | NO | array | List of tag strings |
-
-## Content Structure
-
-After the frontmatter, write your content using MDX (Markdown + React components).
-
-### Basic Markdown Elements
-
-```mdx
-# Heading 1 (use sparingly, usually one per post)
-
-## Heading 2 (main sections)
-
-### Heading 3 (subsections)
-
-#### Heading 4 (minor subsections)
-
-Regular paragraph text goes here. Keep paragraphs focused and concise.
-
-**Bold text** for emphasis.
-
-*Italic text* for subtle emphasis.
-
-~~Strikethrough~~ for deleted content.
-
-Inline `code` looks like this.
-```
-
-### Lists
-
-**Unordered list:**
-```mdx
-- First item
-- Second item
-- Third item
-```
-
-**Ordered list:**
-```mdx
-1. First step
-2. Second step
-3. Third step
-```
-
-### Links
-
-```mdx
-[Internal link](/posts/another-post)
-
-[External link](https://example.com)
-```
-
-External links automatically open in new tabs with `rel="noopener noreferrer"`.
-
-### Images
-
-```mdx
-![Alt text description](/image-name.png)
-```
-
-Images are automatically styled with shadow and caption. Place images in the `public/` folder.
-
-### Code Blocks
-
-**Simple code block:**
-````mdx
-```typescript
-const greeting = "Hello, World!";
-console.log(greeting);
-```
-````
-
-**Code block with title and filename:**
-````mdx
-<CodeBlock title="API Endpoint" filename="api/route.ts" language="typescript">
-
-```typescript
-export async function GET() {
-  return Response.json({ message: "Hello" });
-}
-```
-
-</CodeBlock>
-````
-
-Supported languages: typescript, javascript, python, bash, json, css, html, mdx, etc.
-
-### Callouts (Alerts/Admonitions)
-
-Use callouts for important information:
-
-```mdx
-<Callout type="info">
-  This is an informational callout.
-</Callout>
-
-<Callout type="warning">
-  This is a warning callout.
-</Callout>
-
-<Callout type="error">
-  This is an error callout.
-</Callout>
-
-<Callout type="success">
-  This is a success callout.
-</Callout>
-
-<Callout type="tip" title="Custom Title">
-  This is a tip callout with a custom title.
-</Callout>
-```
-
-Callout types: `info`, `warning`, `error`, `success`, `tip`
-
-### Buttons
-
-```mdx
-<Button href="https://example.com">Click Me</Button>
-
-<Button href="/internal-link" variant="secondary">Secondary Button</Button>
-
-<Button href="https://example.com" variant="outline" size="lg">Large Outline Button</Button>
-```
-
-Button variants: `primary`, `secondary`, `outline`
-Button sizes: `sm`, `md`, `lg`
-
-### Cards
-
-```mdx
-<Card title="Card Title">
-  Card content goes here. You can use **markdown** inside cards.
-</Card>
-
-<Card title="Clickable Card" href="https://example.com">
-  This card links to an external URL.
-</Card>
-```
-
-### Steps (Numbered with Icons)
-
-```mdx
-<Step number={1}>
-  First step content here.
-</Step>
-
-<Step number={2}>
-  Second step content here.
-</Step>
-```
-
-### Blockquotes
-
-```mdx
-> This is a blockquote. It will be styled with a left border and italic text.
-```
-
-### Horizontal Rules
-
-```mdx
----
-```
-
-Creates a horizontal divider line.
-
-### Tables
-
-```mdx
-| Column 1 | Column 2 | Column 3 |
-|----------|----------|----------|
-| Cell 1   | Cell 2   | Cell 3   |
-| Cell 4   | Cell 5   | Cell 6   |
-```
-
-## Writing Style Guidelines
-
-1. **Tone**: Conversational but professional. Write as if explaining to a peer.
-
-2. **Paragraphs**: Keep them short (2-4 sentences). One idea per paragraph.
-
-3. **Headings**: Use a clear hierarchy. Don't skip heading levels.
-
-4. **Code Examples**: Always explain what the code does before or after showing it.
-
-5. **Images**: Use relevant images to break up long text sections. Add descriptive alt text.
-
-6. **Links**: Link to relevant resources. Don't overdo it—only link when it adds value.
-
-7. **Length**: Posts can be any length, but every paragraph should add value.
-
-## Example Post Template
-
-```mdx
----
-title: "How to Build Something Amazing"
-date: "2026-03-22"
-description: "A complete guide to building amazing projects."
-published: true
-tags: ["tutorial", "web-development", "guide"]
----
-
-# How to Build Something Amazing
-
-Introduction paragraph that hooks the reader and explains what they'll learn.
-
-## Prerequisites
-
-- Node.js installed
-- Basic JavaScript knowledge
-- A code editor
-
-## Step 1: Setting Up
-
-<Step number={1}>
-  First, create a new project directory:
+================================================================================
+                              RBLEZ-BLOG DOCUMENTATION
+================================================================================
+
+PROJECT OVERVIEW
+--------------------------------------------------------------------------------
+Name:        rblez-blog
+Version:     0.2.0
+Author:      Ray (rblez)
+Description: Personal blog and portfolio with monochrome liquid glass design
+License:     All Rights Reserved
+
+================================================================================
+ROUTE STRUCTURE
+================================================================================
+
+/                 → Redirects to /me
+/me               → Personal page (bio, avatar, social links)
+/stack            → Tech stack showcase with filters
+/blog             → Blog posts listing
+/blog/[slug]      → Individual blog post
+/not-found        → Custom 404 page
+
+================================================================================
+TECHNICAL STACK
+================================================================================
+
+FRAMEWORKS:
+  - Next.js 16.2.1 (App Router, Turbopack)
+  - React 19.2.4
+  - TypeScript 5.x
+
+STYLING:
+  - Tailwind CSS v4
+  - Custom CSS with font-face declarations
+  - Dark mode via system preference
+
+CONTENT:
+  - Velite 0.3.1 (MDX content collection)
+  - MDX 3.1.1
+  - Rehype plugins (syntax highlighting, autolink headings)
+
+ICONS:
+  - @icons-pack/react-simple-icons 13.13.0
+  - RemixIcon 4.9.1
+
+FONTS:
+  - CursorGothic (Regular, Bold) - Primary
+  - BerkeleyMono (Regular) - Monospace
+
+DEPLOYMENT:
+  - Vercel (Serverless, Edge Network)
+
+================================================================================
+FILE STRUCTURE
+================================================================================
+
+rblez-blog/
+├── src/
+│   ├── app/
+│   │   ├── blog/
+│   │   │   ├── page.tsx           # Blog listing
+│   │   │   └── [...slug]/
+│   │   │       └── page.tsx       # Dynamic blog post
+│   │   ├── me/
+│   │   │   └── page.tsx           # Personal page
+│   │   ├── stack/
+│   │   │   └── page.tsx           # Tech stack page
+│   │   ├── globals.css            # Global styles & fonts
+│   │   ├── layout.tsx             # Root layout
+│   │   ├── page.tsx               # Root redirect
+│   │   └── not-found.tsx          # 404 page
+│   ├── components/
+│   │   ├── header.tsx             # Header component
+│   │   ├── mdx-content.tsx        # MDX renderer
+│   │   └── mdx-components.tsx     # MDX custom components
+│   └── content/                   # Content collections (auto-generated)
+├── content/
+│   └── blog/                      # MDX blog posts
+├── public/
+│   ├── fonts/
+│   │   ├── CursorGothic_Regular.woff2
+│   │   ├── CursorGothic_Bold.woff2
+│   │   └── BerkeleyMono_Regular.woff2
+│   ├── isotipe.svg                # Logo
+│   ├── ray.png                    # Profile photo
+│   └── [other assets]
+├── package.json
+├── tsconfig.json
+├── next.config.ts
+├── velite.config.ts
+├── tailwind.config.ts
+└── postcss.config.mjs
+
+================================================================================
+DESIGN SYSTEM
+================================================================================
+
+COLOR PALETTE:
+  Light Mode:
+    Background: #ffffff
+    Foreground: #000000
+    Primary: #000000
+    Secondary: #f5f5f5
+    Muted: #737373
+    Border: #e5e5e5
+
+  Dark Mode:
+    Background: #000000
+    Foreground: #ffffff
+    Primary: #ffffff
+    Secondary: #262626
+    Muted: #a3a3a3
+    Border: #404040
+
+TYPOGRAPHY:
+  Primary Font: CursorGothic
+    - Regular (400)
+    - Bold (700)
   
-  ```bash
-  mkdir my-project
-  cd my-project
-  npm init -y
-  ```
-</Step>
+  Monospace Font: BerkeleyMono
+    - Regular (400)
 
-## Step 2: Installation
+  Fallback: -apple-system, BlinkMacSystemFont, SF Pro
 
-<Step number={2}>
-  Install the required dependencies:
-  
-  ```bash
-  npm install react next
-  ```
-</Step>
+EFFECTS:
+  - Liquid background orbs (blur: 100-120px)
+  - Backdrop blur for glass effect
+  - Scale hover animations (1.05-1.10)
+  - Smooth transitions (duration: 200-300ms)
+  - Subtle borders (opacity: 5-10%)
 
-<Callout type="tip">
-  You can also use `yarn` or `pnpm` if you prefer.
-</Callout>
+================================================================================
+CONTENT MODEL (Blog Posts)
+================================================================================
 
-## Code Example
+Frontmatter Fields:
+  - title (string, required)
+  - description (string, required)
+  - date (string, required, ISO format)
+  - published (boolean, default: false)
+  - slug (auto-generated from filename)
 
-Here's a complete example:
+Example:
+  ---
+  title: "My First Post"
+  description: "A brief description"
+  date: "2026-01-15"
+  published: true
+  ---
 
-<CodeBlock title="Main Component" filename="components/Main.tsx" language="typescript">
+================================================================================
+COMPONENTS
+================================================================================
 
-```typescript
-export function Main() {
-  return <div>Hello World</div>;
-}
-```
+<Header />
+  - Logo link to /me
+  - Social links (X, GitHub)
+  - Responsive design
 
-</CodeBlock>
+<MDXContent />
+  - Renders MDX blog post content
+  - Syntax highlighting via rehype-pretty-code
+  - Custom component mapping
 
-## Comparison Table
+================================================================================
+BUILD COMMANDS
+================================================================================
 
-| Feature | Option A | Option B |
-|---------|----------|----------|
-| Speed   | Fast     | Faster   |
-| Cost    | Free     | Paid     |
+pnpm install     - Install dependencies
+pnpm dev         - Start development server (Turbopack)
+pnpm build       - Build for production (velite + next)
+pnpm start       - Start production server
+pnpm lint        - Run ESLint
 
-## Conclusion
+================================================================================
+ENVIRONMENT VARIABLES
+================================================================================
 
-Wrap up with key takeaways and next steps.
+None required for basic functionality.
 
-<Button href="https://github.com/example" variant="primary">
-  View on GitHub
-</Button>
-```
+Optional:
+  - NEXT_PUBLIC_SITE_URL - Site URL for SEO
+  - NEXT_PUBLIC_ANALYTICS_ID - Analytics tracking
 
-## Common Patterns
+================================================================================
+SEO CONFIGURATION
+================================================================================
 
-### Tutorial Post Structure
+Metadata (layout.tsx):
+  - Title: "rblez - Blog"
+  - Description: "Personal blog by Ray (rblez) - Vibecoder"
+  - Open Graph tags
+  - Twitter Card tags
+  - Canonical URL: https://rblez.com
 
-1. Introduction (what + why)
-2. Prerequisites
-3. Step-by-step instructions with code
-4. Callouts for tips/warnings
-5. Conclusion with next steps
+Per-post metadata:
+  - Dynamic title
+  - Post description
+  - Published time
+  - Social share images
 
-### Opinion/Analysis Post Structure
+================================================================================
+ACCESSIBILITY
+================================================================================
 
-1. Hook (personal anecdote or bold statement)
-2. Context/background
-3. Main argument with evidence
-4. Counterarguments (optional)
-5. Conclusion and call-to-action
+- Semantic HTML structure
+- ARIA labels on icon buttons
+- Keyboard navigation support
+- Focus states on interactive elements
+- Alt text on images
+- Skip link ready (can be added)
 
-### Announcement Post Structure
+================================================================================
+PERFORMANCE OPTIMIZATIONS
+================================================================================
 
-1. The announcement (clear and direct)
-2. Why it matters
-3. Details/features
-4. How to get started
-5. Links to resources
+- Static site generation (SSG)
+- Image optimization (next/image)
+- Font optimization (font-display: swap)
+- Code splitting (automatic)
+- Tree shaking (ES modules)
+- Minimal JavaScript (client components marked)
 
-## SEO Best Practices
+================================================================================
+BROWSER SUPPORT
+================================================================================
 
-- Include relevant keywords naturally in headings
-- Write descriptive alt text for images
-- Use internal links to related posts
-- Keep the description under 160 characters for meta tags
-- Use semantic HTML (headings in order)
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Mobile browsers (iOS Safari, Chrome Mobile)
 
-## Publishing Checklist
+================================================================================
+CONTRIBUTING
+================================================================================
 
-- [ ] Frontmatter is complete and correct
-- [ ] Title is compelling and under 99 characters
-- [ ] Date is in ISO format
-- [ ] At least 2-3 relevant tags
-- [ ] All code blocks have language specified
-- [ ] Images have alt text
-- [ ] External links open in new tabs (automatic)
-- [ ] Post reads well on mobile (short paragraphs)
-- [ ] No typos or grammatical errors
+This is a personal project. Not accepting contributions.
 
-## Support
+================================================================================
+CONTACT
+================================================================================
 
-For questions about creating content, contact: @rblezX on Twitter/X
+Author: Ray (rblez)
+Email: rblez@proton.me
+X: x.com/rblezX
+Telegram: t.me/rblezX
+GitHub: github.com/rblez
+
+================================================================================
+                                   END OF DOCUMENTATION
+================================================================================

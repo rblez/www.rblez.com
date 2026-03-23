@@ -1,63 +1,99 @@
 # Changelog
 
-All notable changes to rblez.com blog will be documented in this file.
-
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+All notable changes to this project will be documented in this file.
 
 ## [0.2.0] - 2026-03-22
 
-### Added
+### 🎉 Major Changes
 
-- **New MDX Components** for rich blog post formatting:
-  - `<Button>` - Styled buttons with variants (primary, secondary, outline) and sizes (sm, md, lg)
-  - `<Callout>` - Info/warning/error/success/tip callouts with icons
-  - `<Card>` - Card containers with optional titles and links
-  - `<CodeBlock>` - Enhanced code blocks with titles, filenames, and language labels
-  - `<Step>` - Numbered steps with circular icons for tutorial-style posts
-- **Table support** - Styled tables with header rows and bordered cells
-- **Enhanced typography** - Added `<h4>` headings, `<del>` for strikethrough, improved `<code>` styling
-- **Documentation** - New `docs.txt` file with comprehensive guide for LLMs and writers
-- **LICENSE** - Added MIT license file
-- **CHANGELOG.md** - This changelog file
+#### New Route Structure
+- **`/me`** - New personal page with bio, avatar, and social links
+- **`/stack`** - Tech stack showcase with category filtering
+- **`/blog`** - Blog posts listing (moved from `/`)
+- **`/`** - Now redirects to `/me`
+- **Custom 404** - Branded not found page
 
-### Changed
+#### Design System
+- **Monochrome liquid glass** - Clean black/white aesthetic
+- **No emojis** - Professional text-only interface
+- **BerkeleyMono font** - Added as monospace font family
+- **CursorGothic font** - Primary typeface
+- **Background orbs** - Subtle liquid gradient effects
 
-- **Footer positioning** - Footer now stays at the bottom of the page using flexbox layout
-- **Homepage design** - Removed post descriptions from the homepage; only titles are shown
-- **Image styling** - Images now use `<figure>` and `<figcaption>` for better semantics
-- **Blockquote styling** - Enhanced with background color and rounded corners
-- **Link styling** - External links now include an icon indicator
-- **README.md** - Updated with new features, MDX components documentation, and corrected project structure
+#### Navigation
+- **Desktop** - Horizontal nav links (Me, Stack, Blog)
+- **Mobile** - Full-screen menu with animated hamburger icon
+- **Hamburger menu** - 2-line animated icon (transforms to X when open)
+- **GitHub repo link** - Always visible in header
 
-### Fixed
+#### Stack Page
+- **22 tools** in 7 categories:
+  - Frontend (5): Next.js, React, Framer, TypeScript, Tailwind
+  - Backend (6): Python, Node.js, FastAPI, Supabase, MongoDB, Clerk
+  - Deploy (4): Vercel, Railway, Docker, GitHub
+  - AI (3): OpenRouter, Claude, Cursor
+  - Security (3): Proton Mail, Cloudflare, MCP
+  - Communication (1): Resend
+- **Category filters** - Filter by type
+- **External links** - Each tool links to official website
+- **Hover effects** - Scale animation
 
-- Footer no longer floats in the middle of the page on short content
-- MDX components now properly handle external links with `target="_blank"` and `rel="noopener noreferrer"`
+#### Social Integration
+- **8 platforms** on `/me`:
+  - X (Twitter)
+  - GitHub
+  - Telegram
+  - Instagram
+  - Facebook
+  - Bluesky
+  - Threads
+  - Dev.to
 
-## [0.1.0] - 2026-03-14
+### 🔧 Technical Changes
 
-### Added
+#### Content
+- **All content in English** - Previously Spanish
+- **MDX blog posts** - Powered by Velite
+- **Dynamic routing** - Blog at `/blog/[slug]`
 
-- Initial release
-- Next.js 16 with App Router
-- MDX support via `@mdx-js/react` and `@next/mdx`
-- Velite for content collection and MDX processing
-- Tailwind CSS v4 for styling
-- Dark mode support (system preference based)
-- Syntax highlighting with rehype-pretty-code
-- Auto-linked headings with rehype-autolink-headings
-- Remix Icons for social links
-- TypeScript for type safety
-- ESLint for code quality
-- Blog post template with frontmatter (title, date, description, tags, published)
-- Responsive design for mobile and desktop
-- SEO metadata with Open Graph and Twitter Card support
-- Custom MDX components for basic Markdown elements
+#### Architecture
+- **Client/Server split** - Blog posts use separate client component
+- **Static generation** - All pages pre-rendered
+- **Mobile menu state** - Managed with React useState
+
+#### Styling
+- **Tailwind CSS v4** - Latest version
+- **Custom fonts** - CursorGothic and BerkeleyMono
+- **Dark mode** - System preference detection
+- **Responsive** - Mobile-first approach
+
+### 📝 Documentation
+
+- **README.md** - Complete project documentation
+- **CHANGELOG.md** - This changelog
+- **docs.txt** - Technical documentation
+
+### 🐛 Bug Fixes
+
+- Fixed route conflicts between `/` and `/blog`
+- Removed duplicate "blog/" prefix in URLs
+- Fixed `generateStaticParams` with client components
+- Corrected MCP icon (SiModelcontextprotocol)
+
+### 🔄 Migrations
+
+- Removed: Proton VPN, Proton Pass
+- Changed: MCP icon to SiModelcontextprotocol
+- Moved: Stack section to `/stack` route
+- Updated: All text to English
 
 ---
 
-## Version History
+## [0.1.0] - 2026-01-01
 
-- **0.2.0** - 2026-03-22 - Major MDX enhancements and documentation
-- **0.1.0** - 2026-03-14 - Initial release
+### Initial Release
+
+- Basic blog structure
+- MDX content support
+- Dark mode
+- Social links
