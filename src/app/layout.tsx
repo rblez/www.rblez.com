@@ -3,12 +3,12 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "rblez - Blog",
-  description: "Personal blog by Ray (rblez) - Vibecoder from Cuba",
+  description: "Blog personal de Ray (rblez) - Vibecoder de Cuba",
   metadataBase: new URL("https://rblez.com"),
   openGraph: {
     title: "rblez - Blog",
-    description: "Personal blog by Ray (rblez) - Vibecoder from Cuba",
-    locale: "en_US",
+    description: "Blog personal de Ray (rblez) - Vibecoder de Cuba",
+    locale: "es_ES",
     type: "website",
     images: ["/banner-seo.png"],
   },

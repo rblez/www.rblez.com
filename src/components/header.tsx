@@ -5,7 +5,7 @@ export function Header() {
   return (
     <header className="mb-8 sm:mb-12">
       <div className="flex items-center justify-between mb-4">
-        <Link href="/" className="w-8 h-8">
+        <Link href="/home" className="w-8 h-8">
           <Image
             src="/isotipe.svg"
             alt="rblez"
