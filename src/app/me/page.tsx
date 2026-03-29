@@ -19,7 +19,7 @@ import { Footer } from "@/components/footer";
 const socialLinks = [
   { name: "X", icon: SiX, url: "https://x.com/rblezX" },
   { name: "GitHub", icon: SiGithub, url: "https://github.com/rblez" },
-  { name: "Telegram", icon: SiTelegram, url: "https://t.me/rblezX" },
+  { name: "Telegram", icon: SiTelegram, url: "https://t.me/rblez" },
   { name: "Instagram", icon: SiInstagram, url: "https://instagram.com/rblez.build" },
   { name: "Facebook", icon: SiFacebook, url: "https://www.facebook.com/profile.php?id=61586051213241" },
   { name: "Bluesky", icon: SiBluesky, url: "https://bsky.app/profile/rblez.bsky.social" },
