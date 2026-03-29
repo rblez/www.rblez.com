@@ -49,8 +49,8 @@ export default function Me() {
               <div className="absolute inset-0 bg-gradient-to-br from-black/20 to-white/20 dark:from-white/20 dark:to-black/20 rounded-full blur-3xl" />
               <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full overflow-hidden border-4 border-black/5 dark:border-white/5">
                 <Image
-                  src="/isotipe.svg"
-                  alt="Ray - rblez"
+                  src="/obito.png"
+                  alt="Ray"
                   width={192}
                   height={192}
                   className="w-full h-full object-cover"
