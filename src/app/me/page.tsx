@@ -62,7 +62,7 @@ export default function Me() {
 
           <div className="text-center sm:text-left">
             <h1 className="text-3xl sm:text-4xl font-bold mb-3 text-black dark:text-white">
-              Ray (rblez)
+              Ray
             </h1>
             <p className="text-lg text-black/60 dark:text-white/60 mb-4">
               Vibecoder
