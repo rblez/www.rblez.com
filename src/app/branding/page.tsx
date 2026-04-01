@@ -2,7 +2,7 @@
 
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import { SiGithub, SiReact } from "@icons-pack/react-simple-icons";
+import { SiReact, SiVuedotjs, SiSvelte, SiAstro } from "@icons-pack/react-simple-icons";
 
 const colors = [
   { name: "Black", value: "#000000", description: "Primary" },
@@ -15,22 +15,102 @@ const fonts = [
   {
     name: "GT Sectra",
     usage: "Display (H1-H6)",
-    license: "Licencia comercial requerida",
+    license: "Commercial license required",
     formats: [".ttf", ".otf", ".woff2"],
   },
   {
     name: "GT Cinetype",
-    usage: "Sans (Cuerpo, UI)",
-    license: "Licencia comercial requerida",
+    usage: "Sans (Body, UI)",
+    license: "Commercial license required",
     formats: [".ttf", ".otf", ".woff2"],
   },
   {
     name: "GT Cinetype Mono",
-    usage: "Código, elementos técnicos",
-    license: "Licencia comercial requerida",
+    usage: "Code, technical elements",
+    license: "Commercial license required",
     formats: [".ttf", ".otf", ".woff2"],
   },
 ];
+
+const isotipoSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="368" height="368" preserveAspectRatio="xMidYMid meet" viewBox="0 0 276 276"><path fill="#000" d="M141.65 39.55C124.8 42.2 105.9 47.9 84.75 56.7L74 61.2l.65 54.65c.35 30.05.75 54.8.9 55 .15.15 4.5-3.85 9.6-8.9 16.6-16.35 31.8-28.35 47.6-37.45 9.25-5.35 12.25-5.6 4.05-.4-47.85 30.6-94.15 89.1-94.2 119.15-.05 18.85 12.15 17.2 49.2-6.55 32.35-20.8 40.95-25 50.85-25.15 11.2-.1 13.1 4.9 6.35 17.2l-3.95 7.25h63.8l1.5-4.75c8.7-27.05 13.45-56.95 10.7-67.2-4.9-17.85-19.25-14.95-70.55 14.1C126.3 191.9 109 200.8 109 199.5c0-.2 3.95-2.5 8.75-5.1 83.4-45 111.6-75.3 103.85-111.55-7.55-35.4-35.05-50.25-79.95-43.3"/></svg>`;
+
+const reactComponent = `import React from 'react';
+
+export function RBlezLogo({ className = "w-8 h-8" }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 276 276"
+      className={className}
+      preserveAspectRatio="xMidYMid meet"
+    >
+      <path
+        fill="currentColor"
+        d="M141.65 39.55C124.8 42.2 105.9 47.9 84.75 56.7L74 61.2l.65 54.65c.35 30.05.75 54.8.9 55 .15.15 4.5-3.85 9.6-8.9 16.6-16.35 31.8-28.35 47.6-37.45 9.25-5.35 12.25-5.6 4.05-.4-47.85 30.6-94.15 89.1-94.2 119.15-.05 18.85 12.15 17.2 49.2-6.55 32.35-20.8 40.95-25 50.85-25.15 11.2-.1 13.1 4.9 6.35 17.2l-3.95 7.25h63.8l1.5-4.75c8.7-27.05 13.45-56.95 10.7-67.2-4.9-17.85-19.25-14.95-70.55 14.1C126.3 191.9 109 200.8 109 199.5c0-.2 3.95-2.5 8.75-5.1 83.4-45 111.6-75.3 103.85-111.55-7.55-35.4-35.05-50.25-79.95-43.3"
+      />
+    </svg>
+  );
+}`;
+
+const vueComponent = `<script setup lang="ts">
+defineProps<{
+  class?: string
+}>()
+</script>
+
+<template>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 276 276"
+    :class="class || 'w-8 h-8'"
+    preserveAspectRatio="xMidYMid meet"
+  >
+    <path
+      fill="currentColor"
+      d="M141.65 39.55C124.8 42.2 105.9 47.9 84.75 56.7L74 61.2l.65 54.65c.35 30.05.75 54.8.9 55 .15.15 4.5-3.85 9.6-8.9 16.6-16.35 31.8-28.35 47.6-37.45 9.25-5.35 12.25-5.6 4.05-.4-47.85 30.6-94.15 89.1-94.2 119.15-.05 18.85 12.15 17.2 49.2-6.55 32.35-20.8 40.95-25 50.85-25.15 11.2-.1 13.1 4.9 6.35 17.2l-3.95 7.25h63.8l1.5-4.75c8.7-27.05 13.45-56.95 10.7-67.2-4.9-17.85-19.25-14.95-70.55 14.1C126.3 191.9 109 200.8 109 199.5c0-.2 3.95-2.5 8.75-5.1 83.4-45 111.6-75.3 103.85-111.55-7.55-35.4-35.05-50.25-79.95-43.3"
+    />
+  </svg>
+</template>`;
+
+const svelteComponent = `<script lang="ts">
+  export let class: string = 'w-8 h-8';
+</script>
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 276 276"
+  class={class}
+  preserveAspectRatio="xMidYMid meet"
+>
+  <path
+    fill="currentColor"
+    d="M141.65 39.55C124.8 42.2 105.9 47.9 84.75 56.7L74 61.2l.65 54.65c.35 30.05.75 54.8.9 55 .15.15 4.5-3.85 9.6-8.9 16.6-16.35 31.8-28.35 47.6-37.45 9.25-5.35 12.25-5.6 4.05-.4-47.85 30.6-94.15 89.1-94.2 119.15-.05 18.85 12.15 17.2 49.2-6.55 32.35-20.8 40.95-25 50.85-25.15 11.2-.1 13.1 4.9 6.35 17.2l-3.95 7.25h63.8l1.5-4.75c8.7-27.05 13.45-56.95 10.7-67.2-4.9-17.85-19.25-14.95-70.55 14.1C126.3 191.9 109 200.8 109 199.5c0-.2 3.95-2.5 8.75-5.1 83.4-45 111.6-75.3 103.85-111.55-7.55-35.4-35.05-50.25-79.95-43.3"
+  />
+</svg>`;
+
+const astroComponent = `---
+interface Props {
+  class?: string;
+}
+
+const { class: className = 'w-8 h-8' } = Astro.props;
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 276 276"
+  class={className}
+  preserveAspectRatio="xMidYMid meet"
+>
+  <path
+    fill="currentColor"
+    d="M141.65 39.55C124.8 42.2 105.9 47.9 84.75 56.7L74 61.2l.65 54.65c.35 30.05.75 54.8.9 55 .15.15 4.5-3.85 9.6-8.9 16.6-16.35 31.8-28.35 47.6-37.45 9.25-5.35 12.25-5.6 4.05-.4-47.85 30.6-94.15 89.1-94.2 119.15-.05 18.85 12.15 17.2 49.2-6.55 32.35-20.8 40.95-25 50.85-25.15 11.2-.1 13.1 4.9 6.35 17.2l-3.95 7.25h63.8l1.5-4.75c8.7-27.05 13.45-56.95 10.7-67.2-4.9-17.85-19.25-14.95-70.55 14.1C126.3 191.9 109 200.8 109 199.5c0-.2 3.95-2.5 8.75-5.1 83.4-45 111.6-75.3 103.85-111.55-7.55-35.4-35.05-50.25-79.95-43.3"
+  />
+</svg>`;
+
+const copyToClipboard = (text: string) => {
+  navigator.clipboard.writeText(text);
+};
 
 export default function BrandingPage() {
   return (
@@ -42,7 +122,7 @@ export default function BrandingPage() {
           Branding
         </h1>
         <p className="text-lg text-black/60 dark:text-white/60 mb-12">
-          Identidad visual, assets de marca y guías de uso.
+          Visual identity, brand assets, and usage guidelines.
         </p>
 
         {/* Isotipo */}
@@ -52,15 +132,33 @@ export default function BrandingPage() {
           </h2>
           <div className="grid sm:grid-cols-2 gap-6 mb-8">
             <div className="p-8 rounded-xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 flex items-center justify-center">
-              <div className="w-32 h-32">
-                {/* Placeholder isotipo - reemplazar con imagen real */}
-                <div className="w-full h-full bg-black rounded-lg" />
+              <div className="w-32 h-32 text-black">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 276 276"
+                  className="w-full h-full"
+                  preserveAspectRatio="xMidYMid meet"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M141.65 39.55C124.8 42.2 105.9 47.9 84.75 56.7L74 61.2l.65 54.65c.35 30.05.75 54.8.9 55 .15.15 4.5-3.85 9.6-8.9 16.6-16.35 31.8-28.35 47.6-37.45 9.25-5.35 12.25-5.6 4.05-.4-47.85 30.6-94.15 89.1-94.2 119.15-.05 18.85 12.15 17.2 49.2-6.55 32.35-20.8 40.95-25 50.85-25.15 11.2-.1 13.1 4.9 6.35 17.2l-3.95 7.25h63.8l1.5-4.75c8.7-27.05 13.45-56.95 10.7-67.2-4.9-17.85-19.25-14.95-70.55 14.1C126.3 191.9 109 200.8 109 199.5c0-.2 3.95-2.5 8.75-5.1 83.4-45 111.6-75.3 103.85-111.55-7.55-35.4-35.05-50.25-79.95-43.3"
+                  />
+                </svg>
               </div>
             </div>
-            <div className="p-8 rounded-xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 flex items-center justify-center">
-              <div className="w-32 h-32">
-                {/* Placeholder isotipo dark */}
-                <div className="w-full h-full bg-white rounded-lg border border-black/10" />
+            <div className="p-8 rounded-xl border border-black/10 dark:border-white/10 bg-black dark:bg-white flex items-center justify-center">
+              <div className="w-32 h-32 text-white">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 276 276"
+                  className="w-full h-full"
+                  preserveAspectRatio="xMidYMid meet"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M141.65 39.55C124.8 42.2 105.9 47.9 84.75 56.7L74 61.2l.65 54.65c.35 30.05.75 54.8.9 55 .15.15 4.5-3.85 9.6-8.9 16.6-16.35 31.8-28.35 47.6-37.45 9.25-5.35 12.25-5.6 4.05-.4-47.85 30.6-94.15 89.1-94.2 119.15-.05 18.85 12.15 17.2 49.2-6.55 32.35-20.8 40.95-25 50.85-25.15 11.2-.1 13.1 4.9 6.35 17.2l-3.95 7.25h63.8l1.5-4.75c8.7-27.05 13.45-56.95 10.7-67.2-4.9-17.85-19.25-14.95-70.55 14.1C126.3 191.9 109 200.8 109 199.5c0-.2 3.95-2.5 8.75-5.1 83.4-45 111.6-75.3 103.85-111.55-7.55-35.4-35.05-50.25-79.95-43.3"
+                  />
+                </svg>
               </div>
             </div>
           </div>
@@ -68,18 +166,18 @@ export default function BrandingPage() {
           {/* Descargas */}
           <div className="p-6 rounded-xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5">
             <h3 className="text-lg font-semibold text-black dark:text-white mb-4">
-              Descargar Isotipo
+              Download Isotipo
             </h3>
-            <div className="grid sm:grid-cols-3 gap-4">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
               <a
                 href="/isotipo.svg"
                 download="rblez-isotipo.svg"
                 className="flex items-center gap-3 p-4 rounded-lg border border-black/10 dark:border-white/10 hover:bg-black/10 dark:hover:bg-white/10 transition-colors"
               >
-                <SiGithub size={24} />
+                <i className="ri-file-svg-line text-xl"></i>
                 <div>
                   <p className="font-medium text-black dark:text-white">SVG</p>
-                  <p className="text-xs text-black/60 dark:text-white/60">Vector escalable</p>
+                  <p className="text-xs text-black/60 dark:text-white/60">Scalable vector</p>
                 </div>
               </a>
               <a
@@ -87,35 +185,108 @@ export default function BrandingPage() {
                 download="rblez-isotipo.png"
                 className="flex items-center gap-3 p-4 rounded-lg border border-black/10 dark:border-white/10 hover:bg-black/10 dark:hover:bg-white/10 transition-colors"
               >
-                <div className="w-6 h-6 flex items-center justify-center">
-                  <div className="w-4 h-4 bg-black/60 rounded-sm" />
-                </div>
+                <i className="ri-image-line text-xl"></i>
                 <div>
                   <p className="font-medium text-black dark:text-white">PNG</p>
-                  <p className="text-xs text-black/60 dark:text-white/60">Raster con transparencia</p>
+                  <p className="text-xs text-black/60 dark:text-white/60">Raster with transparency</p>
                 </div>
               </a>
               <button
-                onClick={() => {
-                  // Aquí iría la lógica para copiar el componente React
-                  navigator.clipboard.writeText(`<Image src="/isotipo.svg" alt="rblez" width={32} height={32} />`);
-                }}
+                onClick={() => copyToClipboard(isotipoSvg)}
                 className="flex items-center gap-3 p-4 rounded-lg border border-black/10 dark:border-white/10 hover:bg-black/10 dark:hover:bg-white/10 transition-colors"
               >
-                <SiReact size={24} />
+                <i className="ri-code-s-slash-line text-xl"></i>
                 <div>
-                  <p className="font-medium text-black dark:text-white">React</p>
-                  <p className="text-xs text-black/60 dark:text-white/60">Componente</p>
+                  <p className="font-medium text-black dark:text-white">Raw SVG</p>
+                  <p className="text-xs text-black/60 dark:text-white/60">Copy to clipboard</p>
                 </div>
               </button>
+            </div>
+
+            {/* Framework Components */}
+            <h4 className="text-sm font-semibold text-black dark:text-white mb-3">
+              Framework Components
+            </h4>
+            <div className="grid gap-3">
+              <div className="p-4 rounded-lg border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5">
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center gap-2">
+                    <SiReact size={20} />
+                    <span className="font-medium text-black dark:text-white">React</span>
+                  </div>
+                  <button
+                    onClick={() => copyToClipboard(reactComponent)}
+                    className="text-xs px-2 py-1 rounded bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 transition-colors"
+                  >
+                    Copy
+                  </button>
+                </div>
+                <pre className="text-xs text-black/60 dark:text-white/60 overflow-x-auto">
+                  <code>{reactComponent}</code>
+                </pre>
+              </div>
+
+              <div className="p-4 rounded-lg border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5">
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center gap-2">
+                    <SiVuedotjs size={20} />
+                    <span className="font-medium text-black dark:text-white">Vue</span>
+                  </div>
+                  <button
+                    onClick={() => copyToClipboard(vueComponent)}
+                    className="text-xs px-2 py-1 rounded bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 transition-colors"
+                  >
+                    Copy
+                  </button>
+                </div>
+                <pre className="text-xs text-black/60 dark:text-white/60 overflow-x-auto">
+                  <code>{vueComponent}</code>
+                </pre>
+              </div>
+
+              <div className="p-4 rounded-lg border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5">
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center gap-2">
+                    <SiSvelte size={20} />
+                    <span className="font-medium text-black dark:text-white">Svelte</span>
+                  </div>
+                  <button
+                    onClick={() => copyToClipboard(svelteComponent)}
+                    className="text-xs px-2 py-1 rounded bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 transition-colors"
+                  >
+                    Copy
+                  </button>
+                </div>
+                <pre className="text-xs text-black/60 dark:text-white/60 overflow-x-auto">
+                  <code>{svelteComponent}</code>
+                </pre>
+              </div>
+
+              <div className="p-4 rounded-lg border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5">
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center gap-2">
+                    <SiAstro size={20} />
+                    <span className="font-medium text-black dark:text-white">Astro</span>
+                  </div>
+                  <button
+                    onClick={() => copyToClipboard(astroComponent)}
+                    className="text-xs px-2 py-1 rounded bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 transition-colors"
+                  >
+                    Copy
+                  </button>
+                </div>
+                <pre className="text-xs text-black/60 dark:text-white/60 overflow-x-auto">
+                  <code>{astroComponent}</code>
+                </pre>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Colores */}
+        {/* Colors */}
         <section className="mb-16">
           <h2 className="text-xl font-semibold text-black dark:text-white mb-6">
-            Colores
+            Colors
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {colors.map((color) => (
@@ -140,19 +311,19 @@ export default function BrandingPage() {
             ))}
           </div>
 
-          {/* Nota sobre colores */}
+          {/* Note about colors */}
           <div className="mt-6 p-4 rounded-lg border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5">
             <p className="text-sm text-black/60 dark:text-white/60">
-              <strong className="text-black dark:text-white">Nota:</strong> El diseño utiliza exclusivamente una paleta monocromática. 
-              Los colores se aplican mediante variables CSS y clases de Tailwind para soportar modo claro y oscuro automáticamente.
+              <strong className="text-black dark:text-white">Note:</strong> The design uses an exclusively monochromatic palette.
+              Colors are applied via CSS variables and Tailwind classes to support automatic light and dark mode.
             </p>
           </div>
         </section>
 
-        {/* Tipografía */}
+        {/* Typography */}
         <section className="mb-16">
           <h2 className="text-xl font-semibold text-black dark:text-white mb-6">
-            Tipografía
+            Typography
           </h2>
           <div className="space-y-6">
             {fonts.map((font) => (
@@ -181,17 +352,19 @@ export default function BrandingPage() {
                   </div>
                 </div>
                 <p className="text-sm text-amber-600 dark:text-amber-400">
-                  ⚠️ {font.license}
+                  <i className="ri-error-warning-line mr-1"></i>
+                  {font.license}
                 </p>
               </div>
             ))}
           </div>
 
-          {/* Nota sobre fuentes */}
+          {/* Note about fonts */}
           <div className="mt-6 p-4 rounded-lg border border-amber-200 dark:border-amber-800 bg-amber-50 dark:bg-amber-950/30">
             <p className="text-sm text-amber-800 dark:text-amber-200">
-              <strong>Importante:</strong> Las fuentes GT (GT Sectra, GT Cinetype) están protegidas por licencia comercial. 
-              Para uso personal o comercial, debes adquirir la licencia correspondiente en{" "}
+              <i className="ri-information-line mr-1"></i>
+              <strong>Important:</strong> GT fonts (GT Sectra, GT Cinetype) are protected by commercial license.
+              For personal or commercial use, you must purchase the corresponding license at{" "}
               <a
                 href="https://www.grillitype.com"
                 target="_blank"
@@ -205,30 +378,32 @@ export default function BrandingPage() {
           </div>
         </section>
 
-        {/* Uso de marca */}
+        {/* Brand Usage */}
         <section>
           <h2 className="text-xl font-semibold text-black dark:text-white mb-6">
-            Uso de Marca
+            Brand Usage
           </h2>
           <div className="space-y-4">
             <div className="p-6 rounded-xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5">
               <h3 className="font-semibold text-black dark:text-white mb-2">
-                ✅ Uso permitido
+                <i className="ri-checkbox-circle-line mr-2 text-green-600 dark:text-green-400"></i>
+                Allowed Usage
               </h3>
               <ul className="text-sm text-black/60 dark:text-white/60 space-y-1 list-disc ml-5">
-                <li>Proyectos personales y portafolios</li>
-                <li>Contenido educativo y tutoriales</li>
-                <li>Colaboraciones oficiales con rblez</li>
+                <li>Personal projects and portfolios</li>
+                <li>Educational content and tutorials</li>
+                <li>Official collaborations with rblez</li>
               </ul>
             </div>
             <div className="p-6 rounded-xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5">
               <h3 className="font-semibold text-black dark:text-white mb-2">
-                ❌ Uso no permitido
+                <i className="ri-close-circle-line mr-2 text-red-600 dark:text-red-400"></i>
+                Prohibited Usage
               </h3>
               <ul className="text-sm text-black/60 dark:text-white/60 space-y-1 list-disc ml-5">
-                <li>Productos comerciales sin autorización</li>
-                <li>Suplantación de identidad</li>
-                <li>Contenido ilegal o dañino</li>
+                <li>Commercial products without authorization</li>
+                <li>Identity impersonation</li>
+                <li>Illegal or harmful content</li>
               </ul>
             </div>
           </div>

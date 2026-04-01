@@ -10,7 +10,6 @@ const navLinks = [
   { name: "Stack", href: "/stack" },
   { name: "Projects", href: "/projects" },
   { name: "Branding", href: "/branding" },
-  { name: "Community", href: "/community" },
 ];
 
 export function Header() {

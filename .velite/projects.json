@@ -3,7 +3,7 @@
     "slug": "projects/smsnumerovirtual",
     "title": "SMS Número Virtual",
     "description": "Online SMS reception service with virtual numbers from multiple countries. Verify accounts without revealing your personal number.",
-    "image": "",
+    "image": "/smsnumerovirtual.png",
     "stack": [
       "Next.js",
       "TypeScript",

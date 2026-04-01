@@ -11,7 +11,8 @@ import {
 
 const communityLinks = [
   { name: "rblezClub", href: "/rblezclub" },
-  { name: "GitHub", href: "/github" },
+  { name: "rblezTips", href: "https://t.me/rblezTips" },
+
 ];
 
 const legalLinks = [
@@ -100,30 +101,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
-          <div>
-            <h3 className="text-sm font-semibold text-black dark:text-white mb-4">Contact</h3>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="mailto:rblez@proton.me"
-                  className="text-sm text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors"
-                >
-                  Email
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://x.com/rblezX"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors"
-                >
-                  X/Twitter
-                </a>
-              </li>
-            </ul>
-          </div>
+          
         </div>
 
         <div className="pt-8 border-t border-black/10 dark:border-white/10">

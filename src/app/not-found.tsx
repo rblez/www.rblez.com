@@ -29,7 +29,7 @@ export default function NotFound() {
         </p>
         
         <Link 
-          href="/me"
+          href="/?s=404"
           className="inline-flex items-center justify-center px-6 py-3 bg-black dark:bg-white text-white dark:text-black rounded-full font-medium hover:bg-black/80 dark:hover:bg-white/80 transition-all hover:scale-105"
         >
           Back to home
