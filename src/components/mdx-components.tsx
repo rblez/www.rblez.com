@@ -214,7 +214,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ...components,
     // Images
     img: (props) => (
-      <div className="my-8">
+      <span className="block my-8">
         <Image
           {...props}
           className="rounded-xl object-contain shadow-xl"
@@ -224,9 +224,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
           sizes="(max-width: 768px) 100vw, 800px"
         />
         {props.alt && (
-          <p className="text-sm text-black/50 dark:text-white/50 text-center mt-3">{props.alt}</p>
+          <span className="block text-sm text-black/50 dark:text-white/50 text-center mt-3">
+            {props.alt}
+          </span>
         )}
-      </div>
+      </span>
     ),
     // Headings
     h1: (props) => (
@@ -344,14 +346,14 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
     // Image with caption
     Figure: ({ children }: { children: React.ReactNode }) => (
-      <figure className="my-8">
+      <span className="block my-8">
         {children}
-      </figure>
+      </span>
     ),
     Figcaption: ({ children }: { children: React.ReactNode }) => (
-      <figcaption className="text-sm text-black/50 dark:text-white/50 text-center mt-3">
+      <span className="block text-sm text-black/50 dark:text-white/50 text-center mt-3">
         {children}
-      </figcaption>
+      </span>
     ),
   };
 }

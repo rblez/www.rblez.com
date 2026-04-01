@@ -72,7 +72,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           </Link>
 
           {/* Imagen del proyecto */}
-          {project.image ? (
+          {project.image && project.image.trim() !== "" ? (
             <div className="relative aspect-video rounded-xl overflow-hidden bg-gradient-to-br from-black/10 to-white/10 dark:from-white/10 dark:to-black/10 mb-8">
               <Image
                 src={project.image}

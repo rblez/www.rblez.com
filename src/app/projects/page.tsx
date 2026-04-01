@@ -35,7 +35,7 @@ export default function ProjectsPage() {
               >
                 <article className="overflow-hidden rounded-xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 transition-all">
                   <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-black/10 to-white/10 dark:from-white/10 dark:to-black/10">
-                    {project.image ? (
+                    {project.image && project.image.trim() !== "" ? (
                       <Image
                         src={project.image}
                         alt={project.title}

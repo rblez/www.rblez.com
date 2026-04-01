@@ -152,15 +152,12 @@ export default function StackPage() {
 
         {/* Tech Grid */}
         {filteredCategories.map((category) => (
-          <section key={category.name} className="mb-12">
-            <h2 className="text-xl font-semibold text-black dark:text-white mb-6">
-              {category.name}
-            </h2>
+          <section key={category.name} className="mb-4">
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
               {category.techs.map((tech) => (
                 <div
                   key={tech.name}
-                  className="group p-4 border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 transition-all"
+                  className="group p-6 border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 transition-all"
                 >
                   <div className="flex flex-col items-center text-center gap-3">
                     <div className="w-12 h-12 flex items-center justify-center">
