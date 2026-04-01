@@ -101,24 +101,24 @@ interface CodeBlockProps {
 
 const CodeBlock: React.FC<CodeBlockProps> = ({ children, language, title, filename }) => {
   return (
-    <div className="my-6 rounded-lg overflow-hidden border border-black/10 dark:border-white/10">
+    <div className="my-6 rounded-xl overflow-hidden border border-black/10 dark:border-white/10 shadow-lg">
       {(title || filename) && (
-        <div className="flex items-center justify-between px-4 py-2 bg-black/5 dark:bg-white/5 border-b border-black/10 dark:border-white/10">
+        <div className="flex items-center justify-between px-4 py-2.5 bg-gradient-to-r from-black/5 to-transparent dark:from-white/5 dark:to-transparent border-b border-black/10 dark:border-white/10">
           {filename && (
-            <span className="text-xs text-black/50 dark:text-white/50 font-mono">
-              <i className="ri-file-code-line mr-1" />
+            <span className="text-xs text-black/60 dark:text-white/60 font-mono flex items-center gap-1.5">
+              <i className="ri-file-code-line"></i>
               {filename}
             </span>
           )}
           {title && (
-            <span className="text-xs text-black/50 dark:text-white/50">{title}</span>
+            <span className="text-xs text-black/60 dark:text-white/60">{title}</span>
           )}
           {language && (
-            <span className="text-xs text-black/40 dark:text-white/40 uppercase">{language}</span>
+            <span className="text-xs text-black/40 dark:text-white/40 uppercase font-medium">{language}</span>
           )}
         </div>
       )}
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto bg-black/95 dark:bg-gray-950">
         {children}
       </div>
     </div>
@@ -131,7 +131,7 @@ interface TableProps {
 
 const Table: React.FC<TableProps> = ({ children }) => {
   return (
-    <div className="my-6 overflow-x-auto rounded-lg border border-black/10 dark:border-white/10">
+    <div className="my-6 overflow-x-auto rounded-xl border border-black/10 dark:border-white/10 shadow-sm">
       <table className="w-full border-collapse text-sm">
         {children}
       </table>
@@ -152,7 +152,7 @@ const Video: React.FC<VideoProps> = ({ src, title, className = "" }) => {
         src={src}
         title={title}
         controls
-        className="w-full rounded-lg border border-black/10 dark:border-white/10"
+        className="w-full rounded-xl border border-black/10 dark:border-white/10 shadow-lg"
       >
         {title && <track kind="captions" label={title} />}
         Your browser does not support the video tag.
@@ -172,7 +172,7 @@ const YouTube: React.FC<YouTubeProps> = ({ videoId, title = "YouTube video" }) =
       <iframe
         src={`https://www.youtube.com/embed/${videoId}`}
         title={title}
-        className="w-full h-full rounded-lg border border-black/10 dark:border-white/10"
+        className="w-full h-full rounded-xl border border-black/10 dark:border-white/10 shadow-lg"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
       />
@@ -193,7 +193,7 @@ const Iframe: React.FC<IframeProps> = ({ src, title, height = "400px", className
       <iframe
         src={src}
         title={title}
-        className={`w-full rounded-lg border border-black/10 dark:border-white/10 ${className}`}
+        className={`w-full rounded-xl border border-black/10 dark:border-white/10 shadow-sm ${className}`}
         style={{ height }}
         allowFullScreen
       />
@@ -217,7 +217,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       <div className="my-8">
         <Image
           {...props}
-          className="rounded-lg object-contain shadow-lg"
+          className="rounded-xl object-contain shadow-xl"
           width={props.width || 800}
           height={props.height || 450}
           alt={props.alt || ""}
@@ -230,13 +230,13 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
     // Headings
     h1: (props) => (
-      <h1 className="text-3xl font-bold mt-12 mb-6 [&>a]:text-inherit [&>a]:hover:underline [&>a]:no-underline" {...props} />
+      <h1 className="text-3xl sm:text-4xl font-bold mt-12 mb-6 [&>a]:text-inherit [&>a]:hover:underline [&>a]:no-underline" {...props} />
     ),
     h2: (props) => (
-      <h2 className="text-2xl font-semibold mt-10 mb-4 [&>a]:text-inherit [&>a]:hover:underline [&>a]:no-underline" {...props} />
+      <h2 className="text-2xl sm:text-3xl font-semibold mt-10 mb-4 [&>a]:text-inherit [&>a]:hover:underline [&>a]:no-underline" {...props} />
     ),
     h3: (props) => (
-      <h3 className="text-xl font-semibold mt-8 mb-3 [&>a]:text-inherit [&>a]:hover:underline [&>a]:no-underline" {...props} />
+      <h3 className="text-xl sm:text-2xl font-semibold mt-8 mb-3 [&>a]:text-inherit [&>a]:hover:underline [&>a]:no-underline" {...props} />
     ),
     h4: (props) => (
       <h4 className="text-lg font-semibold mt-6 mb-2 [&>a]:text-inherit [&>a]:hover:underline [&>a]:no-underline" {...props} />
@@ -249,14 +249,14 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
     // Text elements
     p: (props) => (
-      <p className="text-base leading-7 mb-6" {...props} />
+      <p className="text-base sm:text-lg leading-7 sm:leading-8 mb-6" {...props} />
     ),
     strong: (props) => <strong className="font-semibold text-black dark:text-white" {...props} />,
     em: (props) => <em className="italic" {...props} />,
     del: (props) => <del className="text-black/50 dark:text-white/50 line-through" {...props} />,
     code: (props) => (
       <code
-        className="px-1.5 py-0.5 rounded text-sm bg-black/10 dark:bg-white/10 text-black dark:text-white font-mono"
+        className="px-1.5 py-0.5 rounded text-sm bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 text-purple-700 dark:text-purple-300 font-mono border border-purple-200/50 dark:border-purple-700/50"
         {...props}
       />
     ),
@@ -271,7 +271,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       <ol className="list-decimal list-outside ml-6 mb-6 space-y-2" {...props} />
     ),
     li: (props) => (
-      <li className="text-base leading-7" {...props} />
+      <li className="text-base sm:text-lg leading-7" {...props} />
     ),
     // Links
     a: (props) => {
@@ -290,7 +290,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     blockquote: (props) => (
       <blockquote
         {...props}
-        className="border-l-4 border-black/20 dark:border-white/20 pl-5 py-2 my-6 italic text-black/70 dark:text-white/70 bg-black/5 dark:bg-white/5 rounded-r-lg"
+        className="border-l-4 border-black/20 dark:border-white/20 pl-5 py-3 my-6 italic text-black/70 dark:text-white/70 bg-gradient-to-r from-black/5 to-transparent dark:from-white/5 dark:to-transparent rounded-r-lg"
       />
     ),
     // Horizontal rule
@@ -299,7 +299,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     table: Table,
     th: (props) => (
       <th
-        className="px-4 py-3 text-left font-semibold bg-black/5 dark:bg-white/5 border-b border-black/10 dark:border-white/10"
+        className="px-4 py-3 text-left font-semibold bg-gradient-to-r from-black/5 to-black/10 dark:from-white/5 dark:to-white/10 border-b border-black/10 dark:border-white/10"
         {...props}
       />
     ),
@@ -320,7 +320,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     Step: ({ children, number }: { children: React.ReactNode; number?: number }) => (
       <div className="flex gap-4 mb-6">
         {number && (
-          <span className="flex-shrink-0 w-8 h-8 rounded-full bg-black/10 dark:bg-white/10 text-black dark:text-white flex items-center justify-center font-bold text-sm">
+          <span className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-black to-gray-800 dark:from-white dark:to-gray-300 text-white dark:text-black flex items-center justify-center font-bold text-sm shadow-md">
             {number}
           </span>
         )}
@@ -329,7 +329,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
     // Card component
     Card: ({ children, title, href }: { children: React.ReactNode; title?: string; href?: string }) => (
-      <div className={`my-6 p-6 rounded-xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 transition-shadow ${href ? 'cursor-pointer' : ''}`}>
+      <div className={`my-6 p-6 rounded-xl border border-black/10 dark:border-white/10 bg-gradient-to-br from-black/5 to-black/10 dark:from-white/5 dark:to-white/10 hover:shadow-lg transition-all duration-300 ${href ? 'cursor-pointer hover:scale-[1.02]' : ''}`}>
         {title && (
           <h3 className="text-lg font-semibold mb-3">{title}</h3>
         )}
