@@ -4,34 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import {
-  SiX,
-  SiGithub,
-  SiTelegram,
-  SiInstagram,
-  SiBluesky,
-  SiThreads,
-  SiReddit,
-  SiProtonmail,
-} from "@icons-pack/react-simple-icons";
-
-const socialLinks = [
-  { name: "X", icon: SiX, url: "https://x.com/rblezX" },
-  { name: "GitHub", icon: SiGithub, url: "https://github.com/rblez" },
-  { name: "Telegram", icon: SiTelegram, url: "https://t.me/rblez" },
-  { name: "Instagram", icon: SiInstagram, url: "https://instagram.com/rblez.build" },
-  { name: "Bluesky", icon: SiBluesky, url: "https://bsky.app/profile/rblez.bsky.social" },
-  { name: "Threads", icon: SiThreads, url: "https://threads.net/@rblez.build" },
-  { name: "Reddit", icon: SiReddit, url: "https://reddit.com/user/rblez" },
-  { name: "Email", icon: SiProtonmail, url: "mailto:rblez@proton.me" },
-];
 
 const mainLinks = [
   { name: "Blog", href: "/blog", description: "Artículos sobre tecnología y desarrollo" },
   { name: "Stack", href: "/stack", description: "Mi stack tecnológico" },
   { name: "Projects", href: "/projects", description: "Proyectos en los que trabajo" },
   { name: "Branding", href: "/branding", description: "Identidad visual y marca" },
-  { name: "Community", href: "/community", description: "Únete a la comunidad" },
 ];
 
 export default function Home() {

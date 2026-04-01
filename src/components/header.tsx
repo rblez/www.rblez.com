@@ -18,17 +18,19 @@ export function Header() {
   return (
     <>
       {/* Top Bar - Language Notice */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-black dark:bg-white text-white dark:text-black text-xs py-1.5 px-4">
+      <div className="fixed top-0 left-0 right-0 z-50 bg-black dark:bg-white text-white dark:text-black text-[10px] sm:text-xs py-1.5 px-3 sm:px-4">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             <span className="flex items-center gap-1.5">
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.148" />
               </svg>
-              <span>EN / ES</span>
+              <span className="hidden xs:inline">EN / ES</span>
+              <span className="xs:hidden">EN</span>
             </span>
             <span className="text-white/60 dark:text-black/60">|</span>
-            <span>This site is in English</span>
+            <span className="hidden sm:inline">This site is in English</span>
+            <span className="sm:hidden">English only</span>
           </div>
         </div>
       </div>
@@ -62,12 +64,12 @@ export function Header() {
             </nav>
 
             {/* Right: Contact + Mobile Menu */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1.5 sm:gap-2">
               <a
                 href="mailto:rblez@proton.me"
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-black dark:bg-white text-white dark:text-black text-sm font-medium hover:opacity-90 transition-opacity"
+                className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 rounded-lg bg-black dark:bg-white text-white dark:text-black text-xs sm:text-sm font-medium hover:opacity-90 transition-opacity"
               >
-                <SiProtonmail size={16} />
+                <SiProtonmail size={14} className="sm:w-4 sm:h-4" />
               </a>
 
               {/* Mobile Menu Button */}

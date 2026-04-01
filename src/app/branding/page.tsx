@@ -208,7 +208,7 @@ export default function BrandingPage() {
               Framework Components
             </h4>
             <div className="grid gap-3">
-              <div className="p-4 rounded-lg border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5">
+              <div className="p-4 rounded-xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 overflow-hidden">
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-2">
                     <SiReact size={20} />
@@ -216,17 +216,18 @@ export default function BrandingPage() {
                   </div>
                   <button
                     onClick={() => copyToClipboard(reactComponent)}
-                    className="text-xs px-2 py-1 rounded bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 transition-colors"
+                    className="text-xs px-3 py-1.5 rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-medium hover:opacity-90 transition-opacity shadow-md"
                   >
+                    <i className="ri-file-copy-line mr-1"></i>
                     Copy
                   </button>
                 </div>
-                <pre className="text-xs text-black/60 dark:text-white/60 overflow-x-auto">
-                  <code>{reactComponent}</code>
+                <pre className="text-xs text-gray-300 dark:text-gray-400 overflow-x-auto bg-gray-900 dark:bg-gray-950 rounded-lg p-4 -mx-4">
+                  <code className="language-tsx">{reactComponent}</code>
                 </pre>
               </div>
 
-              <div className="p-4 rounded-lg border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5">
+              <div className="p-4 rounded-xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 overflow-hidden">
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-2">
                     <SiVuedotjs size={20} />
@@ -234,17 +235,18 @@ export default function BrandingPage() {
                   </div>
                   <button
                     onClick={() => copyToClipboard(vueComponent)}
-                    className="text-xs px-2 py-1 rounded bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 transition-colors"
+                    className="text-xs px-3 py-1.5 rounded-lg bg-gradient-to-r from-emerald-500 to-green-500 text-white font-medium hover:opacity-90 transition-opacity shadow-md"
                   >
+                    <i className="ri-file-copy-line mr-1"></i>
                     Copy
                   </button>
                 </div>
-                <pre className="text-xs text-black/60 dark:text-white/60 overflow-x-auto">
-                  <code>{vueComponent}</code>
+                <pre className="text-xs text-gray-300 dark:text-gray-400 overflow-x-auto bg-gray-900 dark:bg-gray-950 rounded-lg p-4 -mx-4">
+                  <code className="language-vue">{vueComponent}</code>
                 </pre>
               </div>
 
-              <div className="p-4 rounded-lg border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5">
+              <div className="p-4 rounded-xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 overflow-hidden">
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-2">
                     <SiSvelte size={20} />
@@ -252,17 +254,18 @@ export default function BrandingPage() {
                   </div>
                   <button
                     onClick={() => copyToClipboard(svelteComponent)}
-                    className="text-xs px-2 py-1 rounded bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 transition-colors"
+                    className="text-xs px-3 py-1.5 rounded-lg bg-gradient-to-r from-orange-500 to-red-500 text-white font-medium hover:opacity-90 transition-opacity shadow-md"
                   >
+                    <i className="ri-file-copy-line mr-1"></i>
                     Copy
                   </button>
                 </div>
-                <pre className="text-xs text-black/60 dark:text-white/60 overflow-x-auto">
-                  <code>{svelteComponent}</code>
+                <pre className="text-xs text-gray-300 dark:text-gray-400 overflow-x-auto bg-gray-900 dark:bg-gray-950 rounded-lg p-4 -mx-4">
+                  <code className="language-svelte">{svelteComponent}</code>
                 </pre>
               </div>
 
-              <div className="p-4 rounded-lg border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5">
+              <div className="p-4 rounded-xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 overflow-hidden">
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-2">
                     <SiAstro size={20} />
@@ -270,13 +273,14 @@ export default function BrandingPage() {
                   </div>
                   <button
                     onClick={() => copyToClipboard(astroComponent)}
-                    className="text-xs px-2 py-1 rounded bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 transition-colors"
+                    className="text-xs px-3 py-1.5 rounded-lg bg-gradient-to-r from-pink-500 to-rose-500 text-white font-medium hover:opacity-90 transition-opacity shadow-md"
                   >
+                    <i className="ri-file-copy-line mr-1"></i>
                     Copy
                   </button>
                 </div>
-                <pre className="text-xs text-black/60 dark:text-white/60 overflow-x-auto">
-                  <code>{astroComponent}</code>
+                <pre className="text-xs text-gray-300 dark:text-gray-400 overflow-x-auto bg-gray-900 dark:bg-gray-950 rounded-lg p-4 -mx-4">
+                  <code className="language-astro">{astroComponent}</code>
                 </pre>
               </div>
             </div>
