@@ -13,7 +13,6 @@ const legalLinks = [
   { name: "Terms", href: "/legal/terms" },
   { name: "Privacy", href: "/legal/privacy" },
   { name: "Disclaimer", href: "/legal/disclaimer" },
-  { name: "Cookies", href: "/legal/cookies" },
 ];
 
 const socialLinks = [
@@ -23,7 +22,6 @@ const socialLinks = [
   { name: "Instagram", icon: SiInstagram, url: "https://instagram.com/rblez.build" },
   { name: "Bluesky", icon: SiBluesky, url: "https://bsky.app/profile/rblez.bsky.social" },
   { name: "Threads", icon: SiThreads, url: "https://threads.net/@rblez.build" },
-  { name: "Reddit", icon: SiReddit, url: "https://reddit.com/user/rblez" },
 ];
 
 export function Footer() {
