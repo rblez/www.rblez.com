@@ -89,7 +89,7 @@ export default function StackPage() {
                 {category.techs.map((tech) => (
                   <div
                     key={tech.name}
-                    className="group p-4 rounded-xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 transition-all"
+                    className="group p-4 border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 transition-all"
                   >
                     <div className="flex flex-col items-center text-center gap-3">
                       <div className="w-10 h-10 flex items-center justify-center text-black dark:text-white">
