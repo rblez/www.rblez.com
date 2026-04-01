@@ -1,83 +1,112 @@
 ---
-
-title: "Cursor Automations, TRAE SOLO, Qwen Code CLI y Supabase MCP: el nuevo ecosistema de agentes autónomos"
+title: "El nuevo ecosistema de agentes autónomos 2026"
+description: "Un análisis de cuatro herramientas que están redefiniendo el desarrollo: Cursor Automations, TRAE SOLO, Qwen Code CLI y Supabase MCP."
 date: "2026-03-14"
-description: "Un análisis de cuatro herramientas que están redefiniendo el desarrollo de software: los agentes siempre activos de Cursor, el modo SOLO de TRAE, la CLI de Qwen y la apuesta de Supabase por el Model Context Protocol."
+author: "Ray"
+tags: ["cursor", "trae", "qwen", "supabase", "mcp", "agentes", "ia"]
 published: true
-tags: ["cursor", "trae", "qwen", "supabase", "mcp", "agentes"]
-
 ---
 
-En los últimos meses, el foco ha pasado de "IA que me ayuda a escribir código" a "agentes que ejecutan tareas completas por mí". Esta semana he estado probando a fondo cuatro herramientas que representan esta nueva ola: Cursor Automations, TRAE SOLO, Qwen Code CLI y la integración de Supabase con MCP. Cada una lo hace de forma distinta, pero juntas dibujan el futuro del desarrollo.
+En los últimos meses, el foco ha pasado de "IA que me ayuda a escribir código" a "agentes que ejecutan tareas completas por mí".
 
-Cursor Automations: agentes que trabajan en segundo plano
+Esta semana he estado probando a fondo cuatro herramientas que representan esta nueva ola:
+
+- **Cursor Automations** - Agentes siempre activos
+- **TRAE SOLO** - Modo autónomo de ByteDance
+- **Qwen Code CLI** - La CLI de Alibaba
+- **Supabase MCP** - Infraestructura para agentes
+
+Cada una lo hace de forma distinta, pero juntas dibujan el futuro del desarrollo.
+
+## Cursor Automations: agentes en segundo plano
 
 Cursor ha dado un salto enorme con su función Automations. Ya no se trata solo de tener un asistente en el editor, sino de desplegar agentes que viven en la nube y reaccionan a eventos.
 
-![](/cursor-automations.png)
+![Cursor Automations](/cursor-automations.png)
 
-El flujo es sencillo: defines un agente con instrucciones y lo conectas a un trigger. Ese trigger puede ser:
+El flujo es sencillo: defines un agente con instrucciones y lo conectas a un trigger:
 
-· Un horario programado (cron).
-· Un evento de GitHub (push, pull request, issue).
-· Un mensaje en Slack.
-· Un webhook cualquiera.
+- Un horario programado (cron)
+- Un evento de GitHub (push, pull request, issue)
+- Un mensaje en Slack
+- Un webhook cualquiera
 
-Cuando el trigger se activa, el agente arranca en una sandbox aislada, ejecuta sus tareas y puede interactuar con herramientas externas a través de MCP. Cursor ya usa esto internamente: más del 35% de las sugerencias de su Bugbot Autofix se fusionan automáticamente en pull requests sin intervención humana.
+Cuando el trigger se activa, el agente arranca en una sandbox aislada, ejecuta sus tareas y puede interactuar con herramientas externas a través de MCP.
 
-Lo más interesante es la memoria persistente: los agentes pueden recordar ejecuciones anteriores y aprender de ellas. Esto abre la puerta a automatizaciones cada vez más complejas.
+<Callout type="info" title="Dato clave">
+  Cursor ya usa esto internamente: más del 35% de las sugerencias de su Bugbot Autofix se fusionan automáticamente en pull requests sin intervención humana.
+</Callout>
 
-TRAE SOLO: el AI Engineer autónomo
+Lo más interesante es la **memoria persistente**: los agentes pueden recordar ejecuciones anteriores y aprender de ellas.
+
+## TRAE SOLO: el AI Engineer autónomo
 
 ByteDance ha transformado TRAE con el modo SOLO. La diferencia es radical: TRAE pasa de ser un asistente a ser un "AI Engineer" que planifica y ejecuta por su cuenta.
 
-![](/trae-solo.png)
+![TRAE SOLO](/trae-solo.png)
 
 Puedo describirle un objetivo en lenguaje natural y el agente:
 
-· Analiza el problema y desglosa los pasos necesarios.
-· Escribe el código.
-· Ejecuta pruebas automáticas.
-· Si encuentra errores, los depura.
-· Maneja múltiples tareas en paralelo.
+1. Analiza el problema y desglosa los pasos necesarios
+2. Escribe el código
+3. Ejecuta pruebas automáticas
+4. Si encuentra errores, los depura
+5. Maneja múltiples tareas en paralelo
 
 El centro de la interfaz ya no es el editor de código, sino un chat con el agente. Es una forma completamente distinta de pensar el desarrollo.
 
-El concepto de Skills es clave. Son archivos SKILL.md que contienen instrucciones reutilizables: desde estándares de código hasta flujos de trabajo completos. El agente los escanea y solo carga los relevantes para la tarea actual, ahorrando tokens y evitando distracciones.
+<Callout type="tip" title="Skills en TRAE">
+  Los archivos `SKILL.md` contienen instrucciones reutilizables. El agente los escanea y solo carga los relevantes para la tarea actual, ahorrando tokens y evitando distracciones.
+</Callout>
 
-Qwen Code CLI: el competidor que se pone al día
+## Qwen Code CLI: el competidor que se pone al día
 
 Alibaba no se queda atrás. La reciente versión 0.1.5-preview.0 de su Qwen Code CLI incorpora varias funcionalidades que lo colocan a la par de las tendencias.
 
-![](/qwen-cli-demo.png) 
+![Qwen Code CLI](/qwen-cli-demo.png)
 
-Lo más destacado es el soporte experimental para Skills, siguiendo la estela de TRAE. También han mejorado la gestión de servidores MCP y añadido un curioso "YOLO/auto-accept mode" que, cuando está activado, ejecuta comandos sin pedir confirmación. Para tareas rutinarias en entornos de confianza, puede acelerar mucho el trabajo.
+Lo más destacado:
+
+- **Soporte experimental para Skills** - siguiendo la estela de TRAE
+- **Mejor gestión de servidores MCP**
+- **YOLO/auto-accept mode** - ejecuta comandos sin confirmación
 
 Qwen Code CLI no quiere ser solo un interfaz para el modelo, sino un agente autónomo con su propio ecosistema de capacidades.
 
-Supabase MCP: la infraestructura para agentes
+## Supabase MCP: la infraestructura para agentes
 
-La apuesta más interesante a nivel de plataforma es la de Supabase. Han adoptado el Model Context Protocol (MCP) como una pieza central de su estrategia.
+La apuesta más interesante a nivel de plataforma es la de Supabase. Han adoptado el **Model Context Protocol (MCP)** como una pieza central de su estrategia.
 
-![](/supabase-con-mcp.png)
+![Supabase con MCP](/supabase-con-mcp.png)
 
-Ofrecen un servidor MCP oficial que permite a cualquier agente (Cursor, Claude, TRAE, etc.) interactuar directamente con tu proyecto de Supabase. Esto incluye:
+Ofrecen un servidor MCP oficial que permite a cualquier agente (Cursor, Claude, TRAE, etc.) interactuar directamente con tu proyecto de Supabase:
 
-· Listar tablas y esquemas.
-· Ejecutar consultas SQL (con opción de solo lectura).
-· Generar tipos de TypeScript.
-· Desplegar Edge Functions.
-· Buscar en la documentación.
-· Gestionar ramas de base de datos.
+- Listar tablas y esquemas
+- Ejecutar consultas SQL (con opción de solo lectura)
+- Generar tipos de TypeScript
+- Desplegar Edge Functions
+- Buscar en la documentación
+- Gestionar ramas de base de datos
+
+<Callout type="warning" title="Seguridad">
+  El MCP puede configurarse en modo de solo lectura o restringirse a un proyecto específico, mitigando los riesgos de cambios no deseados.
+</Callout>
 
 Además, han publicado guías para desplegar tus propios servidores MCP en sus Edge Functions, lo que permite extender las capacidades de los agentes con lógica personalizada.
 
-La seguridad no se ha dejado de lado: el MCP puede configurarse en modo de solo lectura o restringirse a un proyecto específico, mitigando los riesgos de cambios no deseados.
-
 ---
 
-El patrón es claro: estamos pasando de un modelo en el que la IA nos ayuda a escribir código a otro en el que los agentes ejecutan tareas completas de forma autónoma. Nosotros definimos el problema y los límites; ellos se encargan del resto.
+## El patrón es claro
 
-Cursor Automations aporta los agentes reactivos, TRAE SOLO los agentes planificadores, Qwen Code CLI un nuevo actor con ideas propias, y Supabase MCP la capa de infraestructura que permite a todos ellos interactuar con nuestros datos y servicios.
+Estamos pasando de un modelo en el que la IA nos ayuda a escribir código a otro en el que **los agentes ejecutan tareas completas de forma autónoma**.
+
+Nosotros definimos el problema y los límites; ellos se encargan del resto.
+
+| Herramienta | Aporte principal |
+|-------------|------------------|
+| Cursor Automations | Agentes reactivos |
+| TRAE SOLO | Agentes planificadores |
+| Qwen Code CLI | Nuevo actor con ideas propias |
+| Supabase MCP | Capa de infraestructura |
 
 La próxima frontera será orquestar múltiples agentes trabajando juntos. Por ahora, me conformo con dejar que algunos de ellos hagan el trabajo sucio mientras yo me tomo un café.

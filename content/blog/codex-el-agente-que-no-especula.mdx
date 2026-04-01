@@ -1,11 +1,10 @@
 ---
-
 title: "Codex: el agente que no especula, arregla"
-date: "2026-03-22"
 description: "Mi experiencia probando Codex en un proyecto roto: cómo el nuevo agente de OpenAI arregla errores, actualiza dependencias y te deja el trabajo listo."
-published: true
+date: "2026-03-22"
+author: "Ray"
 tags: ["codex", "openai", "agentes", "vibecoding", "desarrollo"]
-
+published: true
 ---
 
 Hay agentes que te ayudan a pensar. Codex no es uno de esos.
@@ -14,55 +13,56 @@ Codex es el agente que te saca del apuro. El que agarra un repositorio roto, enc
 
 Lo probé esta semana en un proyecto deliberadamente desordenado. Y la experiencia fue tan directa que decidí escribir esto.
 
-![](/codex-logo.png)
+![Codex Logo](/codex-logo.png)
 
-¿Qué hace Codex exactamente?
+## ¿Qué hace Codex exactamente?
 
 Codex está diseñado para una tarea muy específica: mantener y reparar código en repositorios activos. No crea proyectos desde cero. No te da consejos filosóficos. No especula.
 
 En mi prueba, le di un proyecto que tenía tres errores:
 
-· Un import incorrecto que rompía la build
-· Una dependencia desactualizada que generaba warnings
-· Una función que fallaba silenciosamente con un edge case
+- Un import incorrecto que rompía la build
+- Una dependencia desactualizada que generaba warnings
+- Una función que fallaba silenciosamente con un edge case
 
 Codex tardó segundos en identificar los problemas. No me pidió confirmación (estaba en modo auto). Generó los cambios, los aplicó, y dejó el repositorio funcionando sin que yo tocara una línea.
 
-<Callout type="info">
+<Callout type="info" title="Modos de operación">
   Codex puede operar en dos modos: `auto` (aplica cambios sin preguntar) y `review` (propone cambios en un PR para que los revises). En producción, la mayoría de los equipos usan `review` para mantener control.
 </Callout>
 
-Cómo se compara con otros agentes
+## Cómo se compara con otros agentes
 
-Herramienta Mejor para
-Cursor Crear código desde cero, iterar rápido con el dev
-Claude Code Entender el contexto completo, razonar sobre arquitectura
-Codex Arreglar errores, mantener repos, automatizar tareas repetitivas
+| Herramienta | Mejor para |
+|-------------|------------|
+| Cursor | Crear código desde cero, iterar rápido |
+| Claude Code | Entender el contexto, razonar arquitectura |
+| Codex | Arreglar errores, mantener repos, automatizar |
 
 Cada una tiene su lugar. Si estás empezando un proyecto, Cursor es imbatible. Si necesitas entender por qué algo está mal diseñado, Claude Code te ilumina. Pero si tu problema es que hay un bug en producción, la base de datos está lenta o las dependencias están rotas, Codex es la herramienta que querés tener.
 
-Lo que puede hacer (y lo que no)
+## Lo que puede hacer (y lo que no)
 
-Sí puede:
+### Sí puede:
 
-· Detectar y corregir errores comunes (imports faltantes, typos, tipos incorrectos)
-· Actualizar dependencias obsoletas
-· Generar tests faltantes a partir del código existente
-· Documentar funciones complejas automáticamente
-· Sugerir mejoras de rendimiento basadas en patrones
+- Detectar y corregir errores comunes (imports faltantes, typos, tipos incorrectos)
+- Actualizar dependencias obsoletas
+- Generar tests faltantes a partir del código existente
+- Documentar funciones complejas automáticamente
+- Sugerir mejoras de rendimiento basadas en patrones
 
-Todavía no:
+### Todavía no:
 
-· Construir una aplicación desde cero (ahí gana Cursor)
-· Trabajar con múltiples repositorios a la vez
-· Tener interfaz gráfica propia (opera desde la terminal o integrado en IDE)
-· Tomar decisiones arquitectónicas de alto nivel
+- Construir una aplicación desde cero (ahí gana Cursor)
+- Trabajar con múltiples repositorios a la vez
+- Tener interfaz gráfica propia (opera desde la terminal o integrado en IDE)
+- Tomar decisiones arquitectónicas de alto nivel
 
-<Callout type="tip">
+<Callout type="tip" title="Plan gratuito">
   La versión gratuita de Codex incluye **500 fijos por mes**. Para un desarrollador individual que mantiene dos o tres proyectos, es más que suficiente. Los planes pagos están orientados a equipos y se basan en repositorios.
 </Callout>
 
-¿Vale la pena para un vibecoder?
+## ¿Vale la pena para un vibecoder?
 
 Depende de lo que hagas.
 
@@ -70,22 +70,23 @@ Si tu día a día es construir cosas nuevas, quizá no lo necesites todos los d�
 
 En mi caso, lo usé para revisar un par de repositorios que tenía abandonados. En una tarde, Codex arregló errores que llevaban meses ahí, actualizó dependencias y generó tests básicos. No tuve que leer documentación ni debuggear línea por línea.
 
-<Callout type="success">
+<Callout type="success" title="Sin restricciones geográficas">
   Lo mejor: funciona igual desde Cuba. No hay restricciones geográficas. Te registrás con tu cuenta de OpenAI y listo.
 </Callout>
 
-![](/codex-app.png)
-Cómo probarlo
+![Codex App](/codex-app.png)
+
+## Cómo probarlo
 
 Si ya tenés cuenta de OpenAI, podés acceder a Codex desde:
 
-· CLI: codex fix en cualquier repositorio
-· Extensión para VS Code y Cursor
-· App de escritorio (Windows y Mac)
+- **CLI**: `codex fix` en cualquier repositorio
+- **Extensión**: VS Code y Cursor
+- **App de escritorio**: Windows y Mac
 
 No necesita configuración especial. Te logueás, apuntás a un repo local, y pedís que revise.
 
-Mi veredicto
+## Mi veredicto
 
 Codex no va a reemplazar al programador creativo. Pero le va a quitar el trabajo sucio. Y eso, para los que vibcodeamos, es valiosísimo.
 
