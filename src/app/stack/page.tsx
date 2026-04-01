@@ -82,7 +82,7 @@ export default function StackPage() {
         <div className="grid gap-12">
           {techCategories.map((category) => (
             <section key={category.name}>
-              <h2 className="text-sm uppercase tracking-wider font-semibold text-black/60 dark:text-white/60 mb-4">
+              <h2 className="text-sm tracking-wider font-display mb-4">
                 {category.name}
               </h2>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
