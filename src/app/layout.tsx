@@ -1,15 +1,14 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { EmailButton } from "@/components/email-button";
 
 export const metadata: Metadata = {
-  title: "Ray - Blog",
-  description: "Personal blog by Ray (rblez) - Vibecoder",
-  metadataBase: new URL("https://rblez.com"),
+  title: "Ray",
+  description: "Personal blog by Ray",
+  metadataBase: new URL("https://www.rblez.com"),
   openGraph: {
-    title: "Ray - Blog",
-    description: "Personal blog by Ray (rblez) - Vibecoder",
-    locale: "en_US",
+    title: "Ray",
+    description: "Personal blog by Ray",
+    locale: "es_US",
     type: "website",
   },
   twitter: {
@@ -26,9 +25,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>
-        <main>{children}</main>
-        <EmailButton />
+      <body className="pt-20">
+        {children}
       </body>
     </html>
   );

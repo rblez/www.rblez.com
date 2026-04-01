@@ -4,141 +4,182 @@ import { useState } from "react";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import {
-  SiNextdotjs,
   SiReact,
-  SiFramer,
-  SiSupabase,
-  SiPython,
-  SiNodedotjs,
-  SiFastapi,
-  SiVercel,
-  SiRailway,
-  SiOpenrouter,
-  SiGithub,
-  SiDocker,
-  SiResend,
-  SiClerk,
-  SiMongodb,
+  SiNextdotjs,
   SiTypescript,
   SiTailwindcss,
-  SiProtonmail,
+  SiNodedotjs,
+  SiVercel,
+  SiGithub,
+  SiPython,
+  SiDocker,
+  SiPostgresql,
+  SiMongodb,
   SiCloudflare,
   SiCursor,
-  SiClaude,
-  SiModelcontextprotocol,
+  SiGit,
+  SiVite,
+  SiPnpm,
+  SiNpm,
+  SiSupabase,
+  SiGithubactions,
+  SiFastapi,
+  SiBun,
+  SiDiscord,
+  SiTelegram,
+  SiWhatsapp,
 } from "@icons-pack/react-simple-icons";
 
-const categories = ["All", "Frontend", "Backend", "Deploy", "AI", "Security", "Communication"];
+const techCategories = [
+  {
+    name: "Frontend",
+    techs: [
+      { name: "React", icon: SiReact, description: "Main UI library" },
+      { name: "Next.js", icon: SiNextdotjs, description: "React framework" },
+      { name: "TypeScript", icon: SiTypescript, description: "Type safety" },
+      { name: "Tailwind CSS", icon: SiTailwindcss, description: "Utility-first styles" },
+    ],
+  },
+  {
+    name: "Backend",
+    techs: [
+      { name: "Node.js", icon: SiNodedotjs, description: "JavaScript runtime" },
+      { name: "Python", icon: SiPython, description: "Versatile language" },
+      { name: "FastAPI", icon: SiFastapi, description: "Fast Python API" },
+    ],
+  },
+  {
+    name: "Serverless & Cloud",
+    techs: [
+      { name: "Vercel", icon: SiVercel, description: "Deploy & CI/CD" },
+      { name: "Cloudflare", icon: SiCloudflare, description: "Edge & CDN" },
+      { name: "Supabase", icon: SiSupabase, description: "Backend as a Service" },
+    ],
+  },
+  {
+    name: "IA & ML",
+    techs: [],
+  },
+  {
+    name: "Coding Tools",
+    techs: [
+      { name: "Cursor", icon: SiCursor, description: "AI-powered editor" },
+      { name: "Git", icon: SiGit, description: "Version control" },
+      { name: "GitHub", icon: SiGithub, description: "Repositories" },
+      { name: "GitHub Actions", icon: SiGithubactions, description: "CI/CD" },
+      { name: "Vite", icon: SiVite, description: "Fast build tool" },
+      { name: "pnpm", icon: SiPnpm, description: "Package manager" },
+      { name: "npm", icon: SiNpm, description: "Package registry" },
+      { name: "Bun", icon: SiBun, description: "Fast runtime" },
+    ],
+  },
+  {
+    name: "DevOps & Infra",
+    techs: [
+      { name: "Docker", icon: SiDocker, description: "Containers" },
+    ],
+  },
+  {
+    name: "Database",
+    techs: [
+      { name: "PostgreSQL", icon: SiPostgresql, description: "Relational SQL" },
+      { name: "MongoDB", icon: SiMongodb, description: "NoSQL" },
+    ],
+  },
+  {
+    name: "Monitoring",
+    techs: [],
+  },
+  {
+    name: "Security",
+    techs: [],
+  },
+  {
+    name: "Mobile",
+    techs: [],
+  },
+  {
+    name: "Desktop",
+    techs: [],
+  },
+];
 
-const toolsByCategory = {
-  Frontend: [
-    { icon: SiNextdotjs, name: "Next.js" },
-    { icon: SiReact, name: "React" },
-    { icon: SiFramer, name: "Framer" },
-    { icon: SiTypescript, name: "TypeScript" },
-    { icon: SiTailwindcss, name: "Tailwind" },
-  ],
-  Backend: [
-    { icon: SiPython, name: "Python" },
-    { icon: SiNodedotjs, name: "Node.js" },
-    { icon: SiFastapi, name: "FastAPI" },
-    { icon: SiSupabase, name: "Supabase" },
-    { icon: SiMongodb, name: "MongoDB" },
-    { icon: SiClerk, name: "Clerk" },
-  ],
-  Deploy: [
-    { icon: SiVercel, name: "Vercel" },
-    { icon: SiRailway, name: "Railway" },
-    { icon: SiDocker, name: "Docker" },
-    { icon: SiGithub, name: "GitHub" },
-  ],
-  AI: [
-    { icon: SiOpenrouter, name: "OpenRouter" },
-    { icon: SiClaude, name: "Claude" },
-    { icon: SiCursor, name: "Cursor" },
-  ],
-  Security: [
-    { icon: SiProtonmail, name: "Proton Mail" },
-    { icon: SiCloudflare, name: "Cloudflare" },
-    { icon: SiModelcontextprotocol, name: "MCP" },
-  ],
-  Communication: [
-    { icon: SiResend, name: "Resend" },
-  ],
-};
+export default function StackPage() {
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
-export default function Stack() {
-  const [activeCategory, setActiveCategory] = useState("All");
-
-  const filteredTools = activeCategory === "All"
-    ? Object.values(toolsByCategory).flat()
-    : toolsByCategory[activeCategory as keyof typeof toolsByCategory];
+  const filteredCategories = selectedCategory
+    ? techCategories.filter((cat) => cat.name === selectedCategory)
+    : techCategories;
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black relative overflow-hidden pb-16">
-      {/* Liquid Background Orbs */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-black/5 dark:bg-white/5 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-black/5 dark:bg-white/5 rounded-full blur-[120px]" />
-        <div className="absolute top-[30%] left-[40%] w-[40%] h-[40%] bg-black/3 dark:bg-white/3 rounded-full blur-[100px]" />
-      </div>
+    <div className="min-h-screen bg-white dark:bg-black flex flex-col">
+      <Header />
 
-      <div className="max-w-2xl mx-auto px-4 py-8 sm:py-12 relative">
-        <Header menuOpen={false} setMenuOpen={() => {}} />
+      <div className="max-w-6xl mx-auto px-4 pt-24 pb-8 sm:pt-28 sm:pb-12 w-full flex-1">
+        <h1 className="text-3xl sm:text-4xl font-bold mb-4 text-black dark:text-white">
+          Tech Stack
+        </h1>
+        <p className="text-lg text-black/60 dark:text-white/60 mb-8">
+          All the technologies I use to build digital products.
+        </p>
 
-        {/* Stack Section */}
-        <section className="mb-16">
-          <div className="text-center mb-10">
-            <h2 className="text-xl font-bold text-black dark:text-white mb-2">
-              Tech Stack
+        {/* Filter Tabs */}
+        <div className="flex gap-2 mb-8 overflow-x-auto pb-2 scrollbar-hide">
+          <button
+            onClick={() => setSelectedCategory(null)}
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors whitespace-nowrap ${
+              selectedCategory === null
+                ? "bg-black dark:bg-white text-white dark:text-black"
+                : "bg-black/5 dark:bg-white/5 text-black/60 dark:text-white/60 hover:bg-black/10 dark:hover:bg-white/10"
+            }`}
+          >
+            All
+          </button>
+          {techCategories.map((category) => (
+            <button
+              key={category.name}
+              onClick={() => setSelectedCategory(category.name)}
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors whitespace-nowrap ${
+                selectedCategory === category.name
+                  ? "bg-black dark:bg-white text-white dark:text-black"
+                  : "bg-black/5 dark:bg-white/5 text-black/60 dark:text-white/60 hover:bg-black/10 dark:hover:bg-white/10"
+              }`}
+            >
+              {category.name}
+            </button>
+          ))}
+        </div>
+
+        {/* Tech Grid */}
+        {filteredCategories.map((category) => (
+          <section key={category.name} className="mb-12">
+            <h2 className="text-xl font-semibold text-black dark:text-white mb-6">
+              {category.name}
             </h2>
-            <p className="text-sm text-black/50 dark:text-white/50">
-              Tools I use to create magic
-            </p>
-          </div>
-
-          {/* Category Filters */}
-          <div className="flex flex-wrap justify-center gap-2 mb-10">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                  activeCategory === category
-                    ? "bg-black dark:bg-white text-white dark:text-black"
-                    : "text-black/50 dark:text-white/50 hover:text-black dark:hover:text-white"
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-
-          {/* Tools Grid */}
-          <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 gap-4 sm:gap-6">
-            {filteredTools.map((tool) => (
-              <a
-                key={tool.name}
-                href="#"
-                className="group flex flex-col items-center gap-2"
-              >
-                <tool.icon
-                  size={40}
-                  className="text-black/70 dark:text-white/70 group-hover:text-black dark:group-hover:text-white group-hover:scale-110 transition-all duration-200"
-                />
-                <span className="text-[10px] font-medium text-black/60 dark:text-white/60 text-center group-hover:text-black dark:group-hover:text-white transition-colors">
-                  {tool.name}
-                </span>
-              </a>
-            ))}
-          </div>
-
-          {/* Tools count */}
-          <p className="text-center text-xs text-black/30 dark:text-white/30 mt-8">
-            {filteredTools.length} {filteredTools.length === 1 ? 'tool' : 'tools'}
-            {activeCategory !== "All" && ` in ${activeCategory}`}
-          </p>
-        </section>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+              {category.techs.map((tech) => (
+                <div
+                  key={tech.name}
+                  className="group p-4 border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 transition-all rounded-lg"
+                >
+                  <div className="flex flex-col items-center text-center gap-3">
+                    <div className="w-12 h-12 flex items-center justify-center">
+                      <tech.icon size={32} />
+                    </div>
+                    <div>
+                      <h3 className="text-sm font-semibold text-black dark:text-white">
+                        {tech.name}
+                      </h3>
+                      <p className="text-xs text-black/60 dark:text-white/60 mt-1">
+                        {tech.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        ))}
       </div>
 
       <Footer />

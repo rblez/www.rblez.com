@@ -3,121 +3,110 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { SiGithub } from "@icons-pack/react-simple-icons";
+import { SiProtonmail } from "@icons-pack/react-simple-icons";
 
-interface HeaderProps {
-  menuOpen: boolean;
-  setMenuOpen: (open: boolean) => void;
-}
+const navLinks = [
+  { name: "Blog", href: "/blog" },
+  { name: "Stack", href: "/stack" },
+  { name: "Projects", href: "/projects" },
+  { name: "Branding", href: "/branding" },
+  { name: "Community", href: "/community" },
+];
 
-export function Header({ menuOpen, setMenuOpen }: HeaderProps) {
-  const pathname = usePathname();
-
-  const navLinks = [
-    { href: "/me", label: "Me" },
-    { href: "/stack", label: "Stack" },
-    { href: "/blog", label: "Blog" },
-  ];
+export function Header() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <>
-      {/* Mobile Menu Overlay */}
-      {menuOpen && (
-        <div
-          className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 lg:hidden"
-          onClick={() => setMenuOpen(false)}
-        />
-      )}
-
-      {/* Mobile Menu - Full Screen */}
-      <div className={`fixed inset-0 bg-white dark:bg-black z-50 transform transition-transform duration-300 lg:hidden ${menuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
-        <div className="flex flex-col items-center justify-center h-full">
-          <button
-            onClick={() => setMenuOpen(false)}
-            className="absolute top-6 right-6 text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors"
-          >
-            <i className="ri-close-line text-3xl"></i>
-          </button>
-          <nav className="text-center space-y-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`block text-4xl font-bold transition-colors ${
-                  pathname === link.href
-                    ? "text-black dark:text-white"
-                    : "text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white"
-                }`}
-                onClick={() => setMenuOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
+      {/* Top Bar - Language Notice */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-black dark:bg-white text-white dark:text-black text-xs py-1.5 px-4">
+        <div className="max-w-6xl mx-auto flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <span className="flex items-center gap-1.5">
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.148" />
+              </svg>
+              <span>EN / ES</span>
+            </span>
+            <span className="text-white/60 dark:text-black/60">|</span>
+            <span>This site is in English</span>
+          </div>
         </div>
       </div>
 
-      <header className="mb-8 sm:mb-12">
-        <div className="flex items-center justify-between mb-4">
-          {/* Left: Logo */}
-          <Link href="/me" className="w-8 h-8">
-            <Image
-              src="/isotipe.svg"
-              alt="rblez"
-              width={32}
-              height={32}
-              className="w-full h-full brightness-0 invert"
-            />
-          </Link>
+      {/* Main Header */}
+      <header className="fixed top-8 left-0 right-0 z-40 bg-white/80 dark:bg-black/80 backdrop-blur-sm border-b border-black/10 dark:border-white/10">
+        <div className="max-w-6xl mx-auto px-4 py-3">
+          <div className="flex items-center justify-between">
+            {/* Left: Logo */}
+            <Link href="/" className="w-8 h-8">
+              <Image
+                src="/isotipe.svg"
+                alt="rblez"
+                width={32}
+                height={32}
+                className="w-full h-full brightness-0 invert"
+              />
+            </Link>
 
-          {/* Right: Desktop Nav + Hamburger + GitHub */}
-          <div className="flex items-center gap-1">
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-1 mr-2">
+            {/* Center: Desktop Navigation */}
+            <nav className="hidden md:flex items-center gap-6">
               {navLinks.map((link) => (
                 <Link
-                  key={link.href}
+                  key={link.name}
                   href={link.href}
-                  className={`relative px-4 py-2 text-sm font-medium overflow-hidden group ${
-                    pathname === link.href
-                      ? "text-black dark:text-white"
-                      : "text-black/60 dark:text-white/60"
-                  }`}
+                  className="text-sm uppercase tracking-wider text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors"
                 >
-                  <span className="relative z-10">{link.label}</span>
-                  <span
-                    className={`absolute bottom-0 left-0 h-0.5 bg-black dark:bg-white transition-all duration-300 ${
-                      pathname === link.href ? "w-full" : "w-0 group-hover:w-full"
-                    }`}
-                  />
+                  {link.name}
                 </Link>
               ))}
             </nav>
 
-            {/* Mobile Hamburger - 2 lines animated */}
-            <button
-              onClick={() => setMenuOpen(true)}
-              className="lg:hidden p-2 text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors"
-              aria-label="Menu"
-            >
-              <div className="w-5 relative flex flex-col justify-center">
-                <span className={`block w-5 h-0.5 bg-current transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-[5px]' : '-translate-y-[2px]'}`}></span>
-                <span className={`block w-5 h-0.5 bg-current transition-all duration-300 ${menuOpen ? 'opacity-0 rotate-45' : 'opacity-100 translate-y-[2px]'}`}></span>
-              </div>
-            </button>
+            {/* Right: Contact + Mobile Menu */}
+            <div className="flex items-center gap-2">
+              <a
+                href="mailto:rblez@proton.me"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-black dark:bg-white text-white dark:text-black text-sm font-medium hover:opacity-90 transition-opacity"
+              >
+                <SiProtonmail size={16} />
+              </a>
 
-            {/* GitHub Repo */}
-            <a
-              href="https://github.com/rblez/rblez.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors"
-              aria-label="GitHub Repo"
-            >
-              <SiGithub size={22} />
-            </a>
+              {/* Mobile Menu Button */}
+              <button
+                className="md:hidden p-2 text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                aria-label="Toggle menu"
+              >
+                {mobileMenuOpen ? (
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                ) : (
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                )}
+              </button>
+            </div>
           </div>
+
+          {/* Mobile Menu */}
+          {mobileMenuOpen && (
+            <nav className="md:hidden py-4 border-t border-black/10 dark:border-white/10 mt-2">
+              <div className="flex flex-col gap-3">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className="text-sm uppercase tracking-wider text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </div>
+            </nav>
+          )}
         </div>
       </header>
     </>

@@ -1,29 +1,72 @@
-@import "tailwindcss";
-@import "remixicon/fonts/remixicon.css";
-
+/* GT Sectra - Display */
 @font-face {
-  font-family: "CursorGothic";
-  src: url("/fonts/CursorGothic_Regular.woff2") format("woff2");
+  font-family: 'GT Sectra';
+  src: url('/fonts/GT-Sectra-Book.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* GT Cinetype - Sans */
+@font-face {
+  font-family: 'GT Cinetype';
+  src: url('/fonts/GT-Cinetype-Trial-Regular.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "CursorGothic";
-  src: url("/fonts/CursorGothic_Bold.woff2") format("woff2");
+  font-family: 'GT Cinetype';
+  src: url('/fonts/GT-Cinetype-Trial-Bold.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "BerkeleyMono";
-  src: url("/fonts/BerkeleyMono_Regular.woff2") format("woff2");
+  font-family: 'GT Cinetype';
+  src: url('/fonts/GT-Cinetype-Trial-Regular-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Cinetype';
+  src: url('/fonts/GT-Cinetype-Trial-Bold-Italic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Cinetype';
+  src: url('/fonts/GT-Cinetype-Trial-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Cinetype';
+  src: url('/fonts/GT-Cinetype-Trial-Light-Italic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* GT Cinetype Mono */
+@font-face {
+  font-family: 'GT Cinetype Mono';
+  src: url('/fonts/GT-Cinetype-Trial-Mono.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
+
+@import "tailwindcss";
+@import "remixicon/fonts/remixicon.css";
 
 @layer base {
   :root {
@@ -36,23 +79,31 @@
       color-scheme: dark;
     }
   }
-}
 
-* {
-  font-family: "CursorGothic", -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
-}
+  * {
+    font-family: "GT Cinetype", -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  }
 
-body {
-  background: #ffffff;
-  color: #000000;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-@media (prefers-color-scheme: dark) {
   body {
-    background: #000000;
-    color: #ffffff;
+    background: #ffffff;
+    color: #000000;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background: #000000;
+      color: #ffffff;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "GT Sectra", "GT Cinetype", serif;
+  }
+
+  code, pre, kbd, samp {
+    font-family: "GT Cinetype Mono", "SF Mono", monospace;
   }
 }
 
@@ -65,6 +116,60 @@ body {
   text-decoration: underline;
 }
 
-.font-mono {
-  font-family: "BerkeleyMono", "SF Mono", monospace;
+/* Prose styles for MDX content */
+.prose {
+  --tw-prose-body: inherit;
+  --tw-prose-headings: inherit;
+  --tw-prose-links: inherit;
+  --tw-prose-code: inherit;
+}
+
+.prose :where(pre):not(:where([class~="not-prose"] *)) {
+  background-color: transparent;
+  border: 1px solid rgb(0 0 0 / 0.1);
+  border-radius: 0.5rem;
+}
+
+.dark .prose :where(pre):not(:where([class~="not-prose"] *)) {
+  border-color: rgb(255 255 255 / 0.1);
+}
+
+.prose :where(code):not(:where([class~="not-prose"] *)) {
+  background-color: rgb(0 0 0 / 0.05);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.dark .prose :where(code):not(:where([class~="not-prose"] *)) {
+  background-color: rgb(255 255 255 / 0.1);
+}
+
+.prose :where(pre code):not(:where([class~="not-prose"] *)) {
+  background-color: transparent;
+  padding: 0;
+}
+
+.prose :where(table):not(:where([class~="not-prose"] *)) {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.prose :where(th):not(:where([class~="not-prose"] *)) {
+  background-color: rgb(0 0 0 / 0.05);
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+}
+
+.dark .prose :where(th):not(:where([class~="not-prose"] *)) {
+  background-color: rgb(255 255 255 / 0.1);
+}
+
+.prose :where(td):not(:where([class~="not-prose"] *)) {
+  padding: 0.75rem 1rem;
+  border-top: 1px solid rgb(0 0 0 / 0.1);
+}
+
+.dark .prose :where(td):not(:where([class~="not-prose"] *)) {
+  border-top-color: rgb(255 255 255 / 0.1);
 }

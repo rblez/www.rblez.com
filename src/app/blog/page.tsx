@@ -1,58 +1,74 @@
-"use client";
-
-import { useState } from "react";
 import { posts } from "#site/content";
+import Link from "next/link";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import Image from "next/image";
-import Link from "next/link";
 
-const publishedPosts = posts
-  .filter((post) => post.published)
-  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-
-export default function Blog() {
-  const [menuOpen, setMenuOpen] = useState(false);
+export default function BlogPage() {
+  const publishedPosts = posts
+    .filter((post) => post.published)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black relative overflow-hidden pb-16">
-      {/* Liquid Background Orbs */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-black/5 dark:bg-white/5 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-black/5 dark:bg-white/5 rounded-full blur-[120px]" />
-        <div className="absolute top-[30%] left-[40%] w-[40%] h-[40%] bg-black/3 dark:bg-white/3 rounded-full blur-[100px]" />
-      </div>
+    <div className="min-h-screen bg-white dark:bg-black flex flex-col">
+      <Header />
 
-      <div className="max-w-2xl mx-auto px-4 py-8 sm:py-12 relative flex-1 flex flex-col">
-        <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <div className="max-w-4xl mx-auto px-4 pt-24 pb-8 sm:pt-28 sm:pb-12 w-full flex-1">
+        <h1 className="text-3xl sm:text-4xl font-bold mb-4 text-black dark:text-white">
+          Blog
+        </h1>
+        <p className="text-lg text-black/60 dark:text-white/60 mb-12">
+          Articles about technology, development, and more.
+        </p>
 
-        <h1 className="text-2xl sm:text-3xl font-bold text-black dark:text-white mb-8">Blog</h1>
-
-        <section className="space-y-4 sm:space-y-6 flex-1">
-          {publishedPosts.map((post) => {
-            const cleanSlug = post.slug.replace(/^blog\//, '');
-            return (
-              <article key={post.slug} className="group">
-                <Link href={`/blog/${cleanSlug}`} className="block">
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="flex-1">
-                      <h2 className="text-base sm:text-lg font-semibold text-black dark:text-white group-hover:underline">
-                        {post.title}
-                      </h2>
+        {publishedPosts.length === 0 ? (
+          <p className="text-black/60 dark:text-white/60">
+            No posts yet. Check back soon!
+          </p>
+        ) : (
+          <div className="grid gap-8">
+            {publishedPosts.map((post) => {
+              const cleanSlug = post.slug.replace("blog/", "");
+              return (
+                <article
+                  key={post.slug}
+                  className="group p-6 rounded-xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 transition-all"
+                >
+                  <Link href={`/blog/${cleanSlug}`}>
+                    <h2 className="text-xl font-semibold text-black dark:text-white mb-2 group-hover:text-black/80 dark:group-hover:text-white/80 transition-colors">
+                      {post.title}
+                    </h2>
+                    {post.description && (
+                      <p className="text-sm text-black/60 dark:text-white/60 mb-4">
+                        {post.description}
+                      </p>
+                    )}
+                    <div className="flex flex-wrap items-center gap-4 text-xs text-black/40 dark:text-white/40">
+                      <time dateTime={post.date}>
+                        {new Date(post.date).toLocaleDateString("en-US", {
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
+                        })}
+                      </time>
+                      {post.tags && post.tags.length > 0 && (
+                        <div className="flex gap-2">
+                          {post.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="px-2 py-1 rounded-full bg-black/10 dark:bg-white/10 text-black/60 dark:text-white/60"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                     </div>
-                    <time className="text-xs text-black/50 dark:text-white/50 whitespace-nowrap">
-                      {new Date(post.date).toLocaleDateString("en-US", {
-                        month: "short",
-                        day: "numeric",
-                        year: "numeric",
-                      })}
-                    </time>
-                  </div>
-                </Link>
-              </article>
-            );
-          })}
-        </section>
+                  </Link>
+                </article>
+              );
+            })}
+          </div>
+        )}
       </div>
 
       <Footer />
