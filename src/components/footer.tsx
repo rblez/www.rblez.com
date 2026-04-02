@@ -31,7 +31,7 @@ export function Footer() {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Quick Links */}
           <div>
-            <h3 className="text-sm font-semibold text-black dark:text-white mb-4">Quick Links</h3>
+            <h3 className="text-sm font-mono uppercase text-black dark:text-white mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
                 <Link
@@ -62,7 +62,7 @@ export function Footer() {
 
           {/* Legal */}
           <div>
-            <h3 className="text-sm font-semibold text-black dark:text-white mb-4">Legal</h3>
+            <h3 className="text-sm font-mono uppercase text-black dark:text-white mb-4">Legal</h3>
             <ul className="space-y-2">
               {legalLinks.map((link) => (
                 <li key={link.name}>
@@ -79,7 +79,7 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-sm font-semibold text-black dark:text-white mb-4">Contact</h3>
+            <h3 className="text-sm font-mono uppercase text-black dark:text-white mb-4">Contact</h3>
             <ul className="space-y-2">
               <li>
                 <a
