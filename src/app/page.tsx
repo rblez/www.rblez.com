@@ -27,7 +27,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-br from-black/20 to-white/20 dark:from-white/20 dark:to-black/20 rounded-full blur-2xl" />
                 <div className="relative w-48 h-48 rounded-full overflow-hidden border-2 border-black/5 dark:border-white/5">
                   <Image
-                    src="/ray.png"
+                    src="/obito.png"
                     alt="Ray - rblez"
                     width={192}
                     height={192}
