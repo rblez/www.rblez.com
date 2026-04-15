@@ -115,12 +115,12 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: "GT Sectra", "GT Cinetype", serif;
+    font-family: -apple-system;
     text-rendering: optimizeLegibility;
   }
 
   code, pre, kbd, samp {
-    font-family: "GT Cinetype Mono", "SF Mono", monospace;
+    font-family: "SF Mono", monospace;
   }
 }
 
