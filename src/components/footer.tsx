@@ -16,8 +16,8 @@ const legalLinks = [
 ];
 
 const socialLinks = [
-  { name: "X", icon: SiX, url: "https://x.com/rblezX" },
   { name: "GitHub", icon: SiGithub, url: "https://github.com/rblez" },
+{ name: "X", icon: SiX, url: "https://x.com/rblezX" },
   { name: "Telegram", icon: SiTelegram, url: "https://t.me/rblez" },
   { name: "Instagram", icon: SiInstagram, url: "https://instagram.com/rblez.build" },
   { name: "Bluesky", icon: SiBluesky, url: "https://bsky.app/profile/rblez.bsky.social" },
