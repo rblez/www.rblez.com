@@ -2,16 +2,15 @@
 
 Personal blog and portfolio by Ray (rblez) - Vibecoder.
 
-## 🌐 Routes
+## Routes
 
-- **`/`** → Redirects to `/me`
-- **`/me`** → Personal page with bio and social links
+- **`/`** → Home
 - **`/stack`** → Tech stack showcase with filtering
 - **`/blog`** → Blog posts listing
 - **`/blog/[slug]`** → Individual blog posts
 - **`404`** → Custom not found page
 
-## 🚀 Tech Stack
+## Tech Stack
 
 ### Frontend
 - **Next.js 16** - React framework with App Router
@@ -30,7 +29,7 @@ Personal blog and portfolio by Ray (rblez) - Vibecoder.
 - **Cursor** - AI-powered code editor
 - **Claude** - AI assistant
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 rblez-blog/
@@ -71,7 +70,7 @@ pnpm start
 pnpm lint
 ```
 
-## 🎨 Design System
+## Design System
 
 ### Colors
 - **Light mode**: White background, black text
@@ -88,7 +87,7 @@ pnpm lint
 - Smooth hover transitions
 - Scale animations on interactive elements
 
-## 📝 Content
+## Content
 
 Blog posts are written in MDX and stored in `content/blog/`. Each post requires:
 
@@ -101,16 +100,15 @@ published: true
 ---
 ```
 
-## 🔗 Social Links
+## Social Links
 
 - [X/Twitter](https://x.com/rblezX)
 - [GitHub](https://github.com/rblez)
-- [Dev.to](https://dev.to/rblez)
 
-## 🔗 Repository
+## Repository
 
 - [rblez.com](https://github.com/rblez/rblez.com)
 
-## 📄 License
+## License
 
 © 2026 rblez. All rights reserved.
