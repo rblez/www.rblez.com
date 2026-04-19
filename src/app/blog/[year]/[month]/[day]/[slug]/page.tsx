@@ -8,14 +8,24 @@ import { ArticleSchema, BreadcrumbSchema } from "@/components/structured-data";
 
 interface BlogPostPageProps {
   params: Promise<{
+    year: string;
+    month: string;
+    day: string;
     slug: string;
   }>;
 }
 
 export async function generateStaticParams() {
-  return posts.map((post) => ({
-    slug: post.slug.replace("blog/", ""),
-  }));
+  return posts.map((post) => {
+    const date = new Date(post.date);
+    const cleanSlug = post.slug.replace("blog/", "");
+    return {
+      year: date.getFullYear().toString(),
+      month: String(date.getMonth() + 1).padStart(2, "0"),
+      day: String(date.getDate()).padStart(2, "0"),
+      slug: cleanSlug,
+    };
+  });
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps) {
@@ -47,17 +57,20 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const { slug } = await params;
+  const { year, month, day, slug } = await params;
   const post = posts.find((p) => p.slug.replace("blog/", "") === slug);
 
   if (!post || !post.published) {
     notFound();
   }
 
+  const datePath = `${year}/${month}/${day}`;
+  const fullUrl = `https://rblez.com/blog/${datePath}/${slug}`;
+
   const breadcrumbItems = [
     { name: "Inicio", url: "https://rblez.com" },
     { name: "Blog", url: "https://rblez.com/blog" },
-    { name: post.title, url: `https://rblez.com/blog/${slug}` },
+    { name: post.title, url: fullUrl },
   ];
 
   return (
@@ -65,7 +78,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <ArticleSchema
         title={post.title}
         description={post.description}
-        slug={`blog/${slug}`}
+        slug={`blog/${datePath}/${slug}`}
         date={post.date}
         tags={post.tags || []}
       />

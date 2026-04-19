@@ -54,12 +54,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Blog posts
   const blogRoutes = posts
     .filter((post) => post.published)
-    .map((post) => ({
-      url: `${SITE_URL}/blog/${post.slug.replace("blog/", "")}`,
-      lastModified: new Date(post.date),
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
-    }));
+    .map((post) => {
+      const postDate = new Date(post.date);
+      const year = postDate.getFullYear();
+      const month = String(postDate.getMonth() + 1).padStart(2, "0");
+      const day = String(postDate.getDate()).padStart(2, "0");
+      const cleanSlug = post.slug.replace("blog/", "");
+      return {
+        url: `${SITE_URL}/blog/${year}/${month}/${day}/${cleanSlug}`,
+        lastModified: postDate,
+        changeFrequency: "monthly" as const,
+        priority: 0.8,
+      };
+    });
 
   // Projects
   const projectRoutes = projects

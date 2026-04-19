@@ -28,12 +28,17 @@ export default function BlogPage() {
           <div className="grid gap-8">
             {publishedPosts.map((post) => {
               const cleanSlug = post.slug.replace("blog/", "");
+              const postDate = new Date(post.date);
+              const year = postDate.getFullYear();
+              const month = String(postDate.getMonth() + 1).padStart(2, "0");
+              const day = String(postDate.getDate()).padStart(2, "0");
+              const dateUrl = `/blog/${year}/${month}/${day}/${cleanSlug}`;
               return (
                 <article
                   key={post.slug}
                   className="group p-4 sm:p-6 rounded-xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 transition-all min-w-0 overflow-hidden"
                 >
-                  <Link href={`/blog/${cleanSlug}`} className="block min-w-0">
+                  <Link href={dateUrl} className="block min-w-0">
                     <h2 className="text-lg sm:text-xl font-semibold text-black dark:text-white mb-2 group-hover:text-black/80 dark:group-hover:text-white/80 transition-colors break-words hyphens-auto">
                       {post.title}
                     </h2>
