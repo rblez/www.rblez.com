@@ -1,4 +1,4 @@
-# rblez-blog
+# portfolio
 
 Personal blog and portfolio by Ray (rblez).
 
