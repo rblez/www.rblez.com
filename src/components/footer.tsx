@@ -10,9 +10,9 @@ import {
 } from "@icons-pack/react-simple-icons";
 
 const legalLinks = [
-  { name: "Terms", href: "/legal/terms" },
-  { name: "Privacy", href: "/legal/privacy" },
-  { name: "Disclaimer", href: "/legal/disclaimer" },
+  { name: "Términos", href: "/legal/terms" },
+  { name: "Privacidad", href: "/legal/privacy" },
+  { name: "Aviso legal", href: "/legal/disclaimer" },
 ];
 
 const socialLinks = [
@@ -31,7 +31,7 @@ export function Footer() {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Quick Links */}
           <div>
-            <h3 className="text-sm font-mono uppercase text-black dark:text-white mb-4">Quick Links</h3>
+            <h3 className="text-sm font-mono uppercase text-black dark:text-white mb-4">Enlaces</h3>
             <ul className="space-y-2">
               <li>
                 <Link
@@ -54,7 +54,7 @@ export function Footer() {
                   href="/projects"
                   className="text-sm text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors"
                 >
-                  Projects
+                  Proyectos
                 </Link>
               </li>
             </ul>
@@ -79,7 +79,7 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-sm font-mono uppercase text-black dark:text-white mb-4">Contact</h3>
+            <h3 className="text-sm font-mono uppercase text-black dark:text-white mb-4">Contacto</h3>
             <ul className="space-y-2">
               <li>
                 <a
@@ -95,7 +95,7 @@ export function Footer() {
 
         <div className="pt-8 border-t border-black/10 dark:border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-6">
-            <p className="text-xs text-black/40 dark:text-white/40">© 2026 rblez. All rights reserved.</p>
+            <p className="text-xs text-black/40 dark:text-white/40">© 2026 rblez. Todos los derechos reservados.</p>
             <div className="flex items-center gap-4">
               {socialLinks.map((social) => (
                 <a

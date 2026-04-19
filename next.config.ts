@@ -30,6 +30,12 @@ const nextConfig: NextConfig = {
         port: "",
         search: "",
       },
+      {
+        protocol: "https",
+        hostname: "svgl.app",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
 };

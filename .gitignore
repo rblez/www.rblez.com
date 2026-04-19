@@ -43,3 +43,9 @@ next-env.d.ts
 
 # ai
 .agents
+
+# AI/Agent blog posts (local only)
+/content/blog/codex-el-agente-que-no-especula.mdx
+/content/blog/el-mejor-ai-agent-desde-cuba.mdx
+/content/blog/el-nuevo-ecosistema-de-agentes-autonomos-2026.mdx
+/content/blog/hoy-me-cree-una-cuenta-de-claude-desde-cuba.mdx

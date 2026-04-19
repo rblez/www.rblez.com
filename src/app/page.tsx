@@ -3,11 +3,11 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 
 export const metadata = {
-  title: "rblez | Solopreneur Building Digital Products",
-  description: "Solopreneur focused on building, launching, and monetizing digital products with simplicity, speed, and real-world utility.",
+  title: "rblez | Solopreneur Construyendo Productos Digitales",
+  description: "Solopreneur enfocado en construir, lanzar y monetizar productos digitales con simplicidad, velocidad y utilidad real.",
   openGraph: {
     title: "rblez | Solopreneur",
-    description: "Building digital products with simplicity, speed, and real-world utility.",
+    description: "Construyendo productos digitales con simplicidad, velocidad y utilidad real.",
     type: "profile",
   },
 };
@@ -78,59 +78,59 @@ export default function Home() {
           <div className="max-w-2xl">
             <div className="space-y-6 text-black/70 dark:text-white/70 leading-relaxed">
               <p className="text-base sm:text-lg">
-                I'm Ray, also known as <strong className="text-black dark:text-white font-semibold">rblez</strong> — a solopreneur focused on building, launching, and monetizing digital products with a clear emphasis on simplicity, speed, and real-world utility.
+                Soy Ray, también conocido como <strong className="text-black dark:text-white font-semibold">rblez</strong> — un solopreneur enfocado en construir, lanzar y monetizar productos digitales con énfasis en simplicidad, velocidad y utilidad real.
               </p>
 
               <p className="text-base sm:text-lg">
-                I work independently, handling the entire lifecycle of a product: from idea and validation to design, development, distribution, and sales. I don't separate roles — I integrate them. This allows me to move faster, make decisions without friction, and stay fully aligned with the end goal: <em className="text-black dark:text-white">creating products that work and generate results</em>.
+                Trabajo de forma independiente, manejando todo el ciclo de vida de un producto: desde la idea y validación hasta el diseño, desarrollo, distribución y ventas. No separo roles — los integro. Esto me permite moverme más rápido, tomar decisiones sin fricción y mantenerme alineado con el objetivo final: <em className="text-black dark:text-white">crear productos que funcionen y generen resultados</em>.
               </p>
 
               <p className="text-base sm:text-lg">
-                My approach is rooted in <strong className="text-black dark:text-white font-semibold">minimalism</strong>. I avoid unnecessary complexity, both in technology and in strategy. I believe most products fail not because of lack of features, but because they try to do too much without solving a clear problem. Because of that, I focus on building lean, functional solutions that can be tested and improved quickly.
+                Mi enfoque está arraigado en el <strong className="text-black dark:text-white font-semibold">minimalismo</strong>. Evito la complejidad innecesaria, tanto en tecnología como en estrategia. Creo que la mayoría de productos fracasan no por falta de características, sino por intentar hacer demasiado sin resolver un problema claro. Por eso me enfoco en construir soluciones funcionales y eficientes que puedan probarse y mejorarse rápidamente.
               </p>
 
               <p className="text-base sm:text-lg">
-                I'm not interested in building for the sake of building. Every project I work on is tied to a bigger objective: creating sustainable income streams and long-term independence through technology. That means prioritizing:
-              </p>
-
-              <ul className="list-disc ml-6 space-y-2 text-base sm:text-lg">
-                <li>Validation over perfection</li>
-                <li>Distribution over aesthetics</li>
-                <li>Execution over endless planning</li>
-              </ul>
-
-              <p className="text-base sm:text-lg">
-                A key part of my focus is working within <strong className="text-black dark:text-white font-semibold">constrained environments</strong>. Instead of seeing limitations as obstacles, I treat them as design inputs. This has led me to explore alternative systems — such as WhatsApp-based sales flows and crypto-powered transactions — as practical solutions for real-world problems where traditional infrastructure is limited or unavailable.
-              </p>
-
-              <p className="text-base sm:text-lg">
-                I'm particularly interested in <strong className="text-black dark:text-white font-semibold">simple distribution models</strong>. I don't rely on complex marketing funnels or large-scale paid acquisition. Instead, I look for direct, low-friction ways to connect products with users — systems that are easy to deploy, easy to manage, and effective in generating conversions.
-              </p>
-
-              <p className="text-base sm:text-lg">
-                I also continuously refine my tools and workflows. I don't commit to a fixed stack or ideology. I use what works, discard what doesn't, and optimize for efficiency at every step. <em className="text-black dark:text-white">Adaptability is a core principle</em> in how I operate.
-              </p>
-
-              <p className="text-base sm:text-lg">
-                Working alone has shaped the way I think. It forces clarity, accountability, and focus. There's no room for overengineering or unnecessary decisions — everything must serve a purpose. This constraint has helped me develop a mindset centered on ownership and responsibility, where outcomes depend entirely on execution.
-              </p>
-
-              <p className="text-base sm:text-lg">
-                I value:
+                No me interesa construir por construir. Cada proyecto en el que trabajo está vinculado a un objetivo mayor: crear fuentes de ingreso sostenibles e independencia a largo plazo a través de la tecnología. Eso significa priorizar:
               </p>
 
               <ul className="list-disc ml-6 space-y-2 text-base sm:text-lg">
-                <li>Results over opinions</li>
-                <li>Clarity over hype</li>
-                <li>Consistency over short bursts of motivation</li>
+                <li>Validación sobre perfección</li>
+                <li>Distribución sobre estética</li>
+                <li>Ejecución sobre planificación interminable</li>
               </ul>
 
               <p className="text-base sm:text-lg">
-                I don't aim to follow trends or replicate what others are doing. Instead, I focus on building systems that are practical, repeatable, and capable of generating leverage over time.
+                Una parte clave de mi enfoque es trabajar dentro de <strong className="text-black dark:text-white font-semibold">entornos con restricciones</strong>. En lugar de ver las limitaciones como obstáculos, las trato como insumos de diseño. Esto me ha llevado a explorar sistemas alternativos — como flujos de ventas basados en WhatsApp y transacciones con cripto — como soluciones prácticas para problemas reales donde la infraestructura tradicional es limitada o no está disponible.
+              </p>
+
+              <p className="text-base sm:text-lg">
+                Me interesan particularmente los <strong className="text-black dark:text-white font-semibold">modelos de distribución simples</strong>. No dependo de embudos de marketing complejos o adquisición pagada a gran escala. En su lugar, busco formas directas y de baja fricción para conectar productos con usuarios — sistemas que sean fáciles de implementar, fáciles de gestionar y efectivos para generar conversiones.
+              </p>
+
+              <p className="text-base sm:text-lg">
+                También refinó continuamente mis herramientas y flujos de trabajo. No me comprometo con un stack fijo o ideología. Uso lo que funciona, descarto lo que no, y optimizo para la eficiencia en cada paso. <em className="text-black dark:text-white">La adaptabilidad es un principio fundamental</em> en cómo opero.
+              </p>
+
+              <p className="text-base sm:text-lg">
+                Trabajar solo ha moldeado mi forma de pensar. Fuerza claridad, responsabilidad y enfoque. No hay espacio para sobreingeniería o decisiones innecesarias — todo debe servir a un propósito. Esta restricción me ha ayudado a desarrollar una mentalidad centrada en la propiedad y responsabilidad, donde los resultados dependen enteramente de la ejecución.
+              </p>
+
+              <p className="text-base sm:text-lg">
+                Valoro:
+              </p>
+
+              <ul className="list-disc ml-6 space-y-2 text-base sm:text-lg">
+                <li>Resultados sobre opiniones</li>
+                <li>Claridad sobre hype</li>
+                <li>Consistencia sobre ráfagas cortas de motivación</li>
+              </ul>
+
+              <p className="text-base sm:text-lg">
+                No busco seguir tendencias o replicar lo que otros hacen. En su lugar, me enfoco en construir sistemas que sean prácticos, repetibles y capaces de generar apalancamiento con el tiempo.
               </p>
 
               <p className="text-base sm:text-lg font-semibold text-black dark:text-white border-l-4 border-black dark:border-white pl-4">
-                I'm not trying to build everything. I'm building what works — and improving it relentlessly.
+                No intento construirlo todo. Estoy construyendo lo que funciona — y mejorándolo implacablemente.
               </p>
             </div>
           </div>

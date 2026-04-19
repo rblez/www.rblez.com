@@ -7,7 +7,7 @@ import { SiProtonmail } from "@icons-pack/react-simple-icons";
 const navLinks = [
   { name: "Blog", href: "/blog" },
   { name: "Stack", href: "/stack" },
-  { name: "Projects", href: "/projects" },
+  { name: "Proyectos", href: "/projects" },
 ];
 
 export function Header() {

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { MDXContent } from "@/components/mdx-content";
+import { ArticleSchema, BreadcrumbSchema } from "@/components/structured-data";
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -23,7 +24,7 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
 
   if (!post) {
     return {
-      title: "Post not found",
+      title: "Artículo no encontrado",
     };
   }
 
@@ -53,8 +54,22 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
+  const breadcrumbItems = [
+    { name: "Inicio", url: "https://rblez.com" },
+    { name: "Blog", url: "https://rblez.com/blog" },
+    { name: post.title, url: `https://rblez.com/blog/${slug}` },
+  ];
+
   return (
     <div className="min-h-screen bg-white dark:bg-black flex flex-col">
+      <ArticleSchema
+        title={post.title}
+        description={post.description}
+        slug={`blog/${slug}`}
+        date={post.date}
+        tags={post.tags || []}
+      />
+      <BreadcrumbSchema items={breadcrumbItems} />
       <Header />
 
       <article className="max-w-3xl mx-auto px-4 pt-24 pb-8 sm:pt-28 sm:pb-12 w-full flex-1">
@@ -67,7 +82,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
-            Back to blog
+            Volver al blog
           </Link>
 
           <h1 className="text-3xl sm:text-4xl font-bold mb-4 text-black dark:text-white">
@@ -76,7 +91,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
           <div className="flex flex-wrap items-center gap-4 text-sm text-black/60 dark:text-white/60">
             <time dateTime={post.date}>
-              {new Date(post.date).toLocaleDateString("en-US", {
+              {new Date(post.date).toLocaleDateString("es-ES", {
                 year: "numeric",
                 month: "long",
                 day: "numeric",

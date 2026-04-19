@@ -15,15 +15,15 @@ export default function ProjectsPage() {
 
       <div className="max-w-6xl mx-auto px-4 pt-24 pb-8 sm:pt-28 sm:pb-12 w-full flex-1">
         <h1 className="text-3xl sm:text-4xl font-bold mb-4 text-black dark:text-white">
-          Projects
+          Proyectos
         </h1>
         <p className="text-lg text-black/60 dark:text-white/60 mb-12">
-          Projects I have been working on.
+          Proyectos en los que he estado trabajando.
         </p>
 
         {publishedProjects.length === 0 ? (
           <p className="text-black/60 dark:text-white/60">
-            No projects yet. Check back soon!
+            No hay proyectos todavía. ¡Vuelve pronto!
           </p>
         ) : (
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -58,7 +58,7 @@ export default function ProjectsPage() {
                       </h2>
                       {project.featured && (
                         <span className="px-2 py-0.5 rounded-full text-xs bg-black dark:bg-white text-white dark:text-black">
-                          Featured
+                          Destacado
                         </span>
                       )}
                     </div>

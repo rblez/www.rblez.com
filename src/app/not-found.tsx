@@ -25,14 +25,14 @@ export default function NotFound() {
           404
         </h1>
         <p className="text-lg text-black/60 dark:text-white/60 mb-8">
-          Page not found
+          Página no encontrada
         </p>
         
         <Link 
           href="/?s=404"
           className="inline-flex items-center justify-center px-6 py-3 bg-black dark:bg-white text-white dark:text-black rounded-full font-medium hover:bg-black/80 dark:hover:bg-white/80 transition-all hover:scale-105"
         >
-          Back to home
+          Volver al inicio
         </Link>
       </div>
     </div>

@@ -1,69 +1,64 @@
 "use client";
 
+import {
+  JavaScript,
+  TypeScript,
+  Python,
+  PostgreSQL,
+  Nextjs,
+  Vite,
+  TailwindCSS,
+  Nodejs,
+  FastAPI,
+  Supabase,
+  Cloudflare,
+  Git,
+} from "@ridemountainpig/svgl-react";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import {
-  SiReact,
-  SiNextdotjs,
-  SiTailwindcss,
-  SiMongodb,
-  SiGithub,
-  SiVercel,
-  SiCloudflare,
-  SiSupabase,
-  SiProtonmail,
-  SiResend,
-  SiClerk,
-} from "@icons-pack/react-simple-icons";
-import { BetterAuthDark, OpenCodeDark, QwenDark, VisualStudioCode } from "@ridemountainpig/svgl-react";
-import { style } from "motion/react-client";
-import { color } from "motion";
 
-const techCategories = [
-  {
-    name: "Frontend",
-    techs: [
-      { name: "React", icon: SiReact, description: "UI Library" },
-      { name: "Next.js", icon: SiNextdotjs, description: "React Framework" },
-      { name: "Tailwind CSS", icon: SiTailwindcss, description: "Styling" },
-    ],
-  },
-  {
-    name: "Backend & Database",
-    techs: [
-      { name: "Supabase", icon: SiSupabase, description: "Backend as a Service" },
-      { name: "MongoDB", icon: SiMongodb, description: "NoSQL Database" },
-    ],
-  },
-  {
-    name: "Auth",
-    techs: [
-      { name: "Clerk", icon: SiClerk, description: "Authentication" },
-      { name: "Better Auth", icon: BetterAuthDark, description: "Auth Framework" },
-    ],
-  },
-  {
-    name: "Email",
-    techs: [
-      { name: "ProtonMail", icon: SiProtonmail, description: "Secure Email" },
-      { name: "Resend", icon: SiResend, description: "Email API" },
-    ],
-  },
-  {
-    name: "Infrastructure",
-    techs: [
-      { name: "Vercel", icon: SiVercel, description: "Deploy & Hosting" },
-      { name: "Cloudflare", icon: SiCloudflare, description: "Edge & CDN" },
-      { name: "GitHub", icon: SiGithub, description: "Version Control" },
-    ],
-  },
-  {
-    name: "AI & Tools",
-    techs: [
-      { name: "Qwen", icon: QwenDark, description: "AI Model" },
-      { name: "OpenCode", icon: OpenCodeDark, description: "Code Editor" },
-    ],
-  },
+interface Tech {
+  name: string;
+  description: string;
+  Icon?: React.ComponentType<{ className?: string }>;
+  logo?: string;
+  logoDark?: string;
+}
+
+// Mix: svgl-react + SVGL API URLs - all in one list
+const techs: Tech[] = [
+  // Lenguajes
+  { name: "JavaScript", Icon: JavaScript, description: "Lenguaje web" },
+  { name: "TypeScript", Icon: TypeScript, description: "JS tipado" },
+  { name: "Python", Icon: Python, description: "Backend y scripts" },
+  { name: "JSON", logo: "https://svgl.app/json.svg", description: "Formato de datos" },
+  // Bases de datos
+  { name: "PostgreSQL", Icon: PostgreSQL, description: "SQL relacional" },
+  { name: "MongoDB", logo: "https://svgl.app/mongodb.svg", description: "NoSQL documental" },
+  { name: "Supabase", Icon: Supabase, description: "Backend + PostgreSQL" },
+  // Frontend
+  { name: "React", logo: "https://svgl.app/react.svg", description: "Biblioteca UI" },
+  { name: "Next.js", Icon: Nextjs, description: "Framework React" },
+  { name: "Vite", Icon: Vite, description: "Build tool" },
+  { name: "Tailwind CSS", Icon: TailwindCSS, description: "Estilos" },
+  // Backend
+  { name: "Node.js", Icon: Nodejs, description: "Runtime JS" },
+  { name: "Express.js", logo: "https://svgl.app/expressjs.svg", logoDark: "https://svgl.app/expressjs-dark.svg", description: "Framework Node" },
+  { name: "FastAPI", Icon: FastAPI, description: "Framework Python" },
+  { name: "Auth.js", logo: "https://svgl.app/nextauth.svg", logoDark: "https://svgl.app/nextauth-dark.svg", description: "Autenticación" },
+  // Hosting
+  { name: "Vercel", logo: "https://svgl.app/vercel.svg", logoDark: "https://svgl.app/vercel-dark.svg", description: "Deploy frontend" },
+  { name: "Cloudflare", Icon: Cloudflare, description: "Edge + DNS" },
+  { name: "AWS", logo: "https://svgl.app/aws.svg", logoDark: "https://svgl.app/aws-dark.svg", description: "Cloud computing" },
+  { name: "Google Cloud", logo: "https://svgl.app/googlecloud.svg", description: "Cloud platform" },
+  { name: "Contabo", logo: "https://svgl.app/contabo.svg", description: "VPS hosting" },
+  // Herramientas
+  { name: "Git", Icon: Git, description: "Control de versiones" },
+  { name: "GitHub", logo: "https://svgl.app/github.svg", logoDark: "https://svgl.app/github-dark.svg", description: "Repositorios" },
+  { name: "NVM", logo: "https://svgl.app/nvm.svg", description: "Node version manager" },
+  { name: "NPM", logo: "https://svgl.app/npm.svg", description: "Package manager" },
+  { name: "PNPM", logo: "https://svgl.app/pnpm.svg", description: "Package manager" },
+  { name: "MCP", logo: "https://svgl.app/mcp.svg", description: "Model Context Protocol" },
 ];
 
 export default function StackPage() {
@@ -73,29 +68,45 @@ export default function StackPage() {
 
       <div className="max-w-6xl mx-auto px-4 pt-20 pb-8 sm:pt-24 sm:pb-12 w-full flex-1">
         <h1 className="text-3xl sm:text-4xl font-bold mb-4 text-black dark:text-white">
-          Tech Stack
+          Stack
         </h1>
         <p className="text-lg text-black/60 dark:text-white/60 mb-8">
-          Technologies I use to build digital products.
+          Tecnologías que uso para construir productos digitales.
         </p>
 
-        <div className="grid gap-12">
-          {techCategories.map((category) => (
-            <section key={category.name}>
-              
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
-                {category.techs.map((tech) => (
-                  <div
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+          {techs.map((tech) => (
+                  <a
                     key={tech.name}
-                    className="group p-4 border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 transition-all"
+                    href={`https://www.google.com/search?q=${tech.name}+technology`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative p-4 border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 transition-all"
                   >
+                    {/* Link icon - bottom right on hover */}
+                    <div className="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <i className="ri-external-link-line text-xs text-black/40 dark:text-white/40"></i>
+                    </div>
                     <div className="flex flex-col items-center text-center gap-3">
-                      <div className="w-10 h-10 flex items-center justify-center text-black dark:text-white">
-                        {typeof tech.icon === "function" && tech.icon.toString().includes("svg") ? (
-                          <tech.icon className="w-8 h-8" />
-                        ) : (
-                          <tech.icon size={32} />
-                        )}
+                      <div className="w-10 h-10 flex items-center justify-center relative">
+                        {tech.Icon ? (
+                          <tech.Icon className="w-8 h-8" />
+                        ) : tech.logo ? (
+                          <>
+                            <img
+                              src={tech.logo}
+                              alt={tech.name}
+                              className={`w-8 h-8 object-contain ${tech.logoDark ? 'dark:hidden' : ''}`}
+                            />
+                            {tech.logoDark && (
+                              <img
+                                src={tech.logoDark}
+                                alt={tech.name}
+                                className="w-8 h-8 object-contain hidden dark:block absolute"
+                              />
+                            )}
+                          </>
+                        ) : null}
                       </div>
                       <div>
                         <h3 className="text-sm font-semibold text-black dark:text-white">
@@ -106,10 +117,7 @@ export default function StackPage() {
                         </p>
                       </div>
                     </div>
-                  </div>
-                ))}
-              </div>
-            </section>
+                  </a>
           ))}
         </div>
       </div>

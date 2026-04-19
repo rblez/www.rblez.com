@@ -17,12 +17,12 @@ export default function BlogPage() {
           Blog
         </h1>
         <p className="text-lg text-black/60 dark:text-white/60 mb-12">
-          Articles about technology, development, and more.
+          Artículos sobre tecnología, desarrollo, y más.
         </p>
 
         {publishedPosts.length === 0 ? (
           <p className="text-black/60 dark:text-white/60">
-            No posts yet. Check back soon!
+            No hay artículos todavía. ¡Vuelve pronto!
           </p>
         ) : (
           <div className="grid gap-8">
@@ -31,20 +31,20 @@ export default function BlogPage() {
               return (
                 <article
                   key={post.slug}
-                  className="group p-6 rounded-xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 transition-all"
+                  className="group p-4 sm:p-6 rounded-xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 transition-all min-w-0 overflow-hidden"
                 >
-                  <Link href={`/blog/${cleanSlug}`}>
-                    <h2 className="text-xl font-semibold text-black dark:text-white mb-2 group-hover:text-black/80 dark:group-hover:text-white/80 transition-colors">
+                  <Link href={`/blog/${cleanSlug}`} className="block min-w-0">
+                    <h2 className="text-lg sm:text-xl font-semibold text-black dark:text-white mb-2 group-hover:text-black/80 dark:group-hover:text-white/80 transition-colors break-words hyphens-auto">
                       {post.title}
                     </h2>
                     {post.description && (
-                      <p className="text-sm text-black/60 dark:text-white/60 mb-4">
+                      <p className="text-sm text-black/60 dark:text-white/60 mb-4 break-words">
                         {post.description}
                       </p>
                     )}
                     <div className="flex flex-wrap items-center gap-4 text-xs text-black/40 dark:text-white/40">
                       <time dateTime={post.date}>
-                        {new Date(post.date).toLocaleDateString("en-US", {
+                        {new Date(post.date).toLocaleDateString("es-ES", {
                           year: "numeric",
                           month: "long",
                           day: "numeric",

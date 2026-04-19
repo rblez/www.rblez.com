@@ -1,88 +1,10 @@
-/* GT Sectra - Display */
-@font-face {
-  font-family: 'GT Sectra';
-  src: url('/fonts/GT-Sectra-Book.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'GT Sectra';
-  src: url('/fonts/GT-Sectra-Medium.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'GT Sectra';
-  src: url('/fonts/GT-Sectra-Fine-Book.ttf') format('truetype');
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* GT Cinetype - Sans */
-@font-face {
-  font-family: 'GT Cinetype';
-  src: url('/fonts/GT-Cinetype-Trial-Regular.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'GT Cinetype';
-  src: url('/fonts/GT-Cinetype-Trial-Bold.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'GT Cinetype';
-  src: url('/fonts/GT-Cinetype-Trial-Regular-Italic.otf') format('opentype');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'GT Cinetype';
-  src: url('/fonts/GT-Cinetype-Trial-Bold-Italic.otf') format('opentype');
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'GT Cinetype';
-  src: url('/fonts/GT-Cinetype-Trial-Light.otf') format('opentype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'GT Cinetype';
-  src: url('/fonts/GT-Cinetype-Trial-Light-Italic.otf') format('opentype');
-  font-weight: 300;
-  font-style: italic;
-  font-display: swap;
-}
-
-/* GT Cinetype Mono */
-@font-face {
-  font-family: 'GT Cinetype Mono';
-  src: url('/fonts/GT-Cinetype-Trial-Mono.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
 @import "tailwindcss";
 @import "remixicon/fonts/remixicon.css";
+
+@theme {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
 
 @layer base {
   :root {
@@ -99,7 +21,7 @@
   }
 
   * {
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+    font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   }
 
   body {
@@ -115,12 +37,12 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: -apple-system;
+    font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
     text-rendering: optimizeLegibility;
   }
 
   code, pre, kbd, samp {
-    font-family: "SF Mono", monospace;
+    font-family: var(--font-geist-mono), ui-monospace, monospace;
   }
 }
 

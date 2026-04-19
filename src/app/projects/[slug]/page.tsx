@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: ProjectPageProps) {
 
   if (!project) {
     return {
-      title: "Project not found",
+      title: "Proyecto no encontrado",
     };
   }
 
@@ -68,7 +68,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
-            Back to projects
+            Volver a proyectos
           </Link>
 
           {/* Imagen del proyecto */}
@@ -109,7 +109,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-black dark:bg-white text-white dark:text-black text-sm font-medium hover:opacity-90 transition-opacity"
               >
                 <SiGithub size={18} />
-                Project
+                Proyecto
               </a>
             )}
             {project.website && (
@@ -120,7 +120,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-black/20 dark:border-white/20 text-black dark:text-white text-sm font-medium hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
               >
                 <i className="ri-global-line text-base"></i>
-                Website
+                Sitio web
               </a>
             )}
           </div>

@@ -17,6 +17,7 @@
     "@ridemountainpig/svgl-react": "^1.0.16",
     "clsx": "^2.1.1",
     "color-bits": "^1.1.1",
+    "geist": "^1.7.0",
     "lucide-react": "^0.511.0",
     "motion": "^12.38.0",
     "next": "16.2.1",

@@ -74,11 +74,11 @@ const Callout: React.FC<CalloutProps> = ({ type = "info", children, title }) => 
   };
 
   const defaultTitles = {
-    info: "Info",
-    warning: "Warning",
+    info: "Información",
+    warning: "Advertencia",
     error: "Error",
-    success: "Success",
-    tip: "Tip",
+    success: "Éxito",
+    tip: "Consejo",
   };
 
   return (
@@ -214,10 +214,10 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ...components,
     // Images
     img: (props) => (
-      <span className="block my-8">
+      <span className="block my-8 max-w-full overflow-hidden">
         <Image
           {...props}
-          className="rounded-xl object-contain shadow-xl"
+          className="rounded-xl object-contain shadow-xl w-full h-auto max-w-full"
           width={props.width || 800}
           height={props.height || 450}
           alt={props.alt || ""}
