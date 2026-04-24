@@ -1,0 +1,111 @@
+---
+title: "pip vs uv: adiós al gestor lento de Python (sin hype)"
+description: "Comparación real entre pip y uv. Qué ganas al cambiar, qué pierdes, y si realmente vale la pena migrar hoy."
+date: "2026-04-24"
+published: true
+---
+
+## El problema
+
+`pip` funciona. Pero es lento, no resuelve dependencias de forma inteligente y te obliga a combinar varias herramientas (`venv`, `pip-tools`, `pyenv`) para tener un flujo decente.
+
+Si trabajas con Python a diario, ese tiempo perdido en instalaciones y entornos se acumula. Mucho.
+
+---
+
+## Los dos enfoques
+
+### pip (el nativo)
+
+- Viene con Python
+- Instala paquetes desde PyPI
+- No maneja entornos (necesitas `venv` aparte)
+- Resolución de dependencias básica
+
+**Realidad:**
+- Fiable, pero anticuado
+- Cada `pip install` puede ser una mini pesadilla de dependencias
+- No bloquea versiones por defecto (usa `requirements.txt` congelado)
+
+Es el martillo de siempre: cumple, pero no sorprende.
+
+---
+
+### uv (el disruptor)
+
+- Escrito en Rust, lanzado por Astral (los de `ruff`)
+- Reemplaza `pip`, `pip-tools`, `virtualenv`, `pyenv` y más
+- Instala paquetes 10-100x más rápido
+- Resuelve dependencias de forma determinista y rapidísima
+- Gestiona versiones de Python sin configuración extra
+
+**Realidad:**
+- Drop-in replacement para `pip`: comandos casi idénticos (`uv pip install`, `uv venv`)
+- Crea entornos aislados automáticamente
+- Compatible con `requirements.txt` y `pyproject.toml`
+- Todavía en evolución, pero perfectamente usable para producción
+
+Es la navaja suiza que Python debería haber tenido desde siempre.
+
+---
+
+[UV vs All](/images/uv-vs-all.svg)
+
+## Comparación directa
+
+| Factor | pip | uv |
+|---|---|---|
+| Velocidad de instalación | Baja | Muy alta |
+| Resolución de dependencias | Lenta, limitada | Rápida, moderna (PubGrub) |
+| Gestión de entornos | Manual (venv) | Integrada |
+| Gestión de versiones Python | Necesita pyenv | Integrada |
+| Compatibilidad | Total (es el oficial) | Casi total (crece rápido) |
+| Madurez | Máxima | Alta (usado en proyectos reales) |
+
+---
+
+## Diagnóstico
+
+Si sigues usando `pip` + `venv` + `pyenv` por separado, estás perdiendo tiempo y exponiéndote a errores de dependencias que `uv` elimina de raíz.
+
+No es una herramienta de moda. Es una evolución pragmática.
+
+---
+
+## Qué deberías usar
+
+### Si quieres velocidad, simplicidad y un solo binario para todo
+
+Usa:
+
+- `uv`
+- Adiós a `pip`, `virtualenv` y scripts de instalación interminables
+
+Ideal para desarrollo diario, CI/CD y entornos limpios.
+
+---
+
+### Si trabajas en entornos muy restrictivos o heredados
+
+Mantén `pip` como respaldo, pero prueba `uv` en proyectos nuevos. No hay razón real para no migrar.
+
+---
+
+## Conclusión
+
+- `pip` = funciona, pero es el pasado  
+- `uv` = rápido, unificado y compatible con tu flujo actual  
+
+El cambio es trivial (`pip install` → `uv pip install`) y la ganancia de tiempo es inmediata.
+
+No necesitas desinstalar nada. Solo instalar `uv` y empezar a usarlo hoy.
+
+---
+
+## Nota final
+
+Ninguna herramienta te convierte en mejor developer.
+
+Pero `uv` te quita fricción, y eso te acerca más rápido a lo que importa: **construir y distribuir software**.
+
+No te cases con `pip` por costumbre. Prueba, mide y decide.
