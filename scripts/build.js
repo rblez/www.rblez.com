@@ -163,14 +163,13 @@ async function generateIndex(posts) {
 
     <p class="text-[17px] font-light leading-[1.8] text-[#1a1a1a] mb-12">
       Soy desarrollador, construyo cosas en la web desde Cuba.
-      Trabajo con
-      <a href="https://nextjs.org" target="_blank" rel="noopener" class="underline decoration-[#bbb] underline-offset-[3px] hover:decoration-[#111]">Next.js</a>,
-      TypeScript, Supabase y Python.
+      Full-stack con JavaScript/TypeScript, PostgreSQL y Python, aprendiendo Rust.
       Creo herramientas para resolver mis propios problemas y,
       cuando tienen sentido, las publico.
       <br /><br />
       Ahora mismo estoy construyendo
-      <a href="https://crowco.de" target="_blank" rel="noopener" class="underline decoration-[#bbb] underline-offset-[3px] hover:decoration-[#111]">Crow Code</a>
+      <a href="#" target="_blank" rel="noopener"
+        class="underline decoration-[#bbb] underline-offset-[3px] hover:decoration-[#111]">Crow Code</a>
       — un asistente de código con IA —,
       <a href="#" class="underline decoration-[#bbb] underline-offset-[3px] hover:decoration-[#111]">Tiendly</a>
       — storefronts conectados a WhatsApp —, y
@@ -187,10 +186,13 @@ ${postList}
     <p class="font-mono text-[11px] font-light tracking-[0.12em] uppercase text-[#999] mb-5">Links</p>
 
     <div class="flex flex-wrap gap-6">
-      <a href="https://github.com/rblez" target="_blank" rel="noopener" class="font-mono text-[12px] font-light text-[#888] hover:text-[#111]">GitHub</a>
-      <a href="https://twitter.com/rblez" target="_blank" rel="noopener" class="font-mono text-[12px] font-light text-[#888] hover:text-[#111]">X / Twitter</a>
-      <a href="mailto:rblez@proton.me" class="font-mono text-[12px] font-light text-[#888] hover:text-[#111]">Email</a>
-      <a href="https://crowco.de" target="_blank" rel="noopener" class="font-mono text-[12px] font-light text-[#888] hover:text-[#111]">Crow Code</a>
+      <a href="https://github.com/rblez" target="_blank" rel="noopener"
+        class="font-mono text-[12px] font-light text-[#888] hover:text-[#111]">GitHub</a>
+      <a href="https://x.com/rblezX" target="_blank" rel="noopener"
+        class="font-mono text-[12px] font-light text-[#888] hover:text-[#111]">X / Twitter</a>
+      <a href="mailto:hello@rblez.com" class="font-mono text-[12px] font-light text-[#888] hover:text-[#111]">Email</a>
+      <a href="https://rblez.bsky.social" target="_blank" rel="noopener"
+        class="font-mono text-[12px] font-light text-[#888] hover:text-[#111]">Bluesky</a>
     </div>
 
   </main>
