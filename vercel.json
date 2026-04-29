@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "framework": null,
+  "installCommand": "pnpm install",
+  "buildCommand": "pnpm build",
+  "outputDirectory": ".",
+  "rewrites": [
+    { "source": "/writing/:slug", "destination": "/writing/:slug.html" }
+  ],
+  "cleanUrls": true
+}

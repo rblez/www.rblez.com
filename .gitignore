@@ -47,6 +47,10 @@ next-env.d.ts
 # archived next.js project
 /archived/
 
+# generated (build output)
+/.velite/
+/writing/
+
 # AI/Agent blog posts (local only)
 /content/blog/codex-el-agente-que-no-especula.mdx
 /content/blog/el-mejor-ai-agent-desde-cuba.mdx
