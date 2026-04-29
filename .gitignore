@@ -46,6 +46,7 @@ next-env.d.ts
 
 # archived next.js project
 /archived/
+/[archived]/
 
 # generated (build output)
 /.velite/
