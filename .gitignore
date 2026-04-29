@@ -44,6 +44,9 @@ next-env.d.ts
 # ai
 .agents
 
+# archived next.js project
+/archived/
+
 # AI/Agent blog posts (local only)
 /content/blog/codex-el-agente-que-no-especula.mdx
 /content/blog/el-mejor-ai-agent-desde-cuba.mdx
