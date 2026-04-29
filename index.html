@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,7 +8,9 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=Geist+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=Geist+Mono:wght@300;400&display=swap"
+    rel="stylesheet" />
   <script>
     tailwind.config = {
       theme: {
@@ -21,31 +24,44 @@
     }
   </script>
   <style>
-    ::selection { background: #111; color: #fafaf8; }
-    body { background: #fafaf8; }
-    .post-row:first-child { border-top: 1px solid #f0efed; }
-    .post-row { border-bottom: 1px solid #f0efed; }
-    a { transition: color 0.15s; }
+    ::selection {
+      background: #111;
+      color: #fafaf8;
+    }
+
+    body {
+      background: #fafaf8;
+    }
+
+    .post-row:first-child {
+      border-top: 1px solid #f0efed;
+    }
+
+    .post-row {
+      border-bottom: 1px solid #f0efed;
+    }
+
+    a {
+      transition: color 0.15s;
+    }
   </style>
 </head>
+
 <body class="font-serif text-[#111] antialiased">
 
   <main class="max-w-[560px] mx-auto px-6 py-20 sm:py-24">
 
-    <!-- Name -->
     <p class="text-[17px] font-normal tracking-[0.01em] mb-10">Ray</p>
 
-    <!-- Bio -->
     <p class="text-[17px] font-light leading-[1.8] text-[#1a1a1a] mb-12">
       Soy desarrollador, construyo cosas en la web desde Cuba.
-      Trabajo con
-      <a href="https://nextjs.org" target="_blank" rel="noopener" class="underline decoration-[#bbb] underline-offset-[3px] hover:decoration-[#111]">Next.js</a>,
-      TypeScript, Supabase y Python.
+      Full-stack con JavaScript/TypeScript, PostgreSQL y Python, aprendiendo Rust.
       Creo herramientas para resolver mis propios problemas y,
       cuando tienen sentido, las publico.
       <br /><br />
       Ahora mismo estoy construyendo
-      <a href="https://crowco.de" target="_blank" rel="noopener" class="underline decoration-[#bbb] underline-offset-[3px] hover:decoration-[#111]">Crow Code</a>
+      <a href="#" target="_blank" rel="noopener"
+        class="underline decoration-[#bbb] underline-offset-[3px] hover:decoration-[#111]">Crow Code</a>
       — un asistente de código con IA —,
       <a href="#" class="underline decoration-[#bbb] underline-offset-[3px] hover:decoration-[#111]">Tiendly</a>
       — storefronts conectados a WhatsApp —, y
@@ -53,43 +69,30 @@
       — una capa anti-bot para el edge.
     </p>
 
-    <!-- Writing -->
     <p class="font-mono text-[11px] font-light tracking-[0.12em] uppercase text-[#999] mb-5">Writing</p>
 
     <ul class="mb-14">
+
       <li class="post-row flex items-baseline gap-4 py-[10px]">
-        <a href="#" class="text-[16px] font-normal flex-1 hover:text-[#555]">Auser: anti-bot edge layer con Fastify y Upstash</a>
+        <a href="/writing/hello-world.html" class="text-[16px] font-normal flex-1 hover:text-[#555]">Hello World</a>
         <span class="font-mono text-[11px] font-light text-[#bbb] shrink-0">Apr 2025</span>
-      </li>
-      <li class="post-row flex items-baseline gap-4 py-[10px]">
-        <a href="#" class="text-[16px] font-normal flex-1 hover:text-[#555]">Tiendly: storefronts de WhatsApp para pymes cubanas</a>
-        <span class="font-mono text-[11px] font-light text-[#bbb] shrink-0">Mar 2025</span>
-      </li>
-      <li class="post-row flex items-baseline gap-4 py-[10px]">
-        <a href="#" class="text-[16px] font-normal flex-1 hover:text-[#555]">Crow Code: de idea a CLI con branding en pixel art</a>
-        <span class="font-mono text-[11px] font-light text-[#bbb] shrink-0">Feb 2025</span>
-      </li>
-      <li class="post-row flex items-baseline gap-4 py-[10px]">
-        <a href="#" class="text-[16px] font-normal flex-1 hover:text-[#555]">Cómo construir con lo que tienes</a>
-        <span class="font-mono text-[11px] font-light text-[#bbb] shrink-0">Jan 2025</span>
-      </li>
-      <li class="post-row flex items-baseline gap-4 py-[10px]">
-        <a href="#" class="text-[16px] font-normal flex-1 hover:text-[#555]">Por qué escribo mis propias herramientas</a>
-        <span class="font-mono text-[11px] font-light text-[#bbb] shrink-0">Dec 2024</span>
       </li>
     </ul>
 
-    <!-- Links -->
     <p class="font-mono text-[11px] font-light tracking-[0.12em] uppercase text-[#999] mb-5">Links</p>
 
     <div class="flex flex-wrap gap-6">
-      <a href="https://github.com/rblez" target="_blank" rel="noopener" class="font-mono text-[12px] font-light text-[#888] hover:text-[##111]">GitHub</a>
-      <a href="https://twitter.com/rblez" target="_blank" rel="noopener" class="font-mono text-[12px] font-light text-[#888] hover:text-[#111]">X / Twitter</a>
+      <a href="https://github.com/rblez" target="_blank" rel="noopener"
+        class="font-mono text-[12px] font-light text-[#888] hover:text-[##111]">GitHub</a>
+      <a href="https://x.com/rblezX" target="_blank" rel="noopener"
+        class="font-mono text-[12px] font-light text-[#888] hover:text-[#111]">X / Twitter</a>
       <a href="mailto:hello@rblez.com" class="font-mono text-[12px] font-light text-[#888] hover:text-[#111]">Email</a>
-      <a href="https://crowco.de" target="_blank" rel="noopener" class="font-mono text-[12px] font-light text-[#888] hover:text-[#111]">Crow Code</a>
+      <a href="https://rblez.bsky.social" target="_blank" rel="noopener"
+        class="font-mono text-[12px] font-light text-[#888] hover:text-[#111]">Bluesky</a>
     </div>
 
   </main>
 
 </body>
+
 </html>
