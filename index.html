@@ -1,138 +1,227 @@
 <!DOCTYPE html>
-<html lang="en" class="">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ray</title>
-  <meta name="description" content="Developer building on the web from Cuba." />
-  <meta property="og:title" content="Ray" />
-  <meta property="og:description" content="Developer building on the web from Cuba." />
-  <meta property="og:url" content="https://rblez.com" />
-  <link rel="manifest" href="/manifest.json" />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="description" content="Builder and founder." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;1,300;1,400&family=Geist+Mono:wght@300;400&display=swap" rel="stylesheet" />
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            serif: ['Averia Serif Libre', 'Georgia', 'serif'],
-            mono: ['Geist Mono', 'Courier New', 'monospace'],
-          }
-        }
-      }
-    }
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
-    ::selection { background: #2a2318; color: #f0e8d8; }
-    .dark ::selection { background: #f0e8d8; color: #2a2318; }
-    a { transition: color 0.15s; }
-    .project-link:hover .project-arrow { transform: translate(2px, -2px); }
-    .project-arrow { display: inline-block; transition: transform 0.15s; }
-  </style>
-  <script>
-    (function() {
-      const stored = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (stored === 'dark' || (!stored && prefersDark)) {
-        document.documentElement.classList.add('dark');
-      }
-    })();
-  </script>
-</head>
-<body class="font-serif text-[#2a2318] dark:text-[#ece4d4] bg-[#f0ead8] dark:bg-[#171410] antialiased transition-colors duration-300">
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <main class="max-w-[560px] mx-auto px-6 py-20 sm:py-24">
-
-    <!-- Header -->
-    <div class="flex items-center justify-between mb-12">
-      <p class="text-[17px] font-normal tracking-[0.01em]">Ray</p>
-      <button
-        id="theme-toggle"
-        onclick="toggleTheme()"
-        class="font-mono text-[11px] font-light tracking-[0.08em] text-[#a89e90] dark:text-[#5a5248] hover:text-[#2a2318] dark:hover:text-[#ece4d4] transition-colors"
-        aria-label="Toggle theme"
-      >
-        <span class="dark:hidden">dark</span>
-        <span class="hidden dark:inline">light</span>
-      </button>
-    </div>
-
-    <!-- Bio -->
-    <p class="text-[17px] font-light leading-[1.85] text-[#2a2318] dark:text-[#e4dcc8] mb-14">
-      Developer building on the web from Cuba. 19.
-      Full-stack with TypeScript, PostgreSQL, and Python — picking up Rust.
-      <br /><br />
-      I build tools that solve real problems, starting with my own.
-      When they hold up, I ship them.
-    </p>
-
-    <!-- Projects -->
-    <p class="font-mono text-[11px] font-light tracking-[0.12em] uppercase text-[#a89e90] dark:text-[#5a5248] mb-6">Building</p>
-
-    <div class="space-y-8 mb-14">
-
-      <div>
-        <a href="https://github.com/rblez/tiendify" target="_blank" rel="noopener"
-          class="project-link group inline-flex items-baseline gap-2 mb-2">
-          <span class="text-[16px] font-normal text-[#2a2318] dark:text-[#ece4d4] underline decoration-[#c8bfb0] dark:decoration-[#4a4238] underline-offset-[3px] group-hover:decoration-[#2a2318] dark:group-hover:decoration-[#ece4d4] transition-all">Tiendify</span>
-          <span class="project-arrow font-mono text-[11px] text-[#c8bfb0] dark:text-[#4a4238]">↗</span>
-        </a>
-        <p class="text-[15px] font-light leading-[1.75] text-[#6b6050] dark:text-[#9c9080]">
-          Digital storefronts for local businesses. Create your menu or catalog,
-          take orders directly on WhatsApp. No commissions, no complexity —
-          built for Latin American entrepreneurs who don't need Shopify.
-        </p>
-      </div>
-
-      <div>
-        <a href="https://github.com/rblez/memlink" target="_blank" rel="noopener"
-          class="project-link group inline-flex items-baseline gap-2 mb-2">
-          <span class="text-[16px] font-normal text-[#2a2318] dark:text-[#ece4d4] underline decoration-[#c8bfb0] dark:decoration-[#4a4238] underline-offset-[3px] group-hover:decoration-[#2a2318] dark:group-hover:decoration-[#ece4d4] transition-all">Memlink</span>
-          <span class="project-arrow font-mono text-[11px] text-[#c8bfb0] dark:text-[#4a4238]">↗</span>
-        </a>
-        <p class="text-[15px] font-light leading-[1.75] text-[#6b6050] dark:text-[#9c9080]">
-          Universal async memory for AI agents. Structured, persistent,
-          self-hosted. CLI-first. Drop it into any agent stack
-          without touching your architecture.
-        </p>
-      </div>
-
-    </div>
-
-    <!-- Stack -->
-    <p class="font-mono text-[11px] font-light tracking-[0.12em] uppercase text-[#a89e90] dark:text-[#5a5248] mb-4">Stack</p>
-    <p class="font-mono text-[12px] font-light text-[#9c9080] dark:text-[#6a6050] mb-14 leading-[2]">
-      JS&nbsp;/&nbsp;TS&nbsp;&nbsp;·&nbsp;&nbsp;Python&nbsp;&nbsp;·&nbsp;&nbsp;PostgreSQL&nbsp;&nbsp;·&nbsp;&nbsp;Rust <span class="text-[#c0b4a0] dark:text-[#4a4035] text-[10px]">(learning)</span>&nbsp;&nbsp;·&nbsp;&nbsp;Git
-    </p>
-
-    <!-- Links -->
-    <p class="font-mono text-[11px] font-light tracking-[0.12em] uppercase text-[#a89e90] dark:text-[#5a5248] mb-5">Links</p>
-
-    <div class="flex flex-wrap gap-6 items-center">
-      <a href="https://github.com/rblez" target="_blank" rel="noopener"
-        class="font-mono text-[12px] font-light text-[#9c9080] dark:text-[#6a6050] hover:text-[#2a2318] dark:hover:text-[#ece4d4] transition-colors">GitHub</a>
-      <a href="https://x.com/rblezzzz" target="_blank" rel="noopener"
-        class="font-mono text-[12px] font-light text-[#9c9080] dark:text-[#6a6050] hover:text-[#2a2318] dark:hover:text-[#ece4d4] transition-colors">X</a>
-      <a href="mailto:hello@rblez.com"
-        class="font-mono text-[12px] font-light text-[#9c9080] dark:text-[#6a6050] hover:text-[#2a2318] dark:hover:text-[#ece4d4] transition-colors">Email</a>
-      <a href="https://t.me/rblez" target="_blank" rel="noopener"
-        class="font-mono text-[12px] font-light text-[#9c9080] dark:text-[#6a6050] hover:text-[#2a2318] dark:hover:text-[#ece4d4] transition-colors">Telegram</a>
-    </div>
-
-  </main>
-
-  <script>
-    function toggleTheme() {
-      const html = document.documentElement;
-      const isDark = html.classList.contains('dark');
-      html.classList.toggle('dark', !isDark);
-      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    :root {
+      --bg: #fff;
+      --fg: #111;
+      --muted: #666;
+      --border: #eaeaea;
     }
-  </script>
 
+    html { font-size: 16px; }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem 6rem;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      gap: 1.25rem;
+      margin-bottom: 3.5rem;
+    }
+
+    nav a {
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    nav a:hover, nav a.active { color: var(--fg); }
+
+    /* HEADING */
+    h1 {
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    /* PROSE */
+    p {
+      font-size: 0.95rem;
+      color: var(--fg);
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+
+    p.muted { color: var(--muted); }
+
+    a {
+      color: var(--fg);
+      text-decoration: underline;
+      text-decoration-color: var(--border);
+      text-underline-offset: 3px;
+      transition: text-decoration-color 0.15s;
+    }
+
+    a:hover { text-decoration-color: var(--muted); }
+
+    /* LISTS */
+    ul {
+      list-style: none;
+      margin: 0 0 1.5rem 0;
+      padding: 0;
+    }
+
+    ul li {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      padding: 0.2rem 0;
+    }
+
+    ul li::before {
+      content: '—';
+      margin-right: 0.6rem;
+      color: var(--border);
+    }
+
+    /* DIVIDER */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+
+    /* SOCIAL ICONS */
+    .socials {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.75rem;
+      align-items: center;
+    }
+
+    .socials a {
+      display: flex;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .socials a:hover { color: var(--fg); }
+
+    .socials svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: 3.5rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+    }
+
+    footer p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <nav>
+      <a href="/" class="active">Home</a>
+    </nav>
+
+    <h1>Ray</h1>
+
+    <p>
+      I'm a <a href="https://github.com/rblez">builder and founder</a> working on
+      developer tooling and AI agents. I'm interested in how AI changes the way
+      software is built and maintained.
+    </p>
+
+    <p>
+      Right now I'm building <a href="https://github.com/rblez/memlink">memlink</a>,
+      a self-hosted MCP server that gives AI agents persistent, organized memory —
+      one memory, one URL, any agent connects. Compatible with Claude, Cursor, Windsurf,
+      and others. I'm also working on <a href="https://x.com/rblez_">Aiustant</a>,
+      an autonomous GitHub agent for code review, issue triage, and Q&amp;A.
+    </p>
+
+    <p>
+      I build in public and share what I learn along the way.
+      Follow on <a href="https://x.com/rblez_">X</a> or the
+      <a href="https://x.com/memlinkdotdev">memlink account</a> for updates.
+    </p>
+
+    <!-- SOCIAL ICONS (Simple Icons SVGs inline) -->
+    <div class="socials">
+
+      <!-- X -->
+      <a href="https://x.com/rblez_" target="_blank" rel="noopener" title="@rblez_ on X">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+      </a>
+
+      <!-- Telegram -->
+      <a href="https://t.me/rblez" target="_blank" rel="noopener" title="Telegram">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+        </svg>
+      </a>
+
+      <!-- GitHub -->
+      <a href="https://github.com/rblez" target="_blank" rel="noopener" title="GitHub">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+        </svg>
+      </a>
+
+      <!-- npm -->
+      <a href="https://www.npmjs.com/~rblez" target="_blank" rel="noopener" title="npm">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1.763 0C.786 0 0 .786 0 1.763v20.474C0 23.214.786 24 1.763 24h20.474c.977 0 1.763-.786 1.763-1.763V1.763C24 .786 23.214 0 22.237 0zM5.13 5.323l13.837.019-.009 13.836h-3.464l.01-10.382h-3.456L12.04 19.17H5.113z"/>
+        </svg>
+      </a>
+
+    </div>
+
+    <hr class="divider" />
+
+    <p><strong>Projects</strong></p>
+    <ul>
+      <li>
+        <a href="https://github.com/rblez/memlink">Memlink</a> —
+        self-hosted MCP server for AI agent memory
+      </li>
+      <li>
+        <a href="https://x.com/rblez_">Aiustant</a> —
+        autonomous GitHub engineering agent
+      </li>
+    </ul>
+
+    <footer>
+      <p>© 2026</p>
+    </footer>
+
+  </div>
 </body>
 </html>
