@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ray</title>
-  <meta name="description" content="Builder and founder." />
+  <meta name="description" content="Cuban software engineer building tools for AI agents." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -35,15 +35,20 @@
       padding: 4rem 1.5rem 6rem;
     }
 
-    /* HEADING */
     h1 {
       font-size: 1.25rem;
       font-weight: 500;
-      margin-bottom: 1.5rem;
+      margin-bottom: 0.35rem;
       letter-spacing: -0.01em;
     }
 
-    /* PROSE */
+    .location {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 1.75rem;
+      display: block;
+    }
+
     p {
       font-size: 0.95rem;
       color: var(--fg);
@@ -63,7 +68,6 @@
 
     a:hover { text-decoration-color: var(--muted); }
 
-    /* LISTS */
     ul {
       list-style: none;
       margin: 0 0 1.5rem 0;
@@ -82,14 +86,32 @@
       color: var(--border);
     }
 
-    /* DIVIDER */
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.85rem;
+      display: block;
+    }
+
+    .now-block {
+      border-left: 2px solid var(--border);
+      padding-left: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .now-block p {
+      margin-bottom: 0;
+    }
+
     .divider {
       border: none;
       border-top: 1px solid var(--border);
       margin: 2.5rem 0;
     }
 
-    /* SOCIAL ICONS */
     .socials {
       display: flex;
       gap: 1rem;
@@ -112,11 +134,63 @@
       fill: currentColor;
     }
 
-    /* FOOTER */
+    .projects-grid {
+      display: grid;
+      gap: 0;
+    }
+
+    .project-row {
+      display: flex;
+      flex-direction: column;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .project-row:first-child {
+      border-top: 1px solid var(--border);
+    }
+
+    .project-meta {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+
+    .project-name {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--fg);
+      text-decoration: underline;
+      text-decoration-color: var(--border);
+      text-underline-offset: 3px;
+      transition: text-decoration-color 0.15s;
+    }
+
+    .project-name:hover { text-decoration-color: var(--muted); }
+
+    .project-tag {
+      font-size: 0.7rem;
+      color: var(--muted);
+      background: #f5f5f5;
+      padding: 0.1rem 0.4rem;
+      border-radius: 3px;
+      letter-spacing: 0.02em;
+    }
+
+    .project-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.1rem;
+      line-height: 1.5;
+    }
+
     footer {
       margin-top: 3.5rem;
       border-top: 1px solid var(--border);
       padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     footer p {
@@ -124,32 +198,28 @@
       color: var(--muted);
       margin: 0;
     }
+
+    footer a {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    footer a:hover { color: var(--fg); }
   </style>
 </head>
 <body>
   <div class="container">
 
     <h1>Ray</h1>
+    <span class="location">Cuba</span>
 
     <p>
-      Cuban builder. I make tools for AI-assisted development —
-      the layer between agents and the work they actually do.
-    </p>
-
-    <p>
-      Currently: <a href="https://github.com/rblez/memlink">memlink</a>,
-      a self-hosted MCP server that gives AI agents persistent memory across sessions.
-      Works with Claude, Cursor, Windsurf, Codex, and others.
-      Also building <a href="https://github.com/rblez/mcpx">mcpx</a> —
-      one command to wire any MCP server into any agent.
-    </p>
-
-    <p>
-      Building in public on <a href="https://x.com/rblez_">X</a>.
+      Software engineer from Cuba. I build the tools AI agents need to work —
+      memory, context, connectivity. Mostly self-taught, always shipping.
     </p>
 
     <div class="socials">
-
       <!-- X -->
       <a href="https://x.com/rblez_" target="_blank" rel="noopener" title="@rblez_ on X">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -177,37 +247,56 @@
           <path d="M1.763 0C.786 0 0 .786 0 1.763v20.474C0 23.214.786 24 1.763 24h20.474c.977 0 1.763-.786 1.763-1.763V1.763C24 .786 23.214 0 22.237 0zM5.13 5.323l13.837.019-.009 13.836h-3.464l.01-10.382h-3.456L12.04 19.17H5.113z"/>
         </svg>
       </a>
-
     </div>
 
     <hr class="divider" />
 
-    <p><strong>Projects</strong></p>
-    <ul>
-      <li>
-        <a href="https://github.com/rblez/memlink">memlink</a> —
-        persistent memory for AI agents. self-hosted, MCP-native.
-      </li>
-      <li>
-        <a href="https://github.com/rblez/mcpx">mcpx</a> —
-        install any MCP server into any AI agent. one command.
-      </li>
-      <li>
-        <a href="https://github.com/rblez/aiustant">aiustant</a> —
-        autonomous GitHub agent for code review and issue triage.
-      </li>
-      <li>
-        <a href="https://asciidot.vercel.app">asciidot</a> —
-        image → braille dot art, in the browser.
-      </li>
-      <li>
-        <a href="https://roldos.vercel.app">roldos</a> —
-        landing page for a coffee shop in Santiago de Cuba.
-      </li>
-    </ul>
+    <span class="section-label">Now</span>
+    <div class="now-block">
+      <p>Shipping memlink 1.1.1 — persistent memory for AI agents via MCP. Self-hosted, no cloud required.</p>
+    </div>
+
+    <hr class="divider" />
+
+    <span class="section-label">Tools</span>
+    <div class="projects-grid">
+      <div class="project-row">
+        <div class="project-meta">
+          <a class="project-name" href="https://github.com/rblez/memlink" target="_blank" rel="noopener">memlink</a>
+          <span class="project-tag">active</span>
+        </div>
+        <span class="project-desc">persistent memory for AI agents. self-hosted, MCP-native.</span>
+      </div>
+      <div class="project-row">
+        <div class="project-meta">
+          <a class="project-name" href="https://github.com/pyrofast/wslink" target="_blank" rel="noopener">wslink</a>
+          <span class="project-tag">mini</span>
+        </div>
+        <span class="project-desc">zero-config TCP bridge between Windows and WSL. single binary.</span>
+      </div>
+    </div>
+
+    <br />
+
+    <span class="section-label">Experiments</span>
+    <div class="projects-grid">
+      <div class="project-row">
+        <div class="project-meta">
+          <a class="project-name" href="https://asciidot.vercel.app" target="_blank" rel="noopener">asciidot</a>
+        </div>
+        <span class="project-desc">image → braille dot art, in the browser.</span>
+      </div>
+      <div class="project-row">
+        <div class="project-meta">
+          <a class="project-name" href="https://roldos.vercel.app" target="_blank" rel="noopener">roldos</a>
+        </div>
+        <span class="project-desc">landing page for a coffee shop in Santiago de Cuba.</span>
+      </div>
+    </div>
 
     <footer>
-      <p>© 2026</p>
+      <p>Ray · Cuba · 2026</p>
+      <a href="mailto:hello@rblez.com">hello@rblez.com</a>
     </footer>
 
   </div>
