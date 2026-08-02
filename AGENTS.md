@@ -20,7 +20,8 @@ Minimal personal portfolio site for Ray (rblez). Single HTML file, zero JS, zero
 ```
 index.html        — the entire site (inline CSS, inline SVG icons, no JS)
 isotipo.svg       — logo, black (#000), used as header image
-favicon.svg       — same logo, white (#fff) on dark rounded square; referenced by <link rel="icon">
+favicon-black.svg   — same logo, black (#000), for light browser theme (first <link rel="icon">, default)
+favicon-white.svg   — same logo, white (#fff), for dark browser theme (second <link rel="icon"> with media query)
 og-image.svg      — 1200x630 OG/Twitter card image (white bg, black logo)
 robots.txt        — allows all, references sitemap.xml
 sitemap.xml       — single URL https://www.rblez.com/
