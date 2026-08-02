@@ -20,7 +20,10 @@ Minimal personal portfolio site for Ray (rblez). Single HTML file, zero JS, zero
 ```
 index.html        — the entire site (inline CSS, inline SVG icons, no JS)
 isotipo.svg       — logo, black (#000), used as header image
-favicon.svg       — same logo, white (#fff); referenced by <link rel="icon">
+favicon.svg       — same logo, white (#fff) on dark rounded square; referenced by <link rel="icon">
+og-image.svg      — 1200x630 OG/Twitter card image (white bg, black logo)
+robots.txt        — allows all, references sitemap.xml
+sitemap.xml       — single URL https://www.rblez.com/
 manifest.json     — PWA manifest
 wrangler.jsonc    — CF Workers config
 ```
