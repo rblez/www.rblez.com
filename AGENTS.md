@@ -4,28 +4,31 @@ Minimal personal portfolio site for Ray (rblez). Single HTML file, zero JS, zero
 
 ## Stack
 
-- **Deploy**: Cloudflare Workers via `wrangler.jsonc` (static assets mode, not a Worker script)
-- **Font**: Geist (Google Fonts), loaded via `<link>` in HTML
+- **Deploy**: Cloudflare Workers static assets (`wrangler.jsonc`, `assets.directory: "."`) — not Pages, no Worker script
+- **Font**: Geist via Google Fonts `<link>` in HTML
 - **No build step, no package.json, no tests, no CI**
 
 ## Commands
 
 | Action | Command |
 |--------|---------|
-| Preview locally | `npx wrangler pages dev .` |
+| Preview locally | `npx wrangler dev` |
 | Deploy to prod | `npx wrangler deploy` |
 
 ## Structure
 
 ```
-index.html        — the entire site (inline CSS, no JS)
-wrangler.jsonc    — CF Workers config, assets dir is "."
+index.html        — the entire site (inline CSS, inline SVG icons, no JS)
+isotipo.svg       — logo, black (#000), used as header image
+favicon.svg       — same logo, white (#fff); referenced by <link rel="icon">
 manifest.json     — PWA manifest
+wrangler.jsonc    — CF Workers config
 ```
 
 ## Constraints
 
-- Keep it zero-dependency: no JS frameworks, no build tools, no npm install needed
+- Keep it zero-dependency: no JS frameworks, no build tools, no `npm install` needed
 - Inline CSS only (no external stylesheets beyond the Geist font preconnect)
-- `wrangler deploy` uploads the entire directory — `.wrangler/` and `.env*` are gitignored
-- Wrangler config uses `nodejs_compat` flag
+- Site content is in Spanish (`lang="es"`)
+- `assets.directory` is `"."` — everything in the repo root gets uploaded and served publicly; `.gitignore` only affects git, so keep secrets out of the root
+- `isotipo.svg` stays black (#000) — only the favicon is white; don't merge them
