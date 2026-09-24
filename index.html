@@ -3,202 +3,706 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ray</title>
-  <meta name="description" content="Ingeniero de software cubano de 19 años. Hago webs, automatizaciones, APIs y sistemas fullstack." />
+
+  <title>Ray — Software Engineer & Builder</title>
+
+  <meta
+    name="description"
+    content="Ray es un ingeniero de software que construye productos, sistemas y automatizaciones."
+  />
+
+  <meta name="theme-color" content="#ffffff" />
+
   <link rel="canonical" href="https://www.rblez.com/" />
+
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.rblez.com/" />
-  <meta property="og:title" content="Ray Omar, Ingeniero de Software" />
-  <meta property="og:description" content="Ingeniero de software cubano. Construyo webs, automatizaciones, APIs y sistemas fullstack." />
+  <meta property="og:title" content="Ray — Software Engineer & Builder" />
+  <meta
+    property="og:description"
+    content="Construyo productos, sistemas y automatizaciones."
+  />
   <meta property="og:image" content="https://www.rblez.com/og-image.svg" />
-  <meta property="og:site_name" content="Ray Omar" />
+  <meta property="og:site_name" content="Ray" />
+
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Ray Omar, Ingeniero de Software" />
-  <meta name="twitter:description" content="Ingeniero de software cubano. Construyo webs, automatizaciones, APIs y sistemas fullstack." />
+  <meta name="twitter:title" content="Ray — Software Engineer & Builder" />
+  <meta
+    name="twitter:description"
+    content="Construyo productos, sistemas y automatizaciones."
+  />
   <meta name="twitter:image" content="https://www.rblez.com/og-image.svg" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="icon" type="image/svg+xml" href="/favicon-black.svg" media="(prefers-color-scheme: light)" />
-  <link rel="icon" type="image/svg+xml" href="/favicon-white.svg" media="(prefers-color-scheme: dark)" />
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Icons -->
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="/favicon-black.svg"
+    media="(prefers-color-scheme: light)"
+  />
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="/favicon-white.svg"
+    media="(prefers-color-scheme: dark)"
+  />
+
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     :root {
       --bg: #fff;
       --fg: #111;
       --muted: #666;
+      --soft: #888;
       --border: #eaeaea;
+      --border-hover: #d6d6d6;
+      --surface: #fafafa;
     }
 
-    html { font-size: 16px; }
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
 
     body {
       background: var(--bg);
       color: var(--fg);
-      font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-family:
+        "Geist",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
       font-weight: 400;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
-    .container {
-      max-width: 560px;
-      margin: 0 auto;
-      padding: 4rem 1.5rem 6rem;
-    }
-
-    .isotipo {
-      width: 32px;
-      height: 32px;
-    }
-
-    .header {
-      margin-bottom: 1.75rem;
-    }
-
-    p {
-      font-size: 0.95rem;
-      color: var(--fg);
-      line-height: 1.75;
-      margin-bottom: 1.25rem;
+    ::selection {
+      background: #111;
+      color: #fff;
     }
 
     a {
-      color: var(--fg);
-      text-decoration: underline;
-      text-decoration-color: var(--border);
-      text-underline-offset: 3px;
-      transition: text-decoration-color 0.15s;
+      color: inherit;
     }
 
-    a:hover { text-decoration-color: var(--muted); }
+    .container {
+      width: min(100% - 3rem, 680px);
+      margin: 0 auto;
+      padding: 4.5rem 0 5rem;
+    }
+
+    /* Header */
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 6rem;
+    }
+
+    .isotipo {
+      width: 34px;
+      height: 34px;
+      display: block;
+    }
+
+    .availability {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    .availability-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #111;
+    }
+
+    /* Hero */
+
+    .hero {
+      margin-bottom: 5.5rem;
+    }
+
+    .eyebrow {
+      margin-bottom: 1rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    h1 {
+      max-width: 620px;
+      font-size: clamp(2.4rem, 8vw, 4.4rem);
+      font-weight: 500;
+      letter-spacing: -0.055em;
+      line-height: 1.04;
+    }
+
+    .hero-description {
+      max-width: 580px;
+      margin-top: 1.75rem;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--fg);
+      font-size: 0.88rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition:
+        border-color 0.2s,
+        background 0.2s,
+        transform 0.2s;
+    }
+
+    .button:hover {
+      border-color: var(--border-hover);
+      background: var(--surface);
+      transform: translateY(-1px);
+    }
+
+    .button.primary {
+      border-color: #111;
+      background: #111;
+      color: #fff;
+    }
+
+    .button.primary:hover {
+      background: #222;
+    }
+
+    /* Sections */
+
+    section {
+      margin-top: 5rem;
+    }
+
+    .section-label {
+      margin-bottom: 1.5rem;
+      color: var(--soft);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* Projects */
+
+    .projects {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .project {
+      display: block;
+      padding: 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      text-decoration: none;
+      transition:
+        border-color 0.2s,
+        background 0.2s,
+        transform 0.2s;
+    }
+
+    .project:hover {
+      border-color: var(--border-hover);
+      background: var(--surface);
+      transform: translateY(-1px);
+    }
+
+    .project-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .project-name {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .project-arrow {
+      color: var(--soft);
+      font-size: 1rem;
+      transition: transform 0.2s;
+    }
+
+    .project:hover .project-arrow {
+      transform: translate(2px, -2px);
+    }
+
+    .project-description {
+      max-width: 560px;
+      margin-top: 0.4rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.9rem;
+    }
+
+    .tag {
+      padding: 0.25rem 0.5rem;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      color: var(--soft);
+      font-size: 0.72rem;
+    }
+
+    /* Now */
+
+    .now {
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--surface);
+    }
+
+    .now-title {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .now p {
+      margin-top: 0.6rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.75;
+    }
+
+    /* Stack */
+
+    .stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+
+    .stack-item {
+      padding: 0.5rem 0.7rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    /* Contact */
+
+    .contact {
+      padding-top: 1rem;
+    }
+
+    .contact h2 {
+      max-width: 500px;
+      font-size: clamp(1.7rem, 5vw, 2.5rem);
+      font-weight: 500;
+      letter-spacing: -0.035em;
+      line-height: 1.15;
+    }
+
+    .contact p {
+      max-width: 500px;
+      margin-top: 0.9rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .contact-link {
+      display: inline-block;
+      margin-top: 1.25rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: underline;
+      text-decoration-color: var(--border-hover);
+      text-underline-offset: 4px;
+    }
+
+    .contact-link:hover {
+      text-decoration-color: var(--fg);
+    }
+
+    /* Footer */
+
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-top: 6rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .copyright {
+      color: var(--soft);
+      font-size: 0.75rem;
+    }
 
     .socials {
       display: flex;
-      gap: 1.25rem;
-      margin-top: 2rem;
       align-items: center;
+      gap: 1rem;
     }
 
     .socials a {
       display: flex;
       color: var(--muted);
       text-decoration: none;
-      transition: color 0.2s, transform 0.2s;
+      transition:
+        color 0.2s,
+        transform 0.2s;
     }
 
-    .socials a:hover { color: var(--fg); transform: translateY(-1px); }
-    .socials svg { width: 20px; height: 20px; fill: currentColor; }
-
-    h2 {
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin: 2.5rem 0 1rem;
+    .socials a:hover {
+      color: var(--fg);
+      transform: translateY(-1px);
     }
 
-    .project-list {
-      list-style: none;
-      margin-bottom: 1rem;
+    .socials svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
     }
 
-    .project-list li {
-      margin-bottom: 0.9rem;
-    }
+    /* Responsive */
 
-    .project-list a {
-      font-size: 0.95rem;
-      font-weight: 500;
-    }
+    @media (max-width: 600px) {
+      .container {
+        width: min(100% - 2rem, 680px);
+        padding-top: 2rem;
+      }
 
-    .project-list p {
-      margin: 0.15rem 0 0;
-      color: var(--muted);
-    }
+      header {
+        margin-bottom: 4.5rem;
+      }
 
-    .cta {
-      margin-top: 2.5rem;
-      padding: 1.25rem 1.5rem;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-    }
+      .hero {
+        margin-bottom: 4rem;
+      }
 
-    .cta p {
-      margin-bottom: 0.75rem;
-    }
+      section {
+        margin-top: 4rem;
+      }
 
-    .cta .links {
-      display: flex;
-      gap: 1.25rem;
-      flex-wrap: wrap;
+      footer {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 1.25rem;
+        margin-top: 4.5rem;
+      }
     }
-
-    .cta .links a {
-      font-weight: 500;
-    }
-
-    footer {
-      margin-top: 3.5rem;
-      border-top: 1px solid var(--border);
-      padding-top: 1.5rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    footer .socials { margin-top: 0; }
   </style>
 </head>
+
 <body>
   <div class="container">
 
-    <div class="header">
-      <img src="/isotipo.svg" alt="" class="isotipo" />
-    </div>
+    <header>
+      <a href="/" aria-label="Inicio">
+        <img
+          src="/isotipo.svg"
+          alt=""
+          class="isotipo"
+          width="34"
+          height="34"
+        />
+      </a>
 
-    <p>
-      Soy Ray, ingeniero de software con +6 años de experiencia. Hoy uso la IA para
-      acelerar mi trabajo x10, es una herramienta, no un
-      reemplazo.
-      Resuelvo problemas construyendo sistemas, automatizaciones, APIs y sitios
-      web.
-      TypeScript, Tailwind, Svelte, Bun, Git, Vercel, Supabase, Cloudflare, Resend.
-    </p>
+      <span class="availability">
+        <span class="availability-dot"></span>
+        Construyendo
+      </span>
+    </header>
 
-    <h2>Proyectos</h2>
-    <ul class="project-list">
-      <li>
-        <a href="https://www.tiendly.lat" target="_blank" rel="noopener">Tiendly</a>
-        <p>Crea tu tienda online en minutos.</p>
-      </li>
-      <li>
-        <a href="https://www.tiendly.lat/@pickea" target="_blank" rel="noopener">Pickea</a>
-        <p>Compras asistidas y pagos online de servicios digitales: recargas, streaming, suscripciones, etc.</p>
-      </li>
-      <li>
-        <a href="https://roldos.vercel.app" target="_blank" rel="noopener">Roldos</a>
-        <p>Sitio web de Roldos Cafetería con menú, carrito y pedidos armados por WhatsApp.</p>
-      </li>
-    </ul>
+    <main>
+
+      <!-- Hero -->
+
+      <section class="hero" aria-labelledby="hero-title">
+        <p class="eyebrow">Ray · Software Engineer & Builder</p>
+
+        <h1 id="hero-title">
+          Construyo productos que resuelven problemas reales.
+        </h1>
+
+        <p class="hero-description">
+          Soy Ray. Construyo productos digitales, sistemas y automatizaciones.
+          Me interesa convertir problemas concretos en software simple,
+          útil y que realmente pueda utilizarse.
+        </p>
+
+        <div class="hero-links">
+          <a
+            class="button primary"
+            href="https://www.tiendly.lat"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ver Tiendly
+          </a>
+
+          <a
+            class="button"
+            href="https://github.com/rblez"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+        </div>
+      </section>
+
+      <!-- Projects -->
+
+      <section aria-labelledby="projects-title">
+        <p class="section-label" id="projects-title">Proyectos</p>
+
+        <div class="projects">
+
+          <a
+            class="project"
+            href="https://www.tiendly.lat"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="project-top">
+              <span class="project-name">Tiendly</span>
+              <span class="project-arrow">↗</span>
+            </div>
+
+            <p class="project-description">
+              SaaS para crear tiendas online y vender productos con métodos
+              de pago configurables.
+            </p>
+
+            <div class="project-meta">
+              <span class="tag">SaaS</span>
+              <span class="tag">Svelte</span>
+              <span class="tag">Supabase</span>
+            </div>
+          </a>
+
+          <a
+            class="project"
+            href="https://www.tiendly.lat/@pickea"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="project-top">
+              <span class="project-name">Pickea</span>
+              <span class="project-arrow">↗</span>
+            </div>
+
+            <p class="project-description">
+              Tienda digital para compras asistidas y servicios digitales.
+            </p>
+
+            <div class="project-meta">
+              <span class="tag">E-commerce</span>
+              <span class="tag">Tiendly</span>
+            </div>
+          </a>
+
+          <a
+            class="project"
+            href="https://roldos.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="project-top">
+              <span class="project-name">Roldos</span>
+              <span class="project-arrow">↗</span>
+            </div>
+
+            <p class="project-description">
+              Sitio web para cafetería con menú, carrito y pedidos.
+            </p>
+
+            <div class="project-meta">
+              <span class="tag">Web</span>
+              <span class="tag">E-commerce</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- Now -->
+
+      <section aria-labelledby="now-title">
+        <p class="section-label" id="now-title">Ahora</p>
+
+        <div class="now">
+          <div class="now-title">Construyendo Tiendly</div>
+
+          <p>
+            Estoy trabajando en Tiendly y experimentando con productos,
+            automatizaciones e IA para construir software más rápido sin
+            sacrificar la experiencia del usuario.
+          </p>
+        </div>
+      </section>
+
+      <!-- Stack -->
+
+      <section aria-labelledby="stack-title">
+        <p class="section-label" id="stack-title">Stack</p>
+
+        <div class="stack">
+          <span class="stack-item">TypeScript</span>
+          <span class="stack-item">Svelte</span>
+          <span class="stack-item">Tailwind</span>
+          <span class="stack-item">Bun</span>
+          <span class="stack-item">Supabase</span>
+          <span class="stack-item">Cloudflare</span>
+          <span class="stack-item">Git</span>
+          <span class="stack-item">Resend</span>
+          <span class="stack-item">Vercel</span>
+        </div>
+      </section>
+
+      <!-- Contact -->
+
+      <section class="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title">
+          ¿Tienes una idea o un problema que podamos convertir en software?
+        </h2>
+
+        <p>
+          Puedes encontrarme en GitHub, Telegram o X.
+        </p>
+
+        <a
+          class="contact-link"
+          href="https://t.me/rblez"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Escribirme por Telegram ↗
+        </a>
+      </section>
+
+    </main>
 
     <footer>
-    <div class="socials">
-      <a href="https://x.com/rblez_" target="_blank" rel="noopener" title="@rblez_ on X">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-      </a>
-      <a href="https://t.me/rblez" target="_blank" rel="noopener" title="Telegram">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-      </a>
-      <a href="https://github.com/rblez" target="_blank" rel="noopener" title="GitHub">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-      </a>
-      <a href="https://instagram.com/rblez__" target="_blank" rel="noopener" title="Instagram">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-      </a>
-    </div>
+      <span class="copyright">
+        © 2026 Ray
+      </span>
+
+      <nav class="socials" aria-label="Redes sociales">
+
+        <a
+          href="https://x.com/rblez_"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="X"
+          title="X"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+        </a>
+
+        <a
+          href="https://t.me/rblez"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Telegram"
+          title="Telegram"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+          </svg>
+        </a>
+
+        <a
+          href="https://github.com/rblez"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+          title="GitHub"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+          </svg>
+        </a>
+
+        <a
+          href="https://instagram.com/rblez__"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+          title="Instagram"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919C8.333.014 8.741 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+          </svg>
+        </a>
+
+      </nav>
     </footer>
 
   </div>
