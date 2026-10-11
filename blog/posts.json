@@ -1,6 +1,12 @@
 {
   "posts": [
     {
+      "slug": "construyendo-con-ia",
+      "title": "Construyendo con IA como pair programmer",
+      "date": "2026-10-11",
+      "excerpt": "El bottleneck se movió: ya no es escribir código, es decidir qué construir."
+    },
+    {
       "slug": "hola-mundo",
       "title": "Hola mundo",
       "date": "2026-10-11",
