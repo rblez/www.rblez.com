@@ -43,6 +43,11 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
     rel="stylesheet"
   />
+  <!-- Material Design Icons -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css"
+    rel="stylesheet"
+  />
 
   <!-- Icons -->
   <link rel="icon" type="image/svg+xml" href="/favicon-black.svg" />
@@ -99,6 +104,22 @@
       margin-bottom: 3rem;
     }
 
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .isotipo {
+      width: 22px;
+      height: 22px;
+      display: block;
+    }
+
+    .isotipo g {
+      fill: #111;
+    }
+
     .name {
       font-size: 1.125rem;
       font-weight: 700;
@@ -148,20 +169,18 @@
 
     .links {
       padding-top: 1rem;
-    }
-
-    .links p + p {
-      margin-top: 0.15rem;
+      display: flex;
+      gap: 1.25rem;
     }
 
     .links a {
-      font-size: 0.75rem;
       color: #6b7280;
+      font-size: 1.25rem;
+      line-height: 1;
+      transition: color 0.15s;
     }
 
     .links a:hover {
-      text-decoration: underline;
-      text-underline-offset: 2px;
       color: #111;
     }
   </style>
@@ -171,7 +190,25 @@
   <div class="container">
 
     <header>
-      <h1 class="name"><a href="/">Ray</a></h1>
+      <span class="brand">
+        <svg
+          class="isotipo"
+          viewBox="100 125 176 176"
+          width="22"
+          height="22"
+          aria-hidden="true"
+        >
+          <g transform="translate(0.000000,400.000000) scale(0.100000,-0.100000)" stroke="none">
+            <path d="M1177 2570 c58 -73 129 -164 203 -258 l55 -71 400 -3 400 -3 3 -197
+2 -198 195 0 195 0 0 395 0 395 -751 0 -750 0 48 -60z"/>
+            <path d="M1771 1823 c8 -10 21 -27 31 -38 9 -11 57 -72 107 -135 50 -63 121
+-152 158 -197 l67 -83 239 0 239 0 -33 43 c-18 23 -45 56 -59 73 -14 17 -37
+47 -52 65 -15 19 -59 75 -99 124 -40 50 -86 107 -104 128 l-32 37 -238 0
+c-223 0 -237 -1 -224 -17z"/>
+          </g>
+        </svg>
+        <h1 class="name"><a href="/">Ray</a></h1>
+      </span>
       <nav aria-label="Navegación">
         <a href="/blog/">Blog</a>
         <a href="https://www.tiendly.lat" target="_blank" rel="noopener noreferrer">Tiendly</a>
@@ -181,17 +218,24 @@
 
     <main>
       <p class="bio">
-        Fundador y CEO de <a href="/blog/">Blog</a>
-        <a href="https://www.tiendly.lat" target="_blank" rel="noopener noreferrer">Tiendly</a>.
+        Fundador y CEO de <a href="https://www.tiendly.lat" target="_blank" rel="noopener noreferrer">Tiendly</a>.
         Construyo productos que resuelven problemas reales: software simple,
         útil y que realmente pueda utilizarse.
       </p>
 
-      <section class="links" aria-label="Enlaces">
-        <p><a href="https://github.com/rblez" target="_blank" rel="noopener noreferrer">GitHub</a></p>
-        <p><a href="https://t.me/rblez" target="_blank" rel="noopener noreferrer">Telegram</a></p>
-        <p><a href="https://x.com/rblez_" target="_blank" rel="noopener noreferrer">X</a></p>
-        <p><a href="mailto:hello@rblez.com">Email</a></p>
+      <section class="links" aria-label="Redes sociales">
+        <a href="https://github.com/rblez" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <span class="mdi mdi-github"></span>
+        </a>
+        <a href="https://t.me/rblez" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+          <span class="mdi mdi-telegram"></span>
+        </a>
+        <a href="https://x.com/rblez_" target="_blank" rel="noopener noreferrer" aria-label="X">
+          <span class="mdi mdi-twitter"></span>
+        </a>
+        <a href="mailto:hello@rblez.com" aria-label="Email">
+          <span class="mdi mdi-email"></span>
+        </a>
       </section>
     </main>
 
