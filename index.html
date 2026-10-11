@@ -12,6 +12,7 @@
   />
 
   <meta name="theme-color" content="#ffffff" />
+  <meta name="color-scheme" content="light" />
 
   <link rel="canonical" href="https://www.rblez.com/" />
 
@@ -39,23 +40,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
     rel="stylesheet"
   />
 
   <!-- Icons -->
-  <link
-    rel="icon"
-    type="image/svg+xml"
-    href="/favicon-black.svg"
-    media="(prefers-color-scheme: light)"
-  />
-  <link
-    rel="icon"
-    type="image/svg+xml"
-    href="/favicon-white.svg"
-    media="(prefers-color-scheme: dark)"
-  />
+  <link rel="icon" type="image/svg+xml" href="/favicon-black.svg" />
 
   <style>
     *,
@@ -66,47 +56,27 @@
       padding: 0;
     }
 
-    :root {
-      --bg: #fff;
-      --fg: #111;
-      --muted: #666;
-      --faint: #999;
-      --hairline: #eee;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0a0a0a;
-        --fg: #ededed;
-        --muted: #a1a1a1;
-        --faint: #6e6e6e;
-        --hairline: #1f1f1f;
-      }
-    }
-
     html {
       font-size: 16px;
     }
 
     body {
-      background: var(--bg);
-      color: var(--fg);
+      background: #fff;
+      color: #111;
       font-family:
-        "Geist",
+        "Inter",
         -apple-system,
         BlinkMacSystemFont,
         "Segoe UI",
         sans-serif;
       font-weight: 400;
-      font-size: 0.9rem;
-      line-height: 1.65;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
 
     ::selection {
-      background: var(--fg);
-      color: var(--bg);
+      background: #111;
+      color: #fff;
     }
 
     a {
@@ -115,119 +85,84 @@
     }
 
     .container {
-      width: min(100% - 3rem, 600px);
+      max-width: 36rem;
       margin: 0 auto;
-      padding: 4rem 0 3rem;
+      padding: 3rem 2rem;
     }
 
-    /* Brand */
+    /* Header */
 
-    .brand {
+    header {
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 0.65rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .isotipo {
-      width: 26px;
-      height: 26px;
-      display: block;
-    }
-
-    .isotipo g {
-      fill: var(--fg);
+      margin-bottom: 3rem;
     }
 
     .name {
-      font-size: 1rem;
-      font-weight: 500;
+      font-size: 1.125rem;
+      font-weight: 700;
       letter-spacing: -0.01em;
     }
 
     .name a:hover {
-      text-decoration: underline;
-      text-underline-offset: 3px;
+      color: #555;
     }
 
-    /* Intro */
-
-    .intro {
-      margin-bottom: 2.5rem;
-      color: var(--muted);
+    nav {
+      display: flex;
+      gap: 1.5rem;
     }
 
-    .intro strong {
-      color: var(--fg);
-      font-weight: 500;
+    nav a {
+      font-size: 0.75rem;
+      color: #6b7280;
     }
 
-    /* List */
-
-    .list {
-      list-style: none;
+    nav a:hover {
+      color: #111;
     }
 
-    .row {
-      display: block;
-      padding: 0.7rem 0;
-      border-top: 1px solid var(--hairline);
-    }
+    /* Main */
 
-    .list > li:last-child .row {
-      border-bottom: 1px solid var(--hairline);
-    }
-
-    a.row:hover .row-title {
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    .row-title {
-      font-weight: 500;
-    }
-
-    .row-desc {
-      color: var(--muted);
-    }
-
-    .row-desc::before {
-      content: " — ";
-      color: var(--faint);
-    }
-
-    /* Foot */
-
-    .foot {
-      margin-top: 2.5rem;
-      color: var(--muted);
-    }
-
-    .foot a:hover {
-      color: var(--fg);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    .foot .sep {
-      margin: 0 0.45rem;
-      color: var(--faint);
-    }
-
-    .copyright {
-      display: block;
+    main > * + * {
       margin-top: 2rem;
-      color: var(--faint);
-      font-size: 0.78rem;
     }
 
-    /* Responsive */
+    .bio {
+      font-size: 0.875rem;
+      line-height: 1.7;
+      color: #111;
+    }
 
-    @media (max-width: 600px) {
-      .container {
-        width: min(100% - 2.5rem, 600px);
-        padding-top: 3rem;
-      }
+    .bio a {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .bio a:hover {
+      color: #555;
+    }
+
+    /* Links */
+
+    .links {
+      padding-top: 1rem;
+    }
+
+    .links p + p {
+      margin-top: 0.15rem;
+    }
+
+    .links a {
+      font-size: 0.75rem;
+      color: #6b7280;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      color: #111;
     }
   </style>
 </head>
@@ -235,87 +170,27 @@
 <body>
   <div class="container">
 
-    <header class="brand">
-      <svg
-        class="isotipo"
-        viewBox="100 125 176 176"
-        width="26"
-        height="26"
-        aria-hidden="true"
-      >
-        <g transform="translate(0.000000,400.000000) scale(0.100000,-0.100000)" stroke="none">
-          <path d="M1177 2570 c58 -73 129 -164 203 -258 l55 -71 400 -3 400 -3 3 -197
-2 -198 195 0 195 0 0 395 0 395 -751 0 -750 0 48 -60z"/>
-          <path d="M1771 1823 c8 -10 21 -27 31 -38 9 -11 57 -72 107 -135 50 -63 121
--152 158 -197 l67 -83 239 0 239 0 -33 43 c-18 23 -45 56 -59 73 -14 17 -37
-47 -52 65 -15 19 -59 75 -99 124 -40 50 -86 107 -104 128 l-32 37 -238 0
-c-223 0 -237 -1 -224 -17z"/>
-        </g>
-      </svg>
+    <header>
       <h1 class="name"><a href="/">Ray</a></h1>
+      <nav aria-label="Navegación">
+        <a href="https://www.tiendly.lat" target="_blank" rel="noopener noreferrer">Tiendly</a>
+        <a href="https://t.me/rayomarblez" target="_blank" rel="noopener noreferrer">Canal</a>
+      </nav>
     </header>
 
     <main>
-
-      <p class="intro">
-        <strong>Fundador y CEO de Tiendly.</strong>
-        Construyo productos que resuelven problemas reales:
-        software simple, útil y que realmente pueda utilizarse.
+      <p class="bio">
+        Fundador y CEO de <a href="https://www.tiendly.lat" target="_blank" rel="noopener noreferrer">Tiendly</a>.
+        Construyo productos que resuelven problemas reales: software simple,
+        útil y que realmente pueda utilizarse.
       </p>
 
-      <ul class="list" aria-label="Proyectos">
-        <li>
-          <a
-            class="row"
-            href="https://www.tiendly.lat"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span class="row-title">Tiendly</span><span class="row-desc">SaaS para crear tiendas online en Cuba, sin comisiones por venta</span>
-          </a>
-        </li>
-        <li>
-          <a
-            class="row"
-            href="https://t.me/RecargaTuSaldoAquiBot"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span class="row-title">Recarga tu Saldo Aquí</span><span class="row-desc">bot de Telegram para recargas de saldo móvil</span>
-          </a>
-        </li>
-        <li>
-          <a
-            class="row"
-            href="https://roldos.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span class="row-title">Roldos</span><span class="row-desc">sitio web para cafetería, con menú y pedidos</span>
-          </a>
-        </li>
-      </ul>
-
-      <div class="foot">
-        <a
-          href="https://github.com/rblez"
-          target="_blank"
-          rel="noopener noreferrer"
-        >GitHub</a><span class="sep">·</span><a
-          href="https://t.me/rblez"
-          target="_blank"
-          rel="noopener noreferrer"
-        >Telegram</a><span class="sep">·</span><a
-          href="https://x.com/rblez_"
-          target="_blank"
-          rel="noopener noreferrer"
-        >X</a><span class="sep">·</span><a
-          href="mailto:hello@rblez.com"
-        >hello@rblez.com</a>
-
-        <span class="copyright">© 2026 Ray</span>
-      </div>
-
+      <section class="links" aria-label="Enlaces">
+        <p><a href="https://github.com/rblez" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+        <p><a href="https://t.me/rblez" target="_blank" rel="noopener noreferrer">Telegram</a></p>
+        <p><a href="https://x.com/rblez_" target="_blank" rel="noopener noreferrer">X</a></p>
+        <p><a href="mailto:hello@rblez.com">Email</a></p>
+      </section>
     </main>
 
   </div>
