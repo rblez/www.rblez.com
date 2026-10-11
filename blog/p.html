@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Ray</title>
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="color-scheme" content="light" />
+  <link rel="icon" type="image/svg+xml" href="/favicon-black.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{background:#fff;color:#111;font-family:"Inter",-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    .container{max-width:36rem;margin:0 auto;padding:3rem 2rem}
+    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:3rem}
+    .name{font-size:1.125rem;font-weight:700;text-decoration:none}
+    .name:hover{color:#555}
+    nav{display:flex;gap:1.5rem}
+    nav a{font-size:.75rem;color:#6b7280;text-decoration:none}
+    nav a:hover{color:#111}
+    .back{display:inline-block;font-size:.75rem;color:#6b7280;margin-bottom:1.5rem;text-decoration:none}
+    .back:hover{color:#111}
+    .meta{font-size:.75rem;color:#6b7280;margin-bottom:1rem}
+    article{font-size:.925rem;line-height:1.75}
+    article h1{font-size:1.5rem;font-weight:700;margin-bottom:1rem;letter-spacing:-.01em}
+    article h2{font-size:1.2rem;font-weight:700;margin:1.75rem 0 .75rem}
+    article h3{font-size:1.05rem;font-weight:700;margin:1.5rem 0 .5rem}
+    article p{margin-bottom:1rem}
+    article ul,article ol{margin:0 0 1rem 1.25rem}
+    article li{margin-bottom:.35rem}
+    article blockquote{border-left:3px solid #e5e7eb;padding-left:1rem;color:#555;margin-bottom:1rem}
+    article code{font-family:ui-monospace,monospace;font-size:.82em;background:#f3f4f6;padding:.15em .4em;border-radius:.3rem}
+    article pre{background:#f9fafb;border:1px solid #eee;border-radius:.6rem;padding:1rem;overflow-x:auto;margin-bottom:1rem}
+    article pre code{background:none;padding:0}
+    article a{color:#111;text-decoration:underline;text-underline-offset:2px}
+    article img{max-width:100%;border-radius:.6rem}
+    article hr{border:none;border-top:1px solid #eee;margin:1.5rem 0}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a class="name" href="/">Ray</a>
+      <nav>
+        <a href="/blog/">Blog</a>
+        <a href="https://www.tiendly.lat" target="_blank" rel="noopener">Tiendly</a>
+      </nav>
+    </header>
+    <main>
+      <a class="back" href="/blog/">← Blog</a>
+      <div class="meta" id="meta"></div>
+      <article id="content"><p style="color:#6b7280;font-size:.875rem">Cargando…</p></article>
+    </main>
+  </div>
+  <script>
+    const slug = new URLSearchParams(location.search).get('slug');
+    if (!slug) { document.getElementById('content').innerHTML = '<p>Post no encontrado.</p>'; }
+    else {
+      Promise.all([
+        fetch('/blog/posts.json').then(r => r.json()),
+        fetch('/blog/posts/' + slug + '.md').then(r => { if (!r.ok) throw 0; return r.text(); })
+      ]).then(([data, md]) => {
+        const post = (data.posts || []).find(p => p.slug === slug);
+        if (post) {
+          document.title = post.title + ' — Ray';
+          document.getElementById('meta').textContent = post.date;
+        }
+        document.getElementById('content').innerHTML = marked.parse(md);
+      }).catch(() => {
+        document.getElementById('content').innerHTML = '<p>Post no encontrado.</p>';
+      });
+    }
+  </script>
+</body>
+</html>
