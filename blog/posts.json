@@ -1,0 +1,10 @@
+{
+  "posts": [
+    {
+      "slug": "hola-mundo",
+      "title": "Hola mundo",
+      "date": "2026-10-11",
+      "excerpt": "Primer post del blog."
+    }
+  ]
+}
