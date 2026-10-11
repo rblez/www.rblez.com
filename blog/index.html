@@ -11,13 +11,16 @@
   <link rel="icon" type="image/svg+xml" href="/favicon-black.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet" />
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    body{background:#fff;color:#111;font-family:"Inter",-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+    body{background:#fff;color:#111;font-family:"Source Serif 4",Georgia,"Times New Roman",serif;-webkit-font-smoothing:antialiased}
     a{color:inherit;text-decoration:none}
     .container{max-width:36rem;margin:0 auto;padding:3rem 2rem}
     header{display:flex;justify-content:space-between;align-items:center;margin-bottom:3rem}
+    .isotipo{width:22px;height:22px;display:block}
+    .isotipo g{fill:#111}
+    .brand{display:flex;align-items:center;gap:.6rem}
     .name{font-size:1.125rem;font-weight:700}
     .name a:hover{color:#555}
     nav{display:flex;gap:1.5rem}
@@ -36,7 +39,7 @@
 <body>
   <div class="container">
     <header>
-      <h1 class="name"><a href="/">Ray</a></h1>
+      <a href="/" class="brand" aria-label="Inicio"><svg class="isotipo" viewBox="100 125 176 176" width="22" height="22" aria-hidden="true"><g transform="translate(0.000000,400.000000) scale(0.100000,-0.100000)" stroke="none"><path d="M1177 2570 c58 -73 129 -164 203 -258 l55 -71 400 -3 400 -3 3 -197 2 -198 195 0 195 0 0 395 0 395 -751 0 -750 0 48 -60z"/><path d="M1771 1823 c8 -10 21 -27 31 -38 9 -11 57 -72 107 -135 50 -63 121 -152 158 -197 l67 -83 239 0 239 0 -33 43 c-18 23 -45 56 -59 73 -14 17 -37 47 -52 65 -15 19 -59 75 -99 124 -40 50 -86 107 -104 128 l-32 37 -238 0 c-223 0 -237 -1 -224 -17z"/></g></svg></a>
       <nav>
         <a href="https://www.tiendly.lat" target="_blank" rel="noopener">Tiendly</a>
       </nav>
