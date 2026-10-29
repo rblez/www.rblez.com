@@ -19,22 +19,22 @@
   <script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    body{background:#fff;color:#111;font-family:"Geist",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+    body{background:#fff;color:#111214;font-family:"Geist",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
     a{color:inherit;text-decoration:none}
-    .container{max-width:36rem;margin:0 auto;padding:3rem 2rem}
-    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:3rem}
-    .isotipo{width:22px;height:22px;display:block}
-    .isotipo g{fill:#111}
+    .container{max-width:42rem;margin:0 auto;padding:3rem 2rem}
+    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:3.5rem}
+    .isotipo{width:26px;height:26px;display:block}
+    .isotipo g{fill:#111214}
     .brand{display:flex;align-items:center;gap:.6rem}
-    nav{display:flex;gap:1.5rem}
-    nav a{font-size:.75rem;color:#6b7280}
-    nav a:hover{color:#111}
-    .post-title{font-size:1.5rem;font-weight:700;letter-spacing:-0.02em;margin-bottom:.5rem;line-height:1.3}
-    .post-meta{font-size:.8rem;color:#6b7280;margin-bottom:.75rem}
-    .post-excerpt{font-size:.95rem;color:#555;line-height:1.6;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid #eee}
+    nav{display:flex;gap:1.75rem}
+    nav a{font-family:"Geist Mono",ui-monospace,monospace;font-size:.7rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:#6b7280}
+    nav a:hover{color:#111214}
+    .post-title{font-size:2rem;font-weight:600;letter-spacing:-.02em;margin-bottom:.5rem;line-height:1.2}
+    .post-meta{font-family:"Geist Mono",ui-monospace,monospace;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:#9ca3af;margin-bottom:.75rem}
+    .post-excerpt{font-size:.95rem;color:#4b5563;line-height:1.6;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid #e8e8e8}
     .post-body{font-size:.95rem;line-height:1.8;color:#222}
     .post-body p{margin-bottom:1.25rem}
-    .post-body blockquote{border-left:3px solid #111;padding-left:1rem;margin:1.5rem 0;font-style:italic;color:#444}
+    .post-body blockquote{border-left:3px solid #111214;padding-left:1rem;margin:1.5rem 0;color:#444}
     .post-body h1,.post-body h2,.post-body h3{margin:2rem 0 1rem;font-weight:700}
     .post-body code{font-family:"Geist Mono",ui-monospace,monospace;font-size:.85em;background:#f5f5f5;padding:.15em .4em;border-radius:4px}
     .post-body pre{background:#f5f5f5;padding:1rem;border-radius:8px;overflow-x:auto;margin:1.5rem 0}
@@ -43,16 +43,16 @@
     .post-body li{margin-bottom:.5rem}
     .post-body a{text-decoration:underline;text-underline-offset:2px}
     .post-body img{max-width:100%;border-radius:8px;margin:1.5rem 0}
-    footer{margin-top:5rem;padding-top:1.5rem;border-top:1px solid #eee}
-    footer p{font-size:.75rem;color:#6b7280}
-    footer a{text-decoration:underline;text-underline-offset:2px}
-    footer a:hover{color:#111}
+    footer{margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid #e8e8e8}
+    footer p{font-size:.8rem;color:#6b7280}
+    footer a{text-decoration:underline;text-underline-offset:3px}
+    footer a:hover{color:#111214}
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <a href="/" class="brand" aria-label="Inicio"><svg class="isotipo" viewBox="100 125 176 176" width="22" height="22" aria-hidden="true"><g transform="translate(0.000000,400.000000) scale(0.100000,-0.100000)" stroke="none"><path d="M1177 2570 c58 -73 129 -164 203 -258 l55 -71 400 -3 400 -3 3 -197 2 -198 195 0 195 0 0 395 0 395 -751 0 -750 0 48 -60z"/><path d="M1771 1823 c8 -10 21 -27 31 -38 9 -11 57 -72 107 -135 50 -63 121 -152 158 -197 l67 -83 239 0 239 0 -33 43 c-18 23 -45 56 -59 73 -14 17 -37 47 -52 65 -15 19 -59 75 -99 124 -40 50 -86 107 -104 128 l-32 37 -238 0 c-223 0 -237 -1 -224 -17z"/></g></svg></a>
+      <a href="/" class="brand" aria-label="Inicio"><svg class="isotipo" viewBox="100 125 176 176" width="26" height="26" aria-hidden="true"><g transform="translate(0.000000,400.000000) scale(0.100000,-0.100000)" stroke="none"><path d="M1177 2570 c58 -73 129 -164 203 -258 l55 -71 400 -3 400 -3 3 -197 2 -198 195 0 195 0 0 395 0 395 -751 0 -750 0 48 -60z"/><path d="M1771 1823 c8 -10 21 -27 31 -38 9 -11 57 -72 107 -135 50 -63 121 -152 158 -197 l67 -83 239 0 239 0 -33 43 c-18 23 -45 56 -59 73 -14 17 -37 47 -52 65 -15 19 -59 75 -99 124 -40 50 -86 107 -104 128 l-32 37 -238 0 c-223 0 -237 -1 -224 -17z"/></g></svg></a>
       <nav aria-label="Navegación">
         <a href="/blog/">Blog</a>
         <a href="https://www.tiendly.lat" target="_blank" rel="noopener noreferrer">Tiendly</a>
@@ -60,12 +60,12 @@
     </header>
     <main>
       <h1 class="post-title">Construyendo con IA como pair programmer</h1>
-      <div class="post-meta">2026-10-11</div>
+      <div class="post-meta">11 oct 2026</div>
       <div class="post-excerpt">El bottleneck se movió: ya no es escribir código, es decidir qué construir.</div>
       <div class="post-body" id="content"><p>Cargando…</p></div>
     </main>
     <footer>
-      <p>© Ray, Software Engineer</p>
+      <p>© Ray, Software Engineer — <a href="/about/">conoce más de mí</a></p>
     </footer>
   </div>
   <script>
