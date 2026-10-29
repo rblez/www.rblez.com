@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog — Ray</title>
   <meta name="description" content="Blog de Ray." />
-  <meta name="theme-color" content="#ffffff" />
+  <meta name="theme-color" content="#f5f4f1" />
   <meta name="color-scheme" content="light" />
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="canonical" href="https://www.rblez.com/blog/" />
@@ -14,66 +14,105 @@
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    body{background:#fff;color:#111214;font-family:"Geist",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+    body{background:#f5f4f1;color:#161513;font-family:"Geist",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    ::selection{background:#161513;color:#f5f4f1}
     a{color:inherit;text-decoration:none}
-    .container{max-width:42rem;margin:0 auto;padding:3rem 2rem}
-    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:3.5rem}
-    .isotipo{width:26px;height:26px;display:block}
-    .isotipo g{fill:#111214}
-    .brand{display:flex;align-items:center;gap:.6rem}
-    nav{display:flex;gap:1.75rem}
-    nav a{font-family:"Geist Mono",ui-monospace,monospace;font-size:.7rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:#6b7280}
-    nav a:hover{color:#111214}
-    .eyebrow{font-family:"Geist Mono",ui-monospace,monospace;font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#6b7280}
-    h1{font-size:2.25rem;line-height:1.1;letter-spacing:-.025em;font-weight:600;margin:1rem 0 2rem}
-    .post{display:block;padding:1.4rem 0;border-top:1px solid #e8e8e8}
-    .post:last-child{border-bottom:1px solid #e8e8e8}
-    .post:hover .post-title{text-decoration:underline;text-underline-offset:3px}
-    .post-title{font-weight:600;font-size:1.3rem;letter-spacing:-.015em;line-height:1.25}
-    .post-meta{font-family:"Geist Mono",ui-monospace,monospace;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:#9ca3af;margin-top:.4rem}
-    .post-excerpt{font-size:.95rem;line-height:1.55;color:#4b5563;margin-top:.5rem}
-    .post .arrow{float:right;color:#9ca3af;font-size:1.1rem}
-    .empty{font-size:.875rem;color:#6b7280}
-    footer{margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid #e8e8e8}
-    footer p{font-size:.8rem;color:#6b7280}
-    footer a{text-decoration:underline;text-underline-offset:3px}
-    footer a:hover{color:#111214}
+    .container{max-width:46rem;margin:0 auto;padding:0 1.5rem 4rem}
+    header{display:flex;justify-content:space-between;align-items:center;padding:1.4rem 0 3.5rem}
+    .isotipo{width:24px;height:24px;display:block}
+    .isotipo g{fill:#161513}
+    .menu-btn,.menu-close{font-size:1rem;font-weight:500;cursor:pointer}
+    .menu-btn:hover,.menu-close:hover{color:#6f6c66}
+    #menu-toggle:checked ~ .menu-overlay{display:block}
+    .menu-overlay{display:none;position:fixed;inset:0;z-index:50;background:#f5f4f1;padding:0 1.5rem}
+    .menu-top{display:flex;justify-content:space-between;align-items:center;padding:1.4rem 0}
+    .menu-nav{margin-top:2rem}
+    .menu-nav a{display:flex;justify-content:space-between;align-items:center;font-size:2rem;font-weight:500;letter-spacing:-.01em;padding:1.1rem 0;border-bottom:1px solid rgba(22,21,19,.14)}
+    .menu-nav a:first-child{border-top:1px solid rgba(22,21,19,.14)}
+    .menu-nav a.active{color:#2e2be0}
+    .num{font-size:.85rem;font-weight:500;color:#8a877f;margin-bottom:1rem}
+    h1{font-size:clamp(2.15rem,8.5vw,3.9rem);line-height:1.12;letter-spacing:-.025em;font-weight:600}
+    h1.page{font-size:clamp(1.9rem,7vw,3rem)}
+    .lede{font-size:1.06rem;line-height:1.65;color:#262420;margin-top:1.5rem;max-width:36rem}
+    .lede a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:#6f6c66}
+    .lede a:hover{color:#2e2be0;text-decoration-color:#2e2be0}
+    .cta-row{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:2rem}
+    .btn{display:inline-block;padding:.85rem 1.5rem;font-size:1rem;font-weight:500;line-height:1}
+    .btn-dark{background:#161513;color:#f5f4f1}
+    .btn-dark:hover{background:#000}
+    .btn-outline{border:1px solid #161513;color:#161513;background:transparent}
+    .btn-outline:hover{background:#161513;color:#f5f4f1}
+    section{margin-top:5rem}
+    h2.sec{font-size:1.5rem;line-height:1.25;font-weight:500;letter-spacing:-.01em;margin-bottom:.5rem}
+    .row{display:block;padding:1.25rem 0;border-bottom:1px solid rgba(22,21,19,.14)}
+    .row:first-of-type{border-top:1px solid rgba(22,21,19,.14)}
+    .row h3{font-size:1.25rem;line-height:1.3;font-weight:500;letter-spacing:-.01em}
+    .row:hover h3{text-decoration:underline;text-underline-offset:3px}
+    .row .date{font-size:.85rem;color:#6f6c66;margin-top:.35rem}
+    .row .excerpt{font-size:.95rem;line-height:1.55;color:#262420;margin-top:.5rem}
+    footer{margin-top:5rem;border-top:1px solid rgba(22,21,19,.14);padding-top:2rem}
+    .foot-brand{display:flex;align-items:center;gap:.6rem;font-size:1.15rem;font-weight:600;letter-spacing:-.01em;margin-bottom:1.5rem}
+    .foot-links{display:flex;flex-direction:column;gap:.45rem}
+    .foot-links a{font-family:"Geist Mono",ui-monospace,monospace;font-size:.82rem;color:#6f6c66;width:fit-content}
+    .foot-links a:hover{color:#161513}
+    .foot-copy{font-size:.82rem;color:#8a877f;margin-top:2rem}
   </style>
 </head>
 <body>
+  <input type="checkbox" id="menu-toggle" hidden />
+  <div class="menu-overlay" role="dialog" aria-label="Menú">
+    <div class="menu-top">
+      <a href="/" aria-label="Inicio"><svg class="isotipo" viewBox="100 125 176 176" width="24" height="24" aria-hidden="true"><g transform="translate(0.000000,400.000000) scale(0.100000,-0.100000)" stroke="none"><path d="M1177 2570 c58 -73 129 -164 203 -258 l55 -71 400 -3 400 -3 3 -197 2 -198 195 0 195 0 0 395 0 395 -751 0 -750 0 48 -60z"/><path d="M1771 1823 c8 -10 21 -27 31 -38 9 -11 57 -72 107 -135 50 -63 121 -152 158 -197 l67 -83 239 0 239 0 -33 43 c-18 23 -45 56 -59 73 -14 17 -37 47 -52 65 -15 19 -59 75 -99 124 -40 50 -86 107 -104 128 l-32 37 -238 0 c-223 0 -237 -1 -224 -17z"/></g></svg></a>
+      <label for="menu-toggle" class="menu-close">Close</label>
+    </div>
+    <nav class="menu-nav">
+        <a href="/">Home</a>
+        <a href="/blog/" class="active">Blog</a>
+        <a href="/about/">About</a>
+        <a href="https://www.tiendly.lat" target="_blank" rel="noopener noreferrer">Tiendly <span>&nearr;</span></a>
+    </nav>
+  </div>
   <div class="container">
     <header>
-      <a href="/" class="brand" aria-label="Inicio"><svg class="isotipo" viewBox="100 125 176 176" width="26" height="26" aria-hidden="true"><g transform="translate(0.000000,400.000000) scale(0.100000,-0.100000)" stroke="none"><path d="M1177 2570 c58 -73 129 -164 203 -258 l55 -71 400 -3 400 -3 3 -197 2 -198 195 0 195 0 0 395 0 395 -751 0 -750 0 48 -60z"/><path d="M1771 1823 c8 -10 21 -27 31 -38 9 -11 57 -72 107 -135 50 -63 121 -152 158 -197 l67 -83 239 0 239 0 -33 43 c-18 23 -45 56 -59 73 -14 17 -37 47 -52 65 -15 19 -59 75 -99 124 -40 50 -86 107 -104 128 l-32 37 -238 0 c-223 0 -237 -1 -224 -17z"/></g></svg></a>
-      <nav aria-label="Navegación">
-        <a href="/blog/">Blog</a>
-        <a href="https://www.tiendly.lat" target="_blank" rel="noopener noreferrer">Tiendly</a>
-      </nav>
+      <a href="/" aria-label="Inicio"><svg class="isotipo" viewBox="100 125 176 176" width="24" height="24" aria-hidden="true"><g transform="translate(0.000000,400.000000) scale(0.100000,-0.100000)" stroke="none"><path d="M1177 2570 c58 -73 129 -164 203 -258 l55 -71 400 -3 400 -3 3 -197 2 -198 195 0 195 0 0 395 0 395 -751 0 -750 0 48 -60z"/><path d="M1771 1823 c8 -10 21 -27 31 -38 9 -11 57 -72 107 -135 50 -63 121 -152 158 -197 l67 -83 239 0 239 0 -33 43 c-18 23 -45 56 -59 73 -14 17 -37 47 -52 65 -15 19 -59 75 -99 124 -40 50 -86 107 -104 128 l-32 37 -238 0 c-223 0 -237 -1 -224 -17z"/></g></svg></a>
+      <label for="menu-toggle" class="menu-btn">Menu</label>
     </header>
     <main>
-      <p class="eyebrow">Blog</p>
-      <h1>Escritos</h1>
-      <div id="posts"><p class="empty">Cargando…</p></div>
+      <p class="num">01</p>
+      <h1 class="page">Escritos</h1>
+      <div id="posts" style="margin-top:2.5rem"><p style="font-size:.9rem;color:#6f6c66">Cargando…</p></div>
     </main>
     <footer>
-      <p>© Ray, Software Engineer — <a href="/about/">conoce más de mí</a></p>
+      <div class="foot-brand">
+        <a href="/" aria-label="Inicio"><svg class="isotipo" viewBox="100 125 176 176" width="24" height="24" aria-hidden="true"><g transform="translate(0.000000,400.000000) scale(0.100000,-0.100000)" stroke="none"><path d="M1177 2570 c58 -73 129 -164 203 -258 l55 -71 400 -3 400 -3 3 -197 2 -198 195 0 195 0 0 395 0 395 -751 0 -750 0 48 -60z"/><path d="M1771 1823 c8 -10 21 -27 31 -38 9 -11 57 -72 107 -135 50 -63 121 -152 158 -197 l67 -83 239 0 239 0 -33 43 c-18 23 -45 56 -59 73 -14 17 -37 47 -52 65 -15 19 -59 75 -99 124 -40 50 -86 107 -104 128 l-32 37 -238 0 c-223 0 -237 -1 -224 -17z"/></g></svg></a>
+        <span>Ray</span>
+      </div>
+      <div class="foot-links">
+        <a href="/about/">About</a>
+        <a href="/blog/">Blog</a>
+        <a href="https://github.com/rblez" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://t.me/rblez" target="_blank" rel="noopener noreferrer">Telegram</a>
+        <a href="https://x.com/rblez_" target="_blank" rel="noopener noreferrer">X [Twitter]</a>
+        <a href="#" data-u="hello" data-d="rblez.com" onclick="this.href='mailto:'+this.dataset.u+'@'+this.dataset.d">Email</a>
+      </div>
+      <p class="foot-copy">&copy; Ray Omar Blez Hechavarr&iacute;a</p>
     </footer>
   </div>
   <script>
+    const fmt = d => { const [y, m, day] = d.split('-'); return y + '.' + m + '.' + day; };
     fetch('/blog/posts.json')
       .then(r => r.json())
       .then(data => {
         const el = document.getElementById('posts');
-        if (!data.posts.length) { el.innerHTML = '<p class="empty">Sin posts todavía.</p>'; return; }
-        const fmt = d => new Date(d + 'T00:00:00').toLocaleDateString('es-ES', { day: '2-digit', month: 'short', year: 'numeric' }).replace(/\./g, '');
+        if (!data.posts.length) { el.innerHTML = '<p style="font-size:.9rem;color:#6f6c66">Sin posts todavía.</p>'; return; }
         el.innerHTML = data.posts.map(p => `
-          <a class="post" href="/blog/${p.slug}/">
-            <span class="arrow">↗</span>
-            <div class="post-title">${p.title}</div>
-            <div class="post-meta">${fmt(p.date)}</div>
-            ${p.excerpt ? `<div class="post-excerpt">${p.excerpt}</div>` : ''}
+          <a class="row" href="/blog/${p.slug}/">
+            <h3>${p.title}</h3>
+            <p class="date">${fmt(p.date)}</p>
+            ${p.excerpt ? `<p class="excerpt">${p.excerpt}</p>` : ''}
           </a>`).join('');
       })
-      .catch(() => { document.getElementById('posts').innerHTML = '<p class="empty">No se pudo cargar.</p>'; });
+      .catch(() => { document.getElementById('posts').innerHTML = '<p style="font-size:.9rem;color:#6f6c66">No se pudo cargar.</p>'; });
   </script>
 </body>
 </html>
