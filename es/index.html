@@ -42,8 +42,10 @@
   <link rel="manifest" href="/manifest.json" />
   <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://www.rblez.com/#website", "url": "https://www.rblez.com/", "name": "rblez.com", "inLanguage": ["es", "en"]}, {"@type": "WebPage", "@id": "https://www.rblez.com/es/#webpage", "url": "https://www.rblez.com/es/", "name": "rblez — Software Engineer & Builder", "inLanguage": "es", "isPartOf": {"@id": "https://www.rblez.com/#website"}, "about": {"@id": "https://www.rblez.com/#person"}}, {"@type": "Person", "@id": "https://www.rblez.com/#person", "name": "rblez", "url": "https://www.rblez.com/", "jobTitle": "Software Engineer", "email": "mailto:hello@rblez.com", "image": "https://www.rblez.com/icon-512.png", "homeLocation": {"@type": "Place", "name": "Santiago de Cuba, Cuba"}, "sameAs": ["https://github.com/rblez", "https://x.com/rblez_", "https://instagram.com/rayomarblez", "https://t.me/rblez"], "founder": {"@type": "Organization", "name": "Tiendly", "url": "https://www.tiendly.lat"}, "knowsAbout": ["TypeScript", "Svelte", "Supabase", "PostgreSQL", "Cloudflare", "E-commerce", "Automation", "AI"]}]}</script>
   <script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t)}catch(e){}})()</script>
+  <link rel="preload" href="/fonts/roboto-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/source-code-pro-latin.woff2" as="font" type="font/woff2" crossorigin />
   <style>
+    @font-face { font-family: "Roboto"; font-style: normal; font-weight: 400 600; font-stretch: 100%; font-display: swap; src: url(/fonts/roboto-latin.woff2) format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
     @font-face { font-family: "Source Code Pro"; font-style: normal; font-weight: 400 600; font-display: swap; src: url(/fonts/source-code-pro-latin.woff2) format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
     *, *::before, *::after { box-sizing: border-box; }
     :root {
@@ -51,7 +53,7 @@
       --fg: #26251e;
       --muted: #26251e8c;
       --line: #26251e2e;
-      --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", Inter, "Segoe UI", Roboto, sans-serif;
+      --sans: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       --mono: "Source Code Pro", ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
       --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
       color-scheme: light dark;
@@ -96,10 +98,10 @@
     .lang a { text-decoration: none; padding: .25rem .125rem; }
     .lang a:hover { color: var(--fg); }
     .lang a[aria-current] { color: var(--fg); }
-    h1 { font-size: 1rem; font-weight: 600; margin: 0 0 1.25rem; letter-spacing: -.005em; }
+    h1 { font-family: var(--mono); font-size: 1.0625rem; font-weight: 600; margin: 0 0 1.25rem; letter-spacing: -.01em; }
     p { margin: 0 0 1rem; }
     section { margin-top: 3rem; }
-    h2 { font-weight: 400; margin: 0 0 1rem; }
+    h2 { font-weight: 500; font-size: .8125rem; color: var(--fg); margin: 0 0 1rem; text-transform: uppercase; letter-spacing: .06em; }
     ul { list-style: none; margin: 0; padding: 0; }
     li { margin: 0 0 .65rem; }
     .desc, .sep { color: var(--muted); }
@@ -141,7 +143,7 @@
         <li><a href="https://www.tiendly.lat/pickea">Pickea</a><span class="sep" aria-hidden="true"> — </span><span class="desc">Tienda digital de compras asistidas y servicios digitales.</span></li>
         <li><a href="https://roldos.vercel.app">Roldos</a><span class="sep" aria-hidden="true"> — </span><span class="desc">Web para cafetería con menú, carrito y pedidos.</span></li>
         <li><a href="/explorador/">Explorador</a><span class="sep" aria-hidden="true"> — </span><span class="desc">Explorador de tarjetas bancarias cubanas con el catálogo abierto de QvaPay.</span></li>
-        <li><a href="/asciidot/">Asciidot</a><span class="sep" aria-hidden="true"> — </span><span class="desc">Convierte imágenes en arte ASCII con puntos braille.</span></li>
+        <li><a href="/asciidot/">ASCIIdot</a><span class="sep" aria-hidden="true"> — </span><span class="desc">Convierte imágenes en arte ASCII con puntos braille.</span></li>
         <li><a href="/terminal/">Terminal Web</a><span class="sep" aria-hidden="true"> — </span><span class="desc">Portafolio en forma de terminal.</span></li>
         </ul>
       </section>

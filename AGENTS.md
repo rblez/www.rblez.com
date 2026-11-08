@@ -53,4 +53,4 @@ Each page has its own canonical, description, OG/Twitter (`/og-image.jpg`), `og:
 - /asciidot/ = build of rblez/asciidot (vite build --base=/asciidot/); /terminal/ = rblez/terminal-web rblez.html as index.html. Rebuild/copy when those repos change.
 - /explorador/ = copy of rblez/explorador-tarjetas-cubanas (index.html + assets); report URLs point to www.rblez.com/explorador/.
 - Theme switch in footer (dark/light/auto), Iconoir icons (MIT), iOS-style segmented control, stored in localStorage 'theme'; html[data-theme].
-- Mono font: Source Code Pro (OFL), self-hosted at /fonts/source-code-pro-latin.woff2. Sans stays system stack (CursorGothic not used: proprietary, no license).
+- Mono font: Source Code Pro (OFL), self-hosted at /fonts/source-code-pro-latin.woff2. Sans: Roboto (OFL), self-hosted at /fonts/roboto-latin.woff2; headings (h1, h2) in Source Code Pro. CursorGothic not used (proprietary, no license).
