@@ -43,3 +43,4 @@ wrangler.jsonc    — CF Workers config
 - `isotipo.svg` stays black (#000) — only the favicon is white; don't merge them- **Contact**: hello@rblez.com, X @rblez_, Instagram @rayomarblez, Telegram @rblez, GitHub rblez; icons are inline Simple Icons (CC0) in currentColor, envelope drawn for email
 - **SEO**: og-image.jpg 1200x630 (generated, same grid look), apple-touch-icon and manifest PNG icons, JSON-LD WebSite + Person (sameAs socials, founder of Tiendly); .assetsignore keeps AGENTS.md and wrangler.jsonc out of the public site
 - /asciidot/ = build of rblez/asciidot (vite build --base=/asciidot/); /terminal/ = rblez/terminal-web rblez.html as index.html. Rebuild/copy when those repos change.
+- /explorador/ = copy of rblez/explorador-tarjetas-cubanas (index.html + assets); report URLs point to www.rblez.com/explorador/.
