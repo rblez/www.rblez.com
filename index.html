@@ -396,15 +396,9 @@
     .row:hover .arrow { transform: translate(2px, -2px); }
 
     /* Ahora + Stack */
-    .split {
-      display: grid;
-      grid-template-columns: 1fr 1.4fr;
-    }
-
-    .split > .cell + .cell { border-left: 1px solid var(--line); }
-    .split > .cell:first-child::after { display: none; }
 
     .now {
+      max-width: 34ch;
       font-size: 1.25rem;
       letter-spacing: -0.015em;
       line-height: 1.4;
@@ -415,7 +409,7 @@
 
     .stack {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(8, 1fr);
       border-top: 1px solid var(--line);
       border-left: 1px solid var(--line);
       list-style: none;
@@ -504,9 +498,7 @@
       .row { grid-template-columns: 2.25rem 1fr auto; row-gap: 0.35rem; }
       .row-desc { grid-column: 2 / -1; grid-row: 2; }
       .row-meta .tags { display: none; }
-      .split { grid-template-columns: 1fr; }
-      .split > .cell + .cell { border-left: 0; }
-      .split > .cell:first-child::after { display: block; }
+      .stack { grid-template-columns: repeat(4, 1fr); }
     }
 
     @media (max-width: 640px) {
@@ -514,9 +506,17 @@
       .meta { grid-template-columns: 1fr; }
       .meta > div + div { border-left: 0; border-top: 1px solid var(--line); }
       .status { display: none; }
-      .stack { grid-template-columns: repeat(4, 1fr); }
-      .stack li { padding-inline: 0.25rem; }
-      .stack .mono { font-size: 0.6rem; }
+      .stack { grid-template-columns: repeat(2, 1fr); }
+      .stack li {
+        grid-template-rows: none;
+        grid-template-columns: 44px 1fr;
+        justify-items: start;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.9rem 1rem;
+      }
+      .stack li img { justify-self: center; transform: scale(0.8); }
+      .stack li:hover img { transform: scale(0.85); }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -621,34 +621,32 @@
       </div>
     </section>
 
-    <div class="split">
-      <section class="cell" aria-labelledby="now-title">
-        <div class="cell-head mono"><span id="now-title">02 — Ahora</span></div>
-        <p class="now"><strong>Construyendo Tiendly.</strong> Experimentando con productos, automatizaciones e IA para construir software más rápido sin sacrificar la experiencia del usuario.</p>
-      </section>
+    <section class="cell" aria-labelledby="now-title">
+      <div class="cell-head mono"><span id="now-title">02 — Ahora</span></div>
+      <p class="now"><strong>Construyendo Tiendly.</strong> Experimentando con productos, automatizaciones e IA para construir software más rápido sin sacrificar la experiencia del usuario.</p>
+    </section>
 
-      <section class="cell" aria-labelledby="stack-title">
-        <div class="cell-head mono"><span id="stack-title">03 — Stack</span><span>(16)</span></div>
-        <ul class="stack">
-          <li><img src="/logos/typescript.svg" alt="" width="36" height="36" /><span class="mono">TypeScript</span></li>
-          <li><img src="/logos/svelte.svg" alt="" width="32" height="39" /><span class="mono">Svelte</span></li>
-          <li><picture><source srcset="/logos/react_dark.svg" media="(prefers-color-scheme: dark)" /><img src="/logos/react_light.svg" alt="" width="38" height="34" /></picture><span class="mono">React</span></li>
-          <li><img src="/logos/tailwindcss.svg" alt="" width="46" height="28" /><span class="mono">Tailwind</span></li>
-          <li><img src="/logos/bun.svg" alt="" width="39" height="34" /><span class="mono">Bun</span></li>
-          <li><picture><source srcset="/logos/golang_dark.svg" media="(prefers-color-scheme: dark)" /><img src="/logos/golang.svg" alt="" width="58" height="22" /></picture><span class="mono">Go</span></li>
-          <li><img src="/logos/supabase.svg" alt="" width="36" height="37" /><span class="mono">Supabase</span></li>
-          <li><img src="/logos/postgresql.svg" alt="" width="36" height="37" /><span class="mono">PostgreSQL</span></li>
-          <li><img src="/logos/sqlite.svg" alt="" width="54" height="24" /><span class="mono">SQLite</span></li>
-          <li><img src="/logos/cloudflare.svg" alt="" width="53" height="24" /><span class="mono">Cloudflare</span></li>
-          <li><img class="logo-mono" src="/logos/vercel.svg" alt="" width="36" height="31" /><span class="mono">Vercel</span></li>
-          <li><picture><source srcset="/logos/railway_dark.svg" media="(prefers-color-scheme: dark)" /><img src="/logos/railway.svg" alt="" width="36" height="36" /></picture><span class="mono">Railway</span></li>
-          <li><img class="logo-mono" src="/logos/resend-icon-black.svg" alt="" width="54" height="54" /><span class="mono">Resend</span></li>
-          <li><img src="/logos/telegram.svg" alt="" width="36" height="36" /><span class="mono">Telegram</span></li>
-          <li><img src="/logos/git.svg" alt="" width="36" height="36" /><span class="mono">Git</span></li>
-          <li><picture><source srcset="/logos/github_dark.svg" media="(prefers-color-scheme: dark)" /><img src="/logos/github_light.svg" alt="" width="36" height="36" /></picture><span class="mono">GitHub</span></li>
-        </ul>
-      </section>
-    </div>
+    <section class="cell" aria-labelledby="stack-title">
+      <div class="cell-head mono"><span id="stack-title">03 — Stack</span><span>(16)</span></div>
+      <ul class="stack">
+        <li><img src="/logos/typescript.svg" alt="" width="36" height="36" /><span class="mono">TypeScript</span></li>
+        <li><img src="/logos/svelte.svg" alt="" width="32" height="39" /><span class="mono">Svelte</span></li>
+        <li><picture><source srcset="/logos/react_dark.svg" media="(prefers-color-scheme: dark)" /><img src="/logos/react_light.svg" alt="" width="38" height="34" /></picture><span class="mono">React</span></li>
+        <li><img src="/logos/tailwindcss.svg" alt="" width="46" height="28" /><span class="mono">Tailwind</span></li>
+        <li><img src="/logos/bun.svg" alt="" width="39" height="34" /><span class="mono">Bun</span></li>
+        <li><picture><source srcset="/logos/golang_dark.svg" media="(prefers-color-scheme: dark)" /><img src="/logos/golang.svg" alt="" width="58" height="22" /></picture><span class="mono">Go</span></li>
+        <li><img src="/logos/supabase.svg" alt="" width="36" height="37" /><span class="mono">Supabase</span></li>
+        <li><img src="/logos/postgresql.svg" alt="" width="36" height="37" /><span class="mono">PostgreSQL</span></li>
+        <li><img src="/logos/sqlite.svg" alt="" width="54" height="24" /><span class="mono">SQLite</span></li>
+        <li><img src="/logos/cloudflare.svg" alt="" width="53" height="24" /><span class="mono">Cloudflare</span></li>
+        <li><img class="logo-mono" src="/logos/vercel.svg" alt="" width="36" height="31" /><span class="mono">Vercel</span></li>
+        <li><picture><source srcset="/logos/railway_dark.svg" media="(prefers-color-scheme: dark)" /><img src="/logos/railway.svg" alt="" width="36" height="36" /></picture><span class="mono">Railway</span></li>
+        <li><img class="logo-mono" src="/logos/resend-icon-black.svg" alt="" width="54" height="54" /><span class="mono">Resend</span></li>
+        <li><img src="/logos/telegram.svg" alt="" width="36" height="36" /><span class="mono">Telegram</span></li>
+        <li><img src="/logos/git.svg" alt="" width="36" height="36" /><span class="mono">Git</span></li>
+        <li><picture><source srcset="/logos/github_dark.svg" media="(prefers-color-scheme: dark)" /><img src="/logos/github_light.svg" alt="" width="36" height="36" /></picture><span class="mono">GitHub</span></li>
+      </ul>
+    </section>
 
     <section class="cta cell" aria-labelledby="contact-title">
       <span class="cta-noise" aria-hidden="true"></span>
