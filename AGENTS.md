@@ -1,46 +1,53 @@
 # AGENTS.md — www.rblez.com
 
-Minimal personal portfolio site for Ray (rblez). Single HTML file. Only JS: GSAP 3.15.1 (core, ScrollTrigger) from jsDelivr plus a small inline script.
+Minimal personal site for rblez, in the style of leerob.com / rauchg.com: one narrow text column (34rem), short intro with inline links, plain lists, lots of whitespace, small muted mono meta text. No cards, no grids, no images besides the isotype. No JavaScript.
 
 ## Stack
 
 - **Deploy**: Cloudflare Workers static assets (`wrangler.jsonc`, `assets.directory: "."`) — not Pages, no Worker script
-- **Animation**: GSAP via CDN `<script defer>`, used only on the project preview (entrance, tab switch, scroll zoom); the rest of the page has no GSAP; the page must stay fully readable if GSAP fails to load, and respect `prefers-reduced-motion`
-- **Look**: interface and palette inspired by cursor.com without the orange (cream #f7f7f4, ink #26251e, greys, canela #f3ede6; dark #14120b). Noise overlay on the whole page and grain on primary buttons. No name text: isotype only. Layout is a hard grid: a framed column with hairline side rails, sections as cells split by hairlines, "+" crosses on the corners, mono uppercase section heads (01 — Proyectos), stack as a full-width cell grid (8 columns desktop, 4 tablet, 3 on mobile, a lone last item spans the row) (12 tools, logos in official colours at equal optical size; light/dark variants via <picture>)
-- **Font**: SF Pro through the system stack (`-apple-system`, `ui-monospace`), never self-hosted (Apple's license forbids it); Inter and Geist Mono from Google Fonts are the fallback on Android and other non-Apple devices
-- **Stack logos**: SVGs from svgl (github.com/pheralb/svgl) in `logos/`, greyscale until hover; mono logos (Resend, Vercel) invert in dark mode
+- **Look**: cream #f7f7f4 bg, ink #26251e, muted ink (~55% alpha) for meta; dark mode via `prefers-color-scheme` (#14120b bg, #edecec text). A barely visible noise/grain texture (SVG feTurbulence data URI as `body` background, ~4% alpha, static) — mandatory in Ray's designs, keep it subtle.
+- **Identity**: no name text anywhere visible. Only the isotype (`/isotipo.svg`, 24px, inverted in dark mode) at the top left, linking to the home of the current language. Title line: "Software Engineer & Builder".
+- **Font**: system stack (`-apple-system, BlinkMacSystemFont, "SF Pro Text", Inter, …`) and `ui-monospace, "SF Mono", "Geist Mono", …` for meta. Never self-host SF Pro (Apple license). No web fonts are loaded.
 - **No build step, no package.json, no tests, no CI**
 
 ## Commands
 
 | Action | Command |
 |--------|---------|
-| Preview locally | `npx wrangler dev` |
+| Preview locally | `npx wrangler dev` (or `python3 -m http.server`) |
 | Deploy to prod | `npx wrangler deploy` |
 
 ## Structure
 
 ```
-index.html        — the entire site (inline CSS, inline SVG icons, inline JS + GSAP CDN)
-logos/            — stack logos from svgl
-previews/         — real screenshots per project: <name>.webp desktop 1280×800, <name>-m.webp mobile 525×934 (shown under 640px); retake when a project UI changes
-isotipo.svg       — logo, black (#000), used as header image
-favicon-black.svg   — same logo, black (#000), for light browser theme (first <link rel="icon">, default)
-favicon-white.svg   — same logo, white (#fff), for dark browser theme (second <link rel="icon"> with media query)
-og-image.jpg      — 1200x630 OG/Twitter card image (cream grid, isotype, headline)
+index.html        — Spanish page (lang="es"), canonical https://www.rblez.com/
+en/index.html     — English page (lang="en"), canonical https://www.rblez.com/en/
+isotipo.svg       — logo, black (#000), header image (CSS-inverted in dark mode)
+favicon-black.svg — same logo, black, for light browser theme (first <link rel="icon">)
+favicon-white.svg — same logo, white, for dark browser theme (media query)
+og-image.jpg      — 1200x630 OG/Twitter card image
+apple-touch-icon.png, icon-*.png, manifest.json — PWA/home-screen icons
 robots.txt        — allows all, references sitemap.xml
-sitemap.xml       — single URL https://www.rblez.com/
-manifest.json     — PWA manifest
+sitemap.xml       — /, /en/ (with xhtml hreflang alternates), /asciidot/, /terminal/, /explorador/
+asciidot/ terminal/ explorador/ — sub-apps (see below)
 wrangler.jsonc    — CF Workers config
 ```
 
+## Page content (keep both languages in sync)
+
+Header (isotype + "ES / EN" switch) → h1 "Software Engineer & Builder" → intro (Santiago de Cuba; building Tiendly, 0% commission online stores for Cuban sellers; experimenting with products, automations and AI) → Projects list (name — one line): Tiendly, Pickea (tiendly.lat/pickea), Roldos (roldos.vercel.app), Explorador (/explorador/), Asciidot (/asciidot/), Terminal Web (/terminal/) → Contact sentence with inline links (hello@rblez.com, X @rblez_, Instagram @rayomarblez, Telegram @rblez, GitHub rblez) → footer "© 2026".
+
+Any content change must be made in BOTH `index.html` and `en/index.html`.
+
+## SEO
+
+Each page has its own canonical, description, OG/Twitter (`/og-image.jpg`), `og:locale` (es_ES / en_US) + `og:locale:alternate`, and hreflang alternates (es → /, en → /en/, x-default → /). JSON-LD @graph: WebSite + WebPage (per language) + Person (`@id` https://www.rblez.com/#person, sameAs socials, founder of Tiendly). `.assetsignore` keeps AGENTS.md and wrangler.jsonc out of the public site.
+
 ## Constraints
 
-- No JS frameworks, no build tools, no `npm install`; GSAP from CDN is the only external script
-- Inline CSS only (no external stylesheets beyond Google Fonts)
-- Site content is in Spanish (`lang="es"`)
-- `assets.directory` is `"."` — everything in the repo root gets uploaded and served publicly; `.gitignore` only affects git, so keep secrets out of the root
-- `isotipo.svg` stays black (#000) — only the favicon is white; don't merge them- **Contact**: hello@rblez.com, X @rblez_, Instagram @rayomarblez, Telegram @rblez, GitHub rblez; icons are inline Simple Icons (CC0) in currentColor, envelope drawn for email
-- **SEO**: og-image.jpg 1200x630 (generated, same grid look), apple-touch-icon and manifest PNG icons, JSON-LD WebSite + Person (sameAs socials, founder of Tiendly); .assetsignore keeps AGENTS.md and wrangler.jsonc out of the public site
+- No JS frameworks, no build tools, no `npm install`, no external scripts or stylesheets; inline CSS only
+- Responsive from 360px; under 480px project descriptions drop below the name. Respect `prefers-reduced-motion` (only motion is a link underline transition).
+- `assets.directory` is `"."` — everything in the repo root is public; keep secrets out
+- `isotipo.svg` stays black (#000) — only the favicon has a white variant; don't merge them
 - /asciidot/ = build of rblez/asciidot (vite build --base=/asciidot/); /terminal/ = rblez/terminal-web rblez.html as index.html. Rebuild/copy when those repos change.
 - /explorador/ = copy of rblez/explorador-tarjetas-cubanas (index.html + assets); report URLs point to www.rblez.com/explorador/.
