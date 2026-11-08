@@ -3,49 +3,48 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>rblez — Interactive Terminal Portfolio</title>
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>rblez — Software Engineer &amp; Builder · Terminal</title>
+
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Interactive terminal portfolio of Ray (rblez) - Software engineer building digital infrastructure for Cuban businesses. Explore projects, skills, and connect.">
-  <meta name="keywords" content="rblez, Ray, software engineer, terminal, portfolio, developer, Cuba, tiendly, memlink, TypeScript, JavaScript">
-  <meta name="author" content="Ray (rblez)">
+  <meta name="description" content="Interactive terminal portfolio of rblez, software engineer and builder from Santiago de Cuba. Explore projects like Tiendly, Pickea and Asciidot, the stack, and how to get in touch.">
+  <meta name="keywords" content="rblez, software engineer, builder, terminal, portfolio, developer, Cuba, Tiendly, Pickea, Asciidot, TypeScript, Svelte, Supabase">
+  <meta name="author" content="rblez">
   <meta name="robots" content="index, follow">
   <meta name="language" content="en">
-  
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.rblez.com/terminal/">
-  <meta property="og:title" content="rblez — Interactive Terminal Portfolio">
-  <meta property="og:description" content="Interactive terminal portfolio of Ray (rblez) - Software engineer building digital infrastructure for Cuban businesses.">
+  <meta property="og:title" content="rblez — Software Engineer &amp; Builder · Terminal">
+  <meta property="og:description" content="Interactive terminal portfolio of rblez, software engineer and builder from Santiago de Cuba.">
   <meta property="og:image" content="https://www.rblez.com/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:site_name" content="rblez">
-  
+
   <!-- Twitter Card -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://rblez.com/">
-  <meta property="twitter:title" content="rblez — Interactive Terminal Portfolio">
-  <meta property="twitter:description" content="Interactive terminal portfolio of Ray (rblez) - Software engineer building digital infrastructure for Cuban businesses.">
-  <meta property="twitter:image" content="https://www.rblez.com/og-image.jpg">
-  <meta property="twitter:creator" content="@rblezzzz">
-  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://www.rblez.com/terminal/">
+  <meta name="twitter:title" content="rblez — Software Engineer &amp; Builder · Terminal">
+  <meta name="twitter:description" content="Interactive terminal portfolio of rblez, software engineer and builder from Santiago de Cuba.">
+  <meta name="twitter:image" content="https://www.rblez.com/og-image.jpg">
+  <meta name="twitter:creator" content="@rblez_">
+  <meta name="twitter:site" content="@rblez_">
+
   <!-- Additional SEO -->
   <link rel="canonical" href="https://www.rblez.com/terminal/">
   <meta name="format-detection" content="telephone=no">
   <meta name="theme-color" content="#000000">
-  
+
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="manifest" href="site.webmanifest">
   <link rel="shortcut icon" href="favicon.ico">
-  
-  <!-- Additional favicons for better coverage -->
   <meta name="msapplication-TileColor" content="#000000">
-  <meta name="msapplication-config" content="browserconfig.xml">
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;700&display=swap');
 
@@ -57,34 +56,30 @@
       text-rendering: optimizeLegibility;
     }
 
+    :root {
+      --app-h: 100vh;
+      --fs: 13px;
+    }
+    @supports (height: 100dvh) {
+      :root { --app-h: 100dvh; }
+    }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      overscroll-behavior: none;
+    }
+
     body {
       background: #000 url('./wallpaper.webp') center/cover no-repeat fixed;
-      font-family: 'Geist Mono', 'SF Mono', monospace;
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      width: 100vw;
+      font-family: 'Geist Mono', 'SF Mono', ui-monospace, Menlo, monospace;
+      height: var(--app-h);
+      width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
-    }
-
-    /* Mobile message - hidden by default */
-    .mobile-message {
-      display: none;
-      text-align: center;
-      color: #fff;
-      font-family: 'Geist Mono', 'SF Mono', monospace;
-      padding: 40px 20px;
-      background: rgba(0, 0, 0, 0.9);
-      border-radius: 12px;
-      border: 1px solid #333;
-      max-width: 90vw;
-    }
-    
-    /* Mobile content - hidden by default */
-    .mobile-content {
-      display: none;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
     }
 
     /* ── Window ── */
@@ -96,119 +91,20 @@
       flex-direction: column;
       border: 1px solid #333;
       box-shadow: 0 10px 40px rgba(0,0,0,0.8);
-
-      /* Desktop default */
       width: 860px;
       height: 560px;
-      transform: scale(1.25);
-      transform-origin: center center;
+      max-width: 96vw;
+      max-height: 92vh;
     }
 
-    /* Tablet */
-    @media (max-width: 900px) {
+    /* Large desktop: same scaled-up window as before */
+    @media (min-width: 1200px) and (min-height: 760px) {
       .win {
-        width: 90vw;
-        height: 80vh;
-        transform: none;
+        max-width: none;
+        max-height: none;
+        transform: scale(1.25);
+        transform-origin: center center;
       }
-    }
-
-    /* Phone */
-    @media (max-width: 480px) {
-      body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 5vh 5vw;
-        height: 100vh;
-        overflow: hidden;
-        background: #000 url('./wallpaper.webp') center/cover no-repeat fixed;
-      }
-      
-      .mobile-message {
-        display: none;
-      }
-      
-      .mobile-content {
-        display: block;
-      }
-      
-      .welcome {
-        display: none;
-      }
-      
-      .win {
-        width: 90vw;
-        height: 80vh;
-        border-radius: 10px;
-        margin: 0;
-        transform: none;
-      }
-      
-      .tb  { padding: 8px 12px; min-height: 40px; }
-      .term { 
-        padding: 10px 12px;
-        overflow-y: auto;
-      }
-      
-      .mobile-content {
-        color: #ededed;
-        font-size: 14px;
-        line-height: 1.6;
-      }
-      
-      .mobile-content h3 {
-        color: #4fc3f7;
-        margin: 15px 0 10px 0;
-        font-size: 16px;
-      }
-      
-      .mobile-content p {
-        margin-bottom: 10px;
-      }
-      
-      .mobile-content a {
-        color: #ededed;
-        border-bottom: 1px solid #444;
-        text-decoration: none;
-      }
-      
-      .mobile-content a:hover {
-        border-bottom-color: #ededed;
-      }
-      
-      .mobile-content .skills {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 5px;
-        margin: 10px 0;
-      }
-      
-      .mobile-content .skill-tag {
-        background: #333;
-        padding: 2px 6px;
-        border-radius: 3px;
-        font-size: 12px;
-        color: #fff;
-      }
-      
-      /* Show input on mobile for limited commands */
-      #hidden-inp,
-      .prompt-row,
-      .cur {
-        display: block;
-      }
-    }
-
-    /* Landscape phone */
-    @media (max-height: 500px) and (orientation: landscape) {
-      .win {
-        width: 96vw;
-        height: 96vh;
-        border-radius: 0;
-      }
-      .tb   { padding: 5px 12px; min-height: 30px; }
-      .term { padding: 6px 12px; }
     }
 
     /* ── Title bar ── */
@@ -232,10 +128,9 @@
       transition: opacity 0.2s;
     }
 
-    .r { background: #ff5f57; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+    .r { background: #ff5f57; cursor: pointer; }
     .y { background: #666; cursor: not-allowed; opacity: 0.6; }
     .g { background: #666; cursor: not-allowed; opacity: 0.6; }
-
     .r:hover { opacity: 0.8; }
 
     .ttl {
@@ -243,6 +138,11 @@
       text-align: center;
       color: #555;
       font-size: 12px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      /* keep the title optically centred against the dots */
+      margin-right: 50px;
     }
 
     /* ── Terminal body ── */
@@ -256,6 +156,7 @@
       flex-direction: column;
       min-height: 0;
       -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
     }
 
     .term::-webkit-scrollbar { width: 3px; }
@@ -268,42 +169,32 @@
 
     /* ── Lines ── */
     .line {
-      font-size: clamp(11px, 2vw, 13px);
+      font-size: var(--fs);
       line-height: 1.65;
       color: #ededed;
       white-space: pre-wrap;
+      overflow-wrap: anywhere;
       word-break: break-word;
       margin-bottom: 8px;
+      max-width: 100%;
     }
 
     /* ── Active prompt row ── */
     .prompt-row {
+      position: relative;
       display: flex;
       align-items: flex-start;
-      font-size: clamp(11px, 2vw, 13px);
+      font-size: var(--fs);
       line-height: 1.65;
       flex-wrap: nowrap;
+      flex-shrink: 0;
+      max-width: 100%;
     }
 
     .pr {
       font-weight: 700;
       white-space: nowrap;
       flex-shrink: 0;
-    }
-
-    .pr-user {
-      color: #28c840;
-    }
-
-    .pr-host {
-      color: #28c840;
-    }
-
-    .pr-separator {
-      color: #28c840;
-    }
-
-    .pr-arrow {
       color: #28c840;
     }
 
@@ -312,14 +203,15 @@
       flex: 1;
       min-width: 0;
       white-space: pre-wrap;
+      overflow-wrap: anywhere;
       word-break: break-word;
       padding-right: 4px;
-      padding-left: 6px; /* fix: space between prompt and typed text */
+      padding-left: 6px;
     }
 
     .cur {
       display: inline-block;
-      width: clamp(6px, 1.5vw, 8px);
+      width: 8px;
       height: 1em;
       background: #fff;
       margin-left: 4px;
@@ -332,10 +224,38 @@
       50%       { opacity: 0; }
     }
 
+    /* Real input laid over the prompt row. Invisible, but in the viewport
+       so a tap opens the mobile keyboard; 16px avoids iOS zoom-on-focus. */
+    #inp {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      color: transparent;
+      caret-color: transparent;
+      font-size: 16px;
+      font-family: inherit;
+      padding: 0;
+      margin: 0;
+      -webkit-appearance: none;
+      appearance: none;
+      cursor: text;
+    }
+
+    body > #inp { inset: auto; left: 0; top: 0; width: 1px; height: 1px; }
+
     /* ── Colours ── */
     .k   { color: #888; }
     .grn { color: #28c840; }
     .err { color: #ff5f57; }
+    .w   { color: #fff; font-weight: 700; }
+    .nw  { white-space: nowrap; display: inline-block; }
+    .proj { margin-top: 2px; }
+    .desc { padding-left: 2ch; }
 
     a {
       color: #ededed;
@@ -346,189 +266,247 @@
 
     .welcome { color: #28c840; }
 
-    /* hidden real input */
-    #hidden-inp {
-      position: fixed;
-      opacity: 0;
-      pointer-events: none;
-      width: 1px;
-      height: 1px;
-      left: -9999px;
-      top: -9999px;
-    }
-
     /* typing animation */
     .typing-cursor {
       display: inline-block;
       width: 2px;
       height: 1.2em;
       background: #28c840;
-      animation: typing-blink 1s step-end infinite;
+      animation: blink 1s step-end infinite;
       vertical-align: text-bottom;
       margin-left: 2px;
     }
 
-    @keyframes typing-blink {
-      0%, 100% { opacity: 1; }
-      50%       { opacity: 0; }
-    }
-
-    /* fade-in animation */
-    .fade-in {
-      animation: fadeIn 0.3s ease-in;
-    }
+    .fade-in { animation: fadeIn 0.3s ease-in; }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(5px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    
+    /* ── Command chips (touch / small screens) ── */
+    .chips {
+      display: none;
+      gap: 8px;
+      padding: 10px 12px;
+      border-top: 1px solid #222;
+      background: #0a0a0a;
+      flex-shrink: 0;
+      flex-wrap: wrap;
+    }
+
+    .chip {
+      flex: 1 1 auto;
+      font-family: inherit;
+      font-size: 13px;
+      line-height: 1;
+      color: #28c840;
+      background: #111;
+      border: 1px solid #2a2a2a;
+      border-radius: 999px;
+      padding: 10px 14px;
+      min-height: 36px;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+    .chip:active { background: #1c1c1c; border-color: #28c840; }
+    .chip:focus-visible { outline: 1px solid #28c840; outline-offset: 2px; }
+
+    /* Tablet */
+    @media (max-width: 900px) {
+      body {
+        padding:
+          max(12px, env(safe-area-inset-top))
+          max(12px, env(safe-area-inset-right))
+          max(12px, env(safe-area-inset-bottom))
+          max(12px, env(safe-area-inset-left));
+      }
+      .win {
+        width: 100%;
+        max-width: 760px;
+        height: min(100%, 820px);
+        max-height: none;
+      }
+      .chips { display: flex; }
+    }
+
+    /* Phone */
+    @media (max-width: 600px) {
+      :root { --fs: clamp(12px, 3.4vw, 13px); }
+      body {
+        padding:
+          max(8px, env(safe-area-inset-top))
+          max(8px, env(safe-area-inset-right))
+          max(8px, env(safe-area-inset-bottom))
+          max(8px, env(safe-area-inset-left));
+      }
+      .win { height: 100%; border-radius: 10px; }
+      .tb  { padding: 8px 12px; }
+      .ttl { margin-right: 44px; }
+      .term { padding: 10px 12px; }
+      .line { margin-bottom: 6px; }
+      .cur { width: 7px; }
+      .chips { padding: 8px 10px; gap: 6px; }
+      .chip { font-size: 12.5px; padding: 10px 8px; }
+    }
+    @media (max-width: 380px) {
+      .chips { gap: 5px; padding: 8px; }
+      .chip { font-size: 12px; padding: 10px 5px; }
+    }
+
+    /* Any touch device (e.g. large tablets) gets the chips too */
+    @media (pointer: coarse) {
+      .chips { display: flex; }
+    }
+
+    /* Landscape phone */
+    @media (max-height: 500px) and (orientation: landscape) {
+      body { padding: max(4px, env(safe-area-inset-top)) max(8px, env(safe-area-inset-right)) max(4px, env(safe-area-inset-bottom)) max(8px, env(safe-area-inset-left)); }
+      .win { width: 100%; max-width: none; height: 100%; transform: none; }
+      .tb   { padding: 5px 12px; height: 30px; }
+      .term { padding: 6px 12px; }
+      .chips { padding: 6px 10px; }
+      .chip { padding: 7px 12px; min-height: 30px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <div class="mobile-message">
-    <span class="emoji">💻</span>
-    <h2>Desktop Only</h2>
-    <p>This terminal experience is designed for desktop computers.</p>
-    <p>Please visit this site on a desktop or laptop computer for the best experience.</p>
-    <p>🖥️ Desktop recommended 🖥️</p>
-  </div>
-  
   <div class="win" id="win">
     <div class="tb">
       <div class="dots">
-        <div class="d r" id="close-btn"></div>
+        <div class="d r" id="close-btn" title="close"></div>
         <div class="d y"></div>
         <div class="d g"></div>
       </div>
-      <div class="ttl">rblez@Ray — Terminal</div>
+      <div class="ttl">rblez@web — Terminal</div>
     </div>
     <div class="term" id="term">
-      <input id="hidden-inp" autocomplete="off" spellcheck="false" />
       <div class="spacer"></div>
-      
-      <!-- Mobile content (shown only on mobile) -->
-      <div class="mobile-content">
-        <h3>Ray - Software Engineer</h3>
-        <p><strong>Age:</strong> 19 | <strong>Location:</strong> Santiago de Cuba, Cuba</p>
-        <p><strong>Status:</strong> Self-taught developer building digital infrastructure for Cuban businesses</p>
-        
-        <h3>About</h3>
-        <p>Software engineer and pixel art lover building real products for real people. Started reselling gift cards and game top-ups, now building digital infrastructure for Cuban businesses. I don't wait for the right conditions — I build with what I have.</p>
-        
-        <h3>Skills</h3>
-        <div class="skills">
-          <span class="skill-tag">TypeScript</span>
-          <span class="skill-tag">JavaScript</span>
-          <span class="skill-tag">React</span>
-          <span class="skill-tag">Next.js</span>
-          <span class="skill-tag">Node.js</span>
-          <span class="skill-tag">Tailwind</span>
-          <span class="skill-tag">Vercel</span>
-          <span class="skill-tag">Cloudflare</span>
-        </div>
-        
-        <h3>Projects</h3>
-        <p><strong>Tiendly:</strong> <a href="https://tiendly.lat" target="_blank">tiendly.lat</a> - Digital infrastructure for Cuban businesses</p>
-        <p><strong>Memlink:</strong> <a href="https://github.com/rblez/memlink" target="_blank">github.com/rblez/memlink</a> - Persistent memory across sessions</p>
-        <p><strong>Portfolio:</strong> <a href="https://rblez.com" target="_blank">rblez.com</a> - Terminal-style portfolio</p>
-        
-        <h3>Contact</h3>
-        <p><strong>Email:</strong> <a href="mailto:hello@rblez.com">hello@rblez.com</a></p>
-        <p><strong>X/Twitter:</strong> <a href="https://x.com/rblezzzz" target="_blank">@rblezzzz</a></p>
-        <p><strong>GitHub:</strong> <a href="https://github.com/rblez" target="_blank">github.com/rblez</a></p>
-      </div>
-      
-      <!-- Desktop welcome message (shown only on desktop) -->
       <div class="line welcome" id="welcome"></div>
-      
       <!-- active prompt inserted by JS -->
     </div>
+    <nav class="chips" id="chips" aria-label="Quick commands">
+      <button class="chip" type="button" data-cmd="help">help</button>
+      <button class="chip" type="button" data-cmd="about">about</button>
+      <button class="chip" type="button" data-cmd="projects">projects</button>
+      <button class="chip" type="button" data-cmd="skills">skills</button>
+      <button class="chip" type="button" data-cmd="contact">contact</button>
+    </nav>
   </div>
+
+  <input id="inp" type="text" autocomplete="off" autocorrect="off" autocapitalize="off"
+         spellcheck="false" inputmode="text" enterkeyhint="go" aria-label="terminal input" />
 
   <script>
     const term  = document.getElementById('term');
-    const hi    = document.getElementById('hidden-inp');
+    const inp   = document.getElementById('inp');
+    const PROMPT_HTML = 'rblez@web &gt;';
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finePointer  = window.matchMedia('(pointer: fine)').matches;
 
     let cmdHistory = [], hIdx = -1, currentVal = '';
+
+    const LINKS = {
+      tiendly:    'https://www.tiendly.lat',
+      pickea:     'https://www.tiendly.lat/pickea',
+      roldos:     'https://roldos.vercel.app',
+      explorador: 'https://www.rblez.com/explorador/',
+      asciidot:   'https://www.rblez.com/asciidot/',
+      github:     'https://github.com/rblez',
+      x:          'https://x.com/rblez_',
+      instagram:  'https://instagram.com/rayomarblez',
+      telegram:   'https://t.me/rblez',
+      mail:       'mailto:hello@rblez.com'
+    };
+
+    const SKILLS = ['TypeScript', 'Svelte', 'Tailwind', 'Bun', 'Supabase', 'PostgreSQL',
+                    'Cloudflare', 'Vercel', 'Resend', 'Telegram', 'Git', 'GitHub'];
+
+    const PROJECTS = [
+      ['tiendly',    'www.tiendly.lat',             'SaaS to create online stores, 0% commission'],
+      ['pickea',     'www.tiendly.lat/pickea',      'digital store for assisted shopping'],
+      ['roldos',     'roldos.vercel.app',           'café website with menu, cart and orders'],
+      ['explorador', 'www.rblez.com/explorador',    'Cuban bank card explorer built on the QvaPay catalog'],
+      ['asciidot',   'www.rblez.com/asciidot',      'turns images into braille ASCII art']
+    ];
+
+    const a = (href, label) =>
+      `<a href="${href}"${href.startsWith('mailto:') ? '' : ' target="_blank" rel="noopener"'}>${label}</a>`;
 
     /* ── Commands ── */
     const COMMANDS = {
       help: () =>
 `<span class="grn">commands:</span>
-  <span class="k">whoami</span>     personal info
+  <span class="k">whoami</span>     who I am
   <span class="k">about</span>      about me
   <span class="k">skills</span>     tech stack
+  <span class="k">projects</span>   what I've built
   <span class="k">contact</span>    find me online
-  <span class="k">open</span>       open tiendly | memlink | github | x
+  <span class="k">open</span>       open a project or profile
+  <span class="k">now</span>        what I'm doing now
   <span class="k">pwd</span>        show current directory
-  <span class="k">projects</span>   show my projects
-  <span class="k">now</span>        current time and date
   <span class="k">clear</span>      clear terminal
   <span class="k">help</span>       show this`,
 
       whoami: () =>
-`<span class="k">name      </span>Ray
-<span class="k">age       </span>19
+`<span class="k">user      </span>rblez
+<span class="k">role      </span><span class="w">Software Engineer &amp; Builder</span>
 <span class="k">location  </span>Santiago de Cuba, Cuba
 <span class="k">os        </span>Linux · Windows
-<span class="k">status    </span><b style="color:#fff">self-taught</b> · dropped university to build
+<span class="k">status    </span><span class="w">self-taught</span> · dropped university to build
 <span class="k">interests </span>pixel art · software engineering`,
 
       about: () =>
-`Software engineer and pixel art lover building real
-products for real people. Started reselling gift cards
-and game top-ups, now building digital infrastructure
-for Cuban businesses.
+`<span class="w">rblez</span> — Software Engineer &amp; Builder
+<span class="k">Santiago de Cuba, Cuba</span>
+
+Software engineer and pixel art lover building real products for real people. Started reselling gift cards and game top-ups, now building digital infrastructure for Cuban businesses.
 I don't wait for the right conditions — I build with what I have.`,
 
       skills: () =>
-`TypeScript  JavaScript  Bun  PNPM  Next.js  Tailwind
-React  MCP  Clerk  Vercel  Cloudflare  Resend  Railway  Hostinger`,
+`<span class="grn">stack:</span>
+${SKILLS.map(s => `<span class="nw"><span class="k">·</span> ${s}</span>`).join('  ')}`,
 
       contact: () =>
-`<span class="k">email    </span><a href="mailto:hello@rblez.com">hello@rblez.com</a>
-<span class="k">x        </span><a href="https://x.com/rblezzzz" target="_blank">x.com/rblezzzz</a>
-<span class="k">telegram </span><a href="https://t.me/rblez" target="_blank">t.me/rblez</a>
-<span class="k">linkedin </span><a href="https://linkedin.com/in/rblez" target="_blank">linkedin.com/in/rblez</a>
-<span class="k">github   </span><a href="https://github.com/rblez" target="_blank">github.com/rblez</a>`,
+`<span class="k">email     </span>${a(LINKS.mail, 'hello@rblez.com')}
+<span class="k">x         </span>${a(LINKS.x, '@rblez_')}
+<span class="k">instagram </span>${a(LINKS.instagram, '@rayomarblez')}
+<span class="k">telegram  </span>${a(LINKS.telegram, '@rblez')}
+<span class="k">github    </span>${a(LINKS.github, 'rblez')}`,
 
       open: (args) => {
-        const map = {
-          tiendly: 'https://tiendly.lat',
-          memlink: 'https://github.com/rblez/memlink',
-          github:  'https://github.com/rblez',
-          x:       'https://x.com/rblezzzz'
-        };
         const t = (args[0] || '').toLowerCase();
-        if (!t)      return `<span class="err">usage: open &lt;tiendly|memlink|github|x&gt;</span>`;
-        if (!map[t]) return `<span class="err">open: unknown "${esc(t)}"</span>`;
-        window.open(map[t], '_blank');
+        const list = `<span class="k">targets: ${Object.keys(LINKS).join(' · ')}</span>`;
+        if (!t)        return `<span class="err">usage: open &lt;target&gt;</span>\n${list}`;
+        if (!LINKS[t]) return `<span class="err">open: unknown "${esc(t)}"</span>\n${list}`;
+        if (t === 'mail') window.location.href = LINKS[t];
+        else window.open(LINKS[t], '_blank', 'noopener');
         return `opening ${t}...`;
       },
 
       pwd: () => `<span class="k">/home/rblez/projects</span>`,
 
       projects: () =>
-`<span class="grn">active projects:</span>
-<span class="k">tiendly</span>     <a href="https://tiendly.lat" target="_blank">tiendly.lat</a> — digital infrastructure for Cuban businesses
-<span class="k">memlink</span>     <a href="https://github.com/rblez/memlink" target="_blank">github.com/rblez/memlink</a> — persistent memory across sessions
-<span class="k">rblez.com</span>   <a href="https://rblez.com" target="_blank">rblez.com</a> — personal terminal portfolio`,
+`<span class="grn">projects:</span>` +
+PROJECTS.map(([n, url, d]) => `<div class="proj"><span class="w">${n}</span>  ${a('https://' + url + (url.includes('rblez.com/') ? '/' : ''), url)}<div class="desc k">${d}</div></div>`).join(''),
 
       now: () => {
         const now = new Date();
-        return `<span class="k">current time:</span> ${now.toLocaleString('en-US', { 
-          weekday: 'short', 
-          year: 'numeric', 
-          month: 'short', 
-          day: 'numeric', 
-          hour: '2-digit', 
-          minute: '2-digit' 
+        return `<span class="k">current time:</span> ${now.toLocaleString('en-US', {
+          weekday: 'short', year: 'numeric', month: 'short', day: 'numeric',
+          hour: '2-digit', minute: '2-digit'
         })}
-<span class="k">working on:</span> building digital tools for Cuban businesses
-<span class="k">status:</span> <span style="color:#28c840">●</span> available for freelance work`;
+<span class="k">building:</span> Tiendly
+<span class="k">experimenting:</span> products, automations and AI`;
       },
 
       sudo: () => {
@@ -541,117 +519,59 @@ React  MCP  Clerk  Vercel  Cloudflare  Resend  Railway  Hostinger`,
       },
 
       hack: () => {
-        const hackAnimation = [
-          `<span class="grn">Initializing hack sequence...</span>`,
+        const steps = [
           `<span class="grn">Accessing mainframe...</span>`,
           `<span class="grn">Bypassing firewall...</span>`,
           `<span class="grn">Extracting data...</span>`,
           `<span class="err">Just kidding! I'm a good hacker.</span>`
         ];
-        let result = '';
-        hackAnimation.forEach((line, i) => {
-          setTimeout(() => {
-            addOutput(line);
-            if (i === hackAnimation.length - 1) newPrompt();
-          }, i * 500);
+        steps.forEach((line, i) => {
+          setTimeout(() => addOutput(line), (i + 1) * (reduceMotion ? 50 : 500));
         });
-        return `<span class="grn">Hack sequence initiated...</span>`;
+        return `<span class="grn">Initializing hack sequence...</span>`;
       },
 
       matrix: () => {
-        const matrixChars = '01';
-        let result = '<span style="color:#0f0; font-family: monospace;">';
+        const cols = term.clientWidth < 480 ? 28 : 60;
+        let result = '<span style="color:#0f0">';
         for (let i = 0; i < 8; i++) {
-          for (let j = 0; j < 60; j++) {
-            result += matrixChars[Math.floor(Math.random() * 2)];
-          }
+          for (let j = 0; j < cols; j++) result += Math.random() < 0.5 ? '0' : '1';
           result += '\n';
         }
-        result += '</span>';
-        result += `<span class="grn">Wake up, Neo...</span>`;
-        return result;
+        return result + '</span><span class="grn">Wake up, Neo...</span>';
       },
 
       clear: () => {
         clearTerminal();
         return null;
-      },
-
-      // Mobile-specific commands
-      resume: () => {
-        if (navigator.userAgent.match(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i)) {
-          return `<span class="k">name      </span>Ray
-<span class="k">age       </span>19
-<span class="k">location  </span>Santiago de Cuba, Cuba
-<span class="k">status    </span><b style="color:#fff">self-taught</b> · building digital infrastructure`;
-        }
-        return `<span class="err">resume: command not available on desktop</span>`;
-      },
-
-      show: (args) => {
-        if (navigator.userAgent.match(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i)) {
-          const section = args[0] || '';
-          
-          if (section === 'all') {
-            return `<span class="k">name      </span>Ray
-<span class="k">age       </span>19
-<span class="k">location  </span>Santiago de Cuba, Cuba
-<span class="k">status    </span><b style="color:#fff">self-taught</b> · building digital infrastructure
-
-<span class="k">about     </span>Software engineer building real products for Cuban businesses
-
-<span class="k">skills     </span>TypeScript JavaScript React Next.js Node.js Tailwind Vercel Cloudflare
-
-<span class="k">projects   </span>Tiendly: tiendly.lat - Digital infrastructure
-<span class="k">           </span>Memlink: github.com/rblez/memlink - Memory across sessions
-<span class="k">           </span>Portfolio: rblez.com - Terminal portfolio
-
-<span class="k">contact    </span>Email: hello@rblez.com
-<span class="k">           </span>X: @rblezzzz
-<span class="k">           </span>GitHub: github.com/rblez`;
-          } else if (section === 'skills') {
-            return `<span class="k">skills     </span>TypeScript JavaScript React Next.js Node.js Tailwind Vercel Cloudflare`;
-          } else if (section === 'projects') {
-            return `<span class="k">projects   </span>Tiendly: tiendly.lat - Digital infrastructure
-<span class="k">           </span>Memlink: github.com/rblez/memlink - Memory across sessions
-<span class="k">           </span>Portfolio: rblez.com - Terminal portfolio`;
-          } else if (section === 'contact') {
-            return `<span class="k">contact    </span>Email: hello@rblez.com
-<span class="k">           </span>X: @rblezzzz
-<span class="k">           </span>GitHub: github.com/rblez`;
-          } else {
-            return `<span class="err">usage: show &lt;all|skills|projects|contact&gt;</span>`;
-          }
-        }
-        return `<span class="err">show: command not available on desktop</span>`;
       }
     };
 
-    const COMPLETIONS = [...Object.keys(COMMANDS), 'tiendly', 'memlink', 'github', 'x'];
+    const COMPLETIONS = [...Object.keys(COMMANDS), ...Object.keys(LINKS)];
 
     /* ── Helpers ── */
     function esc(t) {
       return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
     }
 
+    let welcomeTimer = null;
     function typeWelcome() {
       const welcome = document.getElementById('welcome');
-      const text = "Welcome to rblez terminal. Type 'help' for available commands.";
+      const text = "Welcome to rblez terminal. Type 'help' or tap a command below.";
+      const desktopText = "Welcome to rblez terminal. Type 'help' for available commands.";
+      const msg = getComputedStyle(document.getElementById('chips')).display === 'none' ? desktopText : text;
+      clearTimeout(welcomeTimer);
+      if (reduceMotion) { welcome.textContent = msg; return; }
       let index = 0;
-      
-      welcome.innerHTML = '';
-      
-      function typeChar() {
-        if (index < text.length) {
-          welcome.innerHTML = text.substring(0, index + 1) + '<span class="typing-cursor"></span>';
+      (function typeChar() {
+        if (index < msg.length) {
+          welcome.innerHTML = esc(msg.substring(0, index + 1)) + '<span class="typing-cursor"></span>';
           index++;
-          setTimeout(typeChar, 50);
+          welcomeTimer = setTimeout(typeChar, 40);
         } else {
-          welcome.innerHTML = text;
+          welcome.textContent = msg;
         }
-      }
-      
-      typeChar();
+      })();
     }
 
     function scrollBottom() {
@@ -666,7 +586,7 @@ React  MCP  Clerk  Vercel  Cloudflare  Resend  Railway  Hostinger`,
 
       const pr = document.createElement('span');
       pr.className = 'pr';
-      pr.innerHTML = '<span class="pr-user">rblez</span><span class="pr-separator">@</span><span class="pr-host">Ray</span><span class="pr-arrow"> ></span>';
+      pr.innerHTML = PROMPT_HTML;
 
       const typed = document.createElement('span');
       typed.className = 'typed';
@@ -674,51 +594,54 @@ React  MCP  Clerk  Vercel  Cloudflare  Resend  Railway  Hostinger`,
 
       const cur = document.createElement('span');
       cur.className = 'cur';
-      cur.id = 'cursor';
-
       typed.appendChild(cur);
+
       row.appendChild(pr);
       row.appendChild(typed);
       return row;
     }
 
     function newPrompt() {
-      // Remove old active line if any
+      const hadFocus = document.activeElement === inp;
       const old = document.getElementById('active-line');
       if (old) old.remove();
 
       currentVal = '';
+      inp.value = '';
       const row = buildPromptRow();
+      row.appendChild(inp);            // the real input lives on the active line
       term.appendChild(row);
+      if (hadFocus) inp.focus({ preventScroll: true });
       scrollBottom();
     }
 
     function updateDisplay() {
       const tt = document.getElementById('typed-text');
       if (!tt) return;
-      // safe: set textContent then append cursor span
       tt.textContent = currentVal;
       const cur = document.createElement('span');
       cur.className = 'cur';
-      cur.id = 'cursor';
       tt.appendChild(cur);
+    }
+
+    function setValue(v) {
+      currentVal = v;
+      inp.value = v;
+      try { inp.setSelectionRange(v.length, v.length); } catch (_) {}
+      updateDisplay();
     }
 
     function freezePrompt(val) {
       const al = document.getElementById('active-line');
       if (!al) return;
-
       const frozen = document.createElement('div');
       frozen.className = 'line';
-
       const pr = document.createElement('span');
       pr.className = 'pr';
-      pr.innerHTML = '<span class="pr-user">rblez</span><span class="pr-separator">@</span><span class="pr-host">Ray</span><span class="pr-arrow"> ></span>';
-
-      const txt = document.createTextNode(' ' + val);
-
+      pr.innerHTML = PROMPT_HTML;
       frozen.appendChild(pr);
-      frozen.appendChild(txt);
+      frozen.appendChild(document.createTextNode(' ' + val));
+      document.body.appendChild(inp);  // park the input while the row is swapped
       al.replaceWith(frozen);
     }
 
@@ -727,224 +650,143 @@ React  MCP  Clerk  Vercel  Cloudflare  Resend  Railway  Hostinger`,
       const d  = document.createElement('div');
       d.className = 'line fade-in';
       d.innerHTML = html;
-
-      if (al) {
-        term.insertBefore(d, al);
-      } else {
-        term.appendChild(d);
-      }
+      if (al) term.insertBefore(d, al);
+      else term.appendChild(d);
       scrollBottom();
     }
 
     function clearTerminal() {
-      // Remove everything except the hidden input
+      document.body.appendChild(inp);
       while (term.firstChild) term.removeChild(term.firstChild);
-
-      // Re-add spacer + welcome + hidden input
       const spacer = document.createElement('div');
       spacer.className = 'spacer';
-
       const welcome = document.createElement('div');
       welcome.className = 'line welcome';
       welcome.id = 'welcome';
-
-      term.appendChild(hi);        // keep the real input in the DOM
       term.appendChild(spacer);
       term.appendChild(welcome);
-
       newPrompt();
-      hi.focus();
       typeWelcome();
     }
 
     /* ── Command runner ── */
     function run(val) {
       const trimmed = val.trim();
+      const hadFocus = document.activeElement === inp;
       freezePrompt(trimmed);
       currentVal = '';
 
-      if (!trimmed) {
-        newPrompt();
-        return;
-      }
+      if (!trimmed) { newPrompt(); if (hadFocus) inp.focus({ preventScroll: true }); return; }
 
       cmdHistory.unshift(trimmed);
       hIdx = -1;
 
-      const [cmd, ...args] = trimmed.split(' ');
+      const [cmd, ...args] = trimmed.split(/\s+/);
       const fn = COMMANDS[cmd.toLowerCase()];
 
       if (!fn) {
-        addOutput(`<span class="err">command not found: ${esc(cmd)}</span>`);
-        newPrompt();
-        return;
+        addOutput(`<span class="err">command not found: ${esc(cmd)}</span>\n<span class="k">type 'help' for available commands</span>`);
+      } else {
+        const result = fn(args);
+        if (result === null) return;   // clear already rebuilt the prompt
+        if (result !== undefined) addOutput(result);
       }
-
-      const result = fn(args);
-      if (result === null) return;   // clear already called newPrompt
-      if (result !== undefined) addOutput(result);
       newPrompt();
+      if (hadFocus) inp.focus({ preventScroll: true });
     }
 
     /* ── Input handling ── */
-    hi.addEventListener('keydown', e => {
+    inp.addEventListener('input', () => {
+      currentVal = inp.value;
+      updateDisplay();
+      scrollBottom();
+    });
+
+    inp.addEventListener('keydown', e => {
+      if (e.isComposing) return;
       switch (e.key) {
         case 'Enter':
-          run(currentVal);
-          break;
-        case 'Backspace':
-          currentVal = currentVal.slice(0, -1);
-          updateDisplay();
+          e.preventDefault();
+          run(inp.value);
           break;
         case 'ArrowUp':
           e.preventDefault();
-          if (hIdx < cmdHistory.length - 1) currentVal = cmdHistory[++hIdx];
-          updateDisplay();
+          if (hIdx < cmdHistory.length - 1) setValue(cmdHistory[++hIdx]);
           break;
         case 'ArrowDown':
           e.preventDefault();
-          if (hIdx > 0) { currentVal = cmdHistory[--hIdx]; }
-          else          { hIdx = -1; currentVal = ''; }
-          updateDisplay();
+          if (hIdx > 0) setValue(cmdHistory[--hIdx]);
+          else { hIdx = -1; setValue(''); }
           break;
-        case 'Tab':
+        case 'ArrowLeft':
+        case 'ArrowRight':
+        case 'Home':
+        case 'End':
+          e.preventDefault();          // cursor is always drawn at the end
+          break;
+        case 'Tab': {
           e.preventDefault();
-          const v = currentVal.toLowerCase();
-          const m = COMPLETIONS.find(c => c.startsWith(v) && c !== v);
-          if (m) { currentVal = m; updateDisplay(); }
+          const v = inp.value.toLowerCase();
+          const parts = v.split(' ');
+          const last = parts[parts.length - 1];
+          const m = COMPLETIONS.find(c => c.startsWith(last) && c !== last);
+          if (m) { parts[parts.length - 1] = m; setValue(parts.join(' ')); }
           break;
+        }
         default:
           if (e.ctrlKey && e.key === 'c') {
             e.preventDefault();
-            currentVal = '';
-            updateDisplay();
             addOutput('<span class="err">^C</span>');
             newPrompt();
+            inp.focus({ preventScroll: true });
           } else if (e.ctrlKey && e.key === 'l') {
             e.preventDefault();
             clearTerminal();
-          } else if (e.ctrlKey && e.key === 'v') {
-            e.preventDefault();
-            navigator.clipboard.readText().then(text => {
-              currentVal += text;
-              updateDisplay();
-            }).catch(() => {
-              // Fallback for browsers that don't support clipboard API
-              console.log('Clipboard access denied');
-            });
-          } else if (e.key.length === 1 && !e.ctrlKey && !e.metaKey) {
-            currentVal += e.key;
-            updateDisplay();
+            inp.focus({ preventScroll: true });
           }
       }
     });
 
-    /* Focus management */
-    term.addEventListener('click', () => hi.focus());
-    term.addEventListener('touchstart', () => hi.focus());
-    document.addEventListener('keydown', () => hi.focus());
-    
-    /* Mobile keyboard support */
-    hi.addEventListener('focus', () => {
-      // Ensure mobile keyboard appears
-      if (navigator.userAgent.match(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i)) {
-        hi.setAttribute('autocomplete', 'off');
-        hi.setAttribute('autocorrect', 'off');
-        hi.setAttribute('autocapitalize', 'off');
-        hi.setAttribute('spellcheck', 'false');
-        hi.setAttribute('inputmode', 'text');
-        hi.setAttribute('enterkeyhint', 'send');
-        
-        // Adjust viewport for keyboard
-        setTimeout(() => {
-          if (window.innerHeight < window.screen.height * 0.7) {
-            const win = document.querySelector('.win');
-            if (win) {
-              win.style.height = '50vh';
-              win.style.marginTop = '2vh';
-            }
-          }
-        }, 300);
+    /* Focus management: a tap/click on the terminal focuses the real input,
+       which opens the keyboard on phones. Links and text selection still work. */
+    term.addEventListener('click', e => {
+      if (e.target.closest('a')) return;
+      const sel = window.getSelection();
+      if (sel && sel.toString()) return;
+      inp.focus({ preventScroll: true });
+      scrollBottom();
+    });
+
+    document.addEventListener('keydown', e => {
+      if (document.activeElement !== inp && !e.metaKey && !e.altKey &&
+          !(e.target && e.target.closest && e.target.closest('.chip'))) {
+        inp.focus({ preventScroll: true });
       }
     });
 
-    hi.addEventListener('blur', () => {
-      // Restore original size when keyboard hides
-      if (navigator.userAgent.match(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i)) {
-        const win = document.querySelector('.win');
-        if (win) {
-          win.style.height = '80vh';
-          win.style.marginTop = '5vh';
-        }
-      }
+    /* Command chips */
+    document.getElementById('chips').addEventListener('click', e => {
+      const btn = e.target.closest('.chip');
+      if (!btn) return;
+      setValue(btn.dataset.cmd);
+      run(btn.dataset.cmd);
     });
 
-    /* Prevent zoom on input focus (iOS) */
-    hi.addEventListener('touchstart', (e) => {
-      if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
-        const viewport = document.querySelector('meta[name=viewport]');
-        if (viewport) {
-          viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0');
-        }
-      }
-    });
-
-    /* Mobile input improvements */
-    hi.addEventListener('input', (e) => {
-      e.preventDefault();
-      const value = e.target.value;
-      
-      if (value !== currentVal && !hi.isComposing) {
-        currentVal = value;
-        updateDisplay();
-        scrollToCursor();
-        // Clear the hidden input to prevent double input
-        e.target.value = '';
-      }
-    });
-
-    /* Handle composition events for mobile keyboards */
-    hi.addEventListener('compositionstart', () => {
-      hi.isComposing = true;
-    });
-
-    hi.addEventListener('compositionend', (e) => {
-      hi.isComposing = false;
-      if (e.data) {
-        currentVal += e.data;
-        updateDisplay();
-        scrollToCursor();
-      }
-      e.target.value = '';
-    });
-
-    /* Auto-scroll to cursor */
-    function scrollToCursor() {
-      const activeLine = document.getElementById('active-line');
-      if (activeLine) {
-        setTimeout(() => {
-          activeLine.scrollIntoView({ behavior: 'smooth', block: 'end' });
-        }, 50);
-      }
+    /* Keep the window inside the visible area when the mobile keyboard opens */
+    if (window.visualViewport) {
+      const vv = window.visualViewport;
+      const fit = () => {
+        document.documentElement.style.setProperty('--app-h', vv.height + 'px');
+        window.scrollTo(0, 0);
+        scrollBottom();
+      };
+      vv.addEventListener('resize', fit);
     }
-
-    /* Touch events for mobile */
-    term.addEventListener('touchend', (e) => {
-      e.preventDefault();
-      hi.focus();
-      
-      // Trigger virtual keyboard on mobile
-      if (navigator.userAgent.match(/Android|iPhone|iPad|iPod/i)) {
-        setTimeout(() => {
-          hi.click();
-        }, 100);
-      }
-    });
 
     /* ── Init ── */
     window.addEventListener('load', () => {
       newPrompt();
-      hi.focus();
+      if (finePointer) inp.focus({ preventScroll: true });
       scrollBottom();
       typeWelcome();
     });
@@ -955,10 +797,14 @@ React  MCP  Clerk  Vercel  Cloudflare  Resend  Railway  Hostinger`,
       win.style.transition = 'opacity 0.3s, transform 0.3s';
       win.style.opacity = '0';
       win.style.transform = 'scale(0.92)';
-      setTimeout(() => { window.close(); window.location.href = 'about:blank'; }, 300);
+      setTimeout(() => { window.close(); window.location.href = 'about:blank'; }, reduceMotion ? 0 : 300);
     });
 
-    document.addEventListener('contextmenu', e => e.preventDefault());
+    if (finePointer) {
+      document.addEventListener('contextmenu', e => {
+        if (!e.target.closest('a')) e.preventDefault();
+      });
+    }
   </script>
 </body>
 
