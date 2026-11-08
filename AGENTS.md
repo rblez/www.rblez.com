@@ -23,7 +23,7 @@ Minimal personal portfolio site for Ray (rblez). Single HTML file. Only JS: GSAP
 ```
 index.html        — the entire site (inline CSS, inline SVG icons, inline JS + GSAP CDN)
 logos/            — stack logos from svgl
-previews/         — real screenshots (1280×800 webp) of each project for the window tabs; retake when a project's UI changes
+previews/         — real screenshots per project: <name>.webp desktop 1280×800, <name>-m.webp mobile 525×934 (shown under 640px); retake when a project UI changes
 isotipo.svg       — logo, black (#000), used as header image
 favicon-black.svg   — same logo, black (#000), for light browser theme (first <link rel="icon">, default)
 favicon-white.svg   — same logo, white (#fff), for dark browser theme (second <link rel="icon"> with media query)
