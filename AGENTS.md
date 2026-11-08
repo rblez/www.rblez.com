@@ -40,4 +40,4 @@ wrangler.jsonc    — CF Workers config
 - Inline CSS only (no external stylesheets beyond Google Fonts)
 - Site content is in Spanish (`lang="es"`)
 - `assets.directory` is `"."` — everything in the repo root gets uploaded and served publicly; `.gitignore` only affects git, so keep secrets out of the root
-- `isotipo.svg` stays black (#000) — only the favicon is white; don't merge them
+- `isotipo.svg` stays black (#000) — only the favicon is white; don't merge them- **Contact**: hello@rblez.com, X @rblez_, Instagram @rayomarblez, Telegram @rblez, GitHub rblez; icons are inline Simple Icons (CC0) in currentColor, envelope drawn for email
