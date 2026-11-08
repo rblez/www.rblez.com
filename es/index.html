@@ -90,8 +90,21 @@
     a:focus-visible { outline: 2px solid var(--fg); outline-offset: 3px; border-radius: 2px; }
     .skip { position: absolute; left: -9999px; }
     .skip:focus { left: 1rem; top: 1rem; background: var(--bg); padding: .25rem .5rem; z-index: 20; }
-    .wrap { max-width: 34rem; margin: 0 auto; padding: 4rem 1.5rem 3rem; }
-    header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 3.5rem; }
+    /* Rejilla: rieles a los lados de la columna, una línea por fila y cruces en cada cruce */
+    :root { --col: min(36rem, calc(100vw - 2rem)); --pad: 1.5rem; }
+    .wrap { position: relative; padding: 2.5rem 0; min-height: 100vh; }
+    .wrap::before { content: ""; position: absolute; inset: 0 auto 0 50%; width: var(--col); transform: translateX(-50%); border-inline: 1px solid var(--line); pointer-events: none; }
+    .x { position: absolute; inset: 0; pointer-events: none; }
+    .row { border-top: 1px solid var(--line); }
+    .row.end { border-bottom: 1px solid var(--line); }
+    .in { position: relative; width: var(--col); margin: 0 auto; padding: 2.25rem var(--pad); }
+    .in::before, .in::after, .row.end > .in > .x::before, .row.end > .in > .x::after { content: ""; position: absolute; top: -5px; width: 9px; height: 9px; pointer-events: none;
+      background: linear-gradient(var(--fg), var(--fg)) center / 1px 100% no-repeat, linear-gradient(var(--fg), var(--fg)) center / 100% 1px no-repeat; opacity: .55; }
+    .in::before { left: -5px; } .in::after { right: -5px; }
+    .row.end > .in > .x::before, .row.end > .in > .x::after { top: auto; bottom: -5px; }
+    .row.end > .in > .x::before { left: -5px; } .row.end > .in > .x::after { right: -5px; }
+    .num { font-family: var(--mono); font-size: .6875rem; color: var(--muted); letter-spacing: .04em; margin-right: .5rem; }
+    header.in { display: flex; align-items: center; justify-content: space-between; padding-block: 1rem; }
     .iso { display: inline-flex; padding: .25rem; margin: -.25rem; }
     .iso img { display: block; width: 24px; height: 24px; }
     .meta, .lang, footer, h2 { font-family: var(--mono); font-size: .75rem; color: var(--muted); letter-spacing: .01em; }
@@ -100,12 +113,12 @@
     .lang a[aria-current] { color: var(--fg); }
     h1 { font-family: var(--mono); font-size: 1.0625rem; font-weight: 600; margin: 0 0 1.25rem; letter-spacing: -.01em; }
     p { margin: 0 0 1rem; }
-    section { margin-top: 3rem; }
+    .in > p:last-child, .in > ul > li:last-child { margin-bottom: 0; }
     h2 { font-weight: 500; font-size: .8125rem; color: var(--fg); margin: 0 0 1rem; text-transform: uppercase; letter-spacing: .06em; }
     ul { list-style: none; margin: 0; padding: 0; }
     li { margin: 0 0 .65rem; }
     .desc, .sep { color: var(--muted); }
-    footer { margin-top: 4rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    footer.in { padding-block: 1rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
     .theme { display: none; padding: 2px; gap: 2px; border-radius: 9px; background: color-mix(in srgb, var(--fg) 7%, transparent); }
     .js .theme { display: inline-flex; }
     .theme button { appearance: none; border: 0; background: transparent; color: var(--muted); width: 34px; height: 28px; display: inline-grid; place-items: center; border-radius: 7px; cursor: pointer; -webkit-tap-highlight-color: transparent; transition: color .2s ease, background-color .2s ease, box-shadow .2s ease; }
@@ -116,8 +129,9 @@
     .theme button:focus-visible { outline: 2px solid var(--fg); outline-offset: 1px; }
     .theme svg { width: 16px; height: 16px; display: block; }
     @media (max-width: 480px) {
-      .wrap { padding-top: 2.5rem; }
-      header { margin-bottom: 2.75rem; }
+      :root { --pad: 1.125rem; }
+      .wrap { padding-block: 1.5rem; }
+      .in { padding-block: 1.75rem; }
       .sep { display: none; }
       .desc { display: block; font-size: .9375rem; }
       li { margin-bottom: .9rem; }
@@ -128,16 +142,18 @@
 <body>
   <a class="skip" href="#main">Saltar al contenido</a>
   <div class="wrap">
-    <header>
+    <div class="row"><header class="in">
       <a class="iso" href="/es/" aria-label="Inicio — rblez.com"><img src="/isotipo.svg" alt="" width="24" height="24" /></a>
       <nav class="lang" aria-label="Idioma"><a href="/es/" hreflang="es" lang="es" aria-current="true">ES</a> / <a href="/en/" hreflang="en" lang="en">EN</a></nav>
-    </header>
+    </header></div>
     <main id="main">
+      <div class="row"><div class="in">
       <h1>Software Engineer &amp; Builder</h1>
       <p>Soy ingeniero de software en Santiago de Cuba y construyo productos, sistemas y automatizaciones. Ahora trabajo en <a href="https://www.tiendly.lat">Tiendly</a>, una plataforma para crear tiendas online con 0% de comisión para vendedores cubanos.</p>
       <p>También experimento con productos, automatizaciones e IA.</p>
-      <section aria-labelledby="proyectos">
-        <h2 id="proyectos">Proyectos</h2>
+      </div></div>
+      <section class="row" aria-labelledby="proyectos"><div class="in">
+        <h2 id="proyectos"><span class="num" aria-hidden="true">01</span>Proyectos</h2>
         <ul>
         <li><a href="https://www.tiendly.lat">Tiendly</a><span class="sep" aria-hidden="true"> — </span><span class="desc">Tiendas online con 0% de comisión para vendedores cubanos.</span></li>
         <li><a href="https://www.tiendly.lat/pickea">Pickea</a><span class="sep" aria-hidden="true"> — </span><span class="desc">Tienda digital de compras asistidas y servicios digitales.</span></li>
@@ -146,13 +162,13 @@
         <li><a href="/asciidot/">ASCIIdot</a><span class="sep" aria-hidden="true"> — </span><span class="desc">Convierte imágenes en arte ASCII con puntos braille.</span></li>
         <li><a href="/terminal/">Terminal Web</a><span class="sep" aria-hidden="true"> — </span><span class="desc">Portafolio en forma de terminal.</span></li>
         </ul>
-      </section>
-      <section aria-labelledby="contacto">
-        <h2 id="contacto">Contacto</h2>
+      </div></section>
+      <section class="row" aria-labelledby="contacto"><div class="in">
+        <h2 id="contacto"><span class="num" aria-hidden="true">02</span>Contacto</h2>
         <p>Escríbeme a <a href="mailto:hello@rblez.com">hello@rblez.com</a> o encuéntrame en X <a href="https://x.com/rblez_">@rblez_</a>, Instagram <a href="https://instagram.com/rayomarblez">@rayomarblez</a>, Telegram <a href="https://t.me/rblez">@rblez</a> y GitHub <a href="https://github.com/rblez">rblez</a>.</p>
-      </section>
+      </div></section>
     </main>
-    <footer>
+    <div class="row end"><footer class="in"><span class="x" aria-hidden="true"></span>
       <span>© 2026</span>
       <!-- Iconos: Iconoir (MIT) -->
       <div class="theme" role="group" aria-label="Tema">
@@ -160,7 +176,7 @@
         <button type="button" data-t="light" aria-pressed="false" aria-label="Claro" title="Claro"><svg aria-hidden="true" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18a6 6 0 1 0 0-12a6 6 0 0 0 0 12m10-6h1M12 2V1m0 22v-1m8-2l-1-1m1-15l-1 1M4 20l1-1M4 4l1 1m-4 7h1"/></svg></button>
         <button type="button" data-t="auto" aria-pressed="false" aria-label="Automático" title="Automático"><svg aria-hidden="true" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2 21h15m4 0h1"/><path d="M2 16.4V3.6a.6.6 0 0 1 .6-.6h18.8a.6.6 0 0 1 .6.6v12.8a.6.6 0 0 1-.6.6H2.6a.6.6 0 0 1-.6-.6Z"/></g></svg></button>
       </div>
-    </footer>
+    </footer></div>
   </div>
   <script>(function(){var d=document.documentElement,b=document.querySelectorAll('.theme button');function cur(){return d.getAttribute('data-theme')||'auto'}function sync(){var c=cur();b.forEach(function(x){x.setAttribute('aria-pressed',String(x.dataset.t===c))})}b.forEach(function(x){x.addEventListener('click',function(){var t=x.dataset.t;if(t==='auto'){d.removeAttribute('data-theme');try{localStorage.removeItem('theme')}catch(e){}}else{d.setAttribute('data-theme',t);try{localStorage.setItem('theme',t)}catch(e){}}sync()})});sync()})()</script>
 </body>
