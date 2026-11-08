@@ -6,7 +6,7 @@ Minimal personal portfolio site for Ray (rblez). Single HTML file. Only JS: GSAP
 
 - **Deploy**: Cloudflare Workers static assets (`wrangler.jsonc`, `assets.directory: "."`) — not Pages, no Worker script
 - **Animation**: GSAP via CDN `<script defer>`, used only on the project preview (entrance, tab switch, scroll zoom); the rest of the page has no GSAP; the page must stay fully readable if GSAP fails to load, and respect `prefers-reduced-motion`
-- **Look**: interface and palette inspired by cursor.com without the orange (cream #f7f7f4, ink #26251e, greys, canela #f3ede6; dark #14120b). Noise overlay on the whole page and grain on primary buttons. No name text: isotype only
+- **Look**: interface and palette inspired by cursor.com without the orange (cream #f7f7f4, ink #26251e, greys, canela #f3ede6; dark #14120b). Noise overlay on the whole page and grain on primary buttons. No name text: isotype only. Layout is a hard grid: a framed column with hairline side rails, sections as cells split by hairlines, "+" crosses on the corners, mono uppercase section heads (01 — Proyectos), stack as a 3×3 cell grid
 - **Font**: SF Pro through the system stack (`-apple-system`, `ui-monospace`), never self-hosted (Apple's license forbids it); Inter and Geist Mono from Google Fonts are the fallback on Android and other non-Apple devices
 - **Stack logos**: SVGs from svgl (github.com/pheralb/svgl) in `logos/`, greyscale until hover; mono logos (Resend, Vercel) invert in dark mode
 - **No build step, no package.json, no tests, no CI**
