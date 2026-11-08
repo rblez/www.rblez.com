@@ -425,6 +425,7 @@
       position: relative;
       isolation: isolate;
       display: grid;
+      grid-template-rows: 56px auto;
       justify-items: center;
       gap: 0.9rem;
       padding: 2rem 0.5rem 1.1rem;
@@ -452,8 +453,7 @@
 
     .stack img {
       display: block;
-      width: auto;
-      height: 40px;
+      align-self: center;
       filter: drop-shadow(0 6px 10px #26251e1f);
       transition: transform 0.3s cubic-bezier(.2, .7, .2, 1);
     }
@@ -626,15 +626,15 @@
       <section class="cell" aria-labelledby="stack-title">
         <div class="cell-head mono"><span id="stack-title">03 — Stack</span><span>(9)</span></div>
         <ul class="stack">
-          <li><img src="/logos/typescript.svg" alt="" height="28" /><span class="mono">TypeScript</span></li>
-          <li><img src="/logos/svelte.svg" alt="" height="28" /><span class="mono">Svelte</span></li>
-          <li><img src="/logos/tailwindcss.svg" alt="" height="28" /><span class="mono">Tailwind</span></li>
-          <li><img src="/logos/bun.svg" alt="" height="28" /><span class="mono">Bun</span></li>
-          <li><img src="/logos/supabase.svg" alt="" height="28" /><span class="mono">Supabase</span></li>
-          <li><img src="/logos/cloudflare.svg" alt="" height="28" /><span class="mono">Cloudflare</span></li>
-          <li><img src="/logos/git.svg" alt="" height="28" /><span class="mono">Git</span></li>
-          <li><img class="logo-mono" src="/logos/resend-icon-black.svg" alt="" height="28" /><span class="mono">Resend</span></li>
-          <li><img class="logo-mono" src="/logos/vercel.svg" alt="" height="28" /><span class="mono">Vercel</span></li>
+          <li><img src="/logos/typescript.svg" alt="" width="36" height="36" /><span class="mono">TypeScript</span></li>
+          <li><img src="/logos/svelte.svg" alt="" width="32" height="39" /><span class="mono">Svelte</span></li>
+          <li><img src="/logos/tailwindcss.svg" alt="" width="46" height="28" /><span class="mono">Tailwind</span></li>
+          <li><img src="/logos/bun.svg" alt="" width="39" height="34" /><span class="mono">Bun</span></li>
+          <li><img src="/logos/supabase.svg" alt="" width="36" height="37" /><span class="mono">Supabase</span></li>
+          <li><img src="/logos/cloudflare.svg" alt="" width="53" height="24" /><span class="mono">Cloudflare</span></li>
+          <li><img src="/logos/git.svg" alt="" width="36" height="36" /><span class="mono">Git</span></li>
+          <li><img class="logo-mono" src="/logos/resend-icon-black.svg" alt="" width="54" height="54" /><span class="mono">Resend</span></li>
+          <li><img class="logo-mono" src="/logos/vercel.svg" alt="" width="36" height="31" /><span class="mono">Vercel</span></li>
         </ul>
       </section>
     </div>
