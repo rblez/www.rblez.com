@@ -56,10 +56,10 @@
     }
     :root[data-theme="light"] { color-scheme: light; }
     :root[data-theme="dark"] { color-scheme: dark; --bg: #14120b; --fg: #edecec; --muted: #edecec8f; --line: #edecec24; --card: #edecec0a; --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.035 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
-    :root[data-theme="dark"] .iso img { filter: invert(1); }
+    :root[data-theme="dark"] .iso img, :root[data-theme="dark"] .logo-tile img { filter: invert(1); }
     @media (prefers-color-scheme: dark) {
       :root:not([data-theme="light"]) { --bg: #14120b; --fg: #edecec; --muted: #edecec8f; --line: #edecec24; --card: #edecec0a; --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.035 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
-      :root:not([data-theme="light"]) .iso img { filter: invert(1); }
+      :root:not([data-theme="light"]) .iso img, :root:not([data-theme="light"]) .logo-tile img { filter: invert(1); }
     }
     html { -webkit-text-size-adjust: 100%; background: var(--bg); scroll-behavior: smooth; scroll-padding-top: var(--hh); }
     body { margin: 0; color: var(--fg); background: var(--noise) var(--bg); background-size: 160px 160px;
@@ -126,6 +126,7 @@
     .facts dd { margin: 0; font-size: 13px; }
     .cta { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 2rem; }
     .pill { display: inline-flex; align-items: center; height: 32px; padding: 0 .9rem; border-radius: 999px; border: 1px solid var(--line); text-decoration: none; font-size: 13px; background: var(--card); }
+    .soc .pill { gap: .45rem; } .soc svg { flex: none; }
     .pill:hover { border-color: var(--fg); }
     .pill.hot { background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E") var(--accent); color: var(--on-accent); border-color: transparent; }
 
@@ -141,6 +142,10 @@
     .dev iframe { position: absolute; top: 0; left: 0; border: 0; transform-origin: 0 0; pointer-events: none; background: #fff; opacity: 0; transition: opacity .5s ease; }
     .dev.ready iframe { opacity: 1; }
     .dev::after { content: ""; position: absolute; inset: 0; z-index: 2; }
+    .fav { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 11px; box-shadow: 0 0 0 1px var(--line), 0 1px 2px rgba(0,0,0,.08); object-fit: cover; background: var(--card); image-rendering: auto; }
+    .fav-l { font-size: 20px; font-weight: 700; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E") var(--accent); color: var(--on-accent); box-shadow: none; }
+    .logo-tile { display: grid; place-items: center; aspect-ratio: 16 / 10; border-radius: 10px; border: 1px solid var(--line); background: var(--card); }
+    .logo-tile img { width: 56px; height: 56px; }
     .poster { display: grid; place-items: center; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E") var(--accent); color: var(--on-accent); }
     .poster-in { display: grid; gap: .2rem; text-align: center; }
     .poster strong { font-size: 26px; letter-spacing: -.03em; }
@@ -226,40 +231,40 @@
       <div class="in">
         <p class="kicker rv"><span class="n">02</span><span>Projects</span></p>
         <h2 id="h-proj" class="rv">Things I’ve <mark>built and shipped</mark>.</h2>
-        <p class="rv">Every preview is the real page, live inside its frame and sized for your screen: on a phone you see the mobile version, on a computer the desktop one. Tap the name to open it.</p>
+        <p class="rv">Products and tools that are live and in use today. Tap a name to open it.</p>
         <div class="grid">
         <article class="card">
-          <div class="dev poster" aria-hidden="true"><div class="poster-in"><span class="ptag">SaaS · E-commerce</span><strong>Tiendly</strong><span class="purl">www.tiendly.lat</span></div></div>
+          <img class="fav" src="/img/fav-tiendly.png" alt="" width="48" height="48" loading="lazy" />
           <div class="meta"><span class="idx">01</span><span class="tag">SaaS · E-commerce</span></div>
           <h3><a href="https://www.tiendly.lat">Tiendly</a></h3>
           <p>Online stores with <mark>0% commission</mark> for Cuban sellers. Catalog, orders, local payments and alerts on Telegram and WhatsApp.</p>
         </article>
         <article class="card">
-          <div class="dev poster" aria-hidden="true"><div class="poster-in"><span class="ptag">Store · Services</span><strong>Pickea</strong><span class="purl">www.tiendly.lat/pickea</span></div></div>
+          <span class="fav fav-l" aria-hidden="true">P</span>
           <div class="meta"><span class="idx">02</span><span class="tag">Store · Services</span></div>
           <h3><a href="https://www.tiendly.lat/pickea">Pickea</a></h3>
           <p>Digital store for assisted shopping and digital services, running on Tiendly.</p>
         </article>
         <article class="card">
-          <div class="dev" data-src="https://roldos.vercel.app" aria-hidden="true"><iframe title="Roldos" tabindex="-1" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin"></iframe></div>
+          <img class="fav" src="/img/fav-roldos.png" alt="" width="48" height="48" loading="lazy" />
           <div class="meta"><span class="idx">03</span><span class="tag">Web · Restaurant</span></div>
           <h3><a href="https://roldos.vercel.app">Roldos</a></h3>
           <p>Café website with menu, cart and ordering, built for ordering fast from a phone.</p>
         </article>
         <article class="card">
-          <div class="dev" data-src="/explorador/" aria-hidden="true"><iframe title="Explorador" tabindex="-1" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin"></iframe></div>
+          <span class="fav fav-l" aria-hidden="true">E</span>
           <div class="meta"><span class="idx">04</span><span class="tag">Tool · Open</span></div>
           <h3><a href="/explorador/">Explorador</a></h3>
           <p>Explorer of Cuban bank cards built on QvaPay’s open catalog. Search, filter and compare.</p>
         </article>
         <article class="card">
-          <div class="dev" data-src="/asciidot/" aria-hidden="true"><iframe title="ASCIIdot" tabindex="-1" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin"></iframe></div>
+          <img class="fav" src="/asciidot/apple-touch-icon.png" alt="" width="48" height="48" loading="lazy" />
           <div class="meta"><span class="idx">05</span><span class="tag">Tool · Creative</span></div>
           <h3><a href="/asciidot/">ASCIIdot</a></h3>
           <p>Turns images into ASCII art with braille dots. With camera, PNG export and a mobile mode.</p>
         </article>
         <article class="card">
-          <div class="dev" data-src="/terminal/" aria-hidden="true"><iframe title="Terminal Web" tabindex="-1" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin"></iframe></div>
+          <img class="fav" src="/terminal/apple-touch-icon.png" alt="" width="48" height="48" loading="lazy" />
           <div class="meta"><span class="idx">06</span><span class="tag">Portfolio · Experiment</span></div>
           <h3><a href="/terminal/">Terminal Web</a></h3>
           <p>A portfolio shaped like a terminal: type commands to find projects and contact.</p>
@@ -283,8 +288,9 @@
           <div class="gh-foot"><span id="gh-upd">Loading live data…</span><span class="legend" aria-hidden="true">Less <i data-l="0"></i><i data-l="1"></i><i data-l="2"></i><i data-l="3"></i><i data-l="4"></i> More</span></div>
         </div>
         <div class="contact rv">
-          <p>Email me at <a href="mailto:hello@rblez.com">hello@rblez.com</a> or find me on X <a href="https://x.com/rblez_">@rblez_</a>, Instagram <a href="https://instagram.com/rayomarblez">@rayomarblez</a>, Telegram <a href="https://t.me/rblez">@rblez</a> and GitHub <a href="https://github.com/rblez">rblez</a>.</p>
-          <div class="cta"><a class="pill" href="https://github.com/rblez">GitHub</a><a class="pill" href="https://x.com/rblez_">X</a><a class="pill" href="https://t.me/rblez">Telegram</a><a class="pill" href="https://instagram.com/rayomarblez">Instagram</a></div>
+          <p>Email me at <a href="mailto:hello@rblez.com">hello@rblez.com</a> or find me on my socials.</p>
+          <!-- Logos: Streamline Logos (streamlinehq.com) -->
+          <div class="cta soc"><a class="pill" href="https://github.com/rblez"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" aria-hidden="true" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M5 1a4 4 0 0 0-4 4v14a4 4 0 0 0 4 4h14a4 4 0 0 0 4-4V5a4 4 0 0 0-4-4zm4.818 6.773s.673-.364 2.182-.364c1.51 0 2.182.364 2.182.364c1.414-1.25 2.311-1.68 4-2.182c.655 1.554.764 2.429.727 4c0 0 1.091.85 1.091 3.636c0 4.817-3.991 6.182-8 6.182s-8-1.365-8-6.182c0-2.786 1.09-3.636 1.09-3.636c-.036-1.571.073-2.446.728-4c1.689.502 2.586.931 4 2.182m-3.636 6.545c.23-2.78 2.368-2.531 4.327-2.302c.523.06 1.033.12 1.491.12s.968-.06 1.491-.12c1.959-.23 4.096-.479 4.327 2.302c.308 3.714-3.196 3.669-5.33 3.641L12 17.955q-.229 0-.487.004c-2.135.028-5.64.073-5.331-3.64Zm4.182.546c0 .903-.489 1.636-1.091 1.636c-.603 0-1.091-.733-1.091-1.636c0-.904.488-1.637 1.09-1.637s1.092.733 1.092 1.636Zm4.363 1.636c.603 0 1.091-.733 1.091-1.636c0-.904-.488-1.637-1.09-1.637s-1.092.733-1.092 1.636c0 .904.489 1.637 1.091 1.637" clip-rule="evenodd"/></svg>GitHub</a><a class="pill" href="https://x.com/rblez_"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" aria-hidden="true" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M5 1a4 4 0 0 0-4 4v14a4 4 0 0 0 4 4h14a4 4 0 0 0 4-4V5a4 4 0 0 0-4-4zm-.334 3.5a.75.75 0 0 0-.338 1.154l5.614 7.45l-5.915 6.345l-.044.051H6.03l4.83-5.179l3.712 4.928a.75.75 0 0 0 .337.251h4.422a.75.75 0 0 0 .336-1.154l-5.614-7.45L20.017 4.5h-2.05l-4.83 5.18l-3.714-4.928a.75.75 0 0 0-.337-.252zm10.88 13.548L6.431 5.952H8.45l9.114 12.095z" clip-rule="evenodd"/></svg>X</a><a class="pill" href="https://t.me/rblez"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" aria-hidden="true" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M5 1a4 4 0 0 0-4 4v14a4 4 0 0 0 4 4h14a4 4 0 0 0 4-4V5a4 4 0 0 0-4-4zm15 11a8 8 0 1 1-16 0a8 8 0 0 1 16 0m-12.986-.77a.19.19 0 0 0-.118.17c0 .074.049.144.118.17l1.929.704l.584 2.872v.004a.56.56 0 0 0 .147.286a.52.52 0 0 0 .525.12a2 2 0 0 0 .159-.076a7 7 0 0 0 .256-.151c.196-.12.444-.28.685-.436a86 86 0 0 0 .87-.573l.073-.048l1.905 1.378a.19.19 0 0 0 .17.023c.056-.02.1-.07.114-.128l1.787-7.519a.19.19 0 0 0-.056-.179a.19.19 0 0 0-.185-.033zm3.169 3.493l-.53-2.6l4.009-2.07a.11.11 0 0 1 .138.035a.11.11 0 0 1-.016.142l-3.012 2.702z" clip-rule="evenodd"/></svg>Telegram</a><a class="pill" href="https://instagram.com/rayomarblez"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" aria-hidden="true" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M5 1a4 4 0 0 0-4 4v14a4 4 0 0 0 4 4h14a4 4 0 0 0 4-4V5a4 4 0 0 0-4-4zm-.5 8A4.5 4.5 0 0 1 9 4.5h6A4.5 4.5 0 0 1 19.5 9v6a4.5 4.5 0 0 1-4.5 4.5H9A4.5 4.5 0 0 1 4.5 15zM9 5.5A3.5 3.5 0 0 0 5.5 9v6A3.5 3.5 0 0 0 9 18.5h6a3.5 3.5 0 0 0 3.5-3.5V9A3.5 3.5 0 0 0 15 5.5zm8 2.667a.833.833 0 1 1-1.667 0a.833.833 0 0 1 1.667 0M8.167 12a3.833 3.833 0 1 1 7.666 0a3.833 3.833 0 0 1-7.666 0M12 9.167a2.833 2.833 0 1 0 0 5.666a2.833 2.833 0 0 0 0-5.666" clip-rule="evenodd"/></svg>Instagram</a></div>
         </div>
       </div>
     </section>
