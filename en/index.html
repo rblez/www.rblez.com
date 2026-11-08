@@ -11,7 +11,7 @@
   <meta name="author" content="rblez" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="canonical" href="https://www.rblez.com/en/" />
-  <link rel="alternate" hreflang="es" href="https://www.rblez.com/" />
+  <link rel="alternate" hreflang="es" href="https://www.rblez.com/es/" />
   <link rel="alternate" hreflang="en" href="https://www.rblez.com/en/" />
   <link rel="alternate" hreflang="x-default" href="https://www.rblez.com/" />
   <!-- Open Graph -->
@@ -41,6 +41,7 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/manifest.json" />
   <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://www.rblez.com/#website", "url": "https://www.rblez.com/", "name": "rblez.com", "inLanguage": ["es", "en"]}, {"@type": "WebPage", "@id": "https://www.rblez.com/en/#webpage", "url": "https://www.rblez.com/en/", "name": "rblez — Software Engineer & Builder", "inLanguage": "en", "isPartOf": {"@id": "https://www.rblez.com/#website"}, "about": {"@id": "https://www.rblez.com/#person"}}, {"@type": "Person", "@id": "https://www.rblez.com/#person", "name": "rblez", "url": "https://www.rblez.com/", "jobTitle": "Software Engineer", "email": "mailto:hello@rblez.com", "image": "https://www.rblez.com/icon-512.png", "homeLocation": {"@type": "Place", "name": "Santiago de Cuba, Cuba"}, "sameAs": ["https://github.com/rblez", "https://x.com/rblez_", "https://instagram.com/rayomarblez", "https://t.me/rblez"], "founder": {"@type": "Organization", "name": "Tiendly", "url": "https://www.tiendly.lat"}, "knowsAbout": ["TypeScript", "Svelte", "Supabase", "PostgreSQL", "Cloudflare", "E-commerce", "Automation", "AI"]}]}</script>
+  <script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t)}catch(e){}})()</script>
   <style>
     *, *::before, *::after { box-sizing: border-box; }
     :root {
@@ -53,9 +54,12 @@
       --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
       color-scheme: light dark;
     }
+    :root[data-theme="light"] { color-scheme: light; }
+    :root[data-theme="dark"] { color-scheme: dark; --bg: #14120b; --fg: #edecec; --muted: #edecec85; --line: #edecec2e; --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.035 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+    :root[data-theme="dark"] .iso img { filter: invert(1); }
     @media (prefers-color-scheme: dark) {
-      :root { --bg: #14120b; --fg: #edecec; --muted: #edecec85; --line: #edecec2e; --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.035 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
-      .iso img { filter: invert(1); }
+      :root:not([data-theme="light"]) { --bg: #14120b; --fg: #edecec; --muted: #edecec85; --line: #edecec2e; --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.035 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+      :root:not([data-theme="light"]) .iso img { filter: invert(1); }
     }
     html { -webkit-text-size-adjust: 100%; }
     body {
@@ -97,7 +101,14 @@
     ul { list-style: none; margin: 0; padding: 0; }
     li { margin: 0 0 .65rem; }
     .desc, .sep { color: var(--muted); }
-    footer { margin-top: 4rem; }
+    footer { margin-top: 4rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .theme { display: none; gap: .125rem; }
+    .js .theme { display: inline-flex; }
+    .theme button { appearance: none; border: 0; background: none; color: var(--muted); width: 32px; height: 32px; display: inline-grid; place-items: center; border-radius: 6px; cursor: pointer; transition: color .15s ease, background-color .15s ease; }
+    .theme button:hover { color: var(--fg); }
+    .theme button[aria-pressed="true"] { color: var(--fg); background: var(--line); }
+    .theme button:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+    .theme svg { width: 16px; height: 16px; display: block; }
     @media (max-width: 480px) {
       .wrap { padding-top: 2.5rem; }
       header { margin-bottom: 2.75rem; }
@@ -105,7 +116,7 @@
       .desc { display: block; font-size: .9375rem; }
       li { margin-bottom: .9rem; }
     }
-    @media (prefers-reduced-motion: reduce) { a { transition: none; } }
+    @media (prefers-reduced-motion: reduce) { a, .theme button { transition: none; } }
   </style>
 </head>
 <body>
@@ -113,7 +124,7 @@
   <div class="wrap">
     <header>
       <a class="iso" href="/en/" aria-label="Home — rblez.com"><img src="/isotipo.svg" alt="" width="24" height="24" /></a>
-      <nav class="lang" aria-label="Language"><a href="/" hreflang="es" lang="es">ES</a> / <a href="/en/" hreflang="en" lang="en" aria-current="true">EN</a></nav>
+      <nav class="lang" aria-label="Language"><a href="/es/" hreflang="es" lang="es">ES</a> / <a href="/en/" hreflang="en" lang="en" aria-current="true">EN</a></nav>
     </header>
     <main id="main">
       <h1>Software Engineer &amp; Builder</h1>
@@ -135,7 +146,16 @@
         <p>Email me at <a href="mailto:hello@rblez.com">hello@rblez.com</a> or find me on X <a href="https://x.com/rblez_">@rblez_</a>, Instagram <a href="https://instagram.com/rayomarblez">@rayomarblez</a>, Telegram <a href="https://t.me/rblez">@rblez</a> and GitHub <a href="https://github.com/rblez">rblez</a>.</p>
       </section>
     </main>
-    <footer>© 2026</footer>
+    <footer>
+      <span>© 2026</span>
+      <!-- Iconos: Solar (480 Design), CC BY 4.0 -->
+      <div class="theme" role="group" aria-label="Theme">
+        <button type="button" data-t="dark" aria-pressed="false" aria-label="Dark" title="Dark"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 22C17.5228 22 22 17.5228 22 12C22 11.5373 21.3065 11.4608 21.0672 11.8568C19.9289 13.7406 17.8615 15 15.5 15C11.9101 15 9 12.0899 9 8.5C9 6.13845 10.2594 4.07105 12.1432 2.93276C12.5392 2.69347 12.4627 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"/></svg></button>
+        <button type="button" data-t="light" aria-pressed="false" aria-label="Light" title="Light"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><circle cx="12" cy="12" r="5"/><path d="M12 2V4"/><path d="M12 20V22"/><path d="M4 12L2 12"/><path d="M22 12L20 12"/><path d="M19.7773 4.22217L17.5553 6.25375"/><path d="M4.22266 4.22217L6.44467 6.25375"/><path d="M6.44531 17.5557L4.22309 19.7779"/><path d="M19.7773 19.7778L17.5553 17.5555"/></g></svg></button>
+        <button type="button" data-t="auto" aria-pressed="false" aria-label="Auto" title="Auto"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path d="M8 17H16C18.8284 17 20.2426 17 21.1213 16.1213C22 15.2426 22 13.8284 22 11V10C22 6.22876 22 4.34315 20.8284 3.17157C19.6569 2 17.7712 2 14 2H10C6.22876 2 4.34315 2 3.17157 3.17157C2 4.34315 2 6.22876 2 10V11C2 13.8284 2 15.2426 2.87868 16.1213C3.75736 17 5.17157 17 8 17Z"/><path d="M16 22H8"/><path d="M12 17L12 22"/><path d="M22 13H2"/></g></svg></button>
+      </div>
+    </footer>
   </div>
+  <script>(function(){var d=document.documentElement,b=document.querySelectorAll('.theme button');function cur(){return d.getAttribute('data-theme')||'auto'}function sync(){var c=cur();b.forEach(function(x){x.setAttribute('aria-pressed',String(x.dataset.t===c))})}b.forEach(function(x){x.addEventListener('click',function(){var t=x.dataset.t;if(t==='auto'){d.removeAttribute('data-theme');try{localStorage.removeItem('theme')}catch(e){}}else{d.setAttribute('data-theme',t);try{localStorage.setItem('theme',t)}catch(e){}}sync()})});sync()})()</script>
 </body>
 </html>
