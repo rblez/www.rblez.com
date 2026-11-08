@@ -11,7 +11,8 @@
     content="Ray es un ingeniero de software que construye productos, sistemas y automatizaciones."
   />
 
-  <meta name="theme-color" content="#ffffff" />
+  <meta name="theme-color" content="#f7f7f4" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#14120b" media="(prefers-color-scheme: dark)" />
 
   <link rel="canonical" href="https://www.rblez.com/" />
 
@@ -67,13 +68,33 @@
     }
 
     :root {
-      --bg: #fff;
-      --fg: #111;
-      --muted: #666;
-      --soft: #888;
-      --border: #eaeaea;
-      --border-hover: #d6d6d6;
-      --surface: #fafafa;
+      /* Paleta de cursor.com sin el naranja: crema, tinta, grises y canela */
+      --bg: #f7f7f4;
+      --fg: #26251e;
+      --fg-hover: #3b3a33;
+      --muted: #26251e99;
+      --soft: #26251e66;
+      --border: #26251e1a;
+      --border-hover: #26251e33;
+      --surface: #f3ede6;
+      color-scheme: light dark;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #14120b;
+        --fg: #edecec;
+        --fg-hover: #d7d6d5;
+        --muted: #edecec99;
+        --soft: #edecec66;
+        --border: #edecec1a;
+        --border-hover: #edecec33;
+        --surface: #1c1713;
+      }
+
+      img[src="/isotipo.svg"] {
+        filter: invert(1);
+      }
     }
 
     html {
@@ -97,8 +118,8 @@
     }
 
     ::selection {
-      background: #111;
-      color: #fff;
+      background: var(--fg);
+      color: var(--bg);
     }
 
     a {
@@ -138,7 +159,7 @@
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background: #111;
+      background: var(--fg);
     }
 
     /* Hero */
@@ -201,13 +222,13 @@
     }
 
     .button.primary {
-      border-color: #111;
-      background: #111;
-      color: #fff;
+      border-color: var(--fg);
+      background: var(--fg);
+      color: var(--bg);
     }
 
     .button.primary:hover {
-      background: #222;
+      background: var(--fg-hover);
     }
 
     /* Sections */
