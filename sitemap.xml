@@ -6,4 +6,12 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://www.rblez.com/asciidot/</loc>
+    <lastmod>2026-11-08</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rblez.com/terminal/</loc>
+    <lastmod>2026-11-08</lastmod>
+  </url>
 </urlset>
