@@ -3,113 +3,642 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ray</title>
-  <meta name="description" content="Ray Omar Blez — Fundador y CEO de Tiendly. Construyo productos que resuelven problemas reales." />
-  <meta name="theme-color" content="#f5f4f1" />
-  <meta name="color-scheme" content="light" />
-  <link rel="icon" type="image/png" href="/favicon.png" />
+
+  <title>Ray — Software Engineer & Builder</title>
+
+  <meta
+    name="description"
+    content="Ray es un ingeniero de software que construye productos, sistemas y automatizaciones."
+  />
+
+  <meta name="theme-color" content="#ffffff" />
+
   <link rel="canonical" href="https://www.rblez.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.rblez.com/" />
+  <meta property="og:title" content="Ray — Software Engineer & Builder" />
+  <meta
+    property="og:description"
+    content="Construyo productos, sistemas y automatizaciones."
+  />
+  <meta property="og:image" content="https://www.rblez.com/og-image.svg" />
+  <meta property="og:site_name" content="Ray" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ray — Software Engineer & Builder" />
+  <meta
+    name="twitter:description"
+    content="Construyo productos, sistemas y automatizaciones."
+  />
+  <meta name="twitter:image" content="https://www.rblez.com/og-image.svg" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Icons -->
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="/favicon-black.svg"
+    media="(prefers-color-scheme: light)"
+  />
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="/favicon-white.svg"
+    media="(prefers-color-scheme: dark)"
+  />
+
   <style>
-    @font-face {
-      font-family: "NB International Pro";
-      font-style: normal;
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #fff;
+      --fg: #111;
+      --muted: #666;
+      --soft: #888;
+      --border: #eaeaea;
+      --border-hover: #d6d6d6;
+      --surface: #fafafa;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family:
+        "Geist",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
       font-weight: 400;
-      font-display: swap;
-      src: url("/fonts/nb-international-pro-regular.woff2") format("woff2");
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
-    @font-face {
-      font-family: "NB International Pro";
-      font-style: normal;
+
+    ::selection {
+      background: #111;
+      color: #fff;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(100% - 3rem, 680px);
+      margin: 0 auto;
+      padding: 4.5rem 0 5rem;
+    }
+
+    /* Header */
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 6rem;
+    }
+
+    .isotipo {
+      width: 34px;
+      height: 34px;
+      display: block;
+    }
+
+    .availability {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    .availability-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #111;
+    }
+
+    /* Hero */
+
+    .hero {
+      margin-bottom: 5.5rem;
+    }
+
+    .eyebrow {
+      margin-bottom: 1rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    h1 {
+      max-width: 620px;
+      font-size: clamp(2.4rem, 8vw, 4.4rem);
       font-weight: 500;
-      font-display: swap;
-      src: url("/fonts/nb-international-pro-medium.woff2") format("woff2");
+      letter-spacing: -0.055em;
+      line-height: 1.04;
     }
-    @font-face {
-      font-family: "NB International Pro";
-      font-style: normal;
-      font-weight: 700;
-      font-display: swap;
-      src: url("/fonts/nb-international-pro-bold.woff2") format("woff2");
+
+    .hero-description {
+      max-width: 580px;
+      margin-top: 1.75rem;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
     }
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    body{background:#f5f4f1;color:#161513;font-family:"NB International Pro",system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-    ::selection{background:#161513;color:#f5f4f1}
-    body::before{content:"";position:fixed;inset:0;z-index:100;pointer-events:none;opacity:.12;background-image:url("/noise.png")}
-    a{color:inherit;text-decoration:none}
-    .container{max-width:46rem;margin:0 auto;padding:0 1.5rem 2rem;min-height:100svh;display:flex;flex-direction:column}
-    header{display:flex;justify-content:space-between;align-items:center;padding:1.4rem 0}
-    main{flex:1;display:flex;flex-direction:column;justify-content:center}
-    .isotipo{width:24px;height:24px;display:block}
-    .isotipo g{fill:#161513}
-    .menu-btn,.menu-close{font-size:1rem;font-weight:500;cursor:pointer}
-    .menu-btn:hover,.menu-close:hover{color:#6f6c66}
-    #menu-toggle:checked ~ .menu-overlay{display:block}
-    .menu-overlay{display:none;position:fixed;inset:0;z-index:50;background:#f5f4f1;padding:0 1.5rem}
-    .menu-top{display:flex;justify-content:space-between;align-items:center;padding:1.4rem 0}
-    .menu-nav{margin-top:2rem}
-    .menu-nav a{display:flex;justify-content:space-between;align-items:center;font-size:2rem;font-weight:500;letter-spacing:-.01em;padding:1.1rem 0;border-bottom:1px solid rgba(22,21,19,.14)}
-    .menu-nav a:first-child{border-top:1px solid rgba(22,21,19,.14)}
-    .menu-nav a.active{color:#2e2be0}
-    h1{font-size:clamp(2.15rem,8.5vw,3.9rem);line-height:1.12;letter-spacing:-.025em;font-weight:500}
-    h1.page{font-size:clamp(1.9rem,7vw,3rem)}
-    .lede{font-size:1.12rem;line-height:1.6;color:#262420;margin-top:1.5rem;max-width:36rem}
-    .lede a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:#6f6c66}
-    .lede a:hover{color:#2e2be0;text-decoration-color:#2e2be0}
-    .hero-links{margin-top:2rem;font-size:1rem;font-weight:500}
-    .hero-links a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:#6f6c66}
-    .hero-links a:hover{color:#2e2be0;text-decoration-color:#2e2be0}
-    section{margin-top:3.5rem}
-    .panel{background:#ebe9e3;border:1px solid rgba(22,21,19,.14);padding:1.25rem 1.25rem 0}
-    .panel .row:first-of-type{border-top:0}
-    .panel .row:last-child{border-bottom:0}
-    .panel .lede{margin-top:.75rem}
-    h2.sec{font-size:1.5rem;line-height:1.25;font-weight:500;letter-spacing:-.01em;margin-bottom:.5rem}
-    .row{display:block;padding:1.25rem 0;border-bottom:1px solid rgba(22,21,19,.14)}
-    .row:first-of-type{border-top:1px solid rgba(22,21,19,.14)}
-    .row h3{font-size:1.25rem;line-height:1.3;font-weight:500;letter-spacing:-.01em}
-    .row:hover h3{text-decoration:underline;text-underline-offset:3px}
-    .row .date{font-size:.85rem;color:#6f6c66;margin-top:.35rem}
-    footer{border-top:1px solid rgba(22,21,19,.14);padding-top:1.5rem}
-    .foot-links{display:flex;flex-direction:row;flex-wrap:wrap;gap:.45rem 1.25rem}
-    .foot-links a{font-family:"Geist Mono",ui-monospace,monospace;font-size:.82rem;color:#6f6c66;width:fit-content}
-    .foot-links a:hover{color:#161513}
-    .foot-copy{font-size:.82rem;color:#8a877f;margin-top:1rem}
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--fg);
+      font-size: 0.88rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition:
+        border-color 0.2s,
+        background 0.2s,
+        transform 0.2s;
+    }
+
+    .button:hover {
+      border-color: var(--border-hover);
+      background: var(--surface);
+      transform: translateY(-1px);
+    }
+
+    .button.primary {
+      border-color: #111;
+      background: #111;
+      color: #fff;
+    }
+
+    .button.primary:hover {
+      background: #222;
+    }
+
+    /* Sections */
+
+    section {
+      margin-top: 5rem;
+    }
+
+    .section-label {
+      margin-bottom: 1.5rem;
+      color: var(--soft);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* Projects */
+
+    .projects {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .project {
+      display: block;
+      padding: 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      text-decoration: none;
+      transition:
+        border-color 0.2s,
+        background 0.2s,
+        transform 0.2s;
+    }
+
+    .project:hover {
+      border-color: var(--border-hover);
+      background: var(--surface);
+      transform: translateY(-1px);
+    }
+
+    .project-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .project-name {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .project-arrow {
+      color: var(--soft);
+      font-size: 1rem;
+      transition: transform 0.2s;
+    }
+
+    .project:hover .project-arrow {
+      transform: translate(2px, -2px);
+    }
+
+    .project-description {
+      max-width: 560px;
+      margin-top: 0.4rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.9rem;
+    }
+
+    .tag {
+      padding: 0.25rem 0.5rem;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      color: var(--soft);
+      font-size: 0.72rem;
+    }
+
+    /* Now */
+
+    .now {
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--surface);
+    }
+
+    .now-title {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .now p {
+      margin-top: 0.6rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.75;
+    }
+
+    /* Stack */
+
+    .stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+
+    .stack-item {
+      padding: 0.5rem 0.7rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    /* Contact */
+
+    .contact {
+      padding-top: 1rem;
+    }
+
+    .contact h2 {
+      max-width: 500px;
+      font-size: clamp(1.7rem, 5vw, 2.5rem);
+      font-weight: 500;
+      letter-spacing: -0.035em;
+      line-height: 1.15;
+    }
+
+    .contact p {
+      max-width: 500px;
+      margin-top: 0.9rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .contact-link {
+      display: inline-block;
+      margin-top: 1.25rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: underline;
+      text-decoration-color: var(--border-hover);
+      text-underline-offset: 4px;
+    }
+
+    .contact-link:hover {
+      text-decoration-color: var(--fg);
+    }
+
+    /* Footer */
+
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-top: 6rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .copyright {
+      color: var(--soft);
+      font-size: 0.75rem;
+    }
+
+    .socials {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .socials a {
+      display: flex;
+      color: var(--muted);
+      text-decoration: none;
+      transition:
+        color 0.2s,
+        transform 0.2s;
+    }
+
+    .socials a:hover {
+      color: var(--fg);
+      transform: translateY(-1px);
+    }
+
+    .socials svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(100% - 2rem, 680px);
+        padding-top: 2rem;
+      }
+
+      header {
+        margin-bottom: 4.5rem;
+      }
+
+      .hero {
+        margin-bottom: 4rem;
+      }
+
+      section {
+        margin-top: 4rem;
+      }
+
+      footer {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 1.25rem;
+        margin-top: 4.5rem;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <input type="checkbox" id="menu-toggle" hidden />
-  <div class="menu-overlay" role="dialog" aria-label="Menú">
-    <div class="menu-top">
-      <a href="/" aria-label="Inicio"><svg class="isotipo" viewBox="100 125 176 176" width="24" height="24" aria-hidden="true"><g transform="translate(0.000000,400.000000) scale(0.100000,-0.100000)" stroke="none"><path d="M1177 2570 c58 -73 129 -164 203 -258 l55 -71 400 -3 400 -3 3 -197 2 -198 195 0 195 0 0 395 0 395 -751 0 -750 0 48 -60z"/><path d="M1771 1823 c8 -10 21 -27 31 -38 9 -11 57 -72 107 -135 50 -63 121 -152 158 -197 l67 -83 239 0 239 0 -33 43 c-18 23 -45 56 -59 73 -14 17 -37 47 -52 65 -15 19 -59 75 -99 124 -40 50 -86 107 -104 128 l-32 37 -238 0 c-223 0 -237 -1 -224 -17z"/></g></svg></a>
-      <label for="menu-toggle" class="menu-close">Close</label>
-    </div>
-    <nav class="menu-nav">
-        <a href="/" class="active">Home</a>
-        <a href="https://www.tiendly.lat" target="_blank" rel="noopener noreferrer">Tiendly <span>&nearr;</span></a>
-    </nav>
-  </div>
   <div class="container">
+
     <header>
-      <a href="/" aria-label="Inicio"><svg class="isotipo" viewBox="100 125 176 176" width="24" height="24" aria-hidden="true"><g transform="translate(0.000000,400.000000) scale(0.100000,-0.100000)" stroke="none"><path d="M1177 2570 c58 -73 129 -164 203 -258 l55 -71 400 -3 400 -3 3 -197 2 -198 195 0 195 0 0 395 0 395 -751 0 -750 0 48 -60z"/><path d="M1771 1823 c8 -10 21 -27 31 -38 9 -11 57 -72 107 -135 50 -63 121 -152 158 -197 l67 -83 239 0 239 0 -33 43 c-18 23 -45 56 -59 73 -14 17 -37 47 -52 65 -15 19 -59 75 -99 124 -40 50 -86 107 -104 128 l-32 37 -238 0 c-223 0 -237 -1 -224 -17z"/></g></svg></a>
-      <label for="menu-toggle" class="menu-btn">Menu</label>
+      <a href="/" aria-label="Inicio">
+        <img
+          src="/isotipo.svg"
+          alt=""
+          class="isotipo"
+          width="34"
+          height="34"
+        />
+      </a>
+
+      <span class="availability">
+        <span class="availability-dot"></span>
+        Construyendo
+      </span>
     </header>
+
     <main>
-      <h1>Construyo productos que resuelven problemas reales.</h1>
-      <p class="lede">Fundador y CEO de <a href="https://www.tiendly.lat" target="_blank" rel="noopener noreferrer">Tiendly</a>. Software simple, &uacute;til y que realmente pueda utilizarse: tiendas online para vendedores cubanos, sin comisiones y sin depender de nadie.</p>
-      <p class="hero-links"><a href="https://www.tiendly.lat" target="_blank" rel="noopener noreferrer">Visitar Tiendly &nearr;</a></p>
+
+      <!-- Hero -->
+
+      <section class="hero" aria-labelledby="hero-title">
+        <p class="eyebrow">Ray · Software Engineer & Builder</p>
+
+        <h1 id="hero-title">
+          Construyo productos que resuelven problemas reales.
+        </h1>
+
+        <p class="hero-description">
+          Soy Ray. Construyo productos digitales, sistemas y automatizaciones.
+          Me interesa convertir problemas concretos en software simple,
+          útil y que realmente pueda utilizarse.
+        </p>
+
+        <div class="hero-links">
+          <a
+            class="button primary"
+            href="https://www.tiendly.lat"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ver Tiendly
+          </a>
+
+          <a
+            class="button"
+            href="https://github.com/rblez"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+        </div>
+      </section>
+
+      <!-- Projects -->
+
+      <section aria-labelledby="projects-title">
+        <p class="section-label" id="projects-title">Proyectos</p>
+
+        <div class="projects">
+
+          <a
+            class="project"
+            href="https://www.tiendly.lat"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="project-top">
+              <span class="project-name">Tiendly</span>
+              <span class="project-arrow">↗</span>
+            </div>
+
+            <p class="project-description">
+              SaaS para crear tiendas online y vender productos con métodos
+              de pago configurables.
+            </p>
+
+            <div class="project-meta">
+              <span class="tag">SaaS</span>
+              <span class="tag">Svelte</span>
+              <span class="tag">Supabase</span>
+            </div>
+          </a>
+
+          <a
+            class="project"
+            href="https://www.tiendly.lat/@pickea"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="project-top">
+              <span class="project-name">Pickea</span>
+              <span class="project-arrow">↗</span>
+            </div>
+
+            <p class="project-description">
+              Tienda digital para compras asistidas y servicios digitales.
+            </p>
+
+            <div class="project-meta">
+              <span class="tag">E-commerce</span>
+              <span class="tag">Tiendly</span>
+            </div>
+          </a>
+
+          <a
+            class="project"
+            href="https://roldos.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="project-top">
+              <span class="project-name">Roldos</span>
+              <span class="project-arrow">↗</span>
+            </div>
+
+            <p class="project-description">
+              Sitio web para cafetería con menú, carrito y pedidos.
+            </p>
+
+            <div class="project-meta">
+              <span class="tag">Web</span>
+              <span class="tag">E-commerce</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- Now -->
+
+      <section aria-labelledby="now-title">
+        <p class="section-label" id="now-title">Ahora</p>
+
+        <div class="now">
+          <div class="now-title">Construyendo Tiendly</div>
+
+          <p>
+            Estoy trabajando en Tiendly y experimentando con productos,
+            automatizaciones e IA para construir software más rápido sin
+            sacrificar la experiencia del usuario.
+          </p>
+        </div>
+      </section>
+
+      <!-- Stack -->
+
+      <section aria-labelledby="stack-title">
+        <p class="section-label" id="stack-title">Stack</p>
+
+        <div class="stack">
+          <span class="stack-item">TypeScript</span>
+          <span class="stack-item">Svelte</span>
+          <span class="stack-item">Tailwind</span>
+          <span class="stack-item">Bun</span>
+          <span class="stack-item">Supabase</span>
+          <span class="stack-item">Cloudflare</span>
+          <span class="stack-item">Git</span>
+          <span class="stack-item">Resend</span>
+          <span class="stack-item">Vercel</span>
+        </div>
+      </section>
+
+      <!-- Contact -->
+
+      <section class="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title">
+          ¿Tienes una idea o un problema que podamos convertir en software?
+        </h2>
+
+        <p>
+          Puedes encontrarme en GitHub, Telegram o X.
+        </p>
+
+        <a
+          class="contact-link"
+          href="https://t.me/rblez"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Escribirme por Telegram ↗
+        </a>
+      </section>
+
     </main>
+
     <footer>
-      <div class="foot-links">
-        <a href="https://github.com/rblez" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://t.me/rblez" target="_blank" rel="noopener noreferrer">Telegram</a>
-        <a href="https://x.com/rblez_" target="_blank" rel="noopener noreferrer">X [Twitter]</a>
-        <a href="#" data-u="hello" data-d="rblez.com" onclick="this.href='mailto:'+this.dataset.u+'@'+this.dataset.d">Email</a>
-      </div>
-      <p class="foot-copy">&copy; Ray Omar Blez</p>
+      <span class="copyright">
+        © 2026 Ray
+      </span>
+
+   
     </footer>
+
   </div>
 </body>
 </html>
