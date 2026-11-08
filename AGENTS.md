@@ -8,6 +8,7 @@ Minimal personal portfolio site for Ray (rblez). Single HTML file. Only JS: GSAP
 - **Font**: Geist and Geist Mono via Google Fonts `<link>` in HTML
 - **Animation**: GSAP via CDN `<script defer>`; the page must stay fully readable if GSAP fails to load, and respect `prefers-reduced-motion`
 - **Look**: interface and palette inspired by cursor.com without the orange (cream #f7f7f4, ink #26251e, greys, canela #f3ede6; dark #14120b). Noise overlay on the whole page and grain on primary buttons. No name text: isotype only
+- **Stack logos**: SVGs from svgl (github.com/pheralb/svgl) in `logos/`, greyscale until hover; mono logos (Resend, Vercel) invert in dark mode
 - **No build step, no package.json, no tests, no CI**
 
 ## Commands
@@ -21,6 +22,7 @@ Minimal personal portfolio site for Ray (rblez). Single HTML file. Only JS: GSAP
 
 ```
 index.html        — the entire site (inline CSS, inline SVG icons, inline JS + GSAP CDN)
+logos/            — stack logos from svgl
 isotipo.svg       — logo, black (#000), used as header image
 favicon-black.svg   — same logo, black (#000), for light browser theme (first <link rel="icon">, default)
 favicon-white.svg   — same logo, white (#fff), for dark browser theme (second <link rel="icon"> with media query)
