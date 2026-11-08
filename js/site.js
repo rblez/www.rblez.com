@@ -26,10 +26,8 @@
       ST.batch(items, {
         start: 'top 88%',
         onEnter: function (b) { g.to(b, { autoAlpha: 1, y: 0, duration: .8, ease: 'power3.out', stagger: .07, overwrite: true }); },
-        onLeaveBack: function (b) { g.to(b, { autoAlpha: 0, y: 28, duration: .4, ease: 'power2.in', stagger: .03, overwrite: true }); }
+        once: true
       });
-      var inn = s.querySelector('.in');
-      g.fromTo(inn, { scale: .985 }, { scale: 1, ease: 'none', scrollTrigger: { trigger: s, start: 'top bottom', end: 'top 30%', scrub: true } });
     });
     if (!reduce) {
       g.fromTo('.ind', { autoAlpha: 0, x: -10 }, { autoAlpha: 1, x: 0, duration: .8, delay: .2, ease: 'power3.out' });
@@ -105,7 +103,7 @@
     document.getElementById('gh-best').textContent = fmt(best);
     document.getElementById('gh-upd').textContent = RB.upd.replace('{t}', new Date().toLocaleTimeString(RB.loc, { hour: '2-digit', minute: '2-digit' }));
     var wrap = cal.parentNode; wrap.scrollLeft = wrap.scrollWidth;
-    if (window.gsap && !reduce) window.gsap.from(cal.children, { autoAlpha: 0, scale: .4, duration: .4, ease: 'power2.out', stagger: { each: .0018, from: 'end' } });
+    if (window.gsap && !reduce) window.gsap.from(cal, { autoAlpha: 0, duration: .5, ease: 'power2.out' });
   }
   function loadGh() {
     fetch('https://github-contributions-api.jogruber.de/v4/rblez?y=last', { cache: 'no-store' })
