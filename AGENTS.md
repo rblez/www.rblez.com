@@ -52,5 +52,5 @@ Each page has its own canonical, description, OG/Twitter (`/og-image.jpg`), `og:
 - `isotipo.svg` stays black (#000) — only the favicon has a white variant; don't merge them
 - /asciidot/ = build of rblez/asciidot (vite build --base=/asciidot/); /terminal/ = rblez/terminal-web rblez.html as index.html. Rebuild/copy when those repos change.
 - /explorador/ = copy of rblez/explorador-tarjetas-cubanas (index.html + assets); report URLs point to www.rblez.com/explorador/.
-- Theme switch in footer (dark/light/auto), Solar icons (480 Design, CC BY 4.0), stored in localStorage 'theme'; html[data-theme].
+- Theme switch in footer (dark/light/auto), Iconoir icons (MIT), iOS-style segmented control, stored in localStorage 'theme'; html[data-theme].
 - Mono font: Source Code Pro (OFL), self-hosted at /fonts/source-code-pro-latin.woff2. Sans stays system stack (CursorGothic not used: proprietary, no license).
