@@ -27,7 +27,7 @@ previews/         — real screenshots per project: <name>.webp desktop 1280×80
 isotipo.svg       — logo, black (#000), used as header image
 favicon-black.svg   — same logo, black (#000), for light browser theme (first <link rel="icon">, default)
 favicon-white.svg   — same logo, white (#fff), for dark browser theme (second <link rel="icon"> with media query)
-og-image.svg      — 1200x630 OG/Twitter card image (white bg, black logo)
+og-image.jpg      — 1200x630 OG/Twitter card image (cream grid, isotype, headline)
 robots.txt        — allows all, references sitemap.xml
 sitemap.xml       — single URL https://www.rblez.com/
 manifest.json     — PWA manifest
