@@ -51,7 +51,7 @@ Each page has its own canonical, description, OG/Twitter (`/og-image.jpg`), `og:
 - `assets.directory` is `"."` — everything in the repo root is public; keep secrets out
 - `isotipo.svg` stays black (#000) — only the favicon has a white variant; don't merge them
 - /asciidot/ = build of rblez/asciidot (vite build --base=/asciidot/); /terminal/ = rblez/terminal-web rblez.html as index.html. Rebuild/copy when those repos change.
-- /designs/ = build of rblez/designs (apps/preview, vite base /designs/, noindex). Same files as its gh-pages branch; copy apps/preview/dist/* here when it changes.
+- /ui/ = build of rblez/ui (apps/preview, vite base /ui/). Copy apps/preview/dist/* to ui/ when it changes.
 - /explorador/ = copy of rblez/explorador-tarjetas-cubanas (index.html + assets); report URLs point to www.rblez.com/explorador/.
 - Theme switch in footer (dark/light/auto), Iconoir icons (MIT), iOS-style segmented control, stored in localStorage 'theme'; html[data-theme].
 - Mono font: Source Code Pro (OFL), self-hosted at /fonts/source-code-pro-latin.woff2. Sans: Roboto (OFL), self-hosted at /fonts/roboto-latin.woff2; headings (h1, h2) in Source Code Pro. CursorGothic not used (proprietary, no license).
