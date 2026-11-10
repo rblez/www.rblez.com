@@ -63,6 +63,13 @@
   "descriptionEn": "Telegram-style profile settings screen: avatar, colored icon groups, compact title on scroll and floating tabs."
  },
  {
+  "slug": "not-found",
+  "name": "NotFound",
+  "group": "Layout",
+  "description": "Página 404 con un 404 isométrico en 3D (vector), rejilla isométrica y un enlace para volver.",
+  "descriptionEn": "404 page with an isometric 3D 404 (vector), an isometric grid and a link back."
+ },
+ {
   "slug": "badge",
   "name": "Badge",
   "group": "Feedback",
