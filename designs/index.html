@@ -4,35 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#14120b" />
     <title>designs · rblez</title>
     <link rel="icon" href="https://www.rblez.com/favicon-black.svg" />
-    <script type="module" crossorigin src="/designs/assets/index-DLLa1nKf.js"></script>
-    <link rel="stylesheet" crossorigin href="/designs/assets/index-BVR6Do-2.css">
+    <script>
+      try { var t = localStorage.getItem("d-theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); document.documentElement.dataset.theme = t; } catch (e) {}
+    </script>
+    <script type="module" crossorigin src="/designs/assets/index-C0BqF7zq.js"></script>
+    <link rel="stylesheet" crossorigin href="/designs/assets/index-C2iJTmw8.css">
   </head>
   <body>
-    <main class="wrap">
-      <header class="top">
-        <a href="https://www.rblez.com/" aria-label="rblez"><img src="https://www.rblez.com/isotipo.svg" alt="" width="24" height="24" class="iso" /></a>
-        <span class="meta">designs · lab</span>
-      </header>
-      <h1>Componentes</h1>
-      <p class="lead">Un mismo componente para Svelte y React, con TypeScript y tokens compartidos.</p>
-
-      <section>
-        <h2>PromptInput</h2>
-        <p class="meta">clon del composer de bolt.new — textarea autosize, placeholder animado, adjuntos, Plan, dictado y Build now</p>
-        <div class="stage stage--bolt-dark"><span class="tag">svelte · dark</span><div id="svelte-prompt"></div></div>
-        <div class="stage stage--bolt-light"><span class="tag">react · light</span><div id="react-prompt"></div></div>
-      </section>
-
-      <section>
-        <h2>Button</h2>
-        <p class="meta">variant: solid · outline · ghost — size: sm · md · lg</p>
-        <div class="stage"><span class="tag">svelte</span><div id="svelte-button"></div></div>
-        <div class="stage"><span class="tag">react</span><div id="react-button"></div></div>
-      </section>
-
-      <footer class="meta">rblez/designs · © 2026</footer>
-    </main>
+    <div id="app"></div>
   </body>
 </html>
