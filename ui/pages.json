@@ -28,11 +28,25 @@
   "descriptionEn": "Accessible toggle with role=switch."
  },
  {
+  "slug": "select",
+  "name": "Select",
+  "group": "Formularios",
+  "description": "Select accesible con listbox propio: teclado completo, búsqueda por tecleo, iconos, búsqueda opcional y el mismo aspecto que Input.",
+  "descriptionEn": "Accessible select with its own listbox: full keyboard support, typeahead, icons, optional search and the same look as Input."
+ },
+ {
   "slug": "prompt-input",
   "name": "PromptInput",
   "group": "IA",
   "description": "Composer de IA: autosize, placeholder animado, adjuntos, Plan, dictado y envío.",
   "descriptionEn": "AI composer: autosize, animated placeholder, attachments, Plan mode, dictation and submit."
+ },
+ {
+  "slug": "grid",
+  "name": "Grid",
+  "group": "Layout",
+  "description": "Rejillas responsive: auto-fit / auto-fill por ancho mínimo, columnas por breakpoint, masonry, bento con spans y split con columna lateral.",
+  "descriptionEn": "Responsive grids: auto-fit / auto-fill by minimum width, columns per breakpoint, masonry, bento with spans and split with a side column."
  },
  {
   "slug": "card",
@@ -70,11 +84,32 @@
   "descriptionEn": "404 page with an isometric 3D 404 (vector), an isometric grid and a link back."
  },
  {
+  "slug": "modal",
+  "name": "Modal",
+  "group": "Overlay",
+  "description": "Diálogo modal sobre <dialog> nativo: focus trap, devuelve el foco, Esc y clic en el fondo configurables, tres tamaños y pie de acciones.",
+  "descriptionEn": "Modal dialog on the native <dialog>: focus trap, focus return, configurable Esc and backdrop close, three sizes and a footer for actions."
+ },
+ {
+  "slug": "bottom-sheet",
+  "name": "BottomSheet",
+  "group": "Overlay",
+  "description": "Hoja inferior para móvil: asa para arrastrar, puntos de anclaje, cerrar arrastrando, fondo, focus trap, Esc, bloqueo de scroll y safe-area.",
+  "descriptionEn": "Mobile bottom sheet: drag handle, snap points, drag to dismiss, backdrop, focus trap, Esc, scroll lock and safe-area padding."
+ },
+ {
   "slug": "badge",
   "name": "Badge",
   "group": "Feedback",
   "description": "Etiquetas de estado con punto opcional.",
   "descriptionEn": "Status labels with an optional dot."
+ },
+ {
+  "slug": "toast",
+  "name": "Toast",
+  "group": "Feedback",
+  "description": "Notificaciones con <Toaster> y la función toast(): variantes de estado, acción, duración, apilado y pausa al pasar el ratón.",
+  "descriptionEn": "Notifications with <Toaster> and the toast() function: status variants, action, duration, stacking and pause on hover."
  },
  {
   "slug": "kbd",
