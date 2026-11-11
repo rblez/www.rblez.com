@@ -49,6 +49,13 @@
   "descriptionEn": "Responsive grids: auto-fit / auto-fill by minimum width, columns per breakpoint, masonry, bento with spans and split with a side column."
  },
  {
+  "slug": "guide-grid",
+  "name": "GuideGrid",
+  "group": "Layout",
+  "description": "Rejilla con guías visibles al estilo Geist: celdas sólidas que tapan las guías, cruces en las esquinas, guías discontinuas u ocultas por eje y columnas por ancho del contenedor.",
+  "descriptionEn": "Grid with visible guides, Geist style: solid cells that cover the guides, corner crosses, dashed or hidden guides per axis and columns per container width."
+ },
+ {
   "slug": "card",
   "name": "Card",
   "group": "Layout",
@@ -110,6 +117,13 @@
   "group": "Feedback",
   "description": "Notificaciones con <Toaster> y la función toast(): variantes de estado, acción, duración, apilado y pausa al pasar el ratón.",
   "descriptionEn": "Notifications with <Toaster> and the toast() function: status variants, action, duration, stacking and pause on hover."
+ },
+ {
+  "slug": "loading",
+  "name": "Loading",
+  "group": "Feedback",
+  "description": "Indicadores de carga: Spinner para acciones del usuario, LoadingDots para texto en curso y Skeleton para reservar el espacio del contenido.",
+  "descriptionEn": "Loading indicators: Spinner for user actions, LoadingDots for in-progress text and Skeleton to hold the content's space."
  },
  {
   "slug": "kbd",
