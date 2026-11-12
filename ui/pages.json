@@ -148,6 +148,13 @@
  },
  {
   "group": "Docs",
+  "slug": "iconos",
+  "name": "Iconos",
+  "description": "Ionicons completo y los iconos propios de rblez-ui, con línea y relleno.",
+  "descriptionEn": "The full Ionicons set and rblez-ui's own icons, in line and fill."
+ },
+ {
+  "group": "Docs",
   "slug": "acerca",
   "name": "Acerca de",
   "description": "Qué es rblez-ui y quién lo hace.",
