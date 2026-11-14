@@ -36,7 +36,7 @@ wrangler.jsonc    — CF Workers config
 
 ## Page content (keep both languages in sync)
 
-Project icons are inline Ionicons SVGs (storefront-outline for Tiendly, pricetag-outline for Pickea) in orange `.fav` tiles — no fav images on the cards.
+Project cards show the official favicons (`/img/fav-tiendly.webp`, `/img/fav-pickea.webp`): Tiendly loads eager, Pickea loads lazy (after).
 
 Header (isotype + "ES / EN" switch) → h1 "Software Engineer & Builder" → intro (Santiago de Cuba; building Tiendly, 0% commission online stores for Cuban sellers; experimenting with products, automations and AI) → ecommerce paragraph (why he loves ecommerce: a stranger buying a product miles away; Tiendly makes selling as simple as posting a photo) → Projects list (name — one line): Tiendly, Pickea (pickea.pages.dev) → Contact sentence with inline links (hello@rblez.com, X @rblez_, Instagram @rayomarblez, Telegram @rblez, GitHub rblez) → footer "© 2026".
 
