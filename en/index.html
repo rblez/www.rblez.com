@@ -1,294 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>rblez — Software Engineer &amp; Builder</title>
-  <meta name="description" content="Software engineer from Santiago de Cuba. Building Tiendly, a platform to create online stores with 0% commission for Cuban sellers, and experimenting with products, automations and AI." />
-  <meta name="theme-color" content="#f7f7f4" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#14120b" media="(prefers-color-scheme: dark)" />
-  <meta name="color-scheme" content="light dark" />
-  <meta name="author" content="rblez" />
-  <meta name="robots" content="index, follow, max-image-preview:large" />
-  <link rel="canonical" href="https://www.rblez.com/en/" />
-  <link rel="alternate" hreflang="es" href="https://www.rblez.com/es/" />
-  <link rel="alternate" hreflang="en" href="https://www.rblez.com/en/" />
-  <link rel="alternate" hreflang="x-default" href="https://www.rblez.com/" />
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.rblez.com/en/" />
-  <meta property="og:title" content="rblez — Software Engineer &amp; Builder" />
-  <meta property="og:description" content="I build products, systems and automations." />
-  <meta property="og:image" content="https://www.rblez.com/og-image.jpg" />
-  <meta property="og:image:type" content="image/jpeg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Software Engineer &amp; Builder — www.rblez.com" />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:locale:alternate" content="es_ES" />
-  <meta property="og:site_name" content="rblez.com" />
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@rblez_" />
-  <meta name="twitter:creator" content="@rblez_" />
-  <meta name="twitter:title" content="rblez — Software Engineer &amp; Builder" />
-  <meta name="twitter:description" content="I build products, systems and automations." />
-  <meta name="twitter:image" content="https://www.rblez.com/og-image.jpg" />
-  <meta name="twitter:image:alt" content="Software Engineer &amp; Builder — www.rblez.com" />
-  <!-- Icons -->
-  <link rel="icon" type="image/svg+xml" href="/favicon-black.svg" media="(prefers-color-scheme: light)" />
-  <link rel="icon" type="image/svg+xml" href="/favicon-white.svg" media="(prefers-color-scheme: dark)" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/manifest.json" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://www.rblez.com/#website", "url": "https://www.rblez.com/", "name": "rblez.com", "inLanguage": ["es", "en"]}, {"@type": "WebPage", "@id": "https://www.rblez.com/en/#webpage", "url": "https://www.rblez.com/en/", "name": "rblez — Software Engineer & Builder", "inLanguage": "en", "isPartOf": {"@id": "https://www.rblez.com/#website"}, "about": {"@id": "https://www.rblez.com/#person"}}, {"@type": "Person", "@id": "https://www.rblez.com/#person", "name": "rblez", "url": "https://www.rblez.com/", "jobTitle": "Software Engineer", "email": "mailto:hello@rblez.com", "image": "https://www.rblez.com/icon-512.png", "homeLocation": {"@type": "Place", "name": "Santiago de Cuba, Cuba"}, "sameAs": ["https://github.com/rblez", "https://x.com/rblez_", "https://instagram.com/rayomarblez", "https://t.me/rblez"], "founder": {"@type": "Organization", "name": "Tiendly", "url": "https://www.tiendly.lat"}, "knowsAbout": ["TypeScript", "Svelte", "Supabase", "PostgreSQL", "Cloudflare", "E-commerce", "Automation", "AI"]}]}</script>
-  <script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t)}catch(e){}})()</script>
-  <link rel="preload" href="/fonts/inter-sub.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preconnect" href="https://github-contributions-api.jogruber.de" crossorigin />
-  <style>
-    @font-face { font-family: "Inter"; font-style: normal; font-weight: 600 700; font-display: swap; src: url(/fonts/inter-sub.woff2) format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-    *, *::before, *::after { box-sizing: border-box; }
-    :root {
-      --bg: #f7f7f4; --fg: #26251e; --muted: #26251e99; --line: #26251e24; --card: #26251e08;
-      --accent: #f54e00; --on-accent: #14120b;
-      --sans: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
-      --noise: url(/img/noise-l.webp); --hh: 52px; --fh: 48px;
-      color-scheme: light dark;
-    }
-    :root[data-theme="light"] { color-scheme: light; }
-    :root[data-theme="dark"] { color-scheme: dark; --bg: #14120b; --fg: #edecec; --muted: #edecec8f; --line: #edecec24; --card: #edecec0a; --noise: url(/img/noise-d.webp); }
-    :root[data-theme="dark"] .iso img, :root[data-theme="dark"] .logo-tile img { filter: invert(1); }
-    @media (prefers-color-scheme: dark) {
-      :root:not([data-theme="light"]) { --bg: #14120b; --fg: #edecec; --muted: #edecec8f; --line: #edecec24; --card: #edecec0a; --noise: url(/img/noise-d.webp); }
-      :root:not([data-theme="light"]) .iso img, :root:not([data-theme="light"]) .logo-tile img { filter: invert(1); }
-    }
-    html { -webkit-text-size-adjust: 100%; background: var(--bg); scroll-behavior: smooth; scroll-padding-top: var(--hh); }
-    body { margin: 0; color: var(--fg); background: var(--noise) var(--bg); background-size: 96px 96px;
-      font: 600 14px/1.55 var(--sans); letter-spacing: -.006em; -webkit-font-smoothing: antialiased; font-feature-settings: "cv11", "ss01"; }
-    ::selection { background: var(--accent); color: var(--on-accent); }
-    a { color: inherit; text-decoration: underline; text-decoration-color: var(--line); text-decoration-thickness: 1px; text-underline-offset: 3px; transition: text-decoration-color .15s ease; }
-    a:hover { text-decoration-color: currentColor; }
-    a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
-    .skip { position: absolute; left: -9999px; }
-    .skip:focus { left: 1rem; top: 1rem; background: var(--bg); padding: .25rem .5rem; z-index: 50; }
-    /* Resaltado naranja con grano */
-    mark { color: var(--on-accent); background: url(/img/noise-m.webp) var(--accent); background-size: 96px 96px; padding: .04em .28em; margin: 0 -.06em; border-radius: 3px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
-    mark a { text-decoration-color: color-mix(in srgb, var(--on-accent) 40%, transparent); }
-
-    /* Rejilla: rieles de la columna */
-    :root { --col: min(68rem, calc(100vw - 2rem)); --pad: 1.5rem; }
-    .rails { position: fixed; inset: 0 auto 0 50%; width: var(--col); transform: translateX(-50%); border-inline: 1px solid var(--line); pointer-events: none; z-index: 0; }
-    .plus { position: absolute; width: 9px; height: 9px; pointer-events: none; opacity: .6;
-      background: linear-gradient(var(--fg), var(--fg)) center / 1px 100% no-repeat, linear-gradient(var(--fg), var(--fg)) center / 100% 1px no-repeat; }
-
-    /* Header y footer fijos */
-    .bar-top, .bar-bot { position: fixed; left: 0; right: 0; z-index: 30; background: var(--bg);  }
-    .bar-top { top: 0; height: var(--hh); border-bottom: 1px solid var(--line); }
-    .bar-bot { bottom: 0; height: var(--fh); border-top: 1px solid var(--line); }
-    .bar-in { position: relative; width: var(--col); height: 100%; margin: 0 auto; padding: 0 var(--pad); display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-    .bar-top .plus { bottom: -5px; } .bar-bot .plus { top: -5px; }
-    .pl { left: -5px; } .pr { right: -5px; }
-    .iso { display: inline-flex; padding: .25rem; margin: -.25rem; }
-    .iso img { display: block; width: 22px; height: 22px; }
-    .now { font-size: 12px; color: var(--muted); }
-    .now b { color: var(--fg); font-weight: 700; }
-    .lang { font-size: 12px; color: var(--muted); }
-    .lang a { text-decoration: none; padding: .25rem .125rem; }
-    .lang a:hover, .lang a[aria-current] { color: var(--fg); }
-    .bar-bot .copy { font-size: 12px; color: var(--muted); }
-
-    /* Indicador de secciones a la izquierda */
-    .ind { position: fixed; z-index: 25; top: 50%; left: max(.5rem, calc(50% - var(--col) / 2 - 2.75rem)); transform: translateY(-50%); }
-    .ind ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
-    .ind a { display: flex; align-items: center; gap: .6rem; text-decoration: none; color: var(--muted); padding: 4px 0; }
-    .ind .bar { display: block; width: 14px; height: 2px; border-radius: 2px; background: currentColor; transition: width .35s cubic-bezier(.2,.7,.2,1), background-color .35s; }
-    .ind .lab { font-size: 11px; opacity: 0; transform: translateX(-4px); transition: opacity .25s, transform .25s; white-space: nowrap; }
-    .ind a:hover .lab, .ind a:focus-visible .lab { opacity: 1; transform: none; }
-    .ind a[aria-current] { color: var(--fg); }
-    .ind a[aria-current] .bar { width: 28px; background: url(/img/noise-m.webp) var(--accent); }
-
-    /* Secciones */
-    main { position: relative; z-index: 1; }
-    .sec { position: relative; min-height: 100vh; min-height: 100svh; padding: calc(var(--hh) + 4rem) 0 calc(var(--fh) + 4rem); border-bottom: 1px solid var(--line); display: flex; align-items: center; }
-    .sec > .in { position: relative; width: var(--col); margin: 0 auto; padding: 0 var(--pad) 0 calc(var(--pad) + 3rem); }
-    .kicker { display: flex; gap: .6rem; align-items: center; font-size: 12px; color: var(--muted); margin: 0 0 1.5rem; }
-    .kicker .n { color: var(--accent); font-weight: 700; }
-    h1, h2 { font-weight: 700; letter-spacing: -.025em; margin: 0 0 1.5rem; text-wrap: balance; }
-    h1 { font-size: clamp(26px, 4.4vw, 44px); line-height: 1.12; max-width: 22ch; }
-    h2 { font-size: clamp(22px, 3vw, 32px); line-height: 1.15; max-width: 26ch; }
-    p { margin: 0 0 1rem; max-width: 62ch; }
-    .lead { font-size: 15px; }
-    .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 3rem; }
-    .cols p { color: var(--muted); }
-    .cols p mark { color: var(--on-accent); }
-    .facts { display: grid; grid-template-columns: repeat(4, 1fr); margin: 2.5rem 0 0; border-top: 1px solid var(--line); }
-    .facts div { padding: 1rem 1rem 0 0; }
-    .facts dt { font-size: 11px; color: var(--muted); margin: 0 0 .25rem; }
-    .facts dd { margin: 0; font-size: 13px; }
-    .cta { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 2rem; }
-    .pill { display: inline-flex; align-items: center; height: 32px; padding: 0 .9rem; border-radius: 999px; border: 1px solid var(--line); text-decoration: none; font-size: 13px; background: var(--card); }
-    .soc .pill { gap: .45rem; } .soc svg { flex: none; }
-    .pill:hover { border-color: var(--fg); }
-    .pill.hot { background: url(/img/noise-m.webp) var(--accent); color: var(--on-accent); border-color: transparent; }
-
-    /* Proyectos con vista en vivo */
-    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem 1.25rem; margin-top: 2rem; }
-    .card p { color: var(--muted); font-size: 13px; margin: 0; }
-    .card h3 { font-size: 15px; font-weight: 700; letter-spacing: -.01em; margin: .35rem 0 .35rem; }
-    .card h3 a { text-decoration: none; }
-    .card h3 a:hover { text-decoration: underline; }
-    .meta { display: flex; gap: .5rem; font-size: 11px; color: var(--muted); margin-top: .85rem; }
-    .meta .idx { color: var(--accent); }
-    .dev { position: relative; aspect-ratio: 16 / 10; overflow: hidden; border-radius: 10px; border: 1px solid var(--line); background: var(--card); isolation: isolate; }
-    .dev iframe { position: absolute; top: 0; left: 0; border: 0; transform-origin: 0 0; pointer-events: none; background: #fff; opacity: 0; transition: opacity .5s ease; }
-    .dev.ready iframe { opacity: 1; }
-    .dev::after { content: ""; position: absolute; inset: 0; z-index: 2; }
-    .fav { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 11px; box-shadow: 0 0 0 1px var(--line), 0 1px 2px rgba(0,0,0,.08); object-fit: cover; background: var(--card); image-rendering: auto; }
-    .fav-l { font-size: 20px; font-weight: 700; background: url(/img/noise-m.webp) var(--accent); color: var(--on-accent); box-shadow: none; }
-    .logo-tile { display: grid; place-items: center; aspect-ratio: 16 / 10; border-radius: 10px; border: 1px solid var(--line); background: var(--card); }
-    .logo-tile img { width: 56px; height: 56px; }
-    .poster { display: grid; place-items: center; background: url(/img/noise-m.webp) var(--accent); color: var(--on-accent); }
-    .poster-in { display: grid; gap: .2rem; text-align: center; }
-    .poster strong { font-size: 26px; letter-spacing: -.03em; }
-    .ptag, .purl { font-size: 11px; opacity: .75; }
-
-    /* GitHub */
-    .gh { margin-top: 2rem; }
-    .gh-top { display: flex; flex-wrap: wrap; gap: .5rem 2rem; margin-bottom: 1.25rem; }
-    .stat b { display: block; font-size: 26px; letter-spacing: -.03em; line-height: 1.1; }
-    .stat span { font-size: 11px; color: var(--muted); }
-    .cal-wrap { overflow-x: auto; padding-bottom: .5rem; scrollbar-width: thin; }
-    .cal { display: grid; grid-auto-flow: column; grid-template-rows: repeat(7, var(--c)); grid-auto-columns: var(--c); gap: 3px; --c: clamp(9px, calc((var(--col) - 7rem) / 53 - 3px), 15px); width: max-content; }
-    .cal i, .legend i { display: block; width: var(--c); height: var(--c); border-radius: 2.5px; background: var(--card); box-shadow: inset 0 0 0 1px var(--line); }
-    .cal i[data-l="1"], .legend i[data-l="1"] { background: color-mix(in srgb, var(--accent) 28%, transparent); box-shadow: none; }
-    .cal i[data-l="2"], .legend i[data-l="2"] { background: color-mix(in srgb, var(--accent) 50%, transparent); box-shadow: none; }
-    .cal i[data-l="3"], .legend i[data-l="3"] { background: color-mix(in srgb, var(--accent) 75%, transparent); box-shadow: none; }
-    .cal i[data-l="4"], .legend i[data-l="4"] { background: var(--accent); box-shadow: none; }
-    .cal i.pad { visibility: hidden; }
-    .gh-foot { display: flex; justify-content: space-between; gap: 1rem; font-size: 11px; color: var(--muted); margin-top: .75rem; }
-    .legend { display: inline-flex; align-items: center; gap: 3px; }
-    .legend i { width: 10px; height: 10px; border-radius: 2.5px; }
-    .contact { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
-
-    /* Selector de tema */
-    .theme { display: none; padding: 2px; gap: 2px; border-radius: 9px; background: color-mix(in srgb, var(--fg) 7%, transparent); }
-    .js .theme { display: inline-flex; }
-    .theme button { appearance: none; border: 0; background: transparent; color: var(--muted); width: 32px; height: 26px; display: inline-grid; place-items: center; border-radius: 7px; cursor: pointer; -webkit-tap-highlight-color: transparent; transition: color .2s, background-color .2s, box-shadow .2s; }
-    .theme button:hover { color: var(--fg); }
-    .theme button[aria-pressed="true"] { color: var(--fg); background: var(--bg); box-shadow: 0 1px 2px rgba(0,0,0,.12), 0 0 0 .5px rgba(0,0,0,.06); }
-    :root[data-theme="dark"] .theme button[aria-pressed="true"] { background: #2c2a24; box-shadow: 0 1px 2px rgba(0,0,0,.4); }
-    @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .theme button[aria-pressed="true"] { background: #2c2a24; box-shadow: 0 1px 2px rgba(0,0,0,.4); } }
-    .theme svg { width: 15px; height: 15px; display: block; }
-
-    .js .rv, .js .card { opacity: 0; transform: translateY(24px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); transition-delay: var(--d, 0s); }
-    .js .rv.on, .js .card.on { opacity: 1; transform: none; }
-    @media (max-width: 900px) {
-      .grid { grid-template-columns: 1fr 1fr; }
-      .facts { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 640px) {
-      :root { --pad: 1rem; }
-      .sec { padding-top: calc(var(--hh) + 2.5rem); padding-bottom: calc(var(--fh) + 2.5rem); }
-      .sec > .in { padding-left: calc(var(--pad) + 1.75rem); }
-      .ind { left: calc(1rem + 8px); }
-      .ind .lab { display: none; }
-      .ind .bar { width: 10px; } .ind a[aria-current] .bar { width: 18px; }
-      .cols { grid-template-columns: 1fr; }
-      .grid { grid-template-columns: 1fr; gap: 1.75rem; }
-      .dev { aspect-ratio: 3 / 4; }
-      .now { display: none; }
-      .cal { --c: 10px; gap: 2px; }
-    }
-    @media (prefers-reduced-motion: reduce) { .js .rv, .js .card { opacity: 1; transform: none; } html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>rblez — Software engineer in Santiago de Cuba</title>
+<meta name="description" content="Software engineer in Santiago de Cuba. I build Tiendly, 0% commission online stores for Cuba, and Pickea, a Cuban buy-and-sell marketplace inside QvaPay." />
+<meta name="theme-color" content="#f7f7f4" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#14120b" media="(prefers-color-scheme: dark)" />
+<meta name="color-scheme" content="light dark" />
+<meta name="author" content="rblez" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://www.rblez.com/en/" />
+<link rel="alternate" hreflang="es" href="https://www.rblez.com/es/" />
+<link rel="alternate" hreflang="en" href="https://www.rblez.com/en/" />
+<link rel="alternate" hreflang="x-default" href="https://www.rblez.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.rblez.com/en/" />
+<meta property="og:title" content="rblez — Software engineer in Santiago de Cuba" />
+<meta property="og:description" content="I build products for buying and selling in Cuba: Tiendly and Pickea." />
+<meta property="og:image" content="https://www.rblez.com/og-image.jpg" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Software Engineer &amp; Builder — www.rblez.com" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:site_name" content="rblez.com" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@rblez_" />
+<meta name="twitter:creator" content="@rblez_" />
+<meta name="twitter:title" content="rblez — Software engineer in Santiago de Cuba" />
+<meta name="twitter:description" content="I build products for buying and selling in Cuba: Tiendly and Pickea." />
+<meta name="twitter:image" content="https://www.rblez.com/og-image.jpg" />
+<meta name="twitter:image:alt" content="Software Engineer &amp; Builder — www.rblez.com" />
+<link rel="icon" type="image/svg+xml" href="/favicon-black.svg" media="(prefers-color-scheme: light)" />
+<link rel="icon" type="image/svg+xml" href="/favicon-white.svg" media="(prefers-color-scheme: dark)" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/manifest.json" />
+<link rel="preload" href="/fonts/inter-sub.woff2" as="font" type="font/woff2" crossorigin />
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.rblez.com/#website","url":"https://www.rblez.com/","name":"rblez.com","inLanguage":["es","en"]},{"@type":"WebPage","@id":"https://www.rblez.com/en/#webpage","url":"https://www.rblez.com/en/","name":"rblez — Software engineer in Santiago de Cuba","inLanguage":"en","isPartOf":{"@id":"https://www.rblez.com/#website"},"about":{"@id":"https://www.rblez.com/#person"}},{"@type":"Person","@id":"https://www.rblez.com/#person","name":"rblez","url":"https://www.rblez.com/","jobTitle":"Software Engineer","email":"mailto:hello@rblez.com","image":"https://www.rblez.com/icon-512.png","homeLocation":{"@type":"Place","name":"Santiago de Cuba, Cuba"},"sameAs":["https://github.com/rblez","https://t.me/rblez","https://x.com/rblez_","https://instagram.com/rayomarblez"],"founder":[{"@type":"Organization","name":"Tiendly","url":"https://www.tiendly.lat"},{"@type":"WebApplication","name":"Pickea","url":"https://pickea.pages.dev"}],"knowsAbout":["TypeScript","Svelte","React","Supabase","PostgreSQL","Cloudflare","E-commerce"]}]}</script>
+<script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t)}catch(e){}})()</script>
+<style>@font-face{font-family:"Inter";font-style:normal;font-weight:600 700;font-display:swap;src:url(/fonts/inter-sub.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+*,*::before,*::after{box-sizing:border-box}
+:root{--bg:#f7f7f4;--fg:#26251e;--muted:#26251ea3;--line:#26251e1f;--card:#ffffff99;--stage:#26251e0a;--accent:#f54e00;--on-accent:#14120b;--noise:url(/img/noise-l.webp);--tile:#fff;
+--sans:Inter,-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",sans-serif;color-scheme:light dark}
+:root[data-theme="light"]{color-scheme:light}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#14120b;--fg:#edecec;--muted:#edecec99;--line:#edecec1f;--card:#edecec08;--stage:#edecec0a;--accent:#ff6a1f;--noise:url(/img/noise-d.webp);--tile:#edecec10}
+:root[data-theme="dark"] .iso img{filter:invert(1)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14120b;--fg:#edecec;--muted:#edecec99;--line:#edecec1f;--card:#edecec08;--stage:#edecec0a;--accent:#ff6a1f;--noise:url(/img/noise-d.webp);--tile:#edecec10}:root:not([data-theme="light"]) .iso img{filter:invert(1)}}
+html{-webkit-text-size-adjust:100%;background:var(--bg)}
+body{margin:0;color:var(--fg);background:var(--noise) var(--bg);background-size:96px 96px;font:600 15px/1.55 var(--sans);letter-spacing:-.006em;-webkit-font-smoothing:antialiased;font-feature-settings:"cv11","ss01"}
+::selection{background:var(--accent);color:var(--on-accent)}
+a{color:inherit;text-decoration:underline;text-decoration-color:var(--line);text-decoration-thickness:1px;text-underline-offset:3px;transition:text-decoration-color .15s}
+a:hover{text-decoration-color:currentColor}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.skip{position:absolute;left:-9999px}.skip:focus{left:1rem;top:1rem;background:var(--bg);padding:.25rem .5rem;z-index:5}
+.wrap{width:min(60rem,100% - 2.5rem);margin:0 auto}
+header{display:flex;align-items:center;justify-content:space-between;height:64px}
+.iso{display:inline-flex;padding:.3rem;margin:-.3rem}.iso img{display:block;width:22px;height:22px}
+.lang{font-size:13px;color:var(--muted)}.lang a{text-decoration:none;padding:.3rem .2rem}.lang a:hover,.lang a[aria-current]{color:var(--fg)}
+.hero{padding:clamp(3rem,10vw,6.5rem) 0 clamp(2.5rem,7vw,4.5rem)}
+.kicker{display:inline-flex;align-items:center;gap:.5rem;font-size:13px;color:var(--muted);margin:0 0 1.25rem}
+.kicker::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
+h1{font-size:clamp(28px,5.2vw,50px);line-height:1.08;letter-spacing:-.035em;font-weight:700;margin:0 0 1.25rem;max-width:20ch;text-wrap:balance}
+mark{color:var(--on-accent);background:var(--accent);padding:0 .2em;margin:0 -.04em;border-radius:.18em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.lead{color:var(--muted);max-width:46ch;margin:0 0 1.75rem;font-size:16px}
+.links{display:flex;flex-wrap:wrap;gap:.5rem;margin:0;padding:0;list-style:none}
+.pill{display:inline-flex;align-items:center;gap:.45rem;height:36px;padding:0 .95rem;border-radius:999px;border:1px solid var(--line);background:var(--card);text-decoration:none;font-size:14px;transition:border-color .15s}
+.pill:hover{border-color:var(--fg)}.pill svg{flex:none}
+.pill.hot{background:var(--fg);color:var(--bg);border-color:transparent}
+h2{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:0;margin:0}
+.sh{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding-bottom:.9rem;border-bottom:1px solid var(--line);margin-bottom:1.25rem}
+.sh p{margin:0;font-size:13px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.card{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:20px;background:var(--card);overflow:hidden}
+.top{padding:1.25rem 1.25rem 0}
+.id{display:flex;align-items:center;gap:.8rem;margin-bottom:.9rem}
+.tile{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:11px;background:var(--tile);box-shadow:0 0 0 1px var(--line)}
+.tile svg{display:block}.tile.pk{background:none;box-shadow:0 0 0 1px var(--line);border-radius:10px}
+.id h3{font-size:19px;letter-spacing:-.02em;margin:0;line-height:1.2}
+.id h3 a{text-decoration:none}.id h3 a::after{content:"";position:absolute;inset:0}
+.id .tag{display:block;font-size:12.5px;color:var(--muted)}
+.badge{margin-left:auto;align-self:flex-start;font-size:11.5px;line-height:1;padding:.4rem .55rem;border-radius:999px;color:#b42318;background:#e5383b1a;white-space:nowrap}
+:root[data-theme="dark"] .badge{color:#ff8a8c}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .badge{color:#ff8a8c}}
+.top p{margin:0 0 1rem;color:var(--muted);font-size:14.5px}
+.acts{display:flex;flex-wrap:wrap;gap:.25rem 1rem;font-size:13.5px;margin-bottom:1.25rem}
+.acts a{display:inline-flex;align-items:center;gap:.3rem}
+.ar{transition:transform .15s}a:hover>.ar{transform:translate(1px,-1px)}
+.stage{position:relative;margin-top:auto;height:clamp(300px,36vw,380px);overflow:hidden;background:color-mix(in srgb,var(--brand) 9%,transparent);border-top:1px solid var(--line)}
+.phone{position:absolute;left:50%;top:1.75rem;width:min(68%,270px);transform:translateX(-50%);border-radius:24px;padding:5px;background:#16150f;box-shadow:0 1px 2px rgba(0,0,0,.12),0 16px 40px -12px rgba(0,0,0,.28)}
+.phone img{display:block;width:100%;height:auto;border-radius:19px;background:#fff}
+.more{margin-top:clamp(3rem,8vw,4.5rem)}
+.list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 2rem}
+.list li{display:flex;flex-direction:column;gap:.15rem;padding:.85rem 0;border-bottom:1px solid var(--line)}
+.list a{text-decoration:none;align-self:flex-start}.list a:hover{text-decoration:underline}
+.list span{font-size:13.5px;color:var(--muted)}
+footer{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;margin-top:clamp(3rem,8vw,5rem);padding:1.25rem 0 2rem;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+footer nav{display:flex;flex-wrap:wrap;gap:.25rem 1rem}footer nav a{text-decoration:none}footer nav a:hover{color:var(--fg)}
+.theme{display:none;padding:2px;gap:2px;border-radius:9px;background:color-mix(in srgb,var(--fg) 7%,transparent)}
+.js .theme{display:inline-flex}
+.theme button{appearance:none;border:0;background:transparent;color:var(--muted);width:32px;height:26px;display:inline-grid;place-items:center;border-radius:7px;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:color .2s,background-color .2s}
+.theme button:hover{color:var(--fg)}
+.theme button[aria-pressed="true"]{color:var(--fg);background:var(--bg);box-shadow:0 1px 2px rgba(0,0,0,.12),0 0 0 .5px rgba(0,0,0,.06)}
+:root[data-theme="dark"] .theme button[aria-pressed="true"]{background:#2c2a24}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .theme button[aria-pressed="true"]{background:#2c2a24}}
+.theme svg{width:15px;height:15px;display:block}
+.card .id{position:relative}
+@media (max-width:720px){.grid,.list{grid-template-columns:1fr}.stage{height:330px}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important}}</style>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-  <div class="rails" aria-hidden="true"></div>
-  <header class="bar-top">
-    <div class="bar-in">
-      <span class="plus pl" aria-hidden="true"></span><span class="plus pr" aria-hidden="true"></span>
-      <a class="iso" href="/en/" aria-label="Home — rblez.com"><img src="/isotipo.svg" alt="" width="22" height="22" /></a>
-      <span class="now" aria-live="polite"><b id="cur">About</b> · <span id="pos">01</span> / 03</span>
-      <nav class="lang" aria-label="Language"><a href="/es/" hreflang="es" lang="es">ES</a> / <a href="/en/" hreflang="en" lang="en" aria-current="true">EN</a></nav>
-    </div>
-  </header>
-  <nav class="ind" aria-label="Sections"><ul><li><a href="#about" data-s="about" aria-label="About"><span class="bar"></span><span class="lab">About</span></a></li><li><a href="#projects" data-s="projects" aria-label="Projects"><span class="bar"></span><span class="lab">Projects</span></a></li><li><a href="#github" data-s="github" aria-label="GitHub"><span class="bar"></span><span class="lab">GitHub</span></a></li></ul></nav>
-  <main id="main">
-    <section class="sec" id="about" aria-labelledby="h-about">
-      <div class="in">
-        <p class="kicker rv"><span class="n">01</span><span>About</span></p>
-        <h1 id="h-about" class="rv">I build software that solves <mark>real problems</mark> for real people in Cuba.</h1>
-        <p class="lead rv">I’m a software engineer in Santiago de Cuba. I design and build complete products end to end: the database, the payments, the notifications and the interface people use every day. Right now I’m building <mark><a href="https://www.tiendly.lat">Tiendly</a></mark>.</p>
-        <div class="cols rv">
-        <p>Tiendly is a platform to create online stores with <mark>0% commission</mark>, made for Cuban sellers. Every store gets its own catalog, cart and link, and the seller gets each order instantly on Telegram or WhatsApp.</p>
-        <p>Selling online in Cuba is unlike anywhere else, so payments follow how people actually pay here: <mark>bank transfers</mark> with BANDEC, BPA and BANMET, MiTransfer, Saldo Móvil, QvaPay, Zelle, PayPal, USDT or cash on delivery.</p>
-        <p>Outside Tiendly I build <mark>bots and automations</mark> that run on their own: alerts, monitors and small services that save hours. I also make open tools, like an explorer of Cuban bank cards or an image to ASCII art converter.</p>
-        <p>Lately I’m experimenting with open <mark>AI agents</mark> that run on your own key. I care about simple: fewer screens, fewer steps and products you understand without a manual.</p>
-        </div>
-        <p class="rv">I'm an <mark>e-commerce lover</mark>: I'm obsessed with someone posting a product and a stranger buying it miles away, without ever seeing it in person. In Cuba that's still hard — payments, shipping, trust — so I built Tiendly: to make selling online as simple as posting a photo.</p>
-        <dl class="facts rv"><div><dt>Based in</dt><dd>Santiago de Cuba</dd></div><div><dt>Now</dt><dd>Tiendly</dd></div><div><dt>Stack</dt><dd>TypeScript, Svelte, React, Go</dd></div><div><dt>Infra</dt><dd>Supabase, Postgres, Cloudflare, Railway</dd></div></dl>
-        <div class="cta rv"><a class="pill hot" href="#projects">See projects</a><a class="pill" href="mailto:hello@rblez.com">hello@rblez.com</a></div>
-      </div>
-    </section>
-    <section class="sec" id="projects" aria-labelledby="h-proj">
-      <div class="in">
-        <p class="kicker rv"><span class="n">02</span><span>Projects</span></p>
-        <h2 id="h-proj" class="rv">Things I’ve <mark>built and shipped</mark>.</h2>
-        <p class="rv">Products and tools that are live and in use today. Tap a name to open it.</p>
-        <div class="grid">
-        <article class="card">
-          <img class="fav" src="/img/fav-tiendly.webp" alt="" width="48" height="48" loading="eager" />
-          <div class="meta"><span class="idx">01</span><span class="tag">SaaS · E-commerce</span></div>
-          <h3><a href="https://www.tiendly.lat">Tiendly</a></h3>
-          <p>Online stores with <mark>0% commission</mark> for Cuban sellers. Catalog, orders, local payments and alerts on Telegram and WhatsApp.</p>
-        </article>
-        <article class="card">
-          <img class="fav" src="/img/fav-pickea.webp" alt="" width="48" height="48" loading="lazy" />
-          <div class="meta"><span class="idx">02</span><span class="tag">Classifieds · QvaPay</span></div>
-          <h3><a href="https://pickea.pages.dev">Pickea</a></h3>
-          <p>Classifieds to buy and sell among Cubans inside QvaPay. Posting is free, and every seller joins with a verified account.</p>
-        </article>
-        </div>
-      </div>
-    </section>
-    <section class="sec" id="github" aria-labelledby="h-gh">
-      <div class="in">
-        <p class="kicker rv"><span class="n">03</span><span>GitHub</span></p>
-        <h2 id="h-gh" class="rv">I ship code <mark>almost every day</mark>.</h2>
-        <p class="rv">My GitHub activity over the last year, loaded live every time you open this page. Each square is a day; the more orange, the more commits, PRs and issues.</p>
-        <div class="gh rv">
-          <div class="gh-top">
-            <div class="stat"><b id="gh-total">—</b><span>contributions in the last year</span></div>
-            <div class="stat"><b id="gh-today">—</b><span>today</span></div>
-            <div class="stat"><b id="gh-streak">—</b><span>day streak now</span></div>
-            <div class="stat"><b id="gh-best">—</b><span>best day</span></div>
-          </div>
-          <div class="cal-wrap"><div class="cal" id="cal" role="img" aria-label="GitHub contributions chart for the last year"></div></div>
-          <div class="gh-foot"><span id="gh-upd">Loading live data…</span><span class="legend" aria-hidden="true">Less <i data-l="0"></i><i data-l="1"></i><i data-l="2"></i><i data-l="3"></i><i data-l="4"></i> More</span></div>
-        </div>
-        <div class="contact rv">
-          <p>Email me at <a href="mailto:hello@rblez.com">hello@rblez.com</a> or find me on my socials.</p>
-          <!-- Logos: Ionicons (ionicons.com) — Telegram es Simple Icons (simpleicons.org) -->
-          <div class="cta soc"><a class="pill" href="https://github.com/rblez"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M256,32C132.3,32,32,134.9,32,261.7c0,101.5,64.2,187.5,153.2,217.9a17.56,17.56,0,0,0,3.8.4c8.3,0,11.5-6.1,11.5-11.4,0-5.5-.2-19.9-.3-39.1a102.4,102.4,0,0,1-22.6,2.7c-43.1,0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1,1.4-14.1h.1c22.5,2,34.3,23.8,34.3,23.8,11.2,19.6,26.2,25.1,39.6,25.1a63,63,0,0,0,25.6-6c2-14.8,7.8-24.9,14.2-30.7-49.7-5.8-102-25.5-102-113.5,0-25.1,8.7-45.6,23-61.6-2.3-5.8-10-29.2,2.2-60.8a18.64,18.64,0,0,1,5-.5c8.1,0,26.4,3.1,56.6,24.1a208.21,208.21,0,0,1,112.2,0c30.2-21,48.5-24.1,56.6-24.1a18.64,18.64,0,0,1,5,.5c12.2,31.6,4.5,55,2.2,60.8,14.3,16.1,23,36.6,23,61.6,0,88.2-52.4,107.6-102.3,113.3,8,7.1,15.2,21.1,15.2,42.5,0,30.7-.3,55.5-.3,63,0,5.4,3.1,11.5,11.4,11.5a19.35,19.35,0,0,0,4-.4C415.9,449.2,480,363.1,480,261.7,480,134.9,379.7,32,256,32Z"/></svg>GitHub</a><a class="pill" href="https://x.com/rblez_"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M9.33349 6.92867L14.5459 1H13.3109L8.78291 6.14671L5.16908 1H1L6.46604 8.78342L1 15H2.235L7.01369 9.56363L10.8309 15H15L9.33349 6.92867ZM7.64142 8.85175L7.08675 8.07621L2.68037 1.91103H4.57759L8.13472 6.88838L8.68705 7.66391L13.3103 14.1334H11.4131L7.64142 8.85175Z"/></svg>X</a><a class="pill" href="https://t.me/rblez"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>Telegram</a><a class="pill" href="https://instagram.com/rayomarblez"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M349.33,69.33a93.62,93.62,0,0,1,93.34,93.34V349.33a93.62,93.62,0,0,1-93.34,93.34H162.67a93.62,93.62,0,0,1-93.34-93.34V162.67a93.62,93.62,0,0,1,93.34-93.34H349.33m0-37.33H162.67C90.8,32,32,90.8,32,162.67V349.33C32,421.2,90.8,480,162.67,480H349.33C421.2,480,480,421.2,480,349.33V162.67C480,90.8,421.2,32,349.33,32Z"/><path fill="currentColor" d="M377.33,162.67a28,28,0,1,1,28-28A27.94,27.94,0,0,1,377.33,162.67Z"/><path fill="currentColor" d="M256,181.33A74.67,74.67,0,1,1,181.33,256,74.75,74.75,0,0,1,256,181.33M256,144A112,112,0,1,0,368,256,112,112,0,0,0,256,144Z"/></svg>Instagram</a></div>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer class="bar-bot">
-    <div class="bar-in">
-      <span class="plus pl" aria-hidden="true"></span><span class="plus pr" aria-hidden="true"></span>
-      <span class="copy">© 2026 · rblez.com</span>
-      <!-- Iconos: Iconoir (MIT) -->
-      <div class="theme" role="group" aria-label="Theme">
-        <button type="button" data-t="dark" aria-pressed="false" aria-label="Dark" title="Dark"><svg aria-hidden="true" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 11.507a9.493 9.493 0 0 0 18 4.219c-8.507 0-12.726-4.22-12.726-12.726A9.49 9.49 0 0 0 3 11.507"/></svg></button>
-        <button type="button" data-t="light" aria-pressed="false" aria-label="Light" title="Light"><svg aria-hidden="true" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18a6 6 0 1 0 0-12a6 6 0 0 0 0 12m10-6h1M12 2V1m0 22v-1m8-2l-1-1m1-15l-1 1M4 20l1-1M4 4l1 1m-4 7h1"/></svg></button>
-        <button type="button" data-t="auto" aria-pressed="false" aria-label="Auto" title="Auto"><svg aria-hidden="true" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2 21h15m4 0h1"/><path d="M2 16.4V3.6a.6.6 0 0 1 .6-.6h18.8a.6.6 0 0 1 .6.6v12.8a.6.6 0 0 1-.6.6H2.6a.6.6 0 0 1-.6-.6Z"/></g></svg></button>
-      </div>
-    </div>
-  </footer>
-  <script>(function(){var d=document.documentElement,b=document.querySelectorAll('.theme button');function cur(){return d.getAttribute('data-theme')||'auto'}function sync(){var c=cur();b.forEach(function(x){x.setAttribute('aria-pressed',String(x.dataset.t===c))})}b.forEach(function(x){x.addEventListener('click',function(){var t=x.dataset.t;if(t==='auto'){d.removeAttribute('data-theme');try{localStorage.removeItem('theme')}catch(e){}}else{d.setAttribute('data-theme',t);try{localStorage.setItem('theme',t)}catch(e){}}sync()})});sync()})()</script>
-  <script>window.RB={"loc": "en-US", "upd": "Updated {t} · source: GitHub", "err": "Couldn’t load the data right now.", "days": "days", "day": "day", "cal": "{n} contributions on {d}"};</script>
-  <script src="/js/site.js" defer></script>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header>
+<a class="iso" href="/en/" aria-label="Home — rblez.com"><img src="/isotipo.svg" alt="" width="22" height="22" /></a>
+<nav class="lang" aria-label="Language"><a href="/es/" hreflang="es" lang="es">ES</a> / <a href="/en/" hreflang="en" lang="en" aria-current="true">EN</a></nav>
+</header>
+<main id="main">
+<section class="hero" aria-labelledby="h1">
+<p class="kicker">Santiago de Cuba</p>
+<h1 id="h1">Software engineer. I build products for <mark>buying and selling</mark> in Cuba.</h1>
+<p class="lead">I design and ship end to end: the database, payments, notifications and the interface people use every day.</p>
+<ul class="links">
+<li><a class="pill hot" href="mailto:hello@rblez.com">Email me</a></li>
+<li><a class="pill" href="https://github.com/rblez"><svg viewBox="0 0 512 512" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M256 32C132.3 32 32 134.9 32 261.7c0 101.5 64.2 187.5 153.2 217.9a17.56 17.56 0 0 0 3.8.4c8.3 0 11.5-6.1 11.5-11.4 0-5.5-.2-19.9-.3-39.1a102.4 102.4 0 0 1-22.6 2.7c-43.1 0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1 1.4-14.1h.1c22.5 2 34.3 23.8 34.3 23.8 11.2 19.6 26.2 25.1 39.6 25.1a63 63 0 0 0 25.6-6c2-14.8 7.8-24.9 14.2-30.7-49.7-5.8-102-25.5-102-113.5 0-25.1 8.7-45.6 23-61.6-2.3-5.8-10-29.2 2.2-60.8a18.64 18.64 0 0 1 5-.5c8.1 0 26.4 3.1 56.6 24.1a208.21 208.21 0 0 1 112.2 0c30.2-21 48.5-24.1 56.6-24.1a18.64 18.64 0 0 1 5 .5c12.2 31.6 4.5 55 2.2 60.8 14.3 16.1 23 36.6 23 61.6 0 88.2-52.4 107.6-102.3 113.3 8 7.1 15.2 21.1 15.2 42.5 0 30.7-.3 55.5-.3 63 0 5.4 3.1 11.5 11.4 11.5a19.35 19.35 0 0 0 4-.4C415.9 449.2 480 363.1 480 261.7 480 134.9 379.7 32 256 32Z"/></svg>GitHub</a></li>
+<li><a class="pill" href="https://t.me/rblez"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>Telegram</a></li>
+<li><a class="pill" href="/ui/"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="2"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="3.75"/></g></svg>rblez/ui</a></li>
+</ul>
+</section>
+<section aria-labelledby="h-proj">
+<div class="sh"><h2 id="h-proj">Projects</h2><p>Live, with people using them today.</p></div>
+<div class="grid">
+<article class="card" style="--brand:#20c45a">
+<div class="top">
+<div class="id"><span class="tile"><svg viewBox="0 0 775 786" width="26" height="26" aria-hidden="true"><path fill="#20C45A" fill-rule="evenodd" d="M483 282L178 284L179 356L289 356L293 358L294 630L368 629L368 358L372 356L484 356ZM1 100L0 784L671 785L672 340L601 339L599 341L600 662L598 714L69 713L69 172L71 170L433 171L435 103L432 100ZM600 0L600 99L498 101L498 169L499 171L598 171L600 173L599 269L601 271L670 271L672 269L672 172L774 170L774 102L772 100L673 100L672 1Z"/></svg></span><div><h3><a href="https://www.tiendly.lat">Tiendly</a></h3><span class="tag">Online stores</span></div></div>
+<p>Online stores with 0% commission for Cuban sellers. Catalog in USD and CUP, instant orders on Telegram or WhatsApp, and local payment methods.</p>
+<div class="acts"><a href="https://www.tiendly.lat">Open tiendly.lat<svg class="ar" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+</div>
+<div class="stage"><div class="phone"><img src="/img/preview-tiendly.webp" width="540" height="1080" loading="lazy" decoding="async" alt="Screenshot of the Tiendly home page on mobile: “Sell online in Cuba. No commissions.”" /></div></div>
+</article>
+<article class="card" style="--brand:#e5383b">
+<div class="top">
+<div class="id"><span class="tile pk"><svg viewBox="0 0 1024 1024" width="44" height="44" aria-hidden="true"><rect width="1024" height="1024" rx="224" fill="#000"/><g transform="translate(545,505) rotate(-12) scale(27) translate(-12,-12)" fill="none" stroke="#E5383B" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"><path d="M4.5 5.5h15A1.5 1.5 0 0 1 21 7v2.9a2.1 2.1 0 0 0 0 4.2V17a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17v-2.9a2.1 2.1 0 0 0 0-4.2V7a1.5 1.5 0 0 1 1.5-1.5z"/><path d="M9.6 14.4l4.8-4.8"/><circle cx="9.8" cy="9.9" r=".75" fill="#E5383B" stroke="none"/><circle cx="14.2" cy="14.1" r=".75" fill="#E5383B" stroke="none"/></g><g transform="translate(300,610) scale(1.35) translate(-210,-492)"><path d="M119.38,382.95 L301.30,450.26 Q348.68,467.79 300.46,482.85 L229.29,505.07 Q222.01,507.34 219.73,514.62 L196.77,588.07 Q183.69,629.92 168.38,588.83 L99.18,403.20 Q87.20,371.05 119.38,382.95 Z" fill="#000" stroke="#000" stroke-width="46" stroke-linejoin="round"/><path d="M119.38,382.95 L301.30,450.26 Q348.68,467.79 300.46,482.85 L229.29,505.07 Q222.01,507.34 219.73,514.62 L196.77,588.07 Q183.69,629.92 168.38,588.83 L99.18,403.20 Q87.20,371.05 119.38,382.95 Z" fill="#fff"/></g></svg></span><div><h3><a href="https://pickea.pages.dev">Pickea</a></h3><span class="tag">Marketplace</span></div><span class="badge">New on QvaPay</span></div>
+<p>Buy and sell between Cubans. It's a QvaPay mini-app: sign in with your verified account, post for free, and every listing also goes out on the Telegram channel.</p>
+<div class="acts"><a href="https://pickea.pages.dev">Open pickea.pages.dev<svg class="ar" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="https://t.me/pickea_ads">Channel @pickea_ads<svg class="ar" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+</div>
+<div class="stage"><div class="phone"><img src="/img/preview-pickea.webp" width="540" height="1080" loading="lazy" decoding="async" alt="Screenshot of Pickea on mobile: search, “Deals of the day” and the latest listings." /></div></div>
+</article>
+</div>
+</section>
+<section class="more" aria-labelledby="h-more">
+<div class="sh"><h2 id="h-more">More things</h2></div>
+<ul class="list">
+<li><a href="/ui/">rblez/ui</a><span>My component library for Svelte and React, with shared tokens.</span></li>
+<li><a href="/asciidot/">asciidot</a><span>Turn images into braille-dot ASCII art, in the browser.</span></li>
+<li><a href="/explorador/">Explorer</a><span>Explorer for Cuban bank cards.</span></li>
+<li><a href="/terminal/">Terminal</a><span>My portfolio as a terminal.</span></li>
+</ul>
+</section>
+</main>
+<footer>
+<span>© 2026 · rblez.com</span>
+<nav aria-label="Links"><a href="mailto:hello@rblez.com">hello@rblez.com</a><a href="https://github.com/rblez">GitHub</a><a href="https://t.me/rblez">Telegram</a><a href="https://x.com/rblez_">X</a><a href="https://instagram.com/rayomarblez">Instagram</a></nav>
+<div class="theme" role="group" aria-label="Theme">
+<button type="button" data-t="dark" aria-pressed="false" aria-label="Dark" title="Dark"><svg aria-hidden="true" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 11.507a9.493 9.493 0 0 0 18 4.219c-8.507 0-12.726-4.22-12.726-12.726A9.49 9.49 0 0 0 3 11.507"/></svg></button>
+<button type="button" data-t="light" aria-pressed="false" aria-label="Light" title="Light"><svg aria-hidden="true" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18a6 6 0 1 0 0-12a6 6 0 0 0 0 12m10-6h1M12 2V1m0 22v-1m8-2l-1-1m1-15l-1 1M4 20l1-1M4 4l1 1m-4 7h1"/></svg></button>
+<button type="button" data-t="auto" aria-pressed="false" aria-label="Automatic" title="Automatic"><svg aria-hidden="true" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2 21h15m4 0h1"/><path d="M2 16.4V3.6a.6.6 0 0 1 .6-.6h18.8a.6.6 0 0 1 .6.6v12.8a.6.6 0 0 1-.6.6H2.6a.6.6 0 0 1-.6-.6Z"/></g></svg></button>
+</div>
+</footer>
+</div>
+<script>(function(){var d=document.documentElement,b=document.querySelectorAll('.theme button');function cur(){return d.getAttribute('data-theme')||'auto'}function sync(){var c=cur();b.forEach(function(x){x.setAttribute('aria-pressed',String(x.dataset.t===c))})}b.forEach(function(x){x.addEventListener('click',function(){var t=x.dataset.t;if(t==='auto'){d.removeAttribute('data-theme');try{localStorage.removeItem('theme')}catch(e){}}else{d.setAttribute('data-theme',t);try{localStorage.setItem('theme',t)}catch(e){}}sync()})});sync()})()</script>
 </body>
 </html>
-
