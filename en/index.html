@@ -146,6 +146,8 @@
     .shot { margin-bottom: 1rem; }
     .shot img { position: absolute; left: 50%; top: 12%; width: 46%; height: auto; transform: translateX(-50%); border-radius: 10px 10px 0 0; background: #fff; box-shadow: 0 0 0 1px var(--line), 0 12px 28px -10px rgba(0,0,0,.28); }
     @media (max-width: 640px) { .dev.shot { aspect-ratio: 1 / 1; } }
+    .shot.pc img { top: 13%; width: 90%; border-radius: 8px 8px 0 0; background: #0A0A0A; }
+    @media (max-width: 640px) { .shot.pc img { top: 50%; transform: translate(-50%, -50%); border-radius: 8px; } }
     .fav-l { font-size: 20px; font-weight: 700; background: url(/img/noise-m.webp) var(--accent); color: var(--on-accent); box-shadow: none; }
     .logo-tile { display: grid; place-items: center; aspect-ratio: 16 / 10; border-radius: 10px; border: 1px solid var(--line); background: var(--card); }
     .logo-tile img { width: 56px; height: 56px; }
@@ -262,7 +264,7 @@
           <p>Perfume and personal care shop in Cuba. Catalog with orders over WhatsApp and <mark>home delivery</mark> to every province. Design and development of the site and its admin panel.</p>
         </article>
         <article class="card">
-          <div class="dev shot"><img src="/img/preview-stabletally.webp" width="540" height="1080" loading="lazy" decoding="async" alt="Screenshot of the Stabletally home page on mobile: “The leaderboard of verified stablecoin revenue”" /></div>
+          <div class="dev shot pc"><img src="/img/preview-stabletally.webp" width="1080" height="868" loading="lazy" decoding="async" alt="Screenshot of the Stabletally home page on desktop: “The leaderboard of verified stablecoin revenue”" /></div>
           <img class="fav" src="/img/isotipo-stabletally.svg" alt="" width="48" height="48" loading="lazy" />
           <div class="meta"><span class="idx">04</span><span class="tag">Fintech · Stablecoins · 2026</span></div>
           <h3><a href="https://www.stabletally.com">Stabletally</a></h3>
